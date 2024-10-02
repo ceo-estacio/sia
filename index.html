@@ -1,0 +1,495 @@
+
+
+<!DOCTYPE html>
+<html lang='pt-br'>
+   <head>
+      <title></title>
+      
+      <link rel='icon' href='src/pix/logo.svg' type='svg+xml'>
+      <meta charset='UTF-8'>
+      <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+      <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+      <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+      <style>
+         @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cinzel+Decorative:wght@400;700;900&family=Open+Sans:wght@500;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tangerine:wght@400;700&display=swap');
+
+         *:not( h1,h2,h3,h4,h5,h6,p,menu,ul,ol,li,hr,pre,dd,blockquote,fieldset,legend ),
+         *:not( h1,h2,h3,h4,h5,h6,p,menu,ul,ol,li,hr,pre,dd,blockquote,fieldset,legend )::before,
+         *:not( h1,h2,h3,h4,h5,h6,p,menu,ul,ol,li,hr,pre,dd,blockquote,fieldset,legend )::after {
+            margin:0; padding:0; box-sizing:border-box;
+         }
+         
+         :root {
+            --dark0: #16181c;   --dark1: #1b1d22;
+            --dark2: #212329;   --dark3: #505257;
+
+            --light0: #ffffff;  --light1: #f5f5f5;
+
+            --pink: #905;   --amber: #ffab00;   --red: #ce3635;
+            --azul: #27f;   --green: #006400;   --blue: #149cbe;
+            --texto: #e9e6e3;
+
+            --green-dark: #8b6d19;  --green-light: #a17d1a;    --green-bg: #fbf6e9;
+            --purple-dark: #603479; --purple-light: #965bb9;   --purple-bg: #f4edf7;
+            --red-dark: #902726;    --red-light: #b83232;      --red-bg: #fceeee;
+            --blue-dark: #1c5b6e;   --blue-light: #267d97;     --blue-bg: #ebf6fb;
+
+            --appbar-height: 81px;
+            --appbar-filter-shadow: drop-shadow( #0009 0 0 5px );
+            --sidebar-width: 68px;
+         }
+         
+         navlink { cursor: pointer; }
+         navlink:hover { color: #27f; transition: .3s ease-in-out; }
+         
+         ::-webkit-scrollbar {
+            width: 10px;
+         }
+         ::-webkit-scrollbar-track {
+            background: var( --pink );
+            border-radius: 5px;
+         }
+         ::-webkit-scrollbar-thumb {
+            background: var( --dark0 );
+            border-radius: 5px;
+         }
+         
+         html {
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+            
+            background-color: #212329;
+            background-image:   linear-gradient( 0deg, #00000000 24px, #313339 25px ),
+            linear-gradient( 90deg, #00000000 24px, #313339 25px );
+            background-size: 25px 25px;
+         }
+         body {
+            width: calc( 100% - var( --sidebar-width ) );
+            min-height: 100vh;
+            /* margin-left: var( --sidebar-width ); */
+            padding-top: 81px;
+            color: var( --texto );
+            font-family: 'Poppins';
+            -webkit-font-smoothing: antialiased;
+            
+            position: absolute;
+            top: 71px; left: 0;
+            padding: 3rem 0 2rem;
+         }
+         body > main {
+            margin: 0 auto;
+            padding: 2.5rem;
+         }
+         body > main > article,
+         body > main > section {
+            width: 90%;
+            margin: 0 auto;
+            padding: 1rem;
+         }
+         t1, t2, t3, t4, t5, t6, t7 {
+            font-size: 3em;
+            font-weight: bold;
+            line-height: 1.2;
+            word-wrap: break-word;
+            color: #27f;
+         }
+         t { font-size: 1rem; }
+         t1 { font-size: 3rem; color: #e33; }
+         t2 { font-size: 2.5rem; color: #f29; }
+         t3 { font-size: 2.25rem; }
+         t4 { font-size: 1.8rem; }
+         t5 { font-size: 1.5rem; }
+         t6 { font-size: 1.25rem; }
+         t7 { font-size: 1.1rem; }
+         p { word-wrap: break-word; }
+         li { margin: 0.8ch 0; font-size: inherit; }
+         li > :nth-child( 1n ) {
+            padding-top: 1ch;
+            padding-bottom: 1ch;
+         }
+         li::marker {
+            /* unicode-bidi: isolate;
+            font-variant-numeric: tabular-nums;
+            font-variant-numeric: slashed-zero;
+            text-transform: none;
+            text-indent: 0px !important;
+            text-align: start !important;
+            text-align-last: start !important; */
+            font-size: larger;
+            font-weight: bolder;
+            color: #da0;
+         }
+         appbar {
+            /* display: block;
+            width: 100%;
+            height: 81px;
+            position: fixed;
+            top: 0; left: 0;
+            background: var( --dark0 );
+            filter: var( --appbar-filter-shadow ); */
+            z-index: 9;
+            
+            display: block;
+            width: 100%;
+            height: 98px;
+            position: fixed;
+            top: 0; left: 0;
+            background: #16181c;
+            box-shadow: #16181c 0 0 0 6px;
+            filter: drop-shadow( #0009 0 0 5px );
+            border-bottom-left-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+            border-bottom: #da0 5px dashed;
+            border-left: #da0 5px dashed;
+            border-right: #da0 5px dashed;
+         }
+         appbar-body {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            width: 99%;
+            height: 81px;
+            margin: 0 auto;
+            background: #1b1d22;
+            box-shadow: #1b1d22 0 0 0 6px;
+            filter: drop-shadow( #0009 0 0 5px );
+            border-bottom-left-radius: 7ch;
+            border-bottom-right-radius: 7ch;
+            border-bottom: #313339 5px dashed;
+            border-left: #313339 5px dashed;
+            border-right: #313339 5px dashed;
+         }
+         appbar-body > t1 {
+            color: #e9e6e3;
+            display: grid;
+            place-items: center;
+         }
+         sidebar {
+            display: grid;
+            grid-template-columns: var( --sidebar-width ) 256px;
+            width: var( --sidebar-width );
+            height: calc( 100% - var( --appbar-height ) );
+            height: 100dvh;
+            margin-top: var( --appbar-height );
+            position: fixed;
+            top: 0; left: 0;
+            z-index: 6;
+            overflow-x: hidden;
+            background: var( --dark0 );
+         }
+         sidebar::-webkit-scrollbar { width: 0; }
+         sidebar-body {
+            display: grid;
+            grid-template-columns: repeat( 1, 60px );
+            grid-template-rows: repeat( auto-fill, 62px );
+            justify-content: center;
+            gap: 8px;
+            padding-top: 18px;
+         }
+         sidebar-header {
+            display: grid;
+            width: 100%;
+            height: 100%;
+         }
+         sidebar-body {
+            display: grid;
+            width: 100%;
+            height: 100%;
+         }
+         sidebar-options {
+            display: grid;
+            width: 100%;
+            height: 100%;
+         }
+         icon {
+            display: grid;
+            grid-template-columns: repeat( 1, 80% );
+            grid-template-rows: 80% 20%;
+            justify-content: center;
+            place-items: center;
+            gap: 2%;
+            padding: 4px;
+            border-radius: 0.5em;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all .2s ease;
+         }
+         icon:has( icon-img ):hover {
+            background: #0005;
+            border-left: #27f 2px solid;
+            color: #ffab00;
+            transition: all .2s ease;
+         }
+         icon-img {
+            display: grid !important;
+            place-items: center;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 5em;
+            background: #f5f5f510;
+         }
+         icon-name {
+            text-transform: capitalize;
+            font-size: x-small;
+         }
+         drawer {
+            display: block;
+            height: 100%;
+            background: var( --dark1 );
+         }
+         card {
+            display: grid;
+            width: clamp( 100px, 90%, 950px );
+            height: 100%;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #2232;
+            box-shadow: #2233 0 0 0 13px;
+            filter: drop-shadow( #9052 0 0 6px );
+            border-radius: 1.5rem;
+            border: 6px dashed #f275;
+         }
+         card-body {
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 1.5em 2.5em;
+            background: #f5f5f5;
+         }
+         label {
+            display: grid;
+         }
+         label > :first-child {
+            font-size: 1.5rem;
+            margin: 1ch 0 .5ch;
+            font-variant: small;
+         }
+         label > input {
+            border-radius: 9px;
+            border: transparent;
+            padding: 0.5rem;
+            font-size: 1.1rem;
+            outline: transparent;
+            cursor: pointer;
+         }
+         label > input:focus-visible {
+         }
+         fieldset {
+            border-radius: 2rem;
+            margin: 1rem 0;
+            padding: 1rem;
+         }
+         legend { font-weight: bolder; }
+         hr {
+            width: 100%;
+            border: #da05 solid;
+            border-radius: 2rem;
+         }
+         button, input[type='button'] {
+            padding: 1rem 2rem;
+            border-radius: 0.5em;
+            border: none;
+            background: var( --azul );
+            box-shadow: var( --purple-light ) 0 2px 0 1px;
+            transform: translateY( -1px );
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            color: #fff;
+            transition: .15s all ease;
+            cursor: pointer;
+         }
+         button:hover, input[type='button']:hover {
+            box-shadow: var( --purple-light ) 0 4px 0 1px;
+            transform: translateY( -3px );
+            transition: .15s all ease;
+         }
+         button:active, input[type='button']:active {
+            box-shadow: var( --purple-light ) 0 2px 0 1px;
+            transform: translateY( -1px );
+            transition: .15s all ease;
+         }
+         article > section {
+            margin: 0 auto;
+            padding: 24px;
+            background: var( --dark1 );
+         }
+         article > section > header-links {
+            display: block;
+         }
+         article > section > home {
+            display: block;
+            margin: 20px 0 50px;
+         }
+         article > section > home > * {
+            padding: 20px 0;
+         }
+         post {
+            display: block;
+            flex: auto;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 90px 0;
+         }
+         post-body {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            position: relative;
+            border-radius: 6px;
+            background: #212329;
+         }
+         post-body > post-header {
+            display: block;
+            padding: 70px 95px;
+         }
+         post-body:has( post-header ) post-body {
+            padding-top: 0;
+         }
+
+         </style>
+         <style>
+            navlink {
+               cursor: pointer;
+            }
+         </style>
+   </head>
+   <body>
+      <appbar>
+         <appbar-body>
+            <appbar-brand></appbar-brand>
+            <center style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+               <t4>Estácio</t4>
+            </center>
+            <appbar-options></appbar-options>
+         </appbar-body>
+      </appbar>
+
+      <drawer id="drawer">
+      </drawer>
+
+      <main>
+      </main>
+
+      <script>
+         'use strict';
+         /* ==[ properties ]================= */
+         const 
+            $ = v => document.querySelector( v ),
+            $$ = v => document.querySelectorAll( v ),
+            _ = v => console.log( v );
+         /* -------------------------------- */
+
+         function LoadNavlinks() {
+            let NavLinks = $$( 'navlink' );
+
+            NavLinks.forEach( link => link.addEventListener( 'click', ev => {
+               window.open( link.getAttribute( 'to' ), '_blank' );
+            } ) );
+         }
+
+         const 
+            icons = {
+               sia: `
+                  <svg viewBox="0 0 24 24" class="archive" width="24.000em" height="24.000em" aria-hidden="true" focusable="false" role="img" alt=""><path fill-rule="evenodd" clip-rule="evenodd" d="M0.25 3C0.25 2.58579 0.585786 2.25 1 2.25H23C23.4142 2.25 23.75 2.58579 23.75 3V8C23.75 8.41421 23.4142 8.75 23 8.75H21.75V21C21.75 21.4142 21.4142 21.75 21 21.75H3C2.58579 21.75 2.25 21.4142 2.25 21V8.75H1C0.585786 8.75 0.25 8.41421 0.25 8V3ZM3.75 8.75V20.25H20.25V8.75H3.75ZM1.75 7.25V3.75H22.25V7.25H1.75ZM9.25 12C9.25 11.5858 9.58579 11.25 10 11.25H14C14.4142 11.25 14.75 11.5858 14.75 12C14.75 12.4142 14.4142 12.75 14 12.75H10C9.58579 12.75 9.25 12.4142 9.25 12Z" fill="currentColor" data-darkreader-inline-fill="" style="--darkreader-inline-fill: currentColor;"></path></svg>
+               `,
+               sava: `
+                  <svg viewBox="0 0 24 25" class="grid" width="24.000em" height="25.000em" aria-hidden="true" focusable="false" role="img" alt=""><path fill-rule="evenodd" clip-rule="evenodd" d="M2.25 3.51758C2.25 3.10336 2.58579 2.76758 3 2.76758H10C10.4142 2.76758 10.75 3.10336 10.75 3.51758V10.5176C10.75 10.9318 10.4142 11.2676 10 11.2676H3C2.58579 11.2676 2.25 10.9318 2.25 10.5176V3.51758ZM3.75 4.26758V9.76758H9.25V4.26758H3.75ZM13.25 3.51758C13.25 3.10336 13.5858 2.76758 14 2.76758H21C21.4142 2.76758 21.75 3.10336 21.75 3.51758V10.5176C21.75 10.9318 21.4142 11.2676 21 11.2676H14C13.5858 11.2676 13.25 10.9318 13.25 10.5176V3.51758ZM14.75 4.26758V9.76758H20.25V4.26758H14.75ZM2.25 14.5176C2.25 14.1034 2.58579 13.7676 3 13.7676H10C10.4142 13.7676 10.75 14.1034 10.75 14.5176V21.5176C10.75 21.9318 10.4142 22.2676 10 22.2676H3C2.58579 22.2676 2.25 21.9318 2.25 21.5176V14.5176ZM3.75 15.2676V20.7676H9.25V15.2676H3.75ZM13.25 14.5176C13.25 14.1034 13.5858 13.7676 14 13.7676H21C21.4142 13.7676 21.75 14.1034 21.75 14.5176V21.5176C21.75 21.9318 21.4142 22.2676 21 22.2676H14C13.5858 22.2676 13.25 21.9318 13.25 21.5176V14.5176ZM14.75 15.2676V20.7676H20.25V15.2676H14.75Z" fill="currentColor" data-darkreader-inline-fill="" style="--darkreader-inline-fill: currentColor;"></path></svg>
+               `,
+               avaliações: `
+                  <svg viewBox="0 0 24 24" class="check_square" width="24.000em" height="24.000em" aria-hidden="true" focusable="false" role="img" alt=""><path fill-rule="evenodd" clip-rule="evenodd" d="M5 3.75C4.66848 3.75 4.35054 3.8817 4.11612 4.11612C3.8817 4.35054 3.75 4.66848 3.75 5V19C3.75 19.3315 3.8817 19.6495 4.11612 19.8839C4.35054 20.1183 4.66848 20.25 5 20.25H19C19.3315 20.25 19.6495 20.1183 19.8839 19.8839C20.1183 19.6495 20.25 19.3315 20.25 19V12C20.25 11.5858 20.5858 11.25 21 11.25C21.4142 11.25 21.75 11.5858 21.75 12V19C21.75 19.7293 21.4603 20.4288 20.9445 20.9445C20.4288 21.4603 19.7293 21.75 19 21.75H5C4.27065 21.75 3.57118 21.4603 3.05546 20.9445C2.53973 20.4288 2.25 19.7293 2.25 19V5C2.25 4.27065 2.53973 3.57118 3.05546 3.05546C3.57118 2.53973 4.27065 2.25 5 2.25H16C16.4142 2.25 16.75 2.58579 16.75 3C16.75 3.41421 16.4142 3.75 16 3.75H5ZM22.5303 3.46967C22.8232 3.76256 22.8232 4.23744 22.5303 4.53033L12.5303 14.5303C12.2374 14.8232 11.7626 14.8232 11.4697 14.5303L8.46967 11.5303C8.17678 11.2374 8.17678 10.7626 8.46967 10.4697C8.76256 10.1768 9.23744 10.1768 9.53033 10.4697L12 12.9393L21.4697 3.46967C21.7626 3.17678 22.2374 3.17678 22.5303 3.46967Z" fill="currentColor" data-darkreader-inline-fill="" style="--darkreader-inline-fill: currentColor;"></path></svg>
+               `,
+            }
+            ,
+            drawerMenuItems = [
+               {
+                  name: "sia",
+                  link: "https://sia.estacio.br/sianet/",
+                  icon: icons.sia,
+               }
+               ,
+               {
+                  name: "sava",
+                  link: "https://estudante.estacio.br/?utm_source=sia&utm_medium=menu-lateral&utm_campaign=2021&force_login=true&login_hint=202309568098@alunos.estacio.br",
+                  icon: icons.sava,
+               }
+               ,
+               {
+                  name: "avaliações",
+                  link: "https://estudante.estacio.br/avaliacoes",
+                  icon: icons.avaliações,
+               }
+               ,
+            ]
+         ;
+
+         function LoadDrawerMenu() {
+            if( drawer ) {
+               drawer.innerHTML = `
+                  <drawer-body id="drawerBody">
+                     <style>
+                        drawer {
+                           display: flex;
+                        }
+                        drawer-body {
+                           display: flex;
+                           flex-direction: column;
+                           gap: 1em;
+                           padding: 1em;
+                        }
+
+                        drawer-item {
+                           display: flex;
+                           align-items: center;
+                           height: 36px;
+                           padding: .5em;
+                        }
+
+                        drawer-item > icon {
+                           width: 36px;
+                           height: 36px;
+                           aspect-ratio: 1 / 1;
+                        }
+
+                        drawer-item > icon > svg {
+                           width: 100%;
+                           height: 100%;
+                        }
+                     </style>
+                  </drawer-body>
+               `,
+               drawerMenuItems.forEach( item => {
+                  drawerBody.innerHTML += `
+                     <drawer-item>
+                        <icon>
+                           ${ item.icon }
+                        </icon>
+                        <navlink
+                           to="${ item.link }"
+                        >
+                           ${ item.name }
+                        </navlink>
+                     </drawer-item>
+                  `
+               } );
+               LoadNavlinks();
+            }
+         }
+
+
+
+         /* ==[ events ]==================== */
+         window.addEventListener( 'load', ev => {
+            let NavLinks = $$( 'navlink' );
+
+
+
+            NavLinks.forEach( link => link.addEventListener( 'click', ev => {
+               window.open( link.getAttribute( 'to' ), '_blank' );
+            } ) );
+
+            LoadDrawerMenu();
+
+         } );
+
+      </script>
+   </body>
+</html>
