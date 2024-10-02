@@ -399,7 +399,13 @@
                         drawer {
                            display: flex;
                            width: clamp( 100px, 75%, 300px );
+                           position: fixed;
+                           top: 0; left: 0;
+                           padding-top: 126px;
+                           // z-index: 99;
+                           box-shadow: #0003 0 0 10px;
                         }
+
                         drawer-body {
                            display: flex;
                            flex-direction: column;
