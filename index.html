@@ -63,6 +63,7 @@
                <button id="update_Btn">Update</button>
                <button id="delete_Btn">Delete</button>
                <button id="oi">oi</button>
+               <button id="send_btn">send</button>
             </buttons>
          </section>
       </main>
@@ -74,7 +75,7 @@
          const 
             $ = v => document.querySelector( v ),
             $$ = v => document.querySelectorAll( v ),
-            _ = v => console.log( v );
+            _ = ( ...v ) => console.log( ...v );
          /* -------------------------------- */
 
          /**
@@ -107,7 +108,6 @@
                rtdb: {
                   crud: {
                      Create: async ( { path, odata, } ) => {
-                        _( "path: ", path, "odata: ", odata );
                         set(
                            ref(
                               getDatabase(),
@@ -134,6 +134,7 @@
                      }
                      ,
                      Read: async ( { path, } ) => {
+                        const data = 
                         get(
                            child(
                               ref( getDatabase() ),
@@ -148,6 +149,7 @@
                         //       canSwin_.value = ( snapshot.val().canswin ) ? "yes" : "no";
                         //    } else { _( "Employee doesn't exist" ); }
                         // } ).catch( err => _( "crud:: Read() err: ", err ) );
+                        return data;
                      }
                      ,
                      Update: async ( { path, odata, } ) => {
@@ -181,8 +183,11 @@
          /* firebase rtdb crud -- -- -- -- -- -- -- -- -- */
 
          function EventListener( { element, event, eventRunner, eventProps } ) {
-            // $( `${ element }` ).addEventListener( `${ event }`, () => eventProps ? eventRunner( { ...eventProps } ) : eventRunner() );
-            $( `${ element }` ).addEventListener( `${ event }`, () => eventRunner( { ...eventProps } ) );
+            // $( `${ element }` ).addEventListener( `${ event }`, () => eventRunner( { ...eventProps } ) );
+            $( `${ element }` ).addEventListener( 
+               `${ event }`, 
+               () => eventRunner() 
+            );
          }
 
          function LoadNavlinks() {
@@ -305,42 +310,46 @@
 
 
          /* == [ events ] == == == == == == == == == == */
-         window.addEventListener( 'load', ev => {
-            LoadNavlinks();
-            LoadDrawerMenu();
+         window.addEventListener( 'load', ev => { 
+            LoadNavlinks(); 
+            LoadDrawerMenu(); 
 
-            // create_btn
+            // create_btn 
             EventListener( { 
                element: "#create_Btn", 
                event: "click", 
-               eventRunner: firebase.rtdb.crud.Create, 
-               eventProps: { 
-                  // path: `EmployeeSet/${ cnic_.value }`, 
-                  path: `EmployeeSet/${ cnic_.value }`, 
-                  odata: { 
-                     // object
-                     nameofemployee: { 
-                        firstname: firstName_.value, 
-                        lastname: lastName_.value 
-                     }, 
-                     // string
-                     department: department_.value,
-                     // bool
-                     canswin: ( canSwin_.value == "yes" ),
-                     // number
-                     // cnic: Number( cnic_.value )
-                     cnic: Number( cnic_.value )
-                  },
+               eventRunner: () => {
+                  firebase.rtdb.crud.Create( {
+                     path: `EmployeeSet/${ cnic_.value }`,
+                     odata: { 
+                        nameofemployee: { 
+                           firstname: firstName_.value, 
+                           lastname: lastName_.value 
+                        }, 
+                        department: department_.value, 
+                        canswin: ( canSwin_.value == "yes" ), 
+                        cnic: Number( cnic_.value ) 
+                     },
+                  } ); 
                }
-            } );
+            } ); 
 
             // read_btn
             EventListener( { 
                element: "#read_Btn", 
                event: "click", 
-               eventRunner: firebase.rtdb.crud.Read, 
-               eventProps: { 
-                  path: `EmployeeSet/${ cnic_.value }`, 
+               eventRunner: () => {
+                  firebase.rtdb.crud.Read( {
+                     path: `EmployeeSet/${ cnic_.value }`
+                  } ).then( snapshot => {
+                     if( snapshot.exists() ) {
+                        firstName_.value = snapshot.val().nameofemployee.firstname;
+                        lastName_.value = snapshot.val().nameofemployee.lastname;
+                        department_.value = snapshot.val().department;
+                        canSwin_.value = ( snapshot.val().canswin ) ? "yes" : "no";
+                        _( "oi" );
+                     } else { _( "Employee doesn't exist" ); }
+                  } ).catch( err => _( "crud:: Read() err: ", err ) );
                }
             } );
 
@@ -348,22 +357,18 @@
             EventListener( { 
                element: "#update_Btn", 
                event: "click", 
-               eventRunner: firebase.rtdb.crud.Update, 
-               eventProps: { 
-                  path: `EmployeeSet/${ cnic_.value }`, 
-                  odata: { 
-                     // object
-                     nameofemployee: { 
-                        firstname: firstName_.value, 
-                        lastname: lastName_.value 
-                     }, 
-                     // string
-                     department: department_.value,
-                     // bool
-                     canswin: ( canSwin_.value == "yes" ),
-                     // number
-                     // cnic: Number( cnic_.value )
-                  },
+               eventRunner: () => {
+                  firebase.rtdb.crud.Update( {
+                     path: `EmployeeSet/${ cnic_.value }`,
+                     odata: { 
+                        nameofemployee: { 
+                           firstname: firstName_.value, 
+                           lastname: lastName_.value 
+                        }, 
+                        department: department_.value,
+                        canswin: ( canSwin_.value == "yes" ),
+                     },
+                  } );
                }
             } );
 
@@ -371,13 +376,12 @@
             EventListener( { 
                element: "#delete_Btn", 
                event: "click", 
-               eventRunner: firebase.rtdb.crud.Delete, 
-               eventProps: { 
-                  path: `EmployeeSet/${ cnic_.value }`
+               eventRunner: () => { 
+                  firebase.rtdb.crud.Delete( { 
+                     path: `EmployeeSet/${ cnic_.value }`
+                  } );
                }
             } );
-
-            EventListener( { element: "#oi", event: "click", eventRunner: () => alert( "oi" ) } );
 
          } );
 

@@ -1,7 +1,7 @@
 
 
 button, input[type='button'] {
-   padding: 1rem 2rem;
+   padding: .5em 1em;
    border-radius: 0.5em;
    border: none;
    background: var( --azul );
@@ -22,4 +22,11 @@ button:active, input[type='button']:active {
    box-shadow: var( --purple-light ) 0 2px 0 1px;
    transform: translateY( -1px );
    transition: .15s all ease;
+}
+
+buttons {
+   display: flex;
+   gap: .5em;
+   padding: 1em 0;
+   flex-wrap: wrap;
 }
