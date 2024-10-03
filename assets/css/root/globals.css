@@ -1,0 +1,21 @@
+
+
+:root {
+   --dark0: #16181c;   --dark1: #1b1d22;
+   --dark2: #212329;   --dark3: #505257;
+
+   --light0: #ffffff;  --light1: #f5f5f5;
+
+   --pink: #905;   --amber: #ffab00;   --red: #ce3635;
+   --azul: #27f;   --green: #006400;   --blue: #149cbe;
+   --texto: #e9e6e3;
+
+   --green-dark: #8b6d19;  --green-light: #a17d1a;    --green-bg: #fbf6e9;
+   --purple-dark: #603479; --purple-light: #965bb9;   --purple-bg: #f4edf7;
+   --red-dark: #902726;    --red-light: #b83232;      --red-bg: #fceeee;
+   --blue-dark: #1c5b6e;   --blue-light: #267d97;     --blue-bg: #ebf6fb;
+
+   --appbar-height: 81px;
+   --appbar-filter-shadow: drop-shadow( #0009 0 0 5px );
+   --sidebar-width: 68px;
+}

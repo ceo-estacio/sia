@@ -1,0 +1,31 @@
+
+
+label {
+   display: grid;
+}
+label > :first-child {
+   font-size: 1.5rem;
+   margin: 1ch 0 .5ch;
+   font-variant: small;
+}
+label > input {
+   border-radius: 9px;
+   border: transparent;
+   padding: 0.5rem;
+   font-size: 1.1rem;
+   outline: transparent;
+   cursor: pointer;
+}
+label > input:focus-visible {
+}
+fieldset {
+   border-radius: 2rem;
+   margin: 1rem 0;
+   padding: 1rem;
+}
+legend { font-weight: bolder; }
+hr {
+   width: 100%;
+   border: #da05 solid;
+   border-radius: 2rem;
+}

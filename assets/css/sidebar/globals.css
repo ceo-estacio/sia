@@ -1,0 +1,39 @@
+
+
+sidebar {
+   display: grid;
+   grid-template-columns: var( --sidebar-width ) 256px;
+   width: var( --sidebar-width );
+   height: calc( 100% - var( --appbar-height ) );
+   height: 100dvh;
+   margin-top: var( --appbar-height );
+   position: fixed;
+   top: 0; left: 0;
+   z-index: 6;
+   overflow-x: hidden;
+   background: var( --dark0 );
+}
+sidebar::-webkit-scrollbar { width: 0; }
+sidebar-body {
+   display: grid;
+   grid-template-columns: repeat( 1, 60px );
+   grid-template-rows: repeat( auto-fill, 62px );
+   justify-content: center;
+   gap: 8px;
+   padding-top: 18px;
+}
+sidebar-header {
+   display: grid;
+   width: 100%;
+   height: 100%;
+}
+sidebar-body {
+   display: grid;
+   width: 100%;
+   height: 100%;
+}
+sidebar-options {
+   display: grid;
+   width: 100%;
+   height: 100%;
+}
