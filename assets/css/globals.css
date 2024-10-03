@@ -1,30 +1,30 @@
 
 
 /* fonts */
-@import url( ./fonts/globals.css );
+@import url( ./imports/fonts/globals.css );
 
 /* resets */
-@import url( ./resets/globals.css );
+@import url( ./imports/resets/globals.css );
 
 /* root */
-@import url( ./root/globals.css );
+@import url( ./imports/root/globals.css );
 
 /* defaults */
-@import url( ./defaults/globals.css );
+@import url( ./imports/defaults/globals.css );
 
 /* appbar */
-@import url( ./appbar/globals.css );
+@import url( ./imports/appbar/globals.css );
 
 /* sidebar */
-@import url( ./sidebar/globals.css );
+@import url( ./imports/sidebar/globals.css );
 
 /* drawer */
-@import url( ./drawer/globals.css );
+@import url( ./imports/drawer/globals.css );
 
 /* inputs */
-@import url( ./inputs/globals.css );
+@import url( ./imports/inputs/globals.css );
 
 /* buttons */
-@import url( ./buttons/globals.css );
+@import url( ./imports/buttons/globals.css );
 
 

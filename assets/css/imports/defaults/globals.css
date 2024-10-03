@@ -25,28 +25,23 @@ html {
    background-size: 25px 25px;
 }
 body {
-   width: calc( 100% - var( --sidebar-width ) );
+   /* width: calc( 100% - var( --sidebar-width ) ); */
    min-height: 100vh;
    /* margin-left: var( --sidebar-width ); */
-   padding-top: 81px;
+   /* padding-top: 111px; */
    color: var( --texto );
    font-family: 'Poppins';
    -webkit-font-smoothing: antialiased;
    
-   position: absolute;
-   top: 71px; left: 0;
-   padding: 3rem 0 2rem;
+   /* position: absolute; */
+   /* top: 71px; left: 0; */
+   /* padding: 3rem 0 2rem; */
 }
 body > main {
    margin: 0 auto;
-   padding: 2.5rem;
+   padding: 1em;
 }
-body > main > article,
-body > main > section {
-   width: 90%;
-   margin: 0 auto;
-   padding: 1rem;
-}
+
 t1, t2, t3, t4, t5, t6, t7 {
    font-size: 3em;
    font-weight: bold;
