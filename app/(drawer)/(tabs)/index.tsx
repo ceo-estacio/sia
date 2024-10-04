@@ -32,7 +32,7 @@ export default function HomeView( { ...props } ) {
                <Pressable
                   onPress={ () => router.push( "/(routes)/(disciplinas)/estruturaDeDados/" ) }
                >
-                  <Text>Estrutura de dados</Text>
+                  <Text style={{ color: "#eee", }}>Estrutura de dados</Text>
                </Pressable>
             </View>
          </ScrollView>
