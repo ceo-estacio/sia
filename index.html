@@ -29,7 +29,10 @@
       </drawer>
 
       <main>
-         <section><button id="login_Btn">login</button></section>
+         <section>
+            <button id="login_Btn">login</button>
+            <button id="estruturaDeDados_Btn">Estrutura de Dados</button>
+         </section>
          
       </main>
 
@@ -409,6 +412,7 @@ window.addEventListener( 'load', ev => {
    } );
 
    Click( "#login_Btn", () => View( "auth/login", () => $_( LoginView ) ) );
+   Click( "#estruturaDeDados_Btn", () => View( "disciplinas/estrutura-de-dados/index", () => $_( view ) ) );
    
 } );
 
