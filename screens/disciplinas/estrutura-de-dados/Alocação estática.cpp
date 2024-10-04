@@ -20,6 +20,8 @@ void increment( void ) {
 int main( void ) {
    int i;
    for( i = 0; i < 5; i++ ) {
-      
+      increment();
+      system( "pause" );
+      return( 0 );
    }
 }
