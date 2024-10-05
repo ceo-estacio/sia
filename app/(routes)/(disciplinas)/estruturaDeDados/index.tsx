@@ -10,7 +10,7 @@ import {
    Image,
    ScrollView, 
 } from "react-native";
-import $, { Code, Header, HomePage, Page, Picture, Pix, Section } from "@/widgets/elements";
+import _, { Code, Header, HomePage, Page, Picture, Pix, Section } from "@/widgets/elements";
 // import "../../../../assets/images/disciplinas/estrutura-de-dados/tree-node.png"
 
 
@@ -27,8 +27,50 @@ export default function EstruturaDeDadosView( { ...props } ) {
       <HomePage>
          <ScrollView>
             <Header bg="#00559c" h={91} ph={18} pv={18} center>
-               <$.H1>Estrutura de dados</$.H1>
+               <_.H1 style={{ color: "#eee" }}>Estrutura de dados</_.H1>
             </Header>
+
+            <Section pv={24} bg="#e5e5e5" gap={18}>
+               <_.H2 style={{ paddingHorizontal: 24 }}>Tema 2</_.H2>
+
+               <Section gap={18}>
+                  <Header bg="#f5f5f5" ph={24} center>
+                     <_.H4 style={{ color: "#0075bd" }}>Empregar ponteiros com a utilização da linguagem de programação C</_.H4>
+                  </Header>
+                  <Section pd={24} gap={16}>
+                     <Text>ponteiro é um apontador para um endereço de memória</Text>
+                     
+                  </Section>
+               </Section>
+
+               <Section gap={18}>
+                  <Header bg="#f5f5f5" ph={24} center>
+                     <_.H4 style={{ color: "#0075bd" }}>Definir estrutura de dados heterogênea</_.H4>
+                  </Header>
+
+                  <Section pd={24} gap={16}>
+                  </Section>
+               </Section>
+
+               <Section gap={18}>
+                  <Header bg="#f5f5f5" ph={24} center>
+                     <_.H4 style={{ color: "#0075bd" }}>Aplicar structs com a utilização da linguagem de programação C</_.H4>
+                  </Header>
+
+                  <Section pd={24} gap={16}>
+                  </Section>
+               </Section>
+
+               <Section gap={18}>
+                  <Header bg="#f5f5f5" ph={24} center>
+                     <_.H4 style={{ color: "#0075bd" }}>Empregar as estruturas de dados aninhadas, os vetores de estruturas e a instrução typedef usando a linguagem de programação C</_.H4>
+                  </Header>
+                  
+                  <Section pd={24} gap={16}>
+                  </Section>
+               </Section>
+
+            </Section>
 
             <Section ph={22} pv={24}>
                <Text>
@@ -41,68 +83,69 @@ export default function EstruturaDeDadosView( { ...props } ) {
 
             <Section ph={22} pv={22}>
                <Header>
-                  <$.H3>tipos</$.H3>
+                  <_.H3>tipos</_.H3>
                </Header>
 
                <Section pv={22}>
-                  <$.H5>Array</$.H5>
-                  <$.Ts>Vetor: estruturas unidimensionais</$.Ts>
-                  <$.Ts>Matriz: estruturas multidimensionais</$.Ts>
-                  <$.P>
+                  <_.H5>Array</_.H5>
+                  <_.Ts>Vetor: estruturas unidimensionais</_.Ts>
+                  <_.Ts>Matriz: estruturas multidimensionais</_.Ts>
+                  <_.P>
                      armazenar uma coleção de elementos do mesmo tipo "ou não", onde cada elemento pode ser identificado por um indice ou uma chave
-                  </$.P>
+                  </_.P>
                </Section>
 
                <Section pv={22}>
-                  <$.H5>Pilha</$.H5>
-                  <$.Ts>coleção ordenada de itens baseada no princípio L.I.F.O "Last In First Out"</$.Ts>
-                  <$.P>
+                  <_.H5>Pilha</_.H5>
+                  <_.Ts>coleção ordenada de itens baseada no princípio L.I.F.O "Last In First Out"</_.Ts>
+                  <_.P>
 
-                  </$.P>
+                  </_.P>
                </Section>
 
                <Section pv={22}>
-                  <$.H5>Fila</$.H5>
-                  <$.Ts>coleção ordenada de itens baseada no princípio F.I.F.O "First In First Out"</$.Ts>
-                  <$.P>
+                  <_.H5>Fila</_.H5>
+                  <_.Ts>coleção ordenada de itens baseada no princípio F.I.F.O "First In First Out"</_.Ts>
+                  <_.P>
 
-                  </$.P>
+                  </_.P>
                </Section>
 
                <Section pv={22}>
-                  <$.H5>Árvore</$.H5>
-                  <$.Ts>coleção não ordenada de itens</$.Ts>
+                  <_.H5>Árvore</_.H5>
+                  <_.Ts>coleção não ordenada de itens</_.Ts>
                   <Picture center >
                      <Pix
                         image={ require( "../../../../assets/images/disciplinas/estrutura-de-dados/tree-node.png" ) }
                         w="70%"   
                      />
                   </Picture>
-                  <$.P>
+                  <_.P>
                      constituídas por nós, com relacionamento pai e filhos
-                  </$.P>
-                  <$.T>Nó do topo: raiz</$.T>
-                  <$.T>cada nó pode ter 0 ou mais filhos: ramos</$.T>
-                  <$.T>nós internos são os que possuem filhos: B, E, F, D, G</$.T>
-                  <$.T>nós externos "folhas" não possuem filhos: I, J, K, C, L, H</$.T>
-                  <$.T>nós </$.T>
+                  </_.P>
+                  <_.T>Nó do topo: raiz</_.T>
+                  <_.T>cada nó pode ter 0 ou mais filhos: ramos</_.T>
+                  <_.T>nós internos são os que possuem filhos: B, E, F, D, G</_.T>
+                  <_.T>nós externos "folhas" não possuem filhos: I, J, K, C, L, H</_.T>
+                  <_.T>nós </_.T>
 
                   <Section pv={16}>
-                     <$.H4>Árvore binária</$.H4>
+                     <_.H4>Árvore binária</_.H4>
                      <Text>insere seus nós sem nenhuma regra definida</Text>
                   </Section>
 
                   <Section pv={16}>
-                     <$.H4>Árvore binária de busca</$.H4>
+                     <_.H4>Árvore binária de busca</_.H4>
                      <Text>inicia a operação inserindo a raiz e o primeiro nó filho</Text>
                      <Text>a partir do segundo nó, é feita a verificação: </Text>
                      <Text>o valor é maior do que o valor da raiz ? ( é adicionado à direita ) : ( é adicionado à esquerda )</Text>
                      <Text>os valores da subarvore da esquerda terão sempre valores menores do que os nós da direita</Text>
                   </Section>
 
-                  <Code ph={24} pv={24} title="Arvore binária">
-                     <Text style={{ color: "#eee" }}>
-{`class Arvore {
+                  <Code 
+                     title="Arvore binária"
+                     script={ `
+class Arvore {
    constructor() {
       this.nós = {}
    }
@@ -133,8 +176,7 @@ const
    novaArvore.inserir( novaArvore.nos, 27 );
    novaArvore.inserir( novaArvore.nos, 25 );
 ;`}
-                     </Text>
-                  </Code>
+                  />
                   <Picture center>
                      <Pix 
                         image={ require( "../../../../assets/images/disciplinas/estrutura-de-dados/novaArvore.png" ) }
@@ -142,6 +184,14 @@ const
                      />
                   </Picture>
 
+               </Section>
+
+               <Section pv={24}>
+                  <Text>ponteiros são declarados pelo símbolo “*” entre o tipo e o nome da variável.</Text>
+                  <Code title="ponteiros"
+                     script=
+                        { `int *p;` }
+                  />
                </Section>
 
             </Section>

@@ -4,7 +4,7 @@ import { Image, ScrollView, Text, View } from "react-native";
 import styled from "styled-components/native";
 
 const 
-   $ = {
+   _ = {
 
       /**
        * == [ texts ] 
@@ -135,8 +135,10 @@ export function Header( { ...props }: HeaderProps ) {
 type SectionProps = {
    h?: number | string;
    bg?: string;
+   pd?: number;
    ph?: number;
    pv?: number;
+   gap?: number;
    children?: any;
    style?: any;
    center?: boolean;
@@ -146,6 +148,8 @@ export function Section( { ...props }: SectionProps ) {
    return(
       <View style={[ props.style, { 
          backgroundColor: props.bg, paddingHorizontal: props.ph, paddingVertical: props.pv, 
+         padding: props.pd,
+         gap: props.gap,
          width: "100%", height: props.h || "auto", 
       }, props.center ? { alignItems: "center", justifyContent: "center" } : "" ]}>
          { props.children }
@@ -213,7 +217,8 @@ type CodeProps = {
    ph?: number;
    pv?: number;
    title?: string;
-   children?: any;
+   // children?: any;
+   script: string;
    style?: any;
    center?: boolean;
 }
@@ -225,10 +230,11 @@ export function Code( { ...props }: CodeProps ) {
             <Text style={{ color: "#fc0" }}>{ props.title }</Text>
          </View>
          <View style={[ props.style, { 
-            backgroundColor: props.bg || "#000", paddingHorizontal: props.ph, paddingVertical: props.pv, 
+            backgroundColor: props.bg || "#000", paddingHorizontal: props.ph || 24, paddingVertical: props.pv || 24, 
             width: props.w || "100%", height: props.h || "auto", 
          }, props.center ? { alignItems: "center", justifyContent: "center" } : "" ]}>
-            { props.children }
+            {/* { props.children } */}
+            <Text style={{ color: "#999" }}>{ props.script }</Text>
          </View>
       </View> 
    </> );
@@ -238,4 +244,4 @@ export function Code( { ...props }: CodeProps ) {
 
 
 /* == [ exports ] == == == == == == == == == */
-export default $;
+export default _;
