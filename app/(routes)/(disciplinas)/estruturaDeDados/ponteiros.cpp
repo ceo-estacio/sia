@@ -1,6 +1,13 @@
 
 
 // Empregar ponteiros com a utilização da linguagem de programação C
+/**
+ * printf codes
+ * %[sinalizadores][largura][.precisão][tamanho]tipo
+ * %d    print string and int variable
+ * %s    print string and char array
+ * %p    writes an implementation-defined character sequence defining a pointer
+ */
 
 // #include <iostream>
 #include <stdio.h>
@@ -49,3 +56,24 @@ int main() {
    // return 0;    
 }
 
+int arrayComChar() {
+    char string[20] = "oi hdsufs";
+    char *point;
+    
+    point = string;
+    printf( "point: %c\n\n", *point );
+    // o
+    point = point + 1;
+    printf( "point: %c\n\n", *point );
+    // i
+    point = point + 2;
+    printf( "point: %c\n\n", *point );
+    // h
+    point = &string[7];
+    printf( "point: %c\n\n", *point );
+    // f
+}
+
+int arrayComString() {
+
+}

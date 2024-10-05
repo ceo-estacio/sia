@@ -43,10 +43,27 @@ export default function EstruturaDeDadosView( { ...props } ) {
                      
                      <Picture center>
                         <Pix 
-                           // w={"70%"}
                            image={ require( "@/assets/images/disciplinas/estrutura-de-dados/ponteiro para ponteiro.jpg" ) }
                         />
                      </Picture>
+
+                     <Section>
+                        <_.H4>alocação dinamica com dois vetores: um com malloc e um com calloc</_.H4>
+                        <Code 
+                           title="alocação com malloc"
+                           script={`
+int *i;   // vetor para ser alocado
+i = ( int* ) malloc( 5 *sizeof( int ) );   // 5 é o n° de elementos, e o tamanho de cada elemento
+                           `}
+                        />
+                        <Code 
+                           title="alocação com calloc"
+                           script={`
+int *i;   // vetor para ser alocado
+i = ( int* ) calloc( 5, sizeof( int ) );   // 1° arg é o n° de elementos, 2° arg é o tamanho de cada elemento
+                           `}
+                        />
+                     </Section>
                   </Section>
                </Section>
 
