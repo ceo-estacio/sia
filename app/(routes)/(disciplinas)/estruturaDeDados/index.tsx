@@ -39,7 +39,14 @@ export default function EstruturaDeDadosView( { ...props } ) {
                   </Header>
                   <Section pd={24} gap={16}>
                      <Text>ponteiro é um apontador para um endereço de memória</Text>
+                     <Text>também apontam para o primeiro de arrays e strings</Text>
                      
+                     <Picture center>
+                        <Pix 
+                           // w={"70%"}
+                           image={ require( "@/assets/images/disciplinas/estrutura-de-dados/ponteiro para ponteiro.jpg" ) }
+                        />
+                     </Picture>
                   </Section>
                </Section>
 
