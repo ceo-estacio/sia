@@ -91,15 +91,14 @@ type PageProps = {
    pv?: number;
    children?: any;
    style?: any;
-   center?: boolean;
 }
 
 export function Page( { ...props }: PageProps ) {
    return(
       <ScrollView style={[ props.style, { 
-         flex: 1, alignItems: "center", width: "100%", height: props.h || "100%", 
+         flex: 1, width: "100%", height: props.h || "100%", 
          backgroundColor: props.bg || "#f5f5f5", paddingHorizontal: props.ph, paddingVertical: props.pv, 
-         }, props.center ? { alignItems: "center", justifyContent: "center" } : "" ]}>
+         } ]}>
          { props.children }
       </ScrollView>
    );
@@ -122,7 +121,7 @@ export function Header( { ...props }: HeaderProps ) {
    return(
       <View style={[ props.style, { 
          backgroundColor: props.bg, paddingHorizontal: props.ph, paddingVertical: props.pv, 
-         width: "100%", height: props.h || 56, 
+         width: "100%", minHeightheight: 56, 
       }, props.center ? { alignItems: "center", justifyContent: "center" } : "" ]}>
          { props.children }
       </View>

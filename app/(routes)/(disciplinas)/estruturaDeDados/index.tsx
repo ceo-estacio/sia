@@ -64,8 +64,40 @@ i = ( int* ) calloc( 5, sizeof( int ) );   // 1° arg é o n° de elementos, 2°
                            `}
                         />
                      </Section>
+
+                     <Section style={{  }} pv={0}>
+                        <Picture bg="#a0f" style={{ paddingVertical: 16, borderRadius: 22, overflow: "hidden" }}>
+                           <Pix 
+                              image={ require( "@/assets/images/disciplinas/estrutura-de-dados/malloc.png" ) }
+                              mode="stretch"
+                           />
+                        </Picture>
+                     </Section>
+
+                     <Section>
+                        <_.H4>Ponteiro para ponteiro</_.H4>
+                        <Code 
+                           title="Indireção múltipla"
+                           script={`
+int ** pt2;   /* ponteiro para ponteiro do tipo inteiro */
+int * pt1;    /* ponteiro para o tipo inteiro */
+int x = 10;
+
+pt2 = &pt1;
+pt1 = &x;
+
+*pt1 = 30;
+**pt2 = 50
+                              `}
+                        />
+                     </Section>
                   </Section>
                </Section>
+
+
+{/* --------------------------------------------------- */}
+{/*                  <módulo 2>                         */}
+{/* --------------------------------------------------- */}
 
                <Section gap={18}>
                   <Header bg="#f5f5f5" ph={24} center>
@@ -73,8 +105,38 @@ i = ( int* ) calloc( 5, sizeof( int ) );   // 1° arg é o n° de elementos, 2°
                   </Header>
 
                   <Section pd={24} gap={16}>
+
+                     <Section>
+                        <Header>
+                           <_.H4>Estrutura de dados</_.H4>
+                        </Header>
+                     </Section>
+
+                     <Section>
+                        <Header>
+                           <_.H4>Tipos de estrutura de dados</_.H4>
+                        </Header>
+                     </Section>
+
+                     <Section>
+                        <Header>
+                           <_.H4>Estruturas de dados homogêneas x heterogêneas</_.H4>
+                        </Header>
+                     </Section>
+
+                     <Section>
+                        <Header>
+                           <_.H4>Verificando o aprendizado</_.H4>
+                        </Header>
+                     </Section>
+
                   </Section>
                </Section>
+
+
+{/* --------------------------------------------------- */}
+{/*                  <módulo 3>                         */}
+{/* --------------------------------------------------- */}
 
                <Section gap={18}>
                   <Header bg="#f5f5f5" ph={24} center>
@@ -82,8 +144,20 @@ i = ( int* ) calloc( 5, sizeof( int ) );   // 1° arg é o n° de elementos, 2°
                   </Header>
 
                   <Section pd={24} gap={16}>
+
+                     <Section>
+                        <Header>
+                           <_.H4></_.H4>
+                        </Header>
+                     </Section>
+
                   </Section>
                </Section>
+
+
+{/* --------------------------------------------------- */}
+{/*                  <módulo 4>                         */}
+{/* --------------------------------------------------- */}
 
                <Section gap={18}>
                   <Header bg="#f5f5f5" ph={24} center>
