@@ -11,7 +11,7 @@ import {
    ScrollView, 
 } from "react-native";
 import _, { Code, Header, HomePage, Page, Picture, Pix, Section } from "@/widgets/elements";
-// import "../../../../assets/images/disciplinas/estrutura-de-dados/tree-node.png"
+// import "../../../../assets/images/disciplinas/estrutura-de-dados/tree-node.png" 
 
 
 /** == [ properties ]
@@ -33,11 +33,12 @@ export default function EstruturaDeDadosView( { ...props } ) {
             <Section pv={24} bg="#e5e5e5" gap={18}>
                <_.H2 style={{ paddingHorizontal: 24 }}>Tema 2</_.H2>
 
-               <Section gap={18}>
+               <Section gap={18} bg="#f5f5f5">
                   <Header bg="#f5f5f5" ph={24} center>
                      <_.H4 style={{ color: "#0075bd" }}>Empregar ponteiros com a utilização da linguagem de programação C</_.H4>
                   </Header>
-                  <Section pd={24} gap={16}>
+
+                  <Section pd={24} gap={16} bg="#e5e5e5" style={{ borderTopStartRadius: 24, borderTopEndRadius: 24, }}>
                      <Text>ponteiro é um apontador para um endereço de memória</Text>
                      <Text>também apontam para o primeiro de arrays e strings</Text>
                      
@@ -66,10 +67,10 @@ i = ( int* ) calloc( 5, sizeof( int ) );   // 1° arg é o n° de elementos, 2°
                      </Section>
 
                      <Section style={{  }} pv={0}>
-                        <Picture bg="#a0f" style={{ paddingVertical: 16, borderRadius: 22, overflow: "hidden" }}>
+                        <Picture bg="#1b1d22" style={{ paddingVertical: 16, borderRadius: 22, overflow: "hidden" }}>
                            <Pix 
                               image={ require( "@/assets/images/disciplinas/estrutura-de-dados/malloc.png" ) }
-                              mode="stretch"
+                              // mode="stretch"
                            />
                         </Picture>
                      </Section>
@@ -96,26 +97,50 @@ pt1 = &x;
 
 
 {/* --------------------------------------------------- */}
-{/*                  <módulo 2>                         */}
+{/*                         <2>                         */}
 {/* --------------------------------------------------- */}
 
-               <Section gap={18}>
+               <Section gap={18} bg="#f5f5f5">
                   <Header bg="#f5f5f5" ph={24} center>
                      <_.H4 style={{ color: "#0075bd" }}>Definir estrutura de dados heterogênea</_.H4>
                   </Header>
 
-                  <Section pd={24} gap={16}>
+                  <Section pd={24} gap={16} bg="#e5e5e5" style={{ borderTopStartRadius: 24, borderTopEndRadius: 24, }}>
 
                      <Section>
                         <Header>
                            <_.H4>Estrutura de dados</_.H4>
                         </Header>
+                        <Text>São formas de distribuir e relacionar os dados</Text>
+                        <Text>São distribuidos em 2 tipos: </Text>
+                        <_.H5>dado </_.H5>
+                        <Text>elemento usado para solucionar problemas</Text>
+                        <Text>
+                           possuem tipos especificos: inteiro, real, lógicos, texto
+                        </Text>
+
+                        <_.H5>estrutura </_.H5>
+                        <Text>Elemento estrutural, responsável por carregar as informações</Text>
                      </Section>
 
                      <Section>
                         <Header>
                            <_.H4>Tipos de estrutura de dados</_.H4>
                         </Header>
+                        <_.H6>Tipos de estruturas</_.H6>
+                        <_.H6 style={{ color: "#0af" }}>vetor</_.H6>
+                        <Section>
+                           <Text>Unidimencionais / bidimencionais</Text>
+                        </Section>
+                        <_.H6 style={{ color: "#0af" }}>lista</_.H6>
+                        <_.H6 style={{ color: "#0af" }}>pilha</_.H6>
+                        <_.H6 style={{ color: "#0af" }}>fila</_.H6>
+                        <_.H6 style={{ color: "#0af" }}>arvore</_.H6>
+                        <_.H6 style={{ color: "#0af" }}>registro</_.H6>
+                        <Section>
+                           <Text>heterogenea</Text>
+                        </Section>
+                        <_.H6 style={{ color: "#0af" }}>...</_.H6>
                      </Section>
 
                      <Section>
@@ -135,19 +160,60 @@ pt1 = &x;
 
 
 {/* --------------------------------------------------- */}
-{/*                  <módulo 3>                         */}
+{/*                         <3>                         */}
 {/* --------------------------------------------------- */}
 
-               <Section gap={18}>
+               <Section gap={18} bg="#f5f5f5" >
                   <Header bg="#f5f5f5" ph={24} center>
                      <_.H4 style={{ color: "#0075bd" }}>Aplicar structs com a utilização da linguagem de programação C</_.H4>
                   </Header>
 
-                  <Section pd={24} gap={16}>
+                     <Section pd={24} gap={16} bg="#e5e5e5" style={{ borderTopStartRadius: 24, borderTopEndRadius: 24, }}>
 
                      <Section>
                         <Header>
-                           <_.H4></_.H4>
+                           <_.H4>Definição de struct em C</_.H4>
+                        </Header>
+                        <Text>Struct : Registro</Text>
+
+                     </Section>
+
+                     <Section>
+                        <Header>
+                           <_.H4>Declaração de struct em C</_.H4>
+                        </Header>
+                        <Text>Tipos de declaração struct</Text>
+                        <Code title="tipo 1" script={`struct nome {\n   int item;\n}\n\nstruct nome v_nome;`}/>
+                        <Code title="tipo 2" script={`struct nome {\n   int item;\n} v_nome1, v_nome2, v_nome3;`}/>
+                        <Code title="tipo 3" script={`struct {\n   int item;\n} v_nome;`}/>
+                     </Section>
+
+                     <Section>
+                        <Header>
+                           <_.H4>Inicializando struct em C</_.H4>
+                        </Header>
+                        <Code title="tipo 2" script={`struct endereco x = { "Av. das Américas", "4200", " 22640-102 ", "Barra da Tijuca" };`}/>
+                     </Section>
+
+                     <Section>
+                        <Header>
+                           <_.H4>Acessando os membros da struct em C</_.H4>
+                        </Header>
+                        <Text></Text>
+                        <Code title="acesso por struct sendo referenciada por var" script={`printf("%s", x.rua);`}/>
+                        <Text></Text>
+                        <Code title="acesso por struct sendo referenciada por ponieiro" script={`printf("%s", x->rua);`}/>
+                     </Section>
+
+                     <Section>
+                        <Header>
+                           <_.H4>Manipulando structs</_.H4>
+                        </Header>
+                     </Section>
+
+                     <Section>
+                        <Header>
+                           <_.H4>Verificando o aprendizado</_.H4>
                         </Header>
                      </Section>
 
@@ -156,15 +222,65 @@ pt1 = &x;
 
 
 {/* --------------------------------------------------- */}
-{/*                  <módulo 4>                         */}
+{/*                         <4>                         */}
 {/* --------------------------------------------------- */}
 
-               <Section gap={18}>
+               <Section gap={18} bg="#f5f5f5" >
                   <Header bg="#f5f5f5" ph={24} center>
                      <_.H4 style={{ color: "#0075bd" }}>Empregar as estruturas de dados aninhadas, os vetores de estruturas e a instrução typedef usando a linguagem de programação C</_.H4>
                   </Header>
-                  
-                  <Section pd={24} gap={16}>
+
+                  <Section pd={24} gap={16} bg="#e5e5e5" style={{ borderTopStartRadius: 24, borderTopEndRadius: 24, }}>
+
+                     <Section>
+                        <Header>
+                           <_.H4>struct aninhada</_.H4>
+                        </Header>
+                        
+                     </Section>
+
+
+                     <Section>
+                        <Header>
+                           <_.H4>manipulação de struct aninhadas</_.H4>
+                        </Header>
+                     </Section>
+
+
+                     <Section>
+                        <Header>
+                           <_.H4>mão na massa</_.H4>
+                        </Header>
+                     </Section>
+
+
+                     <Section>
+                        <Header>
+                           <_.H4>array de struct</_.H4>
+                        </Header>
+                     </Section>
+
+
+                     <Section>
+                        <Header>
+                           <_.H4>buscando um elemento no array de struct</_.H4>
+                        </Header>
+                     </Section>
+
+
+                     <Section>
+                        <Header>
+                           <_.H4>mão na massa</_.H4>
+                        </Header>
+                     </Section>
+
+
+                     <Section>
+                        <Header>
+                           <_.H4>Verificando o aprendizado</_.H4>
+                        </Header>
+                     </Section>
+
                   </Section>
                </Section>
 
