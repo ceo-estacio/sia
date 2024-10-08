@@ -34,6 +34,7 @@ export default function HomeView( { ...props } ) {
                >
                   <Text style={{ color: "#eee", }}>Linguagem C</Text>
                </Pressable>
+
                <Pressable
                   onPress={ () => router.push( "/(routes)/(disciplinas)/estruturaDeDados/" ) }
                >

@@ -11,7 +11,7 @@ import {
    ScrollView, 
 } from "react-native";
 import _, { Code, Header, HomePage, Page, Picture, Pix, Section } from "@/widgets/elements";
-// import "../../../../assets/images/disciplinas/estrutura-de-dados/tree-node.png" 
+
 
 
 /** == [ properties ]
@@ -258,6 +258,31 @@ pt1 = &x;
                         <Header>
                            <_.H4>array de struct</_.H4>
                         </Header>
+                        <_.H5>criando um modelo</_.H5>
+                        <Picture>
+                           <Pix 
+                              image={ require( "@/assets/images/disciplinas/estrutura-de-dados/arrayDeStruct-1.png" ) }
+                           />
+                        </Picture>
+                        <_.H5>criando um vetor de 10 posições</_.H5>
+                        <Picture>
+                           <Pix 
+                              image={ require( "@/assets/images/disciplinas/estrutura-de-dados/arrayDeStruct-2.png" ) }
+                           />
+                        </Picture>
+                        <_.H5>Inicializando o array de struct</_.H5>
+                        <Text>Para inicializar um array de struct, devemos atribuir aos seus membros os valores padrão (default) de cada tipo de dado</Text>
+                        <Picture>
+                           <Pix 
+                              image={ require( "@/assets/images/disciplinas/estrutura-de-dados/arrayDeStruct-3.png" ) }
+                           />
+                        </Picture>
+                        <_.H5>Populando o array de struct</_.H5>
+                        <Picture>
+                           <Pix 
+                              image={ require( "@/assets/images/disciplinas/estrutura-de-dados/arrayDeStruct-4.png" ) }
+                           />
+                        </Picture>
                      </Section>
 
 

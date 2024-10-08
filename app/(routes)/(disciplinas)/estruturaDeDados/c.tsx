@@ -25,51 +25,51 @@ export default function CView( { ...props } ) {
 
    function Tecido( { ...props } ) {
       return( 
-         <View 
-            style={{
-               width: props.w || "100%", height: props.h || 132,
-               backgroundColor: props.bg || "#16181c",
-               alignItems: "center",
-               borderBottomStartRadius: props.rd || 45,
-               borderBottomEndRadius: props.rd || 45,
-               elevation: 5,
-               // borderStyle: "dashed",
-               // borderColor: props.bc || "#daa520",
-               // borderTopWidth: 0,
-               // borderWidth: 6,
-               shadowOpacity: 1,
-               shadowColor: "#0005",
-               shadowRadius: 10,
-               shadowOffset: {
-                  width: 0,
-                  height: 10
-               },
-               
-            }}
-         >
+         <View style={{ width: props.w || "100%", height: props.h || 132, backgroundColor: props.fundo || "#21232900", margin: 0, padding: 0, alignItems: "center", }}>
             <View 
                style={{
-                  width: "95.3%", height: "93%",
+                  width: props.w || "100%", height: props.h || 132,
                   backgroundColor: props.bg || "#16181c",
                   alignItems: "center",
                   borderBottomStartRadius: props.rd || 45,
                   borderBottomEndRadius: props.rd || 45,
                   elevation: 5,
-                  borderStyle: "dashed",
-                  borderColor: props.bc || "#ffab00",
-                  borderTopWidth: 0,
-                  borderWidth: 6,
+                  // borderStyle: "dashed",
+                  // borderColor: props.bc || "#daa520",
+                  // borderTopWidth: 0,
+                  // borderWidth: 6,
                   shadowOpacity: 1,
-                  shadowColor: "#0000",
-                  shadowRadius: 0,
+                  shadowColor: "#0005",
+                  shadowRadius: 10,
                   shadowOffset: {
                      width: 0,
                      height: 10
                   },
-                  
                }}
             >
-               { props.children }
+               <View 
+                  style={{
+                     width: "95.3%", height: "93%",
+                     backgroundColor: props.bg || "#16181c",
+                     alignItems: "center",
+                     borderBottomStartRadius: props.rd || 45,
+                     borderBottomEndRadius: props.rd || 45,
+                     elevation: 5,
+                     borderStyle: "dashed",
+                     borderColor: props.bc || "#ffab00",
+                     borderTopWidth: 0,
+                     borderWidth: 4.5,
+                     shadowOpacity: 1,
+                     shadowColor: "#0000",
+                     shadowRadius: 0,
+                     shadowOffset: {
+                        width: 0,
+                        height: 10
+                     },
+                  }}
+               >
+                  { props.children }
+               </View>
             </View>
          </View>
       );
@@ -79,14 +79,14 @@ export default function CView( { ...props } ) {
       <Stack.Screen 
          options={{
             header: () => ( 
-               <Tecido>
+               <Tecido fundo="#fafafa">
                   <Tecido
-                     w="105%" h="95%" rd={ 140 }
+                     w="105%" h="95%" rd={ 90 }
                      bg="#1b1d22" bc="#313339"
                   >
                   </Tecido>
                </Tecido>
-            )
+            ),
          }}
       />
       <HomePage>
