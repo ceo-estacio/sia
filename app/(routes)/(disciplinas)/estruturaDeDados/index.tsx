@@ -283,6 +283,12 @@ pt1 = &x;
                               image={ require( "@/assets/images/disciplinas/estrutura-de-dados/arrayDeStruct-4.png" ) }
                            />
                         </Picture>
+                        <_.H5>Buscando um elemento no array de struct</_.H5>
+                        <Picture>
+                           <Pix 
+                              image={ require( "@/assets/images/disciplinas/estrutura-de-dados/arrayDeStruct-5.png" ) }
+                           />
+                        </Picture>
                      </Section>
 
 
@@ -297,6 +303,12 @@ pt1 = &x;
                         <Header>
                            <_.H4>mão na massa</_.H4>
                         </Header>
+                        <_.H6>Considere que você está desenvolvendo um novo software para catalogar os jogadores de futebol. Você modelou o seu programa utilizando as structs apresentadas abaixo.</_.H6>
+                        <Picture>
+                           <Pix 
+                              image={ require( "@/assets/images/disciplinas/estrutura-de-dados/jogador.png" ) }
+                           />
+                        </Picture>
                      </Section>
 
 
