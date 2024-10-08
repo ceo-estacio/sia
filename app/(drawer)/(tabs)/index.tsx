@@ -30,7 +30,7 @@ export default function HomeView( { ...props } ) {
          <ScrollView>
             <View>
                <Pressable
-                  onPress={ () => router.push( "/(routes)/(disciplinas)/estruturaDeDados/c" ) }
+                  onPress={ () => router.push( "/(routes)/(disciplinas)/estruturaDeDados/tema-2/c" ) }
                >
                   <Text style={{ color: "#eee", }}>Linguagem C</Text>
                </Pressable>
