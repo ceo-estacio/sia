@@ -8,6 +8,7 @@
       "ranges": "cpp",
       "regex": "cpp",
       "utility": "cpp",
-      "stdlib.h": "c"
+      "stdlib.h": "c",
+      "numbers": "c"
    }
 }

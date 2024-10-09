@@ -60,6 +60,9 @@ export default function EstruturaDeDadosView( { ...props } ) {
                <Tema tema={3} name="Modularização" 
                   link="/(disciplinas)/estruturaDeDados/tema-3"
                />
+               <Tema tema={4} name="Listas, Pilhas, Filas e Deques"
+                  link="/(disciplinas)/estruturaDeDados/tema-4"
+               />
       
             </Section>
          </ScrollView>

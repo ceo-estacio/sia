@@ -2,7 +2,7 @@
 
 /** == [ @imports ] 
  * == == == == == == == == == */
-import _, { Code, Header, HomePage, Pix, Section } from "@/widgets/elements";
+import _, { Code, Header, HomePage, Picture, Pix, Section } from "@/widgets/elements";
 import React, { useState, useEffect } from "react";
 import { 
    StyleSheet,
@@ -35,7 +35,20 @@ export default function ModularizaçãoView( { ...props } ) {
                      <_.H3>Definições</_.H3>
                   </Header>
                   <Section pd={18}
-                  ></Section>
+                  >
+                     <Text>
+                        <_.H5>parametros:  </_.H5>
+                        são passados no momento da criação da função,
+                        são formais e são como uma var local dentro da função.
+                     </Text>
+
+                     <Text>
+                        <_.H5>argumentos:  </_.H5>
+                        
+                        são parametros passados na execução da função,
+                        são reais/atuais e são como os valores passados para os parametros formais
+                     </Text>
+                  </Section>
                </Section>
 
                <Section>
@@ -74,20 +87,26 @@ export default function ModularizaçãoView( { ...props } ) {
                      <_.H3>Passagem de vetores</_.H3>
                   </Header>
                   <Section pd={18}
-                  ></Section>
+                  >
+                     <Code title="criação de vetores" script={`type name[ quantity ]`}/>
+
+                     <Text>1: criação</Text>
+                     <Pix image={ require( "@/assets/images/disciplinas/estrutura-de-dados/tema-3/vetores-1.png" ) }/>
+
+                     <Text>2: iniciação</Text>
+                     <Pix image={ require( "@/assets/images/disciplinas/estrutura-de-dados/tema-3/vetores-2.png" ) }/>
+
+                     <Text>3: criação</Text>
+                     <Pix image={ require( "@/assets/images/disciplinas/estrutura-de-dados/tema-3/vetores-3.png" ) }/>
+
+                     <Text>4: criação</Text>
+                     <Pix image={ require( "@/assets/images/disciplinas/estrutura-de-dados/tema-3/vetores-4.png" ) }/>
+                  </Section>
                </Section>
 
                <Section>
                   <Header ph={18} pv={18}>
                      <_.H3>Verificando o aprendizado</_.H3>
-                  </Header>
-                  <Section pd={18}
-                  ></Section>
-               </Section>
-
-               <Section>
-                  <Header ph={18} pv={18}>
-                     <_.H3></_.H3>
                   </Header>
                   <Section pd={18}
                   ></Section>
@@ -111,3 +130,4 @@ const
       },
    } )
 ;
+

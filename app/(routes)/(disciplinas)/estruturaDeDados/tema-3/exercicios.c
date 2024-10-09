@@ -18,14 +18,14 @@ int main( void ) {
 // parametros
 
 // por referencia
-void Dobro( int *pX ) {
+void Dobro( int *pX ) {    // params com *
    ( *pX ) = ( *pX ) * 2;
 }
 
 int main1( void ) {
    int n = 2;
 
-   Dobro( &n );
+   Dobro( &n );   // uso com & na var 
    printf( "dobro: %d", n ); 
 }
 

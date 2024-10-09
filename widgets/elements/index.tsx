@@ -57,6 +57,8 @@ const
    }
 ;
 
+export const T = { ..._ };
+
 /**
  * == [ HomePage ] 
  * == == == == == == == == == */
@@ -198,8 +200,9 @@ export function Pix( { ...props }: PixProps ) {
          source={ props.image }
          resizeMode={ props.mode || "contain" }
          style={[ props.style, { 
-            width: props.w || "100%",  
-         } ]}
+            width: props.w || "100%",   
+            overflow: "hidden",
+         }, props.h && { height: props.h } ]}
       />
    );
 }
@@ -233,7 +236,7 @@ export function Code( { ...props }: CodeProps ) {
             width: props.w || "100%", height: props.h || "auto", 
          }, props.center ? { alignItems: "center", justifyContent: "center" } : "" ]}>
             {/* { props.children } */}
-            <Text style={{ color: "#999" }}>{ props.script }</Text>
+            <Text style={{ color: "#eee", lineHeight: 22,  }}>{ props.script }</Text>
          </View>
       </View> 
    </> );
