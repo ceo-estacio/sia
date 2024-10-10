@@ -69,7 +69,7 @@ export function DisciplinasMenu( { ...props }: DisciplinasMenuProps ) {
             <View style={{ 
                backgroundColor: Palette.dark[2],
                flex: 1, 
-               minHeight: (Dimensions.get( "window" ).height) - ( 129 - 30 ), 
+               minHeight: ( Dimensions.get( "window" ).height ) - ( 129 - 30 ), 
                borderTopStartRadius: 24,
                }}
             >
