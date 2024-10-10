@@ -117,14 +117,19 @@ type HeaderProps = {
    children?: any;
    style?: any;
    center?: boolean;
+   centerH?: boolean;
 }
 
 export function Header( { ...props }: HeaderProps ) {
    return(
       <View style={[ props.style, { 
          backgroundColor: props.bg, paddingHorizontal: props.ph, paddingVertical: props.pv, 
-         width: "100%", minHeightheight: 56, 
-      }, props.center ? { alignItems: "center", justifyContent: "center" } : "" ]}>
+         width: "100%", minHeightheight: 56, height: props.h,
+      }, 
+         props.center ? { alignItems: "center", justifyContent: "center" } : "" 
+         ,
+         props.centerH ? { justifyContent: "center" } : ""
+      ]}>
          { props.children }
       </View>
    );

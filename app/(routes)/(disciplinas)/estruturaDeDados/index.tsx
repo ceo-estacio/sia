@@ -32,8 +32,8 @@ function Tema( { ...p }: { link: Href; tema: number; name: string; } ) {
          <Pressable
             onPress={ () => { router.push( link ); } }
          >
-            <Text>Tema { p.tema }</Text>
-            <_.H4>{ p.name }</_.H4>
+            <Text style={{ color: "#ccc" }}>Tema { p.tema }</Text>
+            <_.H4 style={{ color: "#eee" }}>{ p.name }</_.H4>
          </Pressable>
       </View>
    </> );
@@ -46,13 +46,16 @@ export default function EstruturaDeDadosView( { ...props } ) {
 
    return( <>
       <HomePage>
-         <ScrollView>
-            <Header bg="#00559c" h={91} ph={18} pv={18} center>
+         <ScrollView style={{ backgroundColor: "#212329" }}>
+            {/* <Header bg="#00559c" h={129} ph={18} pv={18} centerH> */}
+            <Header bg="#16181c" h={129} ph={18} pv={18} centerH>
+               <_.H4 style={{ color: "#ccc" }}>Disciplina</_.H4>
                <_.H1 style={{ color: "#eee" }}>Estrutura de dados</_.H1>
             </Header>
 
             <View style={{ padding: 18, }}>
                <Section pd={ 18 } 
+                  bg="#1b1d22"
                   style={{
                      borderRadius: 13,
                      borderColor: "#9995",
