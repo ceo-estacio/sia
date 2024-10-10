@@ -2,19 +2,41 @@
 
 /** == [ @imports ] 
  * == == == == == == == == == */
-import _, { TT, Header, HomePage, Section, T, Code, Pix } from "@/widgets/elements";
+import _, { TT, Header, HomePage, Section, T, Code, Pix, PixB } from "@/widgets/elements";
 import React, { useState, useEffect } from "react";
 import { 
    StyleSheet,
    View,
    Text,
-   ScrollView, 
+   ScrollView,
+   FlatList,
+   Image, 
+   Dimensions,
+   ImageBackground,
 } from "react-native";
 
 
 /** == [ properties ]
  * == == == == == == == == == */
+function ModuloView( { ...props }: { n?: number; children: any; hbg?: string; bg?: string; } ) {
+   return( <>
+      <Section bg={ props.bg }>
+         { props.n &&
+            <Header ph={18} pv={18} bg={ props.hbg }>
+               <T.H6 style={{ color: "#0af" }}>Módulo { props.n }</T.H6>
+            </Header>
+         }
+         { props.children }
+         {/* <Section pd={18}>
 
+            <Section gap={16} pv={16}>
+               <T.H5></T.H5>
+            </Section>
+
+         </Section> */}
+      </Section>
+   </> );
+}
 
 /** == [ exports ]
  * == == == == == == == == == */
@@ -188,29 +210,91 @@ aux_r = 5;
 
                <Section>
                   <Header ph={18} pv={18}>
-                     <T.H6>Módulo </T.H6>
+                     <T.H6>Módulo 3</T.H6>
                   </Header>
                   <Section pd={18}>
 
                      <Section gap={16} pv={16}>
-                        <T.H5></T.H5>
+                        <T.H5>Tipo de lista: Pilha</T.H5>
+                        <Pix h={ 1110 } image={ require( "@/assets/images/disciplinas/estrutura-de-dados/tema-4/pilha.png" ) }/>
+                        {
+                           [
+                              "verificar se esta vazia antes de inserir ou remover itens",
+                              "d"
+                           ].map( ( item, i ) => <>
+                              <View style={{ padding: 8 }}>
+                                 <Text key={ i } style={{ alignItems: "center", justifyContent: "center",}}>
+                                    <T.H6 style={{ fontSize: 18, color: "#fc0" }}>{ i + 1 }-  </T.H6>
+                                    { item }
+                                 </Text>
+                              </View>
+                           </> )
+                        }
+                     </Section>
+
+                     <Section gap={16} pv={16}>
+                        <T.H5>Teoria na prática</T.H5>
+                     </Section>
+
+                     <Section gap={16} pv={16}>
+                        <T.H5>Pilhas em alocação sequencial</T.H5>
+                     </Section>
+
+                     <Section gap={16} pv={16}>
+                        <T.H5>Pilhas em alocação dinâmica</T.H5>
+                     </Section>
+
+                     <Section gap={16} pv={16}>
+                        <T.H5>Pilhas e expressões aritméticas binárias</T.H5>
+                     </Section>
+
+                     <Section gap={16} pv={16}>
+                        <T.H5>Teoria na prática</T.H5>
+                     </Section>
+
+                     <Section gap={16} pv={16}>
+                        <T.H5>Mão na Massa</T.H5>
+                     </Section>
+
+                     <Section gap={16} pv={16}>
+                        <T.H5>Verificando o aprendizado</T.H5>
+
+                        <T.H6>vantagem de se implementar pilhas em alocação encadeada</T.H6>
+                        <Text>Evita o desperdício de memória.</Text>
                      </Section>
 
                   </Section>
                </Section>
 
-               <Section>
-                  <Header ph={18} pv={18}>
-                     <T.H6>Módulo </T.H6>
-                  </Header>
+               <ModuloView n={4} >
                   <Section pd={18}>
 
                      <Section gap={16} pv={16}>
-                        <T.H5></T.H5>
+                        <T.H5>Tipo de lista: Fila ( queue )</T.H5>
+                        <Text>inserção no final</Text>
+                        <Text>remoção no começo</Text>
+                        <Pix image={ require( "@/assets/images/disciplinas/estrutura-de-dados/tema-4/fila.jpg" ) }/>
+                        
+                     </Section>
+
+                     <Section gap={16} pv={16}>
+                        <T.H5>Filas em alocação sequencial</T.H5>
+                     </Section>
+
+                     <Section gap={16} pv={16}>
+                        <T.H5>Teoria na prática</T.H5>
+                     </Section>
+
+                     <Section gap={16} pv={16}>
+                        <T.H5>Filas em alocação dinâmica</T.H5>
+                     </Section>
+
+                     <Section gap={16} pv={16}>
+                        <T.H5>Verificando o aprendizado</T.H5>
                      </Section>
 
                   </Section>
-               </Section>
+               </ModuloView>
                
             </Section>
          </ScrollView>

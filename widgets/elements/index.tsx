@@ -1,6 +1,6 @@
 
 
-import { Image, ScrollView, Text, View } from "react-native";
+import { Dimensions, Image, ImageBackground, ScrollView, Text, View } from "react-native";
 import styled from "styled-components/native";
 
 const 
@@ -202,7 +202,8 @@ export function Pix( { ...props }: PixProps ) {
          style={[ props.style, { 
             width: props.w || "100%",   
             overflow: "hidden",
-         }, props.h && { height: props.h } ]}
+            height: props.h || Dimensions.get( "window" ).width,
+         } ]}
       />
    );
 }

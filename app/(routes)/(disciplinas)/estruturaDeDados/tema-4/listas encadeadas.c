@@ -5,17 +5,19 @@
 
 
 struct Produto {
-   int codigo; /* Codigo do produto */
-   double preco; /* Preco do produto */
-   struct Produto *proximo;    /* Proximo elemento da lista encadeada de Produtos */
+   int codigo;    /* Codigo do produto */
+   double preco;  /* Preco do produto */
+   struct Produto *proximo;    
+   /* Proximo elemento da lista encadeada de Produtos */
 };
 
-/* Estrutura que ser� usada para criar os n�s da lista */
+/* Estrutura que será usada para criar os nós da lista */
 
 typedef struct tipo_produto {
-   int codigo;                  /* Codigo do produto */
-   double preco;                /* Preco do produto */
-   struct tipo_produto *proximo;    /* Proximo elemento da lista encadeada de Produtos */
+   int codigo;    /* Codigo do produto */
+   double preco;  /* Preco do produto */
+   struct tipo_produto *proximo;    
+   /* Proximo elemento da lista encadeada de Produtos */
 }  TProduto;
 
 /* Prototipos das funcoes para inserir e listar produtos */
@@ -23,37 +25,46 @@ void inserir( TProduto **cabeca );
 void listar( TProduto *cabeca );
 
 int main() {
-   TProduto *cabeca = NULL;        /* Ponteiro para a cabeca da lista */
-   TProduto *noatual;               /* Ponteiro a ser usado para percorrer a lista no momento de desalocar seus elementos*/
-   char q;                          /* Caractere para receber a opcao do usuario */
+   TProduto *cabeca = NULL;        
+   /* Ponteiro para a cabeca da lista */
+   TProduto *noatual;               
+   /* Ponteiro a ser usado para percorrer a lista no 
+   momento de desalocar seus elementos */
+   char q;                          
+   /* Caractere para receber a opcao do usuario */
+   
    do {
-      printf( "\n\nOpcoes: \nI -> para inserir novo produto;\nL -> para listar os produtos; \nS -> para sair \n:" );
-      scanf( "%c", &q );     /* Le a opcao do usuario */
+      printf( "\n\nOpcoes: \n" );
+      printf( "I -> para inserir novo produto;\n" );
+      printf( "L -> para listar os produtos; \n" );
+      printf( "S -> para sair \n:" );
+      scanf( "%c", &q );     
+      /* Le a opcao do usuario */
       switch( q ) {
          case 'i': case 'I': inserir( &cabeca ); break;
          case 'l': case 'L': listar( cabeca ); break;
          case 's': case 'S': break;
-         default: printf( "\n\n Opcao nao valida" );
+         default: printf( "\n\n Opcao invalida" );
       }
-      fflush( stdin );    /* Limpa o buffer de entrada */
+      fflush( stdin );    
+      /* Limpa o buffer de entrada */
    } while( ( q != 's' ) && ( q != 'S' ) );
 
 /* Desaloca a memoria alocada para os elementos da lista */
-
    noatual = cabeca;
    while( noatual != NULL ) {
       cabeca = noatual->proximo;
       free( noatual );
       noatual = cabeca;
    }
-}
+}  /* </ main() > */
+
 
 /* Lista todos os elementos presentes na lista encadeada */
-
-
 void listar( TProduto *noatual ) {
-   int i=0;
-   while( noatual != NULL ) {    /* Enquanto nao chega no fim da lista */
+   int i = 0;
+   while( noatual != NULL ) {    
+   /* Enquanto nao chega no fim da lista */
       i++;
       printf( 
          "\n\nProduto numero %d\nCodigo: %d \nPreco:R$%.2lf", 
@@ -61,9 +72,11 @@ void listar( TProduto *noatual ) {
          noatual->codigo, 
          noatual->preco 
       );
-      noatual = noatual->proximo;     /* Faz noatual apontar para o proximo no */
+      noatual = noatual->proximo;     
+      /* Faz noatual apontar para o proximo no */
    }
-}
+}  // -- listar()
+
 
 /* Funcao para inserir um novo no, ao final da lista */
 void inserir( TProduto **cabeca ) {
@@ -81,16 +94,20 @@ void inserir( TProduto **cabeca ) {
       *cabeca = ( TProduto * ) malloc( sizeof( TProduto ) );
       ( *cabeca )->codigo = cod;
       ( *cabeca )->preco = preco;
-      ( *cabeca )->proximo = NULL;
+      ( *cabeca )->proximo = NULL; 
    } else {
-/* Se ja existem elementos na lista, deve percorre-la ate' o seu final e inserir o novo elemento */
+/* Se ja existem elementos na lista, 
+deve percorre-la ate' o seu final e inserir o novo elemento */
       noatual = *cabeca;
       while( noatual->proximo != NULL )
-            noatual = noatual->proximo;    /* Ao final do while, noatual aponta para o ultimo no */
-      novono = ( TProduto * ) malloc( sizeof( TProduto ) );/* Aloca memoria para o novo no */
+            noatual = noatual->proximo;    
+            /* Ao final do while, noatual aponta para o ultimo no */
+      novono = ( TProduto * ) malloc( sizeof( TProduto ) );
+      /* Aloca memoria para o novo no */
       novono->codigo = cod;
       novono->preco = preco;
       novono->proximo = NULL;
-      noatual->proximo = novono;     /* Faz o ultimo no apontar para o novo no */
+      noatual->proximo = novono;     
+      /* Faz o ultimo no apontar para o novo no */
    }
-} 
+}  // -- inserir()
