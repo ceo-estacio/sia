@@ -40,9 +40,21 @@ function Tema( { ...p }: { link: Href; tema: number; name: string; } ) {
 }
 
 
-/** == [ exports ]
+/** == [ Disciplinas Menu ]
  * == == == == == == == == == */
-export function DisciplinasMenu( { ...props } ) {
+type ItemsProps = {
+   id: number;
+   title: string;
+   link: string;
+}
+
+type DisciplinasMenuProps = {
+   title: string;
+   titleColor?: string;
+   items?: ItemsProps[];
+}
+
+export function DisciplinasMenu( { ...props }: DisciplinasMenuProps ) {
 
    return( <>
       <HomePage>
@@ -50,7 +62,7 @@ export function DisciplinasMenu( { ...props } ) {
             {/* <Header bg="#00559c" h={129} ph={18} pv={18} centerH> */}
             <Header bg={ Palette.dark[1] } h={129} ph={18} pv={18} centerH>
                <_.H4 style={{ color: "#ccc" }}>Disciplina</_.H4>
-               <_.H1 style={{ color: "#eee" }}>Estrutura de dados</_.H1>
+               <_.H1 style={{ color: props.titleColor || "#eee" }}>{ props.title }</_.H1>
             </Header>
 
             <View style={{ padding: 18, }}>
@@ -63,28 +75,34 @@ export function DisciplinasMenu( { ...props } ) {
                   }}
                >
                   {
-                     [
-                        { 
-                           id: 2,
-                           title: "Estruturas de Dados Heterogêneas", 
-                           link: "/(disciplinas)/estruturaDeDados/tema-2", 
-                        },
-                        { 
-                           id: 3,
-                           title: "Modularização", 
-                           link: "/(disciplinas)/estruturaDeDados/tema-3", 
-                        },
-                        { 
-                           id: 4,
-                           title: "Listas, Pilhas, Filas e Deques", 
-                           link: "/(disciplinas)/estruturaDeDados/tema-4", 
-                        },
-                     ].map( ( item, i ) => <>
+                     props.items && props.items.map( ( item, i ) => <>
                         <Tema tema={ item.id } name={ item.title } key={ item.id }
                            link={ item.link }
                         />
                         <View style={{ height: 1, backgroundColor: "#9995", }}/>
                      </> )
+                     // [
+                     //    { 
+                     //       id: 2,
+                     //       title: "Estruturas de Dados Heterogêneas", 
+                     //       link: "/(disciplinas)/estruturaDeDados/tema-2", 
+                     //    },
+                     //    { 
+                     //       id: 3,
+                     //       title: "Modularização", 
+                     //       link: "/(disciplinas)/estruturaDeDados/tema-3", 
+                     //    },
+                     //    { 
+                     //       id: 4,
+                     //       title: "Listas, Pilhas, Filas e Deques", 
+                     //       link: "/(disciplinas)/estruturaDeDados/tema-4", 
+                     //    },
+                     // ].map( ( item, i ) => <>
+                     //    <Tema tema={ item.id } name={ item.title } key={ item.id }
+                     //       link={ item.link }
+                     //    />
+                     //    <View style={{ height: 1, backgroundColor: "#9995", }}/>
+                     // </> )
                   }
          
                </Section>
