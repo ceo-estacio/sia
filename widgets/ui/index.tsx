@@ -53,6 +53,7 @@ type DisciplinasMenuProps = {
    title: string;
    titleColor?: string;
    items?: ItemsProps[];
+   bodyBG?: string;
 }
 
 export function DisciplinasMenu( { ...props }: DisciplinasMenuProps ) {
@@ -67,7 +68,8 @@ export function DisciplinasMenu( { ...props }: DisciplinasMenuProps ) {
             </Header>
 
             <View style={{ 
-               backgroundColor: Palette.dark[2],
+               // backgroundColor: Palette.dark[2],
+               backgroundColor: props.bodyBG || Palette.dark[1],
                flex: 1, 
                minHeight: ( Dimensions.get( "window" ).height ) - ( 129 - 30 ), 
                borderTopStartRadius: 24,

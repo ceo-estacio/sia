@@ -12,6 +12,7 @@ import {
 // import { Href, router } from "expo-router";
 // import { Colors, Palette, } from "@/constants/Colors";
 import { DisciplinasMenu } from "@/widgets/ui";
+import { Palette } from "@/constants/Colors";
 
 
 
@@ -45,6 +46,7 @@ export default function EstruturaDeDadosView( { ...props } ) {
                },
             ]
          }
+         bodyBG={ Palette.dark[0] }
       />
    </> );
 }
