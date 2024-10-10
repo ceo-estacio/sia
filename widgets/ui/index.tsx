@@ -19,7 +19,6 @@ import { Colors, Palette, } from "@/constants/Colors";
 
 /** == [ properties ]
  * == == == == == == == == == */
-
 function Tema( { ...p }: { link: Href; tema: number; name: string; } ) {
    const 
       link: Href = p.link 
@@ -43,7 +42,7 @@ function Tema( { ...p }: { link: Href; tema: number; name: string; } ) {
 
 /** == [ exports ]
  * == == == == == == == == == */
-export default function EstruturaDeDadosView( { ...props } ) {
+export function DisciplinasMenu( { ...props } ) {
 
    return( <>
       <HomePage>
