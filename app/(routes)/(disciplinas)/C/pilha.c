@@ -19,7 +19,7 @@ typedef struct {
 } STACK;
 
 // 2- inicializador da pilha
-void StartStack( STACK *p ) {
+void StackInit( STACK *p ) {
    p->stackTop = -1;
    // definir o topo com -1
 }
@@ -68,8 +68,11 @@ int Pop( STACK *p ) {
 int main() {
    STACK *pilha = ( STACK* ) malloc( sizeof( STACK ) );
 
-   StartStack( pilha );
+   StackInit( pilha );
 
+   // for( int i = 0; i <= 9; i++ ) {
+
+   // }
    Push( pilha, 6 );
    Push( pilha, 13 );
    Push( pilha, 14 );

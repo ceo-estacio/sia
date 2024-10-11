@@ -46,7 +46,6 @@ export default function EstruturaDeDadosView( { ...props } ) {
                },
             ]
          }
-         bodyBG={ Palette.dark[0] }
       />
    </> );
 }

@@ -9,6 +9,7 @@
       "regex": "cpp",
       "utility": "cpp",
       "stdlib.h": "c",
-      "numbers": "c"
+      "numbers": "c",
+      "stdio.h": "c"
    }
 }

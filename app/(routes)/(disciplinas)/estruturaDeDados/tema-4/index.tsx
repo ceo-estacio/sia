@@ -271,6 +271,57 @@ aux_r = 5;
 
                      <Section gap={16} pv={16}>
                         <T.H5>Tipo de lista: Fila ( queue )</T.H5>
+                        <T.H6>caracteristicas</T.H6>
+                        {
+                           [
+                              {
+                                 "0": "lista vazia será caracterizada por ",
+                                 "1": " inicio = fim = NULL."
+                              },
+                              {
+                                 "0": "quando o primeiro elemento for inserido numa fila vazia",
+                                 "1": "(“inicio” e “fim”) apontarão para o mesmo endereço de memória."
+                              },
+                              {
+                                 "0": "Se novas inserções ocorrerem",
+                                 "1": "“inicio” manter-se-á apontando para o primeiro elemento inserido",
+                              },
+                              {
+                                 "0": "A remoção",
+                                 "1": "provocará a desalocação do nó apontado por “inicio”, forçando com que a variável passe a apontar para o nó seguinte.",
+                              },
+                              {
+                                 "0": "A remoção do único elemento na fila",
+                                 "1": "novamente inicio = fim = NULL.",
+                              },
+                              {
+                                 "0": "",
+                                 "1": "",
+                              },
+                              {
+                                 "0": "",
+                                 "1": "",
+                              },
+                           ].map( ( item, i ) => <>
+                              <View 
+                                 style={
+                                    [ i % 2 == 0 ? { backgroundColor: "#d5d5d5" } : { backgroundColor: "#e5e5e5" },
+                                    {
+                                       padding: 8, borderRadius: 13
+                                    }
+                                 ]} 
+                                 key={ i }
+                              >
+                                 <View style={{ flexDirection: "row" }}>
+                                    <Text style={{ fontWeight: "bold" }}>#  </Text>
+                                    <Text style={{  }}>{ item[0] }</Text>
+                                 </View>
+                                 <View style={{ paddingLeft: 24 }}>
+                                    <Text>{ item[1] }</Text>
+                                 </View>
+                              </View>
+                           </> )
+                        }
                         <Text>inserção no final</Text>
                         <Text>remoção no começo</Text>
                         <Pix image={ require( "@/assets/images/disciplinas/estrutura-de-dados/tema-4/fila.jpg" ) }/>
