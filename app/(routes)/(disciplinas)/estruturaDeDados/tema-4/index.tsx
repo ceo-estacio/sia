@@ -305,7 +305,7 @@ aux_r = 5;
                            ].map( ( item, i ) => <>
                               <View 
                                  style={
-                                    [ i % 2 == 0 ? { backgroundColor: "#d5d5d5" } : { backgroundColor: "#e5e5e5" },
+                                    [ i % 2 == 0 ? { backgroundColor: "#c5c5c5" } : { backgroundColor: "#e5e5e5" },
                                     {
                                        padding: 8, borderRadius: 13
                                     }
