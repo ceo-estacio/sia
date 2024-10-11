@@ -44,6 +44,16 @@ export default function EstruturaDeDadosView( { ...props } ) {
                   title: "Listas, Pilhas, Filas e Deques", 
                   link: "/(disciplinas)/estruturaDeDados/tema-4", 
                },
+               { 
+                  id: 5,
+                  title: "Ordenação", 
+                  link: "/(disciplinas)/estruturaDeDados/tema-5", 
+               },
+               { 
+                  id: 99,
+                  title: "Exercícios", 
+                  link: "/(disciplinas)/estruturaDeDados/exercicios", 
+               },
             ]
          }
       />

@@ -1,11 +1,14 @@
 
 
-import { Dimensions, Image, ImageBackground, ScrollView, Text, View } from "react-native";
+import { Palette } from "@/constants/Colors";
+import { Dimensions, Image, ImageBackground, PressableProps, ScrollView, Text as TextRN, useColorScheme, View, 
+   type ColorValue, type PushNotificationEventName,
+   type TextProps,
+} from "react-native";
 import styled from "styled-components/native";
 
 const 
-   _ = {
-
+   X = {
       /**
        * == [ texts ] 
        * == == == == == == == == == */
@@ -57,14 +60,26 @@ const
    }
 ;
 
-export const T = { ..._ };
+export const T = { ...X };
+
+// type Txt = {
+//    color?: ColorValue;
+// } 
+export function Text( { ...props }: TextProps ) {
+   return( 
+      <TextRN style={[ { color: Palette.dark.text, fontSize: 16, }, props.style ]}>
+         { props.children }
+      </TextRN>
+   );
+}
 
 /**
  * == [ HomePage ] 
  * == == == == == == == == == */
 type HomePageProps = {
    h?: number | string;
-   bg?: string;
+   // bg?: string;
+   bg?: ColorValue;
    ph?: number;
    pv?: number;
    children?: any;
@@ -88,7 +103,8 @@ export function HomePage( { ...props }: HomePageProps ) {
  * == == == == == == == == == */
 type PageProps = {
    h?: number | string;
-   bg?: string;
+   // bg?: string;
+   bg?: ColorValue;
    ph?: number;
    pv?: number;
    children?: any;
@@ -111,7 +127,8 @@ export function Page( { ...props }: PageProps ) {
  * == == == == == == == == == */
 type HeaderProps = {
    h?: number | string;
-   bg?: string;
+   // bg?: string;
+   bg?: ColorValue;
    ph?: number;
    pv?: number;
    children?: any;
@@ -140,7 +157,8 @@ export function Header( { ...props }: HeaderProps ) {
  * == == == == == == == == == */
 type SectionProps = {
    h?: number | string;
-   bg?: string;
+   // bg?: string;
+   bg?: ColorValue;
    pd?: number;
    ph?: number;
    pv?: number;
@@ -169,7 +187,8 @@ export function Section( { ...props }: SectionProps ) {
 type PictureProps = {
    w?: number | string;
    h?: number | string;
-   bg?: string;
+   // bg?: string;
+   bg?: ColorValue;
    ph?: number;
    pv?: number;
    children?: any;
@@ -221,7 +240,8 @@ export function Pix( { ...props }: PixProps ) {
 type CodeProps = {
    w?: number | string;
    h?: number | string;
-   bg?: string;
+   // bg?: string;
+   bg?: ColorValue;
    ph?: number;
    pv?: number;
    title?: string;
@@ -235,14 +255,14 @@ export function Code( { ...props }: CodeProps ) {
    return( <>
       <View style={{ borderRadius: 13, overflow: "hidden", marginVertical: 16, }}>
          <View style={{ backgroundColor: "#1b1d22", height: 36, justifyContent: "center", paddingHorizontal: 16, }}>
-            <Text style={{ color: "#fc0" }}>{ props.title }</Text>
+            <TextRN style={{ color: "#fc0" }}>{ props.title }</TextRN>
          </View>
          <View style={[ props.style, { 
             backgroundColor: props.bg || "#000", paddingHorizontal: props.ph || 24, paddingVertical: props.pv || 24, 
             width: props.w || "100%", height: props.h || "auto", 
          }, props.center ? { alignItems: "center", justifyContent: "center" } : "" ]}>
             {/* { props.children } */}
-            <Text style={{ color: "#eee", lineHeight: 22,  }}>{ props.script }</Text>
+            <TextRN style={{ color: "#eee", lineHeight: 22,  }}>{ props.script }</TextRN>
          </View>
       </View> 
    </> );
@@ -252,4 +272,4 @@ export function Code( { ...props }: CodeProps ) {
 
 
 /* == [ exports ] == == == == == == == == == */
-export default _;
+export default X;

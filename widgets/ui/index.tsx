@@ -12,7 +12,7 @@ import {
    Pressable,
    Dimensions,
 } from "react-native";
-import _, { Code, Header, HomePage, Page, Picture, Pix, Section } from "@/widgets/elements";
+import X, { Code, Header, HomePage, Page, Picture, Pix, Section } from "@/widgets/elements";
 import { Href, router } from "expo-router";
 import { Colors, Palette, } from "@/constants/Colors";
 
@@ -34,7 +34,7 @@ function Tema( { ...p }: { link: Href; tema: number; name: string; } ) {
             onPress={ () => { router.push( link ); } }
          >
             <Text style={{ color: Palette.dark.accent.amber[1] }}>Tema { p.tema }</Text>
-            <_.H4 style={{ color: Palette.dark.text }}>{ p.name }</_.H4>
+            <X.H4 style={{ color: Palette.dark.text }}>{ p.name }</X.H4>
          </Pressable>
       </View>
    </> );
@@ -60,15 +60,13 @@ export function DisciplinasMenu( { ...props }: DisciplinasMenuProps ) {
 
    return( <>
       <HomePage>
-         {/* <ScrollView style={{ backgroundColor: Palette.darkReader[1] }}> */}
          <ScrollView style={{ backgroundColor: Palette.dark[0] }}>
-            <Header /* bg={ Palette.darkReader[1] } */ h={129} ph={18} pv={18} centerH>
-               <_.H4 style={{ color: "#ccc" }}>Disciplina</_.H4>
-               <_.H1 style={{ color: props.titleColor || "#ddd" }}>{ props.title }</_.H1>
+            <Header h={129} ph={18} pv={18} centerH>
+               <X.H4 style={{ color: "#ccc" }}>Disciplina</X.H4>
+               <X.H1 style={{ color: props.titleColor || "#ddd" }}>{ props.title }</X.H1>
             </Header>
 
             <View style={{ 
-               // backgroundColor: props.bodyBG || Palette.darkReader[2],
                backgroundColor: props.bodyBG || Palette.dark[1],
                flex: 1, 
                minHeight: ( Dimensions.get( "window" ).height ) - ( 129 - 30 ), 
@@ -78,15 +76,14 @@ export function DisciplinasMenu( { ...props }: DisciplinasMenuProps ) {
 
                <View style={{ padding: 18, }}>
                   <Section pd={ 18 } 
-                     // bg={ Palette.darkReader[1] }
-                     bg={ Palette.dark[0] }
+                     bg={ Palette.dark[0] || "#ffffff05" }
                      style={{
                         borderRadius: 13,
                         borderColor: "#9992",
                         borderWidth: 1,
                      }}
                   >
-                     {
+                     { 
                         props.items && props.items.map( ( item, i ) => <>
                            <Tema tema={ item.id } name={ item.title } key={ item.id }
                               link={ item.link }

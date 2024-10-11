@@ -2,7 +2,8 @@
 
 /** == [ @imports ] 
  * == == == == == == == == == */
-import _, { TT, Header, HomePage, Section, T, Code, Pix, PixB } from "@/widgets/elements";
+import X, { T, Header, HomePage, Section, Code, Pix } from "@/widgets/elements";
+import { transform } from "@babel/core";
 import React, { useState, useEffect } from "react";
 import { 
    StyleSheet,
@@ -310,7 +311,7 @@ aux_r = 5;
                                        padding: 8, borderRadius: 13
                                     }
                                  ]} 
-                                 key={ i }
+                                 key={ `id-${ i }` }
                               >
                                  <View style={{ flexDirection: "row" }}>
                                     <Text style={{ fontWeight: "bold" }}>#  </Text>
@@ -343,10 +344,8 @@ aux_r = 5;
                      <Section gap={16} pv={16}>
                         <T.H5>Verificando o aprendizado</T.H5>
                      </Section>
-
                   </Section>
                </ModuloView>
-               
             </Section>
          </ScrollView>
       </HomePage>
