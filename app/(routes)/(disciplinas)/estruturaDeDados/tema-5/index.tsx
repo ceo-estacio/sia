@@ -5,7 +5,7 @@
 import { Palette } from "@/constants/Colors";
 // import { useColorScheme } from "@/hooks/useColorScheme.web";
 import { useThemeColor } from "@/hooks/useThemeColor";
-import X, { Header, HomePage, Section, Text } from "@/widgets/elements";
+import X, { Header, HomePage, Section, Text as text } from "@/widgets/elements";
 import React, { useState, useEffect } from "react";
 import { 
    StyleSheet,
@@ -13,6 +13,7 @@ import {
    ScrollView,
    useColorScheme, 
 } from "react-native";
+import Text from "@/widgets/ThemedText";
 
 
 /** == [ properties ]
@@ -21,9 +22,9 @@ import {
 /** == [ exports ]
  * == == == == == == == == == */
 export default function Tema5View( { ...props } ) {
-   const 
-      colorScheme = useColorScheme()
-   ;
+   // const 
+   //    colorScheme = useColorScheme()
+   // ;
 
 
    return( <>
@@ -34,7 +35,14 @@ export default function Tema5View( { ...props } ) {
                   <X.H3>Ordenação</X.H3>
                </Header>
                <Section>
-                  <Text style={{ color: colorScheme == "dark" ? "#fc0" : "#0af" }}>oifd</Text>
+                  <Text 
+                     h={1}
+                     // lightColor="#0af"
+                     // darkColor="#f0a"
+                     // style={{ color: colorScheme == "dark" ? "#fc0" : "#0af" }}
+                  >
+                     oifd
+                  </Text>
                </Section>
             </View>
          </ScrollView>
