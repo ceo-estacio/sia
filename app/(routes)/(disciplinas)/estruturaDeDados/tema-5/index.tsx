@@ -32,7 +32,8 @@ export default function Tema5View( { ...props } ) {
          <ScrollView>
             <View>
                <Header center ph={24} pv={24}>
-                  <X.H3>Ordenação</X.H3>
+                  {/* <X.H3>Ordenação</X.H3> */}
+                  <Text h={3}>Ordenação</Text>
                </Header>
                <Section>
                   <Text 
