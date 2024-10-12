@@ -9,11 +9,15 @@ import X, { Header, HomePage, Section, Text as text } from "@/widgets/elements";
 import React, { useState, useEffect } from "react";
 import { 
    StyleSheet,
-   View,
+   // View as ViewRN,
    ScrollView,
    useColorScheme, 
 } from "react-native";
-import Text from "@/widgets/ThemedText";
+// import Text from "@/widgets/ThemedText";
+import {
+   View,
+   Text,
+} from "@/widgets/céo";
 
 
 /** == [ properties ]
@@ -22,26 +26,18 @@ import Text from "@/widgets/ThemedText";
 /** == [ exports ]
  * == == == == == == == == == */
 export default function Tema5View( { ...props } ) {
-   // const 
-   //    colorScheme = useColorScheme()
-   // ;
-
 
    return( <>
-      <HomePage bg={ Palette.dark[0] }>
+      <HomePage 
+         // bg={ Palette.dark[0] }
+      >
          <ScrollView>
             <View>
                <Header center ph={24} pv={24}>
-                  {/* <X.H3>Ordenação</X.H3> */}
                   <Text h={3}>Ordenação</Text>
                </Header>
-               <Section>
-                  <Text 
-                     h={1}
-                     // lightColor="#0af"
-                     // darkColor="#f0a"
-                     // style={{ color: colorScheme == "dark" ? "#fc0" : "#0af" }}
-                  >
+               <Section darkColor="#fc0">
+                  <Text h={1} >
                      oifd
                   </Text>
                </Section>

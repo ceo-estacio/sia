@@ -3,19 +3,30 @@
 import { View as ViewRN, type ViewProps } from 'react-native';
 
 import { useThemeColor } from '@/hooks/useThemeColor';
+import { Palette } from "@/constants/Colors";
 
 export type ThemedViewProps = ViewProps & {
   lightColor?: string;
   darkColor?: string;
 };
 
-export function ThemedView({ style, lightColor, darkColor, ...otherProps }: ThemedViewProps) {
+export type ViewSuperProps = ViewProps & {
+  lightColor?: string;
+  darkColor?: string;
+  pd?: number;
+  ph?: number;
+  pv?: number;
+  gap?: number;
+  
+};
+
+export function ThemedView({ style, lightColor = "#e5e5e5", darkColor = Palette.dark[0], ...otherProps }: ThemedViewProps) {
   const backgroundColor = useThemeColor({ light: lightColor, dark: darkColor }, 'background');
 
   return <ViewRN style={[{ backgroundColor }, style]} {...otherProps} />;
 }
 
-export default function View({ style, lightColor, darkColor, ...otherProps }: ThemedViewProps) {
+export function View({ style, lightColor = "#e5e5e5", darkColor = Palette.dark[0], ...otherProps }: ViewSuperProps) {
   const backgroundColor = useThemeColor({ light: lightColor, dark: darkColor }, 'background');
 
   return <ViewRN style={[{ backgroundColor }, style]} {...otherProps} />;

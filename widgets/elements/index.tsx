@@ -1,11 +1,13 @@
 
 
 import { Palette } from "@/constants/Colors";
-import { Dimensions, Image, ImageBackground, PressableProps, ScrollView, Text as TextRN, useColorScheme, View, 
+import { Dimensions, Image, ImageBackground, PressableProps, ScrollView, Text as TextRN, useColorScheme, ViewProps, View as ViewRN, 
    type ColorValue, type PushNotificationEventName,
    type TextProps,
 } from "react-native";
 import styled from "styled-components/native";
+// import { View } from "@/widgets/ThemedView";
+import { View, ViewSuperProps } from "@/widgets/céo";
 
 const 
    X = {
@@ -91,7 +93,8 @@ export function HomePage( { ...props }: HomePageProps ) {
    return(
       <View style={[ props.style, { 
          flex: 1, width: "100%", height: props.h || "100%", 
-         backgroundColor: props.bg || "#f5f5f5", paddingHorizontal: 0, paddingVertical: 0, 
+         // backgroundColor: props.bg || "#f5f5f5", 
+         paddingHorizontal: 0, paddingVertical: 0, 
          }, props.center ? { alignItems: "center", justifyContent: "center" } : "" ]}>
          { props.children }
       </View>
@@ -155,27 +158,31 @@ export function Header( { ...props }: HeaderProps ) {
 /**
  * == [ Section ] 
  * == == == == == == == == == */
-type SectionProps = {
+type SectionProps = ViewSuperProps & {
    h?: number | string;
    // bg?: string;
-   bg?: ColorValue;
-   pd?: number;
-   ph?: number;
-   pv?: number;
-   gap?: number;
+   // bg?: ColorValue;
+   // pd?: number;
+   // ph?: number;
+   // pv?: number;
+   // gap?: number;
    children?: any;
    style?: any;
    center?: boolean;
 }
 
-export function Section( { ...props }: SectionProps ) {
+// export function Section( { ...props }: SectionProps ) {
+export function Section( { ...props }: ViewSuperProps ) {
    return(
       <View style={[ props.style, { 
-         backgroundColor: props.bg, paddingHorizontal: props.ph, paddingVertical: props.pv, 
+         // backgroundColor: props.bg, 
+         paddingHorizontal: props.ph, paddingVertical: props.pv, 
          padding: props.pd,
          gap: props.gap,
          width: "100%", height: props.h || "auto", 
-      }, props.center ? { alignItems: "center", justifyContent: "center" } : "" ]}>
+      }, 
+      // props.center ? { alignItems: "center", justifyContent: "center" } : "" 
+      ]}>
          { props.children }
       </View>
    );

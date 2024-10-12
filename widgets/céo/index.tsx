@@ -1,44 +1,46 @@
 
 
-import { Text as TextRN, type TextProps, StyleSheet } from 'react-native';
-
+import { 
+   View as ViewRN, type ViewProps, 
+   Text as TextRN, type TextProps, 
+   StyleSheet,
+} from 'react-native';
 import { useThemeColor } from '@/hooks/useThemeColor';
 import { Palette } from "@/constants/Colors";
 
-export type ThemedTextProps = TextProps & {
-  lightColor?: string;
-  darkColor?: string;
-  h?: 1 | 2 | 3 | 4 | 5 | 6;
-  type?: 'default' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link';
+
+/** == [ properties ]
+ * == == == == == == == == == */
+
+
+/** == [ View ]
+ * == == == == == == == == == */
+export type ViewSuperProps = ViewProps & {
+   lightColor?: string;
+   darkColor?: string;
+   pd?: number;
+   ph?: number;
+   pv?: number;
+   gap?: number;
 };
 
-export function ThemedText({
-  style,
-  lightColor,
-  darkColor,
-  h,
-  type = 'default',
-  ...rest
-}: ThemedTextProps) {
-  const color = useThemeColor({ light: lightColor, dark: darkColor }, 'text' );
+export function View({ style, lightColor = "#e5e5e5", darkColor = Palette.dark[0], ...otherProps }: ViewSuperProps) {
+  const backgroundColor = useThemeColor({ light: lightColor, dark: darkColor }, 'background');
 
-  return (
-    <TextRN
-      style={[
-        { color },
-        type === 'default' ? styles.default : undefined,
-        type === 'title' ? styles.title : undefined,
-        type === 'defaultSemiBold' ? styles.defaultSemiBold : undefined,
-        type === 'subtitle' ? styles.subtitle : undefined,
-        type === 'link' ? styles.link : undefined,
-        style,
-      ]}
-      {...rest}
-    />
-  );
+  return <ViewRN style={[{ backgroundColor }, style]} {...otherProps} />;
 }
 
-export default function Text( {
+
+/** == [ Text ]
+ * == == == == == == == == == */
+export type ThemedTextProps = TextProps & {
+   lightColor?: string;
+   darkColor?: string;
+   h?: 1 | 2 | 3 | 4 | 5 | 6;
+   type?: 'default' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link';
+};
+
+export function Text( {
   style,
   lightColor = "#333",
   darkColor = Palette.dark.text,
