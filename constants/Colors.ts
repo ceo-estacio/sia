@@ -8,6 +8,10 @@
 export const 
    Palette = {
       sigrid: {
+         bar: "#121417",
+         bg: "#16181c",
+         bg_lv1: "#1b1d22",
+         tint: "#f0a",
          d0: "#060707",
          d1: "#0c0e0f",
          d2: "#121417",
@@ -20,11 +24,16 @@ export const
          d9: "#3b444B",
       },
       dark: {
-         "0-": "#121417",
-         "0": "#16181c",
-         "1": "#1b1d22",
-         "2": "#212329",
+         "0": "#121417",
+         "1": "#16181c",
+         "2": "#1b1d22",
+         "3": "#212329",
+         bar: "#121417",
+         bg: "#16181c",
+         bg_lv1: "#1b1d22",
+         bg_lv2: "#212329",
          text: "#ddd",
+         tint: "#f0a",
          accent: {
             blue: {
                "0": "#0af",
@@ -82,20 +91,20 @@ const tintColorLight = '#0a7ea4';
 const tintColorDark = '#fff';
 
 export const Colors = {
-  light: {
-    text: '#11181C',
-    background: '#fff',
-    tint: tintColorLight,
-    icon: '#687076',
-    tabIconDefault: '#687076',
-    tabIconSelected: tintColorLight,
-  },
-  dark: {
-    text: '#ECEDEE',
-    background: '#151718',
-    tint: tintColorDark,
-    icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
-    tabIconSelected: tintColorDark,
-  },
+   light: {
+      text: '#11181C',
+      background: '#e5e5e5',
+      tint: tintColorLight,
+      icon: '#687076',
+      tabIconDefault: '#687076',
+      tabIconSelected: tintColorLight,
+   },
+   dark: {
+      text: '#ECEDEE',
+      background: Palette.dark.bg,
+      tint: tintColorDark,
+      icon: '#9BA1A6',
+      tabIconDefault: '#9BA1A6',
+      tabIconSelected: tintColorDark,
+   },
 };

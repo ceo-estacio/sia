@@ -11,7 +11,7 @@ import { Palette } from "@/constants/Colors";
 
 /** == [ properties ]
  * == == == == == == == == == */
-
+ 
 
 /** == [ View ]
  * == == == == == == == == == */
@@ -24,7 +24,7 @@ export type ViewSuperProps = ViewProps & {
    gap?: number;
 };
 
-export function View({ style, lightColor = "#e5e5e5", darkColor = Palette.dark[0], ...otherProps }: ViewSuperProps) {
+export function View({ style, lightColor = "#e5e5e5", darkColor = Palette.dark.bg, ...otherProps }: ViewSuperProps) {
   const backgroundColor = useThemeColor({ light: lightColor, dark: darkColor }, 'background');
 
   return <ViewRN style={[{ backgroundColor }, style]} {...otherProps} />;

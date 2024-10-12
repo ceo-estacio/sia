@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { Palette } from "@/constants/Colors";
+import { BackBtn } from "@/widgets/ui";
 
 
 export default function EstruturaDeDadosLayout() {
@@ -18,7 +19,8 @@ export default function EstruturaDeDadosLayout() {
          headerTitleAlign: "center",
          headerStyle: { backgroundColor: Palette.sigrid.d2 },
          statusBarColor: Palette.sigrid.d2,
-         headerTintColor: Palette.accent.purple[3]
+         headerTintColor: Palette.accent.purple[3],
+         headerLeft:() => <BackBtn />
       }}>
         <Stack.Screen name="index" options={{ headerShown: true, title: "Tema 5: Ordenação" }} />
         <Stack.Screen name="exercicios/index" options={{ title: "Exercícios" }} />
