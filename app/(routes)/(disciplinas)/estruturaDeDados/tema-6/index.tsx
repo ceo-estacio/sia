@@ -12,7 +12,8 @@ import {
    Text,
    Br,
    Pix,
-   OL, 
+   OL,
+   Collapsible, 
 } from "@/widgets/elements";
 import { router } from "expo-router";
 import React, { useState, useEffect } from "react";
@@ -42,8 +43,14 @@ export default function Tema6View( { ...props } ) {
                   <Header pv={24} ph={24}>
                      <Text h={6}>Módulo 1</Text>
                   </Header>
-                  <Content>
-
+                  <Content gap={16}>
+                     <Text>Árvores</Text>
+                     <Collapsible title="Conceito">
+                        <Text>um conjunto finito de elementos que obedecem duas regras</Text>
+                     </Collapsible>
+                     <Collapsible title="Regras">
+                        <Text>se existe pelo menos um elemento, a árvore é considerada "NÃO VAZIA" e esse elemento é chamado de "NÓ RAIZ".</Text>
+                     </Collapsible>
                   </Content>
                </Section>
                <Section darkColor={ Palette.dark.bg_lv2 }>

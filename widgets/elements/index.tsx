@@ -10,12 +10,15 @@ import {
    View as ViewRN, type ViewProps, 
    Text as TextRN, type TextProps, 
    type ColorValue, type PushNotificationEventName,
-   type DimensionValue, 
+   type DimensionValue,
+   Pressable,
+   TouchableOpacity, 
 } from "react-native";
 import styled from "styled-components/native";
 import { useThemeColor } from "@/hooks/useThemeColor";
 import Icon from "../icon";
-import { ReactNode } from "react";
+import { PropsWithChildren, ReactNode, useState } from "react";
+import { ThemedView } from "../ThemedView";
 
 const 
    X = {
@@ -94,8 +97,9 @@ export function View({ style, lightColor, darkColor, pd, ...otherProps }: ViewSu
 
    return( <ViewRN 
       style={[
+         darkColor || lightColor ? { backgroundColor } : null,
          { 
-            backgroundColor, 
+            // backgroundColor, 
             padding: pd,
             paddingHorizontal: otherProps.ph, 
             paddingVertical: otherProps.pv,
@@ -331,9 +335,11 @@ export function Grid( { ...props }: GridType ) {
  * == [ Tile ] 
  * == == == == == == == == == */
 type TileProps = ViewSuperProps & {
+   btn?: boolean;
+   onPress?: () => void;
 }
 
-export function Tile( { ...props }: TileProps ) {
+export function Tile( { onPress, ...props }: TileProps ) {
    return( <>
       <View darkColor="#0000" lightColor="#0000" pd={2}>
          <View darkColor="#212329" lightColor="#f5f5f5" borderRadius={18} pd={24}
@@ -497,6 +503,33 @@ export function UL( { ...props }: UL ) {
 
 
 
+/** == [ Collapsible ]
+ * == == == == == == == == == */
+export function Collapsible({ children, title }: PropsWithChildren & { title: string }) {
+   const [isOpen, setIsOpen] = useState(false);
+   const theme = useColorScheme() ?? 'light';
+ 
+   return (
+      <View darkColor="#0000" lightColor="#0000">
+         <TouchableOpacity
+            style={styles.CollapsibleHeading}
+            onPress={() => setIsOpen((value) => !value)}
+            activeOpacity={0.8}>
+            <Icon 
+               family="Ionicons"
+               name={isOpen ? 'chevron-down' : 'chevron-forward-outline'}
+               size={18}
+               color={theme === 'light' ? Palette.dark.accent.blue : Palette.dark.accent.amber[0] }
+            />
+            <Text type="defaultSemiBold">{title}</Text>
+         </TouchableOpacity>
+         {isOpen && <View  style={styles.CollapsibleContent}>{children}</View>}
+      </View>
+   );
+ }
+
+
+
 /** == [ TabBarIcon ]
  * == == == == == == == == == */
 type TabBarIconType = {
@@ -512,16 +545,12 @@ export function TabBarIcon( { focused, color, size, title, name, family, ...prop
    return(
       <View darkColor={ focused ? "#212329" : "#1b1d2255" } lightColor="#f5f5f5" 
          h={45}
-         // ratio={ focused ? "2.2 / 1" : "1.8 / 1" }
          ratio={ focused ? "2.2 / 1" : "1.2 / 1" }
-         // w={ focused ? "100%" : "auto" }
          borderRadius={99} 
          style={{
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "space-evenly",
-            // maxWidth: "70%",
-            // minWidth: "30%",
             borderColor: Palette.dark.bg_lv1,
             borderWidth: focused ? 5 : 0,
          }}
@@ -614,6 +643,17 @@ const styles = StyleSheet.create( {
    },
    Small: {
       fontSize: 14,
+   },
+
+   // collapsible
+   CollapsibleHeading: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 6,
+   },
+   CollapsibleContent: {
+      marginTop: 6,
+      marginLeft: 24,
    },
 } );
 

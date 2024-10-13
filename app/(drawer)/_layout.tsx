@@ -25,20 +25,7 @@ export default function DrawerLayout() {
             // ) }
             screenOptions={{
                headerShown: true,
-               // headerStyle: { height: 0, },
-               // header: () => <View style={{ backgroundColor:"#00559c", height: 60, }}></View>,
                sceneContainerStyle: { backgroundColor: "#006400", },     
-
-               // headerRight: () => ( <View style={{ height: 35, width: 35, backgroundColor: "#fff", }}>
-               //    <Pressable 
-               //       onPress={ () => { 
-               //          alert( "oi" );
-               //          DrawerActions.openDrawer();
-               //       } }
-               //    >
-               //       <Text>Open</Text>
-               //    </Pressable>
-               // </View> ),
 
                // headerLeft: () => { DrawerActions.openDrawer() }
             }}

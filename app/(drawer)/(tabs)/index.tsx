@@ -29,8 +29,12 @@ export default function HomeView( { ...props } ) {
          <ScrollView style={{ flex: 1, width: "100%", }}>
             <View pv={68}>
                <Grid>
-                  <Tile>
+                  <Tile
+                     btn
+                     onPress={ () => router.push( "/(routes)/(disciplinas)/estruturaDeDados/tema-2/c" ) }
+                  >
                      <Pressable
+                        style={{ flex: 1 }}
                         onPress={ () => router.push( "/(routes)/(disciplinas)/estruturaDeDados/tema-2/c" ) }
                      >
                         <Text style={{ color: "#eee", }}>Linguagem C</Text>
@@ -38,6 +42,7 @@ export default function HomeView( { ...props } ) {
                   </Tile>
                   <Tile>
                      <Pressable
+                        style={{ flex: 1 }}
                         onPress={ () => router.push( "/(routes)/(disciplinas)/estruturaDeDados/" ) }
                         >
                         <Text style={{ color: "#eee", }}>Estrutura de dados</Text>
