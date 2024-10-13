@@ -14,6 +14,8 @@ import {
 } from "react-native";
 import styled from "styled-components/native";
 import { useThemeColor } from "@/hooks/useThemeColor";
+import Icon from "../icon";
+import { ReactNode } from "react";
 
 const 
    X = {
@@ -365,6 +367,68 @@ export function Code( { ...props }: CodeProps ) {
       </View> 
    </> );
 }
+
+
+
+/** == [ ol ]
+ * == == == == == == == == == */
+type LI = {
+   item: ReactNode;
+}
+
+type OL = {
+   children?: ReactNode;
+   li: LI[];
+}
+
+export function OL( { ...props }: OL ) {
+   return( props.li.map( ( item, i ) => ( <>
+      <View
+         key={ `ol-item:${ i }` }
+         style={{
+            flexDirection: "row",
+            alignItems: "center",
+            gap: 8,
+            paddingHorizontal: 24,
+            paddingVertical: 12,
+            // backgroundColor: "#fff"
+         }}
+      >
+         <Icon family="Octicons" name="dot-fill" color={ Palette.accent.amber[0] }/>
+         <Text>{ item }</Text>
+      </View>
+   </> ) ) );
+   // return(  );
+}
+
+
+
+/** == [ ul ]
+ * == == == == == == == == == */
+type UL = {
+   children?: ReactNode;
+   li: LI[];
+}
+
+export function UL( { ...props }: UL ) {
+   return( props.li.map( ( item, i ) => ( <>
+      <View
+         key={ `ol-item:${ i }` }
+         style={{
+            flexDirection: "row",
+            alignItems: "center",
+            gap: 8,
+            paddingLeft: 24,
+            // backgroundColor: "#fff"
+         }}
+      >
+         <Text h={2} darkColor={ Palette.accent.amber[0] }>{ i + 1 }</Text>
+         <Text>{ item }</Text>
+      </View>
+   </> ) ) );
+   // return(  );
+}
+
 
 
 /** == [ StyleSheet ]

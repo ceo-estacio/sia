@@ -3,12 +3,12 @@
 /** == [ @imports ] 
  * == == == == == == == == == */
 import { Palette } from "@/constants/Colors";
-import X, { T as x, Header } from "@/widgets/elements";
+import X, { T as x, Header, View, Text, Section } from "@/widgets/elements";
 import React, { useState, useEffect } from "react";
 import { 
    StyleSheet,
-   View,
-   Text,
+   // View,
+   // Text,
    ScrollView, 
 } from "react-native";
 
@@ -180,18 +180,166 @@ export default function ExercíciosView( { ...props } ) {
                      ]}
                   />
                </Card>
-               
-               <Card>
-                  <Title 
-                     data={[
-                     ]}
-                  />
-                  <Txt 
-                     data={[
-                     ]}
-                  />
-               </Card>
 
+            </View>
+
+            <View>
+               <Title data={["Tema 5"]}/>
+               <Header center bg={"#006400"} ph={24} pv={24}>
+                  <Text h={3}>Ordenação</Text>
+               </Header>
+
+
+               <Section pd={18} gap={16}>
+                  <Card>
+                     <Title 
+                        data={[
+                           "(MPE-BA/2023) Algoritmos de ordenação são responsáveis por ordenar elementos de uma estrutura de dados de forma completa ou parcial. Sobre a complexidade dos algoritmos de ordenação, assinale, a seguir, o algoritmo de ordenação que, no pior caso, tem complexidade igual a O(n log n)."
+                        ]}
+                     />
+                     <Txt 
+                        data={[
+                           "Merge sort"
+                        ]}
+                     />
+                  </Card>
+                  
+                  <Card>
+                     <Title 
+                        data={[
+                           "Sobre o método da bolha é correto afirmar que: "
+                        ]}
+                     />
+                     <Txt 
+                        data={[
+                           "O tempo de execução pode ser linear em relação ao tamanho da entrada se a instância apresentada já estiver ordenada. "
+                        ]}
+                     />
+                  </Card>
+                  
+                  <Card>
+                     <Title 
+                        data={[
+                           "(CESGRANRIO/2014) Considere utilizar o algoritmo Bubble Sort para ordenar, em ordem crescente, a sequência de números",
+                           "17, 43, 37, 31, 8, 77, 52, 25.",
+                           "Se a sequência original for a iteração zero, qual será a sequência de números da segunda iteração?"
+                        ]}
+                     />
+                     <Txt 
+                        data={[
+                           "17, 31, 8, 37, 43, 25, 52, 77"
+                        ]}
+                     />
+                  </Card>
+                  
+                  <Card>
+                     <Title 
+                        data={[
+                           "(INSTITUTO AOCP/2013 - Adaptada) A ordenação é um dos conceitos fundamentais da ciência da computação e desempenha um papel crucial em várias áreas, como algoritmos, estruturas de dados e processamento de dados em geral. Qual das alternativas abaixo indica um algoritmo de ordenação?"
+                        ]}
+                     />
+                     <Txt 
+                        data={[
+                           "Bubble sort"
+                        ]}
+                     />
+                  </Card>
+                  
+                  <Card>
+                     <Title 
+                        data={[
+                           "(MPE-BA/2023) Algoritmos de ordenação são responsáveis por ordenar elementos de uma estrutura de dados de forma completa ou parcial. Sobre a complexidade dos algoritmos de ordenação, assinale, a seguir, o algoritmo de ordenação que, no pior caso, tem complexidade igual a O(n log n)."
+                        ]}
+                     />
+                     <Txt 
+                        data={[
+                           "Merge sort"
+                        ]}
+                     />
+                  </Card>
+                  
+                  <Card>
+                     <Title 
+                        data={[
+                           "(FUMARC/2014 - Adaptada) Considere uma estrutura de dados do tipo vetor de tamanho 6 (seis) inicializado com as chaves abaixo:",
+                           "vetor 79, 82, 68, 69, 78, 65",
+                           "Analise a ilustração dos passos intermediários de um método de ordenação das chaves do vetor:",
+                           "65, 82, 68, 69, 78, 79",
+                           "65, 68, 82, 69, 78, 79",
+                           "65, 68, 69, 82, 78, 79",
+                           "65, 68, 69, 78, 82, 79",
+                           "65, 68, 69, 78, 79, 82",
+                        ]}
+                     />
+                     <Txt 
+                        data={[
+                           "Ordenação por seleção"
+                        ]}
+                     />
+                  </Card>
+                  
+                  <Card>
+                     <Title 
+                        data={[
+                           "(UEAP/2014) Leia o seguinte trecho de código-fonte escrito em Java."
+                           ,"< imagem >"
+                        ]}
+                     />
+                     <Txt 
+                        data={[
+                           "Bubble Sort"
+                        ]}
+                     />
+                  </Card>
+                  
+                  <Card>
+                     <Title 
+                        data={[
+                           "Todos os algoritmos de ordenação interna devem ter complexidade de espaço de: "
+                        ]}
+                     />
+                     <Txt 
+                        data={[
+                           "O(n)"
+                        ]}
+                     />
+                  </Card>
+                  
+                  <Card>
+                     <Title 
+                        data={[
+                           "Algoritmos de ordenação baseados em comparação entre elementos da sequência tem complexidade computacional mínima de: "
+                        ]}
+                     />
+                     <Txt 
+                        data={[
+                           "O(n log n)"
+                        ]}
+                     />
+                  </Card>
+                  
+                  <Card>
+                     <Title 
+                        data={[
+                        ]}
+                     />
+                     <Txt 
+                        data={[
+                        ]}
+                     />
+                  </Card>
+                  
+                  <Card>
+                     <Title 
+                        data={[
+                        ]}
+                     />
+                     <Txt 
+                        data={[
+                        ]}
+                     />
+                  </Card>
+               </Section>
             </View>
          </ScrollView>
       </View>

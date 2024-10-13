@@ -11,13 +11,16 @@ import {
    View,
    Text,
    Br,
-   Pix, 
+   Pix,
+   OL, 
 } from "@/widgets/elements";
+import { router } from "expo-router";
 import React, { useState, useEffect } from "react";
 import { 
    StyleSheet,
    ScrollView,
-   useColorScheme, 
+   useColorScheme,
+   Pressable, 
 } from "react-native";
 
 
@@ -75,7 +78,14 @@ export default function Tema5View( { ...props } ) {
                      <Text h={2}>Método da bolha (Bubble Sort)</Text>
                   </Header>
                   <Content>
-                     <Text>S = s1, s2, ..., sn </Text>
+                     <OL 
+                        li={[
+                           "No melhor caso: (vetor já ordenado), executa n operações \"n = numero de elementos\".",
+                           "No pior caso, são feitas n² operações (complexidade quadratica).",
+                           "Não recomendado para programas que precisam de velocidade e operem com uma quantidade elevada de dados."
+                        ]}
+                     />
+                     <Text></Text>
                      <Text>Para 1 i &lt; n verificar se si &lt; si+1</Text>
                   </Content>
                   <Pix h={200} image={ require( "@/assets/images/disciplinas/estrutura-de-dados/tema-5/bolha-etapa1.png" ) }/>
@@ -90,6 +100,27 @@ export default function Tema5View( { ...props } ) {
                      <Header center>
                         <Text h={3}>Insection sort</Text>
                      </Header>
+                     <Section>
+                        <Content>
+                           <Pressable
+                              onPress={ () => router.push( "https://stecine.azureedge.net/repositorio/ordenacao/docs/ordenacao.c" ) }
+                           >
+                              <Text>Código fonte do programa</Text>
+                           </Pressable>
+                        </Content>
+                     </Section>
+
+                     <Section>
+                        <Header center bg="#bd0075" pv={8}>
+                           <Text h={3}>Exercicios</Text>
+                        </Header>
+                        <Content>
+                           <OL li={[
+                              "algoritmos da bolha e para o Insert Sort. Ambos executam sempre em tempo linear para as instâncias já ordenadas.",
+                              "Bubble Sort, Selection Sort, Insert Sort, os três têm a mesma complexidade, são considerados equivalentes."
+                           ]} />
+                        </Content>
+                     </Section>
                   </Section>
                </Section>
             </View>
