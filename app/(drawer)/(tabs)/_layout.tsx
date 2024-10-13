@@ -3,9 +3,11 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
 
-import { TabBarIcon } from '@/widgets/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
+// import { TabBarIcon } from '@/widgets/navigation/TabBarIcon';
+import { Colors, Palette } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { TabBarIcon, Text, View } from "@/widgets/elements";
+import Icon from "@/widgets/icon";
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -13,16 +15,35 @@ export default function TabLayout() {
   return (
    <Tabs
       screenOptions={{
-      tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-      headerShown: false,
+         headerShown: false,
+         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+         tabBarStyle: {
+            backgroundColor: Palette.dark.bar,
+            height: 68,
+            paddingHorizontal: 54,
+            alignItems: "center",
+            justifyContent: "center",
+            borderTopWidth: 0,
+         }, 
+         tabBarItemStyle: { backgroundColor: "#27f0", 
+            alignItems: "center",
+            // width: "80%",
+         },
+         tabBarShowLabel: false,
       }}
    >
       <Tabs.Screen
          name="index"
          options={{
-            title: 'Home',
-            tabBarIcon: ({ color, focused }) => (
-               <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
+            title: 'Home', 
+            // tabBarItemStyle
+            tabBarIcon: ( { color, focused, size } ) => (
+               <TabBarIcon 
+                  title={"Home"}
+                  family="Ionicons"
+                  name={ focused ? "home" : "home-outline" }
+                  focused={ focused }
+               />
             ),
          }}
       />
@@ -31,7 +52,24 @@ export default function TabLayout() {
          options={{
             title: 'Explore',
             tabBarIcon: ({ color, focused }) => (
-               <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+               <TabBarIcon 
+                  title="Explore" 
+                  name={ focused ? "baseball" : "baseball-outline" }
+                  focused={ focused }
+               />
+            ),
+         }}
+      />
+      <Tabs.Screen
+         name="explore copy"
+         options={{
+            title: 'Explore',
+            tabBarIcon: ({ color, focused }) => (
+               <TabBarIcon 
+                  title="Explore" 
+                  name={ focused ? "baseball" : "baseball-outline" }
+                  focused={ focused }
+               />
             ),
          }}
       />

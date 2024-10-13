@@ -50,6 +50,11 @@ export default function EstruturaDeDadosView( { ...props } ) {
                   link: "/(disciplinas)/estruturaDeDados/tema-5", 
                },
                { 
+                  id: 6,
+                  title: "Árvores", 
+                  link: "/(disciplinas)/estruturaDeDados/tema-6", 
+               },
+               { 
                   id: 99,
                   title: "Exercícios", 
                   link: "/(disciplinas)/estruturaDeDados/exercicios", 

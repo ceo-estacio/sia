@@ -85,12 +85,30 @@ export type ViewSuperProps = ViewProps & {
    ph?: number;
    pv?: number;
    gap?: number;
+   borderRadius?: number;
+   ratio?: string | number | undefined;
 };
 
-export function View({ style, lightColor, darkColor, ...otherProps }: ViewSuperProps) {
-  const backgroundColor = useThemeColor({ light: lightColor, dark: darkColor }, 'background');
+export function View({ style, lightColor, darkColor, pd, ...otherProps }: ViewSuperProps) {
+   const backgroundColor = useThemeColor({ light: lightColor, dark: darkColor }, 'background');
 
-  return <ViewRN style={[{ backgroundColor }, style]} {...otherProps} />;
+   return( <ViewRN 
+      style={[
+         { 
+            backgroundColor, 
+            padding: pd,
+            paddingHorizontal: otherProps.ph, 
+            paddingVertical: otherProps.pv,
+            width: otherProps.w,
+            height: otherProps.h,
+            gap: otherProps.gap,
+            borderRadius: otherProps.borderRadius,
+            aspectRatio: otherProps.ratio,
+         }, 
+         otherProps.center ? { alignItems: "center", justifyContent: "center", } : null,  
+         style
+      ]} {...otherProps} 
+   /> );
 }
 
 
@@ -281,6 +299,54 @@ export function Content( { ...props }: ViewSuperProps ) {
    );
 }
 
+
+
+/**
+ * == [ Grid ] 
+ * == == == == == == == == == */
+type GridType = ViewSuperProps & {
+   sizeH?: number;
+   sizeV?: number;
+}
+export function Grid( { ...props }: GridType ) {
+   return( <View 
+      darkColor={ props.darkColor } 
+      lightColor={ props.lightColor }
+      style={[
+         // props.sizeH ? 
+         {
+            flex: 1,
+            width: "100%",
+            flexDirection: "row",
+            justifyContent: "space-evenly",
+
+         }
+      ]} { ...props }
+   /> );      
+}
+
+
+
+/**
+ * == [ Tile ] 
+ * == == == == == == == == == */
+type TileProps = ViewSuperProps & {
+}
+
+export function Tile( { ...props }: TileProps ) {
+   return( <>
+      <View darkColor="#0000" lightColor="#0000" pd={2}>
+         <View darkColor="#212329" lightColor="#f5f5f5" borderRadius={18} pd={24}
+            w={ Dimensions.get( "window" ).width / 2.3 }
+            ratio="1 / 1"
+            { ...props }
+         />
+      </View>
+   </> );
+}
+
+
+
 /**
  * == [ Picture ] 
  * == == == == == == == == == */
@@ -427,6 +493,47 @@ export function UL( { ...props }: UL ) {
       </View>
    </> ) ) );
    // return(  );
+}
+
+
+
+/** == [ TabBarIcon ]
+ * == == == == == == == == == */
+type TabBarIconType = {
+   focused?: boolean;
+   color?: string;
+   size?: number;
+   title: string;
+   name?: string;
+   family?: string;
+}
+
+export function TabBarIcon( { focused, color, size, title, name, family, ...props }: TabBarIconType ) {
+   return(
+      <View darkColor={ focused ? "#212329" : "#1b1d2255" } lightColor="#f5f5f5" 
+         h={45}
+         // ratio={ focused ? "2.2 / 1" : "1.8 / 1" }
+         ratio={ focused ? "2.2 / 1" : "1.2 / 1" }
+         // w={ focused ? "100%" : "auto" }
+         borderRadius={99} 
+         style={{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+            // maxWidth: "70%",
+            // minWidth: "30%",
+            borderColor: Palette.dark.bg_lv1,
+            borderWidth: focused ? 5 : 0,
+         }}
+         { ...props }
+      >
+         <Icon 
+            family={ family || "Ionicons" } color={ color || focused ? "#a90" : "#f0a" } 
+            name={ name }
+         />
+         { focused && <Text>{ title }</Text> }
+      </View>
+   );
 }
 
 

@@ -2,14 +2,13 @@
 
 /** == [ @imports ] 
  * == == == == == == == == == */
+import { Grid, Text, Tile, View, } from "@/widgets/elements";
 import { router } from "expo-router";
 import React, { useState, useEffect } from "react";
 import { 
    StyleSheet,
-   View,
-   Text,
    ScrollView,
-   Pressable, 
+   Pressable,
 } from "react-native";
 
 
@@ -25,21 +24,29 @@ export default function HomeView( { ...props } ) {
    return( <>
       <View style={ s.sheet }>
          <View style={{ width: "100%", height: 160, padding: 24, backgroundColor: "#0af", alignItems: "center", justifyContent: "center", }}>
-            <Text style={{ fontSize: 24, fontWeight: 700, color: "#00559c", }}>Estácio</Text>
+            <Text h={2} darkColor="#00559c">Estácio</Text>
          </View>
-         <ScrollView>
+         <ScrollView style={{ flex: 1, width: "100%", }}>
+            <View pv={68}>
+               <Grid>
+                  <Tile>
+                     <Pressable
+                        onPress={ () => router.push( "/(routes)/(disciplinas)/estruturaDeDados/tema-2/c" ) }
+                     >
+                        <Text style={{ color: "#eee", }}>Linguagem C</Text>
+                     </Pressable>
+                  </Tile>
+                  <Tile>
+                     <Pressable
+                        onPress={ () => router.push( "/(routes)/(disciplinas)/estruturaDeDados/" ) }
+                        >
+                        <Text style={{ color: "#eee", }}>Estrutura de dados</Text>
+                     </Pressable>
+                  </Tile>
+               </Grid>
+            </View>
             <View>
-               <Pressable
-                  onPress={ () => router.push( "/(routes)/(disciplinas)/estruturaDeDados/tema-2/c" ) }
-               >
-                  <Text style={{ color: "#eee", }}>Linguagem C</Text>
-               </Pressable>
 
-               <Pressable
-                  onPress={ () => router.push( "/(routes)/(disciplinas)/estruturaDeDados/" ) }
-               >
-                  <Text style={{ color: "#eee", }}>Estrutura de dados</Text>
-               </Pressable>
             </View>
          </ScrollView>
       </View>
