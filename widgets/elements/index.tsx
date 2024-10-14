@@ -586,24 +586,7 @@ type TabBarIconType = IconType & {
 
 export function TabBarIcon( { focused, color, size, title, name, family, ...props }: TabBarIconType ) {
    return(
-      // <View darkColor={ focused ? "#212329" : "#1b1d2255" } lightColor="#f5f5f5" 
-      //    h={45}
-      //    ratio={ focused ? "2.2 / 1" : "1.2 / 1" }
-      //    borderRadius={99} 
-      //    style={{
-      //       flexDirection: "row",
-      //       alignItems: "center",
-      //       justifyContent: "space-evenly",
-      //       borderColor: Palette.dark.bg_lv1,
-      //       borderWidth: focused ? 5 : 0,
-      //    }}
-      //    { ...props }
-      // >
       <Animated.View 
-         // darkColor={ focused ? "#212329" : "#1b1d2255" } lightColor="#f5f5f5" 
-         // h={45}
-         // ratio={ focused ? "2.2 / 1" : "1.2 / 1" }
-         // borderRadius={99} 
          layout={ LinearTransition.springify().damping( 80 ).stiffness( 200 ) }
          style={{
             backgroundColor: focused ? "#212329" : "#1b1d2255",
@@ -616,7 +599,6 @@ export function TabBarIcon( { focused, color, size, title, name, family, ...prop
             borderColor: Palette.dark.bg_lv1,
             borderWidth: focused ? 5 : 0,
          }}
-         // { ...props }
       >
          <Icon 
             family={ family || "Ionicons" } color={ color || focused ? "#a90" : "#f0a" } 

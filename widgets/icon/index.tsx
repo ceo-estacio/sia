@@ -31,23 +31,12 @@ export type IconFamilies =
    "Octicons" | "SimpleLineIcons" | "Zocial"
 ;
 export type IconType = {
-   family: IconFamilies;
+   family?: IconFamilies;
    name: string;
    size?: number;
    color?: ColorValue;
 }
 export type IconProps = IconType & {
-   // family?: 
-   //    "MaterialCommunityIcons" |
-   //    "AntDesign" | "Entypo" | "EvilIcons" | "Feather" | 
-   //    "FontAwesome" | "FontAwesome5" | "FontAwesome6" | 
-   //    "Fontisto" | "Foundation" | "Ionicons" | 
-   //    "MaterialCommunityIcons" | "MaterialIcons" | 
-   //    "Octicons" | "SimpleLineIcons" | "Zocial"
-   // ;
-   // name?: string;
-   // color?: ColorValue;
-   // size?: number;
    pd?: number;
    ph?: number;
    pv?: number;
