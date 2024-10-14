@@ -16,7 +16,7 @@ import {
 } from "react-native";
 import styled from "styled-components/native";
 import { useThemeColor } from "@/hooks/useThemeColor";
-import Icon from "../icon";
+import Icon, { IconType } from "../icon";
 import { PropsWithChildren, ReactNode, useState } from "react";
 import { ThemedView } from "../ThemedView";
 import Animated, { FadeInRight, AnimatedProps, FadeOutRight, LinearTransition } from "react-native-reanimated";
@@ -575,13 +575,13 @@ export function Collapsible({ children, title }: PropsWithChildren & { title: st
 
 /** == [ TabBarIcon ]
  * == == == == == == == == == */
-type TabBarIconType = {
-   focused?: boolean;
-   color?: string;
-   size?: number;
+type TabBarIconType = IconType & {
    title: string;
-   name?: string;
-   family?: string;
+   focused?: boolean;
+   // color?: string;
+   // size?: number;
+   // name?: string;
+   // family?: string;
 }
 
 export function TabBarIcon( { focused, color, size, title, name, family, ...props }: TabBarIconType ) {

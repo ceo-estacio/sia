@@ -22,23 +22,37 @@ import { createIconSet,
 /** == [ properties ]
  * == == == == == == == == == */
 // type IconNames = keyof typeof Icon;
-type IconProps = {
+export type IconFamilies =  
+   "MaterialCommunityIcons" |
+   "AntDesign" | "Entypo" | "EvilIcons" | "Feather" | 
+   "FontAwesome" | "FontAwesome5" | "FontAwesome6" | 
+   "Fontisto" | "Foundation" | "Ionicons" | 
+   "MaterialCommunityIcons" | "MaterialIcons" | 
+   "Octicons" | "SimpleLineIcons" | "Zocial"
+;
+export type IconType = {
+   family: IconFamilies;
+   name: string;
+   size?: number;
+   color?: ColorValue;
+}
+export type IconProps = IconType & {
+   // family?: 
+   //    "MaterialCommunityIcons" |
+   //    "AntDesign" | "Entypo" | "EvilIcons" | "Feather" | 
+   //    "FontAwesome" | "FontAwesome5" | "FontAwesome6" | 
+   //    "Fontisto" | "Foundation" | "Ionicons" | 
+   //    "MaterialCommunityIcons" | "MaterialIcons" | 
+   //    "Octicons" | "SimpleLineIcons" | "Zocial"
+   // ;
+   // name?: string;
+   // color?: ColorValue;
+   // size?: number;
    pd?: number;
    ph?: number;
    pv?: number;
    bg?: ColorValue;
-   color?: ColorValue;
    shadow?: ColorValue;
-   family?: 
-      "MaterialCommunityIcons" |
-      "AntDesign" | "Entypo" | "EvilIcons" | "Feather" | 
-      "FontAwesome" | "FontAwesome5" | "FontAwesome6" | 
-      "Fontisto" | "Foundation" | "Ionicons" | 
-      "MaterialCommunityIcons" | "MaterialIcons" | 
-      "Octicons" | "SimpleLineIcons" | "Zocial"
-   ;
-   name?: string;
-   size?: number;
    w?: number;
    h?: number;
    ratio?: number;
