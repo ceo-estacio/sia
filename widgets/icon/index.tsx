@@ -15,6 +15,7 @@ import { createIconSet,
    MaterialCommunityIcons, MaterialIcons, 
    Octicons, SimpleLineIcons, Zocial, 
 } from "@expo/vector-icons";
+// import { type IconProps, } from "@expo/vector-icons/build/createIconSet";
 // import { Icon } from "lucide-react-native";
 
 

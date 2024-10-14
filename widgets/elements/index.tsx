@@ -19,7 +19,18 @@ import { useThemeColor } from "@/hooks/useThemeColor";
 import Icon, { IconType } from "../icon";
 import { PropsWithChildren, ReactNode, useState } from "react";
 import { ThemedView } from "../ThemedView";
-import Animated, { FadeInRight, AnimatedProps, FadeOutRight, LinearTransition } from "react-native-reanimated";
+import Animated, { 
+   FadeInRight, 
+   AnimatedProps, 
+   FadeOutRight, 
+   LinearTransition, 
+   withSpring,
+   useDerivedValue,
+   withTiming,
+   useAnimatedStyle,
+   interpolate,
+   useSharedValue,
+} from "react-native-reanimated";
 import { ThemedTextProps } from "../ThemedText";
 
 const 
@@ -585,16 +596,21 @@ type TabBarIconType = IconType & {
 }
 
 export function TabBarIcon( { focused, color, size, title, name, family, ...props }: TabBarIconType ) {
+   const w = useSharedValue( 110 );
+   
    return(
       <Animated.View 
-         layout={ LinearTransition.springify().damping( 80 ).stiffness( 200 ) }
+         // layout={ LinearTransition.springify().damping( 80 ).stiffness( 200 ) }
+         // layout={ LinearTransition.springify().damping( 80 ).stiffness( 200 ) }
          style={{
             backgroundColor: focused ? "#212329" : "#1b1d2255",
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "space-evenly",
             height: 45,
-            aspectRatio: focused ? "2.2 / 1" : "1.2 / 1",
+            // aspectRatio: focused ? "2.2 / 1" : "1.2 / 1",
+            // width: focused ? withSpring( 150 ) : withSpring( 54 ),
+            // width: focused ? w.value = 110 : w.value = 54,
             borderRadius: 99,
             borderColor: Palette.dark.bg_lv1,
             borderWidth: focused ? 5 : 0,
@@ -607,8 +623,8 @@ export function TabBarIcon( { focused, color, size, title, name, family, ...prop
          { 
             focused && 
             <Animated.Text
-               entering={ FadeInRight.springify().damping( 80 ).stiffness( 200 ) }
-               exiting={ FadeOutRight.springify().damping( 80 ).stiffness( 200 ) }
+               // entering={ FadeInRight.springify().damping( 80 ).stiffness( 200 ) }
+               // exiting={ FadeOutRight.springify().damping( 80 ).stiffness( 200 ) }
                style={{
                   fontSize: 16,
                   lineHeight: 24,

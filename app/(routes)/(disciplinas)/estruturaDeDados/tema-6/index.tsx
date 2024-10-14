@@ -15,6 +15,7 @@ import {
    OL,
    Collapsible, 
 } from "@/widgets/elements";
+import { transform } from "@babel/core";
 import { router } from "expo-router";
 import React, { useState, useEffect } from "react";
 import { 
@@ -24,6 +25,7 @@ import {
    Pressable,
    Dimensions, 
 } from "react-native";
+import Animated, { useSharedValue, withSpring } from "react-native-reanimated";
 
 
 /** == [ properties ]
@@ -32,6 +34,9 @@ import {
 /** == [ exports ]
  * == == == == == == == == == */
 export default function Tema6View( { ...props } ) {
+   const 
+      w = useSharedValue( 200 )
+   ;
 
    return( <>
       <HomePage >
@@ -75,6 +80,30 @@ export default function Tema6View( { ...props } ) {
                      
                   </Content>
                </Section>
+               <View style={{ flexDirection: "row" }}>
+                  <Animated.View
+                     style={{
+                        width: w,
+                        backgroundColor: "#743"
+                     }}
+                     entering={ w.value = 150 }
+                     exiting={ w.value = 50 }
+                  >
+                        <Pressable onPress={ () => {
+                           w.value = withSpring( 250 );
+                        } }>
+                           <Text>oi</Text>
+                        </Pressable>
+                  </Animated.View>
+                  <Animated.View
+                     style={{
+                        width: 150,
+                        backgroundColor: "#175"
+                     }}
+                  >
+                     <Text>io</Text>
+                  </Animated.View>
+               </View>
             </View>
          </ScrollView>
       </HomePage>
