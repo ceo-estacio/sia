@@ -163,43 +163,32 @@ export function Text( {
 /**
  * == [ HomePage ] 
  * == == == == == == == == == */
-type HomePageProps = {
+type HomePageProps = ViewProps & {
    h?: number | string;
    // bg?: string;
-   bg?: ColorValue;
    ph?: number;
    pv?: number;
-   children?: any;
+   // children?: any;
    style?: any;
    center?: boolean;
 }
 
 export function HomePage( { ...props }: HomePageProps ) {
    return(
-      <View style={[ props.style, { 
-         flex: 1, width: "100%", height: props.h || "100%", 
-         // backgroundColor: props.bg || "#f5f5f5", 
-         paddingHorizontal: 0, paddingVertical: 0, 
-         }, props.center ? { alignItems: "center", justifyContent: "center" } : "" ]}>
-         { props.children }
-      </View>
+      <View darkColor={ Palette.dark.bg } lightColor="#e5e5e5" 
+         style={[ props.style, { 
+            flex: 1, width: "100%", height: props.h || "100%", 
+            paddingHorizontal: 0, paddingVertical: 0, 
+         }, props.center ? { alignItems: "center", justifyContent: "center" } : "" ]}
+         { ...props }   
+      />
    );
 }
 
 /**
  * == [ Page ] 
  * == == == == == == == == == */
-type PageProps = {
-   h?: number | string;
-   // bg?: string;
-   bg?: ColorValue;
-   ph?: number;
-   pv?: number;
-   children?: any;
-   style?: any;
-}
-
-export function Page( { ...props }: PageProps ) {
+export function Page( { ...props }: ViewSuperProps ) {
    return(
       <ScrollView style={[ props.style, { 
          flex: 1, width: "100%", height: props.h || "100%", 
@@ -275,7 +264,14 @@ export function Section({ ...props }: ViewSuperProps) {
 /**
  * == [ Content ] 
  * == == == == == == == == == */
-export function Content( { ...props }: ViewSuperProps ) {
+type ContentType = ViewSuperProps & {
+   position?: "absolute" | "relative" | "static";
+   top?: number;
+   bottom?: number;
+   left?: number;
+   right?: number;
+}
+export function Content( { position, top, bottom, left, right, ...props }: ContentType ) {
    const 
       backgroundColor = useThemeColor(
          { 
@@ -295,6 +291,11 @@ export function Content( { ...props }: ViewSuperProps ) {
                gap: props.gap,
                width: props.w,
                height: props.h,
+               position,
+               top,
+               bottom,
+               left,
+               right,
             }, 
             props.center ? { alignItems: "center", justifyContent: "center", } : null,
             props.style

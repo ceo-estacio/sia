@@ -2,7 +2,7 @@
 
 /** == [ @imports ] 
  * == == == == == == == == == */
-import { Grid, Text, Tile, View, } from "@/widgets/elements";
+import { Grid, HomePage, Text, Tile, View, } from "@/widgets/elements";
 import { router } from "expo-router";
 import React, { useState, useEffect } from "react";
 import { 
@@ -22,7 +22,7 @@ export default function HomeView( { ...props } ) {
 
 
    return( <>
-      <View style={ s.sheet }>
+      <HomePage>
          <View style={{ width: "100%", height: 160, padding: 24, backgroundColor: "#0af", alignItems: "center", justifyContent: "center", }}>
             <Text h={2} darkColor="#00559c">Estácio</Text>
          </View>
@@ -54,7 +54,7 @@ export default function HomeView( { ...props } ) {
 
             </View>
          </ScrollView>
-      </View>
+      </HomePage>
    </> );
 }
 

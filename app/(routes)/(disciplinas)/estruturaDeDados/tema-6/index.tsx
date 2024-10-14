@@ -21,7 +21,8 @@ import {
    StyleSheet,
    ScrollView,
    useColorScheme,
-   Pressable, 
+   Pressable,
+   Dimensions, 
 } from "react-native";
 
 
@@ -36,8 +37,12 @@ export default function Tema6View( { ...props } ) {
       <HomePage >
          <ScrollView>
             <View>
-               <Header center ph={24} pv={24} bg={"#00559c"}>
-                  <Text h={3}>Árvores</Text>
+               <Header center bg={"#00559c"}>
+                  <Section>
+                     <Content position="relative" top={0}>
+                        <Text h={3}>Árvores</Text>
+                     </Content>
+                  </Section>   
                </Header>
                <Section darkColor={ Palette.dark.bg_lv1 }>
                   <Header pv={24} ph={24}>
@@ -51,6 +56,11 @@ export default function Tema6View( { ...props } ) {
                      <Collapsible title="Regras">
                         <Text>se existe pelo menos um elemento, a árvore é considerada "NÃO VAZIA" e esse elemento é chamado de "NÓ RAIZ".</Text>
                      </Collapsible>
+                  </Content>
+                  <Content>
+                     <Text h={5}>Especificações</Text>
+                     <Pix h={ Dimensions.get( "window" ).width * .5 } image={ require( "@/assets/images/disciplinas/estrutura-de-dados/tema-6/arvores-niveis.jpg" ) }/>
+                     <Pix h={ Dimensions.get( "window" ).width * .5 } image={ require( "@/assets/images/disciplinas/estrutura-de-dados/tema-6/arvores-niveis-2.png" ) }/>
                   </Content>
                </Section>
                <Section darkColor={ Palette.dark.bg_lv2 }>
