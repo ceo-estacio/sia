@@ -19,6 +19,8 @@ import { useThemeColor } from "@/hooks/useThemeColor";
 import Icon from "../icon";
 import { PropsWithChildren, ReactNode, useState } from "react";
 import { ThemedView } from "../ThemedView";
+import Animated, { FadeInRight, AnimatedProps, FadeOutRight, LinearTransition } from "react-native-reanimated";
+import { ThemedTextProps } from "../ThemedText";
 
 const 
    X = {
@@ -118,7 +120,7 @@ export function View({ style, lightColor, darkColor, pd, ...otherProps }: ViewSu
 
 /** == [ Text ]
  * == == == == == == == == == */
-export type ThemedTextProps = TextProps & {
+export type TextSuperProps = TextProps & {
    lightColor?: string;
    darkColor?: string;
    h?: 1 | 2 | 3 | 4 | 5 | 6;
@@ -126,6 +128,46 @@ export type ThemedTextProps = TextProps & {
 };
 
 export function Text( {
+  style,
+  lightColor = "#333",
+  darkColor = Palette.dark.text,
+  h,
+  type = 'default',
+  ...rest
+}: TextSuperProps ) {
+  const color = useThemeColor( { light: lightColor, dark: darkColor }, 'text' );
+
+   return(
+      <TextRN
+         style={ [
+            { color },
+            type === 'default' ? styles.default : undefined,
+            type === 'title' ? styles.title : undefined,
+            type === 'defaultSemiBold' ? styles.defaultSemiBold : undefined,
+            type === 'subtitle' ? styles.subtitle : undefined,
+            type === 'link' ? styles.link : undefined,
+
+            h == 1 ? styles.H1 
+            : h == 2 ? styles.H2 
+            : h == 3 ? styles.H3 
+            : h == 4 ? styles.H4 
+            : h == 5 ? styles.H5 
+            : styles.H6,
+
+            style,
+         ] }
+         { ...rest }
+      />
+   );
+}
+
+
+/** == [ Text Animated ]
+ * == == == == == == == == == */
+export type TextAniProps = TextSuperProps & {
+};
+
+export function TextAni( {
   style,
   lightColor = "#333",
   darkColor = Palette.dark.text,
@@ -164,7 +206,7 @@ export function Text( {
  * == [ HomePage ] 
  * == == == == == == == == == */
 type HomePageProps = ViewProps & {
-   h?: number | string;
+   h?: DimensionValue;
    // bg?: string;
    ph?: number;
    pv?: number;
@@ -192,7 +234,7 @@ export function Page( { ...props }: ViewSuperProps ) {
    return(
       <ScrollView style={[ props.style, { 
          flex: 1, width: "100%", height: props.h || "100%", 
-         backgroundColor: props.bg || "#f5f5f5", paddingHorizontal: props.ph, paddingVertical: props.pv, 
+         paddingHorizontal: props.ph, paddingVertical: props.pv, 
          } ]}>
          { props.children }
       </ScrollView>
@@ -544,25 +586,57 @@ type TabBarIconType = {
 
 export function TabBarIcon( { focused, color, size, title, name, family, ...props }: TabBarIconType ) {
    return(
-      <View darkColor={ focused ? "#212329" : "#1b1d2255" } lightColor="#f5f5f5" 
-         h={45}
-         ratio={ focused ? "2.2 / 1" : "1.2 / 1" }
-         borderRadius={99} 
+      // <View darkColor={ focused ? "#212329" : "#1b1d2255" } lightColor="#f5f5f5" 
+      //    h={45}
+      //    ratio={ focused ? "2.2 / 1" : "1.2 / 1" }
+      //    borderRadius={99} 
+      //    style={{
+      //       flexDirection: "row",
+      //       alignItems: "center",
+      //       justifyContent: "space-evenly",
+      //       borderColor: Palette.dark.bg_lv1,
+      //       borderWidth: focused ? 5 : 0,
+      //    }}
+      //    { ...props }
+      // >
+      <Animated.View 
+         // darkColor={ focused ? "#212329" : "#1b1d2255" } lightColor="#f5f5f5" 
+         // h={45}
+         // ratio={ focused ? "2.2 / 1" : "1.2 / 1" }
+         // borderRadius={99} 
+         layout={ LinearTransition.springify().damping( 80 ).stiffness( 200 ) }
          style={{
+            backgroundColor: focused ? "#212329" : "#1b1d2255",
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "space-evenly",
+            height: 45,
+            aspectRatio: focused ? "2.2 / 1" : "1.2 / 1",
+            borderRadius: 99,
             borderColor: Palette.dark.bg_lv1,
             borderWidth: focused ? 5 : 0,
          }}
-         { ...props }
+         // { ...props }
       >
          <Icon 
             family={ family || "Ionicons" } color={ color || focused ? "#a90" : "#f0a" } 
             name={ name }
          />
-         { focused && <Text>{ title }</Text> }
-      </View>
+         { 
+            focused && 
+            <Animated.Text
+               entering={ FadeInRight.springify().damping( 80 ).stiffness( 200 ) }
+               exiting={ FadeOutRight.springify().damping( 80 ).stiffness( 200 ) }
+               style={{
+                  fontSize: 16,
+                  lineHeight: 24,
+                  color: Palette.dark.text,
+               }}
+            >
+               { title }
+            </Animated.Text> 
+         }
+      </Animated.View>
    );
 }
 

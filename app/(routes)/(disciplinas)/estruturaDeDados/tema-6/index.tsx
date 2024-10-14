@@ -10,7 +10,7 @@ import {
    Content, 
    View,
    Text,
-   Br,
+   // Br,
    Pix,
    OL,
    Collapsible, 

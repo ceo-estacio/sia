@@ -8,19 +8,20 @@ import {
    type ColorValue,
 } from "react-native";
 import { View } from "../céo";
-import { 
+import { createIconSet,
    AntDesign, Entypo, EvilIcons, Feather, 
    FontAwesome, FontAwesome5, FontAwesome6, 
    Fontisto, Foundation, Ionicons, 
    MaterialCommunityIcons, MaterialIcons, 
    Octicons, SimpleLineIcons, Zocial, 
 } from "@expo/vector-icons";
-
+// import { Icon } from "lucide-react-native";
 
 
 
 /** == [ properties ]
  * == == == == == == == == == */
+// type IconNames = keyof typeof Icon;
 type IconProps = {
    pd?: number;
    ph?: number;
