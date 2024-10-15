@@ -1,0 +1,6 @@
+
+
+<< youtube >>
+yarn add react-native-webview react-native-youtube-iframe
+import YoutubePlayer from "react-native-youtube-iframe";
+

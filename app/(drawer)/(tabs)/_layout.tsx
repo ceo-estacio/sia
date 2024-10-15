@@ -19,15 +19,15 @@ export default function TabLayout() {
          tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
          tabBarStyle: {
             backgroundColor: Palette.dark.bar,
+            width: "100%",
             height: 68,
             paddingHorizontal: 54,
-            alignItems: "center",
+            marginHorizontal: "auto",
             justifyContent: "center",
             borderTopWidth: 0,
          }, 
          tabBarItemStyle: { backgroundColor: "#27f0", 
             alignItems: "center",
-            // width: "80%",
          },
          tabBarShowLabel: false,
       }}
@@ -36,7 +36,6 @@ export default function TabLayout() {
          name="index"
          options={{
             title: 'Home', 
-            // tabBarItemStyle
             tabBarIcon: ( { color, focused, size } ) => (
                <TabBarIcon 
                   title={"Home"}

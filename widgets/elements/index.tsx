@@ -575,7 +575,7 @@ export function Collapsible({ children, title }: PropsWithChildren & { title: st
                size={18}
                color={theme === 'light' ? Palette.dark.accent.blue : Palette.dark.accent.amber[0] }
             />
-            <Text type="defaultSemiBold">{title}</Text>
+            <Text darkColor="#ddd" lightColor="#121212" type="defaultSemiBold">{title}</Text>
          </TouchableOpacity>
          {isOpen && <View  style={styles.CollapsibleContent}>{children}</View>}
       </View>
@@ -608,7 +608,7 @@ export function TabBarIcon( { focused, color, size, title, name, family, ...prop
             alignItems: "center",
             justifyContent: "space-evenly",
             height: 45,
-            // aspectRatio: focused ? "2.2 / 1" : "1.2 / 1",
+            aspectRatio: focused ? "2.2 / 1" : "1.2 / 1",
             // width: focused ? withSpring( 150 ) : withSpring( 54 ),
             // width: focused ? w.value = 110 : w.value = 54,
             borderRadius: 99,

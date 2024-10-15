@@ -40,7 +40,7 @@ export const
          bg: "#16181c",
          bg_lv1: "#1b1d22",
          bg_lv2: "#212329",
-         text: "#ddd",
+         text: "#999",
          tint: "#f0a",
          accent: {
             blue: {
