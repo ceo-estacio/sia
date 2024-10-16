@@ -15,7 +15,8 @@ import {
    Pix,
    OL,
    Collapsible,
-   Li, 
+   Li,
+   Code, 
 } from "@/widgets/elements";
 import { transform } from "@babel/core";
 import { router } from "expo-router";
@@ -89,9 +90,10 @@ export default function Tema6View( { ...props } ) {
                      <Collapsible title="Excluir: ">
                         <Section gap={16}>
                            <Text>Há 3 casos que podem acontecer quando você tenta excluir um nós. Ele pode,</Text>
-                           <Li>não ter uma subárvore (não ter filhos): esse é o caso mais fácil. Você pode simplesmente excluir o nó, sem precisar realizar outras ações.</Li>
-                           <Li>Uma subárvore (um filho): você precisa se certificar de que, após o nó ser excluído, seu filho é, então, conectado ao pai do nó excluído.</Li>
-                           <Li>Duas subárvores (dois filhos): você precisa encontrar e substituir o nó que você quer excluir pelo seu sucessor em ordem (o nó mais à esquerda na subárvore à direita).</Li>
+                           <Li>não ter uma sub-árvore (não ter filhos): esse é o caso mais fácil. Você pode simplesmente excluir o nó, sem precisar realizar outras ações.</Li>
+                           <Li>Uma sub-árvore (um filho): você precisa se certificar de que, após o nó ser excluído, seu filho é, então, conectado ao pai do nó excluído.</Li>
+                           <Li>Duas sub-árvores (dois filhos): você precisa encontrar e substituir o nó que você quer excluir pelo seu sucessor em ordem (o nó mais à esquerda na sub-árvore à direita).</Li>
+                           <Text>A complexidade de tempo para a criação de uma árvore é O(1). A complexidade de tempo para a pesquisa, inserção ou exclusão de um nó depende da altura h da árvore, portanto o pior caso é O(h) no caso de árvores que vão apenas em uma direção (esquerda ou direita).</Text>
                         </Section>
                      </Collapsible>
                      <Collapsible title="Travessia em ordem: ">
@@ -103,7 +105,44 @@ export default function Tema6View( { ...props } ) {
                      <Collapsible title="Travessia pós-ordem: ">
                         <Text></Text>
                      </Collapsible>
+
                   </Content>
+
+                  <Content gap={16}>
+                     <Text h={2}>Tipos especiais de árvore binária</Text>
+                     <Li>Heap</Li>
+                     <Li>Árvore rubro-negra</Li>
+                     <Li>Árvore B (B-Tree)</Li>
+                     <Li>Árvore play</Li>
+                     <Li>Árvore n-ária</Li>
+                     <Li>Trie (árvore de prefixos)</Li>
+                  </Content>
+
+                  <Content gap={16}>
+                     <Text h={2}>Tempo de execução</Text>
+                     <Li>Desempenho no pior caso:  O(n)</Li>
+                     <Li>Desempenho no melhor caso:  O(1)</Li>
+                     <Li>Desempenho médio:  O(log n)</Li>
+                     <Li>Complexidade de espaço no pior caso:  O(1)</Li>
+                     <Text>Onde n  é o número de nós da BST. O pior caso é O(n), já que a BST pode não estar balanceada.</Text>
+                  </Content>
+
+                  <Content>
+                     <Text h={2}>Implementação de uma BST</Text>
+                     <Code title="Implementação de uma BST"
+                        script={`typedef struct Node {\n\t\tint data;\n\t\tNode *Left;\n\t\tNode *Right;\n} NODE; \n`}
+                     />
+                  </Content>
+                  {/* 
+                  == [ calculos ] 
+                  == == == == == == == == == 
+                  paiL = filhoL: rotL
+                  d(z) - e(z) = 1, e(p) = e(z) 
+
+                  paiR = filhoR: rotR
+                  e(U) - d(u) = 1, d(p) = d(u)
+
+                  */}
                </Section>
 
                <Section darkColor={ Palette.dark.bg_lv1 }>
@@ -199,7 +238,7 @@ export default function Tema6View( { ...props } ) {
                   
                   <Content gap={16}>
                      <Text>O maior nível de uma árvore é numericamente igual à sua altura.</Text>
-                     <Text>O isomorfismo entre duas árvores diz respeito à possibilidade de elas serem tornadas coincidentes pela permutação de suas subárvores. Permutar as subárvores apenas alterna suas posições relativas, mas não permite alterar a altura de uma árvore. Isto pode ser provado por contradição. Suponha que a permutação tenha alterado a altura da árvore para torná-la coincidente com a outra. Neste caso, se a altura mudou, obrigatoriamente algum nó mudou de nível, pois não há inserção ou remoção de nó. Então, para que ambas as árvores sejam coincidentes, fez-se necessário permutar as subárvores e mudar o nível de algum nó, o que contraria a definição de isomorfismo.</Text>
+                     <Text>O isomorfismo entre duas árvores diz respeito à possibilidade de elas serem tornadas coincidentes pela permutação de suas sub-árvores. Permutar as sub-árvores apenas alterna suas posições relativas, mas não permite alterar a altura de uma árvore. Isto pode ser provado por contradição. Suponha que a permutação tenha alterado a altura da árvore para torná-la coincidente com a outra. Neste caso, se a altura mudou, obrigatoriamente algum nó mudou de nível, pois não há inserção ou remoção de nó. Então, para que ambas as árvores sejam coincidentes, fez-se necessário permutar as sub-árvores e mudar o nível de algum nó, o que contraria a definição de isomorfismo.</Text>
                   </Content>
                </Section>
 
@@ -235,12 +274,12 @@ export default function Tema6View( { ...props } ) {
                         <Text>O primeiro nó da árvore é chamado de raiz.</Text>
                      </Collapsible>
                      
-                     <Collapsible title="Subárvores">
-                        <Text>A raiz tem dois ponteiros para duas estruturas diferentes, chamadas subárvore esquerda e subárvore direita. </Text>
+                     <Collapsible title="sub-árvores">
+                        <Text>A raiz tem dois ponteiros para duas estruturas diferentes, chamadas sub-árvore esquerda e sub-árvore direita. </Text>
                      </Collapsible>
                      
                      <Collapsible title="Balanceamento">
-                        <Text>Uma árvore binária é balanceada quando as subárvores esquerda e direita de cada nó têm aproximadamente a mesma altura. </Text>
+                        <Text>Uma árvore binária é balanceada quando as sub-árvores esquerda e direita de cada nó têm aproximadamente a mesma altura. </Text>
                      </Collapsible>
                      
                      <Collapsible title="Altura">
@@ -255,7 +294,7 @@ export default function Tema6View( { ...props } ) {
                         <Text>O nível de um nó é a distância desse nó até o nó raiz. </Text>
                      </Collapsible>
                      <Text>
-                        As árvores binárias de pesquisa (BST) são um tipo de árvore binária que se baseia em nós, onde os valores numéricos da subárvore esquerda são inferiores ao nó e os valores da subárvore direita são superiores ao nó. 
+                        As árvores binárias de pesquisa (BST) são um tipo de árvore binária que se baseia em nós, onde os valores numéricos da sub-árvore esquerda são inferiores ao nó e os valores da sub-árvore direita são superiores ao nó. 
                      </Text>
                      <Text>
                         As árvores são uma estrutura de dados versátil e poderosa, com aplicações em ciência da computação, como representação de dados hierárquicos e implementação de algoritmos de busca e ordenação. 
@@ -268,10 +307,10 @@ export default function Tema6View( { ...props } ) {
                      </Header>
                      
                         <Text h={3} darkColor="#833">Estrutura</Text>
-                        <Text>Uma árvore binária é uma estrutura de dados que pode estar vazia ou ter um elemento raiz, que possui dois ponteiros para subárvores esquerda e direita. </Text>
+                        <Text>Uma árvore binária é uma estrutura de dados que pode estar vazia ou ter um elemento raiz, que possui dois ponteiros para sub-árvores esquerda e direita. </Text>
 
                         <Text h={3} darkColor="#833">Balanceamento</Text>
-                        <Text>Uma árvore binária é balanceada quando as subárvores esquerda e direita de cada nó têm aproximadamente a mesma altura. </Text>
+                        <Text>Uma árvore binária é balanceada quando as sub-árvores esquerda e direita de cada nó têm aproximadamente a mesma altura. </Text>
                      
                         <Text h={3} darkColor="#833">Árvore de busca binária</Text>
                         <Text>Uma árvore binária de busca é uma estrutura de dados que favorece buscas eficientes. Uma propriedade importante desta estrutura é que o valor de um nó é maior que o valor dos descendentes do seu filho da esquerda, mas menor que o valor dos descendentes do seu filho da direita. </Text>
@@ -293,15 +332,15 @@ export default function Tema6View( { ...props } ) {
                      <Text>Um percurso em uma árvore binária é uma forma de acessar todos os nós da árvore de forma sistemática, geralmente realizando alguma operação.</Text>
                      <Text>Existem vários tipos de percursos em árvores binárias, incluindo: </Text>
                      <Collapsible title="Percurso em-ordem:">
-                        <Text> Exclusivo das árvores binárias de busca (BST), este percurso visita primeiro a subárvore esquerda, depois o nó atual e, por fim, a subárvore direita. É ideal para operações de ordenação e para obter uma visão sequencial dos elementos da árvore. </Text>
+                        <Text> Exclusivo das árvores binárias de busca (BST), este percurso visita primeiro a sub-árvore esquerda, depois o nó atual e, por fim, a sub-árvore direita. É ideal para operações de ordenação e para obter uma visão sequencial dos elementos da árvore. </Text>
                      </Collapsible>
                      <Collapsible title="Percurso em profundidade:">
                         <Text>Neste percurso, os nós da sub-árvore atual têm prioridade na ordem de acesso. </Text>
                      </Collapsible>
                      <Collapsible title="Percurso em Pré-Ordem: ">
-                        <Text>Este percurso é constituído por visitar nós especiais e subárvores. </Text>
+                        <Text>Este percurso é constituído por visitar nós especiais e sub-árvores. </Text>
                      </Collapsible>
-                     <Text>A maioria dos percursos em árvores binárias são recursivos, pois cada percurso é composto por visitar nós especiais e subárvores. </Text>
+                     <Text>A maioria dos percursos em árvores binárias são recursivos, pois cada percurso é composto por visitar nós especiais e sub-árvores. </Text>
                      <Text>Uma árvore binária é uma estrutura de dados que organiza os dados de forma hierárquica, onde cada nó tem no máximo dois filhos: um à esquerda e outro à direita. </Text>
                   </Content>
 

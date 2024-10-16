@@ -3,7 +3,7 @@
 /** == [ @imports ] 
  * == == == == == == == == == */
 import { Palette } from "@/constants/Colors";
-import X, { T as x, Header, View, Text, Section } from "@/widgets/elements";
+import X, { T as x, Header, View, Text, Section, Pix } from "@/widgets/elements";
 import React, { useState, useEffect } from "react";
 import { 
    StyleSheet,
@@ -31,6 +31,12 @@ function Card( { ...props } ) {
 }
 
 const 
+   Qea = ( { ...props } ) => (
+      <Text darkColor="#27f" h={5}
+         style={{ fontWeight: 800, fontSize: 17, }}
+         { ...props }
+      ></Text>
+   ),
    Title = ( { ...props } ) => <>
       <View style={{ gap: 8, }}>
          { 
@@ -340,6 +346,65 @@ export default function ExercíciosView( { ...props } ) {
                      />
                   </Card>
                </Section>
+
+               {/* 
+            <View>
+               <Title data={["Tema 5"]}/>
+               <Header center bg={"#006400"} ph={24} pv={24}>
+                  <Text h={3}>Ordenação</Text>
+               </Header>
+
+
+               <Section pd={18} gap={16}> */}
+
+               <View>
+                  <Title data={["Tema 6"]}/>
+                  <Header center ph={24} pv={24} bg={"#006400"}>
+                     <Text h={3}>Árvores</Text>
+                  </Header>
+
+                  <Section pv={18} gap={16} darkColor="#212329">
+                  
+                  <Card>
+                     <Qea h={5}>
+                        Ano: 2015 Banca: NUCEPE Órgão: SEFAZ - PI Prova: Analista - Sistemas Pleno
+                        Árvore AVL é uma árvore de busca autobalanceada. Isso significa que:
+                     </Qea>
+                     <Text>As alturas das duas subárvores a partir de cada nó diferem no máximo em uma unidade.</Text>
+                     {/* 
+                     
+                        55
+                  35          75
+               25    45    65    85
+                     
+                     */}
+                  </Card>
+                  
+                  <Card>
+                     <Qea>Seja o seguinte código em Python cujo principal objetivo é implementar uma árvore binária. Marque a alternativa correta quanto a execução do código:</Qea>
+                     <Pix h={300} image={ require( "@/assets/images/disciplinas/estrutura-de-dados/tema-6/ex-2.png" ) }/>
+                     <Text>A árvore criada no código acima é uma árvore binária de busca com todas as folhas no último nível.</Text>
+                  </Card>
+                  
+                  <Card>
+                     <Qea>Seja a seguinte árvore binária de busca abaixo, marque a sequência correta do percurso em pós-ordem:</Qea>
+                     <Pix image={ require( "@/assets/images/disciplinas/estrutura-de-dados/tema-6/ex-3.png" ) }/>
+                     <Text>23,24,26,29,28,27,25</Text>
+                  </Card>
+                  
+                  <Card>
+                     <Qea>Seja a seguinte árvore, marque a opção correta que indica o porquê a árvore abaixo não é uma árvore binária de busca:</Qea>
+                     <Pix image={ require( "@/assets/images/disciplinas/estrutura-de-dados/tema-6/ex-4.png" ) }/>
+                     <Text>Não é uma árvore binária de busca pois o nó 22 deveria estar inserido à direita do nó 20.</Text>
+                  </Card>
+                  
+                  <Card>
+                     <Qea>As árvores binárias de busca são especializações das árvores binárias que permitem uma melhor organização dos algoritmos de busca. Sobre a inserção de uma nova chave em uma árvore binária de busca é correto afirmar que:</Qea>
+                     <Text>Todas as chaves são inseridas em folhas, a posição da folha é determinada pela busca.</Text>
+                  </Card>
+                  
+                  </Section>
+               </View>
             </View>
          </ScrollView>
       </View>
