@@ -14,7 +14,8 @@ import {
    // Br,
    Pix,
    OL,
-   Collapsible, 
+   Collapsible,
+   Li, 
 } from "@/widgets/elements";
 import { transform } from "@babel/core";
 import { router } from "expo-router";
@@ -54,6 +55,57 @@ export default function Tema6View( { ...props } ) {
                      </Content>
                   </Section>   
                </Header>
+
+               <Section>
+                  <Header center bg="#daa52020">
+                     <Text h={4} darkColor="#daa520">resumão </Text>
+                  </Header>
+                  <Content gap={16}>
+                     <Header pv={24}>
+                        <Text h={2}>Operações básicas em uma BST</Text>
+                     </Header>
+                     <Collapsible title="Criar: ">
+                        <Text>Inicialmente, uma árvore vazia e sem nós é criada. A variável/identificador que deve apontar para o nó raiz é inicializado com o valor NULL.</Text>
+                     </Collapsible>
+                     <Collapsible title="Inserir: ">
+                        <Text>É muito semelhante à função de pesquisar. Novamente, começamos do nó raiz da árvore e descemos de modo recursivo, procurando pelo local certo para inserir o novo nó, do mesmo modo que explicamos na função de pesquisar. Se um nó com o mesmo valor já existir na árvore, é possível escolher inserir a duplicata ou não. Algumas árvores permitem duplicatas, outras não. Isso depende da implementação.</Text>
+                     </Collapsible>
+                     <Collapsible title="Pesquisar: ">
+                        <Section gap={16}>
+                           <Text>Sempre começamos a pesquisa em uma árvore pelo nó raiz e descemos a partir dele. Você compara os dados em cada nó com o valor que você está buscando. Se o nó comparado não corresponder, seguimos para o nó filho da direita ou da esquerda, dependendo do resultado da comparação seguinte: se o nó que buscamos for inferior àquele com o qual estamos comparando, seguimos para o filho da esquerda. Do contrário (se for maior) vamos para o filho da direita. Por quê? Porque a BST é estruturada (por definição) de modo que o filho da direita sempre seja maior que o pai e que o filho da esquerda sempre seja menor.</Text>
+                           <Text h={5}>
+                              Busca em largura (BFS, do inglês breadth-first search)
+                           </Text>
+                           <Text>
+                              A busca em largura é um algoritmo usado para fazer a travessia de uma BST. Ela começa no nó raiz e viaja de modo lateral (de um lado para outro), buscando pelo nó desejado. Este tipo de busca pode ser descrito como O(n), dado que cada nó é visitado uma vez e que o tamanho da árvore está correlacionado diretamente com o  tamanho da busca.
+                           </Text>
+
+                           <Text>
+                              Busca em profundidade (DFS, do inglês depth-first search)
+                              Com a abordagem da busca em profundidade, começamos com o nó raiz e viajamos para baixo em uma única ramificação. Se o nó desejado for encontrado naquela ramificação, ótimo. Do contrário, continuamos subindo e pesquisando por nós não visitados. Esse tipo de busca também tem uma notação big O de O(n).
+                           </Text>
+                        </Section>
+                     </Collapsible>
+                     <Collapsible title="Excluir: ">
+                        <Section gap={16}>
+                           <Text>Há 3 casos que podem acontecer quando você tenta excluir um nós. Ele pode,</Text>
+                           <Li>não ter uma subárvore (não ter filhos): esse é o caso mais fácil. Você pode simplesmente excluir o nó, sem precisar realizar outras ações.</Li>
+                           <Li>Uma subárvore (um filho): você precisa se certificar de que, após o nó ser excluído, seu filho é, então, conectado ao pai do nó excluído.</Li>
+                           <Li>Duas subárvores (dois filhos): você precisa encontrar e substituir o nó que você quer excluir pelo seu sucessor em ordem (o nó mais à esquerda na subárvore à direita).</Li>
+                        </Section>
+                     </Collapsible>
+                     <Collapsible title="Travessia em ordem: ">
+                        <Text></Text>
+                     </Collapsible>
+                     <Collapsible title="Travessia pré-ordem:">
+                        <Text></Text>
+                     </Collapsible>
+                     <Collapsible title="Travessia pós-ordem: ">
+                        <Text></Text>
+                     </Collapsible>
+                  </Content>
+               </Section>
+
                <Section darkColor={ Palette.dark.bg_lv1 }>
                   <Header pv={24} ph={24}>
                      <Text h={6}>Módulo 1</Text>

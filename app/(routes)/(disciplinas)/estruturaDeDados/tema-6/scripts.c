@@ -1,7 +1,7 @@
 
 
 /*------------------------------------------------------------------------------*/
-#include<stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
 #include <time.h>
@@ -21,13 +21,11 @@ void bolha (int *v);
 void selecao (int *v);
 void insercao (int *v);
 /*------------------------------------------------------------------------------*/
-main()
-{
+main() {
 	while(menu());
 }
 /*------------------------------------------------------------------------------*/
-int menu()
-{
+int menu() {
 	int opcao;
 	clock_t Ticks[2];
 	int fImprimir = 0;
@@ -41,15 +39,12 @@ int menu()
 	printf("\n   4.Executar os 3 algoritmos ");
 	printf("\n");
 	scanf("%d",&opcao);
-	switch(opcao)
-	{
+	switch(opcao) {
 		case 0:return 0;
-		case 1:
-		{
+		case 1: {
 		  carregarExemplo();
 		  /*-------------------------------------------------------*/		  
-		  if(fImprimir)
-		  {
+		  if(fImprimir) {
 		     printf("Antes da Ordenacao \n");
 		     imprimir(vetor);		 
 		  }
@@ -60,8 +55,7 @@ int menu()
           double Tempo = (Ticks[1] - Ticks[0]) * 1000.0 / CLOCKS_PER_SEC;
           printf("Tempo gasto: %g ms.", Tempo);		  
 		  /*-------------------------------------------------------*/
- 		  if(fImprimir)
-		  {
+ 		  if(fImprimir) {
 		     printf("Depois da Ordenacao \n");
 		     imprimir(vetor);
 	      }
@@ -70,12 +64,10 @@ int menu()
 		  system("pause");
 		  return 1;
 		}
-		case 2:
-		{ 
+		case 2: { 
           carregarExemplo();
 		  /*-------------------------------------------------------*/		  
-		  if(fImprimir)
-		  {
+		  if(fImprimir) {
 		     printf("Antes da Ordenacao \n");
 		     imprimir(vetor);		 
 		  }
@@ -86,8 +78,7 @@ int menu()
           double Tempo = (Ticks[1] - Ticks[0]) * 1000.0 / CLOCKS_PER_SEC;
           printf("Tempo gasto: %g ms.", Tempo);		  
 		  /*-------------------------------------------------------*/
- 		  if(fImprimir)
-		  {
+ 		  if(fImprimir) {
 		     printf("Depois da Ordenacao \n");
 		     imprimir(vetor);
 	      }
@@ -96,12 +87,10 @@ int menu()
 		  system("pause");
 		  return 1;
 		}		
-    	case 3:
-		{ 
+    	case 3: { 
           carregarExemplo();
 		  /*-------------------------------------------------------*/		  
-		  if(fImprimir)
-		  {
+		  if(fImprimir) {
 		     printf("Antes da Ordenacao \n");
 		     imprimir(vetor);		 
 		  }
@@ -112,8 +101,7 @@ int menu()
           double Tempo = (Ticks[1] - Ticks[0]) * 1000.0 / CLOCKS_PER_SEC;
           printf("Tempo gasto: %g ms.", Tempo);		  
 		  /*-------------------------------------------------------*/
- 		  if(fImprimir)
-		  {
+ 		  if(fImprimir) {
 		     printf("Depois da Ordenacao \n");
 		     imprimir(vetor);
 	      }
@@ -122,12 +110,10 @@ int menu()
 		  system("pause");
 		  return 1;
 		}
-    	case 4:
-		{ 
+    	case 4: { 
           carregarExemplos();
 		  /*-------------------------------------------------------*/		  
-		  if(fImprimir)
-		  {
+		  if(fImprimir) {
 		     printf("Antes da Ordenacao \n");
 		     printf("[BOLHA]\n");
 		     imprimir(vetorB);	
@@ -157,8 +143,7 @@ int menu()
           double TempoS = (Ticks[1] - Ticks[0]) * 1000.0 / CLOCKS_PER_SEC;
           printf("[SELECAO] Tempo gasto: %g ms.\n", TempoS);		  
 		  /*-------------------------------------------------------*/
- 		  if(fImprimir)
-		  {
+ 		  if(fImprimir) {
 		     printf("Depois da Ordenacao \n");
 		     printf("[BOLHA]\n");
 		     imprimir(vetorB);	
@@ -179,22 +164,19 @@ int menu()
 	}	
 }
 /*------------------------------------------------------------------------------*/
-void imprimir(int *v)
-{
+void imprimir(int *v) {
   int i;
   for(i=0; i < TAMANHO; i++)
      printf("%i\n",v[i]);
 }
 /*------------------------------------------------------------------------------*/
-void carregarExemplo()
-{
+void carregarExemplo() {
   int i;
   for(i=0; i < TAMANHO; i++)
      vetor[i]= rand() % 100;
 }
 /*------------------------------------------------------------------------------*/
-void carregarExemplos()
-{
+void carregarExemplos() {
   int i;
   for(i=0; i < TAMANHO; i++)
   {
@@ -209,8 +191,7 @@ void carregarExemplos()
 /*
 Algoritmo de Ordenacao Bolha
 */
-void bolha (int *v)
-{
+void bolha (int *v) {
     int troca=1;
     int i=0;
     int aux;
@@ -234,8 +215,7 @@ void bolha (int *v)
 /*
 Algoritmo de Ordenacao Selecao
 */
-void selecao (int *v)
-{
+void selecao (int *v) {
     int i,j,aux, minimo, pos_minimo;
     for (i=0; i < TAMANHO-1; i++)
     {

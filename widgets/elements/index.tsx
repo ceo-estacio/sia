@@ -557,6 +557,35 @@ export function UL( { ...props }: UL ) {
 
 
 
+/** == [ Li ]
+ * == == == == == == == == == */
+export function Li({ children, title }: PropsWithChildren & { title?: string }) {
+   const [isOpen, setIsOpen] = useState(false);
+   const theme = useColorScheme() ?? 'light';
+ 
+   return (
+      <View darkColor="#0000" lightColor="#0000" ph={24}>
+         <TouchableOpacity
+            style={styles.CollapsibleHeading}
+            onPress={() => setIsOpen((value) => !value)}
+            activeOpacity={0.8}>
+            <Icon 
+               family="Ionicons"
+               // name={isOpen ? 'chevron-down' : 'chevron-forward-outline'}
+               name="chevron-forward-outline"
+               size={18}
+               color={theme === 'light' ? Palette.dark.accent.blue : Palette.dark.accent.amber[0] }
+            />
+            <Text darkColor="#ddd" lightColor="#121212" type="defaultSemiBold">{title}</Text>
+            <Text>{  children }</Text>
+         </TouchableOpacity>
+         {isOpen && <View  style={styles.CollapsibleContent}>{children}</View>}
+      </View>
+   );
+}
+
+
+
 /** == [ Collapsible ]
  * == == == == == == == == == */
 export function Collapsible({ children, title }: PropsWithChildren & { title: string }) {
@@ -580,7 +609,7 @@ export function Collapsible({ children, title }: PropsWithChildren & { title: st
          {isOpen && <View  style={styles.CollapsibleContent}>{children}</View>}
       </View>
    );
- }
+}
 
 
 
