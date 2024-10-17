@@ -345,6 +345,36 @@ export default function ExercíciosView( { ...props } ) {
                         ]}
                      />
                   </Card>
+
+                  <Card>
+                     <Qea>Merge sort: funcionamento e a complexidade desse algoritmo, como ele gerencia a divisão e a combinação dos dados, e qual é sua complexidade computacional no pior caso?</Qea>
+                     <Text>O Merge Sort utiliza a estratégia de divisão recursiva, onde a lista é continuamente dividida ao meio até que todas as sublistas tenham um único elemento, e então as combina em ordem. Sua complexidade no pior caso é O(n log n)</Text>
+                  </Card>
+
+                  <Card>
+                     <Qea>algoritmos de ordenação que não se baseiam em comparações diretas entre os elementos da sequência</Qea>
+                     <Text>Algoritmos como Counting Sort, Bucket Sort, e Radix Sort não realizam comparações diretas entre elementos. Em vez disso, eles utilizam estratégias como contagem de frequências ou distribuição de elementos em buckets com base em seus valores. Como não dependem de comparações, o limite inferior de O(n log n) não se aplica a eles, e alguns podem alcançar uma complexidade de O(n) em cenários ideais, onde o número de buckets ou a distribuição dos elementos é favorável.</Text>
+                  </Card>
+                  
+                  <Card>
+                     <Qea>Bubble Sort: funcionamento</Qea>
+                     <Text>O Bubble Sort realiza comparações entre elementos adjacentes e troca suas posições se estiverem fora de ordem.</Text>
+                     <Text>O Bubble Sort é um algoritmo estável, ou seja, preserva a ordem relativa dos elementos iguais na lista.</Text>
+                  </Card>
+                  
+                  <Card>
+                     <Qea>Selection Sort:</Qea>
+                     <Text>O Selection Sort tem uma complexidade de tempo de O(n^2), independentemente de a lista já estar ordenada ou não.</Text>
+                     <Text>O Selection Sort é um algoritmo que, a cada iteração, seleciona o menor elemento da lista não ordenada e o move para sua posição correta.</Text>
+                  </Card>
+
+                  <Card>
+                     <Qea>Insertion Sort:</Qea>
+                     <Text>O Insertion Sort é particularmente eficiente para listas pequenas ou que já estão parcialmente ordenadas.</Text>
+                     <Text>O Insertion Sort tem uma complexidade de tempo de O(n^2) no pior caso, que ocorre quando a lista está em ordem decrescente.</Text>
+                     <Text>O Insertion Sort é um algoritmo estável, ou seja, ele mantém a ordem relativa dos elementos iguais na lista.</Text>
+                  </Card>
+                  
                </Section>
 
                {/* 
@@ -402,6 +432,54 @@ export default function ExercíciosView( { ...props } ) {
                      <Qea>As árvores binárias de busca são especializações das árvores binárias que permitem uma melhor organização dos algoritmos de busca. Sobre a inserção de uma nova chave em uma árvore binária de busca é correto afirmar que:</Qea>
                      <Text>Todas as chaves são inseridas em folhas, a posição da folha é determinada pela busca.</Text>
                   </Card>
+
+                  <Card>
+                     <Qea>árvores binárias:</Qea>
+                     <Text>Em uma árvore binária, cada nó possui no máximo dois filhos, denominados filho esquerdo e filho direito.</Text>
+                     <Text>A altura de uma árvore binária completa é definida como o número mínimo de nós no caminho da raiz até a folha mais distante.</Text>
+                  </Card>
+                  
+                  <Card>
+                     <Qea>(50 (30 (20) (40)) (70 (60) (80)))
+
+ 
+
+Qual seria a sequência correta dos nós visitados durante o percurso em pré-ordem?</Qea>
+                     <Text>50, 30, 20, 40, 70, 60, 80</Text>
+                  </Card>
+                  
+                  <Card>
+                     <Qea>(45 (20 (10) (35)) (70 (50) (90)))
+
+ 
+
+Qual seria a sequência correta dos nós visitados durante o percurso em ordem simétrica (in-order)?</Qea>
+                     <Text>10, 20, 35, 45, 50, 70, 90</Text>
+                  </Card>
+                  
+                  <Card>
+                     <Qea>(55 (25 (15) (40)) (80 (70) (90)))
+
+ 
+
+Qual seria a sequência correta dos nós visitados durante o percurso em pós-ordem (post-order)?</Qea>
+                     <Text>15, 40, 25, 70, 90, 80, 55</Text>
+                  </Card>
+                  
+                  <Card>
+                     <Qea>(50 (30 (20) (40)) (70 (60) (80)))
+
+ 
+
+Agora, realize as seguintes operações nesta árvore:</Qea>
+                     <Qea>Inserir o valor 35.</Qea>
+                     <Qea>Inserir o valor 65.</Qea>
+                     <Qea>Remover o valor 70.</Qea>
+                     <Qea>Remover o valor 30.</Qea>
+                     <Qea>Qual será o estado final da árvore binária de busca após a execução dessas operações?</Qea>
+                     <Text>( 50 ( 35 (20) (40) ) ( 80 (60) (65) ) )</Text>
+                  </Card>
+                  
                   
                   </Section>
                </View>
