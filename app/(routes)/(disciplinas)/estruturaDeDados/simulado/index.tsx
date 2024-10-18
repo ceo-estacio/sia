@@ -41,6 +41,7 @@ function Exercicio( { ...props }: ExProps ) {
 }
 
 type QProps = {
+   children?: any;
 }
 
 function Question( { ...props }: QProps ) {
@@ -54,7 +55,8 @@ function Question( { ...props }: QProps ) {
 }
 
 type ResProps = {
-   title: string;
+   title?: string;
+   children?: any;
 }
 
 function Res( { ...props }: ResProps ) {
