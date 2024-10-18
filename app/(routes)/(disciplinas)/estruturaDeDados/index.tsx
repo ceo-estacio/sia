@@ -27,6 +27,7 @@ export default function EstruturaDeDadosView( { ...props } ) {
    return( <>
       <DisciplinasMenu
          title="Estruturas de Dados"
+         sectionName="Módulo"
          items={
             [
                { 
@@ -58,6 +59,11 @@ export default function EstruturaDeDadosView( { ...props } ) {
                   id: 99,
                   title: "Exercícios", 
                   link: "/(disciplinas)/estruturaDeDados/exercicios", 
+               },
+               { 
+                  id: 999,
+                  title: "Simulados", 
+                  link: "/(disciplinas)/estruturaDeDados/simulado", 
                },
             ]
          }

@@ -2,8 +2,9 @@ import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import 'react-native-reanimated';
+import { Palette } from "@/constants/Colors"
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 
@@ -28,9 +29,9 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
-        <Stack.Screen name="(routes)" options={{ headerShown: false }} />
+      <Stack screenOptions={{ statusBarColor: Palette.dark.bar }}>
+        <Stack.Screen name="(drawer)" options={{ headerShown: false, statusBarColor: Palette.dark.bar }} />
+        <Stack.Screen name="(routes)" options={{ headerShown: false, statusBarColor: "#f27" }} />
         <Stack.Screen name="+not-found" />
       </Stack>
     </ThemeProvider>
