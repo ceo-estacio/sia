@@ -3,9 +3,12 @@
 /** == [ @imports ] 
  * == == == == == == == == == */
 import { Palette } from "@/constants/Colors";
-import { Header, HomePage, Section, Text, View } from "@/widgets/elements";
+import { Exercicio, Header, HomePage, Pix, Qea, Res, Section, Text, View,
+} from "@/widgets/elements";
 import React, { useState, useEffect, ReactElement } from "react";
 import { 
+   Image,
+   ImageBackground,
    ScrollView,
    StyleSheet,
 } from "react-native";
@@ -13,56 +16,6 @@ import {
 
 /** == [ properties ]
  * == == == == == == == == == */
-type ExProps = {
-   title: string;
-   question?: ReactElement;
-   answer?: ReactElement;
-}
-
-function Exercicio( { ...props }: ExProps ) {
-   return( <>
-      <View 
-         { ...props }
-         style={{ 
-            borderRadius: 13,
-            backgroundColor: Palette.dark.bg_lv2,
-            overflow: "hidden",
-         }}
-      >
-         <Header ph={8} pv={8} bg="#00559c">
-            <Text>{ props.title }</Text>
-         </Header>
-         <View gap={24} style={{
-            padding: 16,
-
-         }}>
-            <View gap={8}>{ props.question }</View>
-            <View darkColor="#1b1d22" borderRadius={13} pd={16}>{ props.answer }</View>
-         </View>
-      </View>
-   </> );
-}
-
-type QProps = {
-   children?: any;
-}
-
-function Qea( { ...props }: QProps ) {
-   return( 
-      <Text h={4}>{ props.children }</Text>
-   );
-}
-
-type ResProps = {
-   title?: string;
-   children?: any;
-}
-
-function Res( { ...props }: ResProps ) {
-   return( 
-      <Text darkColor="#777">{ props.children }</Text>
-   );
-}
 
 /** == [ exports ]
  * == == == == == == == == == */
@@ -75,7 +28,9 @@ export default function SimuladoEstruturaDeDados( { ...props } ) {
             <Header ph={24} pv={24}>
                <Text h={3}>Estrutura de Dados</Text>
             </Header>
-            <Section darkColor={ Palette.dark.bg_lv1 } gap={24} pd={24}>
+            <Section darkColor={ Palette.dark.bg } gap={24} pd={24}>
+            {/* <Section darkColor={ Palette.dark.bg_lv1 } gap={24} pd={24}> */}
+            {/* <Section darkColor={ Palette.dark.bg_lv2 } gap={24} pd={24}> */}
 
                <Exercicio title="titulo"
                   question={ <>
@@ -88,7 +43,7 @@ export default function SimuladoEstruturaDeDados( { ...props } ) {
                
                <Exercicio title=""
                   question={<Qea>alocação dinamica de um vetor do tipo primitivo double com 10 posições nalinguagem C.</Qea>}
-                  answer={<Res>malloc( 10 * sizeof( doubles ) )</Res>}
+                  answer={<Res>malloc( 10 * sizeof( double ) )</Res>}
                />
                
                <Exercicio title=""
@@ -169,110 +124,207 @@ int main() {
       
 Marque (V) para verdadeiro ou (F) para falso.`}</Qea>}
                   answer={<Res>{`( F ) A alocação de memória, presente na função main, efetuada com a função malloc, resulta na mesma quantidade em bytes que ptr = malloc( sizeof( struct entrada_cadastro ) ).
-( V ) A função strcpy copia a palavra Aluno para o vetor name da struct <entrada_cadastro className="
+( V ) A função strcpy copia a palavra Aluno para o vetor name da struct entrada_cadastro.
 ( V ) O acesso aos campos da estrutura de dados é ralizado através do ponteiro nomeado ptr de tipo struct entrada_cadastro.
  
-F, V, V."`}</Res>}
+F, V, V.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
+                  question={<Qea>{`Pode-se definir uma estrutura heterogenea como sendo um conjunto de elementos, geralmente, agrupados sob um alógica e associados por um nome.
+Esses elementos podem ser variáveis simples, matrizes ou ainda outras estruturas.
+Seja a definição de uma estrutura como:
+
+Struct empregado {
+      string nome;
+      float salario;
+};
+
+Suponha ainda que exista um vetor dessa estrutura, definido como:
+
+empregado vet [ 100];
+
+Marque a alternativa em que é atribuida de forma correta o salario 805.7 para o décimo primeiro elemento deste vetor.`}</Qea>}
+                  answer={<Res>{`vet[10].salario=805.7;`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
+                  question={<Qea>{`Observe o trecho de código abaixo, escrito na linguagem C.
+                     
+void imprimecabecalho() {
+      ...
+}
+void calcula() {
+      int soma;
+      ...
+      imprimecabecalho();
+}
+      
+com base nesse código, é correto afirmar que:`}</Qea>}
+                  answer={<Res>{`O tempo de vida da variável soma estende-se durante o tempo em que a função imprimecabecalho() é executada.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
+                  question={<Qea>{`Em relação ao uso de procedimentos e funcões em lógica de programação, analise as seguintes afirmativas:
+                     
+      1. Procedimentos e funções são blocos de instruções para realizar tarefas especificas e são considerados su-rotinas.
+      2. Em um procedimento, a passagem de parametros é obrigatoria.
+      3. Em uma função, a passagem de parametros e o retorno de um valor são obrigatórios.`}</Qea>}
+                  answer={<Res>{`1, apenas.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
+                  question={<Qea>{`Levando em consideração a estrutura de dados do tipo "Pilha", analise os itens a seguir e, ao final, assinale a alternativa correta:`}</Qea>}
+                  answer={<Res>{`1. Um elemento a ser removido é o que está há mesno tempo na estrutura de dados.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
+                  question={<Qea>{`Avalie as afirmativas abaixo:
+                     
+      1. O merge sort executa em O(n log n).
+      2. O bucket sort executa em O(n).
+      3. Algoritmos que executam em uma complexidade abaixo de O(n log n) ordenam a sequencia sem comparar os elementos desta sequencia.`}</Qea>}
+                  answer={<Res>{`Todas estão corretas.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
+                  question={<Qea>{`Todos os algoritmos de ordenação interna devem ter complexidade de espaço de:`}</Qea>}
+                  answer={<Res>{`O(n)`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
+                  question={<>
+                     <Qea>{`Analise a seguinte árvore binaria e assinale a alternativa correta.`}</Qea>
+                     <View w={"100%"} h={200}>
+                        <ImageBackground style={{ width: "100%", height: "100%" }} resizeMode="contain" source={ require("@/assets/images/disciplinas/estrutura-de-dados/simulados/1.png") }/>
+                     </View>
+                  </>}
+                  answer={<Res>{`TA é a subarvore enraizada em A, portanto toda a árvore.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
+                  question={<Qea>{`Referente a alocação dinâmica de memória em C, é CORRETO afirmar:`}</Qea>}
+                  answer={<Res>{`As funções malloc e free e o operador sizeof, são essenciais para a alocação dinâmica de
+memória.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
+                  question={<Text>{`Uma pilha segue a regra: "o ultimo a chegar é o primeiro a sair". Já as filas obedecem à regra: o primeiro a chegar é o primeiro a sair. 
+Com base nesses argumentos, Uma pilha P e uma fila F originalmente com n elementos cada (n > 5), onde suas operações são:
+
+empilha(P, elemento): insere elemento na pilha P;
+desempilha(P): remove da pilha P e retorna o elemento removido;
+enfileira(F, elemento): insere elemento na fila F;
+desenfileira(F): remove da fila F e retorna o elemento removido;
+para i = 1 até n, faça
+empilha(P, desempilha(P))
+enfileira(F, desenfileira(F))
+fim-para
+
+Ao final da execução do pseudocódigo, os estados finais de P e F serão respectivamente:`}</Text>}
+                  answer={<Res>{`elementos em ordem original e elementos em ordem original.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
+                  question={<Qea>{`Sobre o método da bolha é correto afirmar que:`}</Qea>}
+                  answer={<Res>{`O tempo de execução pode ser linear em relação ao tamanho da entrada se a instância apresentada já estiver ordenada.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
+                  question={<Qea>{`Árvore de pesquisa é uma estrutura de dados eficiente para armazenar informação, sendo particularmente adequada quando existe a necessidade de considerar todos ou alguma combinação de registros. 
+Assinale uma combinação correta desses registros.`}</Qea>}
+                  answer={<Res>{`Acesso direto e sequencial eficientes, facilidade de inserção e retirada de registro, boa taxa de utilização de memória, utilização de memória primária e secundária.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
+                  question={<Qea>{`Uma lista ordenada alocada sequencialmente possui como desvantagem:`}</Qea>}
+                  answer={<Res>{`Tamanho limitado de memória alocada para lista.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
+                  question={<>
+                     <Text>{`A estrutura abaixo representa a célula de uma árvore em linguagem C:
+
+typedef struc _no {
+      int chave;
+      struct no *esq, *dir;
+} no;
+ 
+Assinale a alternativa correta sobre qual sequencia será impressa ao executar um caminhamento na árvore abaixo, conforme o código escrito em linguagem C a seguir.`}</Text>
+<ImageBackground style={{ width: "100%", height: 150 }} source={ require( "@/assets/images/disciplinas/estrutura-de-dados/simulados/2.png" ) }/>
+</>}
+                  answer={<Res>{`ABCDEXY`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
+                  question={<>
+                     <Text>
+                        {`Analise o seguinte código implementado na linguagem C:
+
+int soma( int *a, int *b ) {
+      *a = *a + *b;
+      return *a;
+}
+int main() {
+      int x=5, y=3;
+      y = soma(&x, &y);
+      printf(?%d?, x+y);
+      return(0);
+}
+
+QUal será o valor exibido na saída padrão do sistema?`}
+                     </Text>
+                  </>}
+                  answer={<Res>{`16`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
+                  question={<Text>{`Considere o código a seguir escrito na linguagem C.
+                     
+#include
+Int main() {
+      printf(?Valor total: %.1f\\n?, 9,1415169265);
+      return(0);
+}
+      
+Assinale a alternativa que apresenta a saída correta.`}</Text>}
+                  answer={<Res>{`Valor total: 9.1`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
+                  question={<Qea>{`Considere uma lista circular simplesmente encadeada com "n" elementos.
+Após "n - 1" remoções realizadas no final da lista podemos afirmar que:`}</Qea>}
+                  answer={<Res>{`O primeiro elemento estará apontando para si mesmo.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
+                  question={<Qea>{`Internamente, nos softwares, podem ser usadas duas estruturas de dados que armazenam as sucessivas operações de "Desfazer" e Refaser", de modo que o próximo "Refazer" sempre recupera o último "Desfazer".
+Os tipos de estrutura de dados que podem ser usados para "Desfazer" e "Refazer" são, respectivamente:`}</Qea>}
+                  answer={<Res>{`Pilha e Pilha`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
+                  question={<Qea>{`É correto afirmar que:`}</Qea>}
+                  answer={<Res>{`O bubble sort. o insert sort e o selection sort tem a mesma complexidade computacional, porém, isto não quer dizer que todos executem ao mesmo tempo para a mesma instância.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
+                  question={<Text>{`Um método de ordenação é dito estável quando preserva a ordem dos elementos da lista durante a execução.
+Analise as afirmativas abaixo e marque a opção correta.
+
+      1. A estabilidade não impacta na complexidade computacional teórica.
+      2. A estabilidade pode impactar no tempo de execução do algoritmo uma vez que, em algoritmos estáveis, sequências "quase" ordenadas implicam em tempo de execução menor.
+      3. O conceito de estabilidade é puramente teórico e não tem implicação prática.`}</Text>}
+                  answer={<Res>{`1, 2 são verdadeiras e 3 é falsa.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
+                  question={<Text>{`Acerca das estruturas de dados Árvores, analise as afirmativas a seguir.
+                     
+      1. A árvore AVL é uma árvore binária com uma condição de balanço, porem não completamente balanceada.
+      2. Árvores admitem tratamento computacionaleficiente quando comparadas às estruturas mais genéricas como os grafos.
+      3. Em uma Árvore Binária de Busca, todas as chaves da subarvore esquerda são maiores que a chave da raiz.`}</Text>}
+                  answer={<Res>{`Se somente as afirmativas 1 e 2estiverem corretas.`}</Res>}
                />
                
                <Exercicio title=""

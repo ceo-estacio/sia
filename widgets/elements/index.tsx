@@ -17,7 +17,7 @@ import {
 import styled from "styled-components/native";
 import { useThemeColor } from "@/hooks/useThemeColor";
 import Icon, { IconType } from "../icon";
-import { PropsWithChildren, ReactNode, useState } from "react";
+import { PropsWithChildren, ReactElement, ReactNode, useState } from "react";
 import { ThemedView } from "../ThemedView";
 import Animated, { 
    FadeInRight, 
@@ -233,6 +233,7 @@ type HomePageProps = ViewProps & {
 export function HomePage( { ...props }: HomePageProps ) {
    return(
       <View darkColor={ Palette.dark.bg } lightColor="#e5e5e5" 
+      // <View darkColor={ Palette.andy[1] } lightColor="#e5e5e5" 
          style={[ props.style, { 
             flex: 1, width: "100%", height: props.h || "100%", 
             paddingHorizontal: 0, paddingVertical: 0, 
@@ -453,11 +454,12 @@ export function Pix( { ...props }: PixProps ) {
       <Image 
          source={ props.image }
          resizeMode={ props.mode || "contain" }
-         style={[ props.style, { 
+         style={[ { 
             width: props.w || "100%",   
             overflow: "hidden",
             height: props.h || Dimensions.get( "window" ).width,
-         } ]}
+         },
+         props.style ]}
       />
    );
 }
@@ -668,6 +670,63 @@ export function TabBarIcon( { focused, color, size, title, name, family, ...prop
             </Animated.Text> 
          }
       </Animated.View>
+   );
+}
+
+
+
+/** == [ StyleSheet ]
+ * == == == == == == == == == */
+type ExercicioProps = {
+   title: string;
+   question?: ReactElement;
+   answer?: ReactElement;
+}
+
+export function Exercicio( { ...props }: ExercicioProps ) {
+   return( <>
+      <View 
+         { ...props }
+         style={{ 
+            borderRadius: 13,
+            // backgroundColor: Palette.dark.bg_lv2,
+            backgroundColor: Palette.dark.bg_lv2,
+            // backgroundColor: Palette.andy[2],
+            overflow: "hidden",
+         }}
+      >
+         <Header ph={8} pv={8} bg="#00559c">
+            <Text>{ props.title }</Text>
+         </Header>
+         <View gap={24} style={{
+            padding: 16,
+
+         }}>
+            <View gap={8}>{ props.question }</View>
+            <View darkColor={ Palette.andy[3] } borderRadius={13} pd={16}>{ props.answer }</View>
+         </View>
+      </View>
+   </> );
+}
+
+type QeaProps = {
+   children?: any;
+}
+
+export function Qea( { ...props }: QeaProps ) {
+   return( 
+      <Text h={4}>{ props.children }</Text>
+   );
+}
+
+type ResProps = {
+   title?: string;
+   children?: any;
+}
+
+export function Res( { ...props }: ResProps ) {
+   return( 
+      <Text darkColor="#777">{ props.children }</Text>
    );
 }
 

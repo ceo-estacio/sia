@@ -68,7 +68,9 @@ export function DisciplinasMenu( { ...props }: DisciplinasMenuProps ) {
             <X.H1 style={{ color: props.titleColor || "#ddd" }}>{ props.title }</X.H1>
          </Header>
             <View style={{ 
-               backgroundColor: props.bodyBG || Palette.dark[2],
+               // backgroundColor: props.bodyBG || Palette.dark[2],
+               // backgroundColor: props.bodyBG || Palette.andy[2],
+               backgroundColor: props.bodyBG || "#212329",
                flex: 1, 
                minHeight: ( Dimensions.get( "window" ).height ) - ( 129 - 30 ), 
                borderTopStartRadius: 24,
