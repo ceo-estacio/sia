@@ -105,12 +105,15 @@ export type ViewSuperProps = ViewProps & {
    ratio?: string | number | undefined;
 };
 
-export function View({ style, lightColor, darkColor, pd, ...otherProps }: ViewSuperProps) {
-   const backgroundColor = useThemeColor({ light: lightColor, dark: darkColor }, 'background');
+export function View( { style, lightColor, darkColor, pd, ...otherProps }: ViewSuperProps ) {
+   const backgroundColor = useThemeColor(
+      { light: lightColor, dark: darkColor }, 
+      'background'
+   );
 
    return( <ViewRN 
       style={[
-         darkColor || lightColor ? { backgroundColor } : null,
+         darkColor ? { backgroundColor } : lightColor ? { backgroundColor } : null,
          { 
             // backgroundColor, 
             padding: pd,
@@ -124,7 +127,8 @@ export function View({ style, lightColor, darkColor, pd, ...otherProps }: ViewSu
          }, 
          otherProps.center ? { alignItems: "center", justifyContent: "center", } : null,  
          style
-      ]} {...otherProps} 
+      ]} 
+      { ...otherProps } 
    /> );
 }
 
