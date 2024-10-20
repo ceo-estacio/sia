@@ -3,7 +3,7 @@
 /** == [ @imports ] 
  * == == == == == == == == == */
 import { Palette } from "@/constants/Colors";
-import { Exercicio, Header, HomePage, Pix, Qea, Res, Section, Text, View,
+import { Code, Exercicio, Header, HomePage, Pix, Qea, Res, Section, Text, View,
 } from "@/widgets/elements";
 import React, { useState, useEffect, ReactElement } from "react";
 import { 
@@ -42,13 +42,26 @@ export default function SimuladoEstruturaDeDados( { ...props } ) {
                />
                
                <Exercicio title=""
-                  question={<Qea>alocação dinamica de um vetor do tipo primitivo double com 10 posições nalinguagem C.</Qea>}
+                  question={<Qea>{`Na linguagem C, é possível realizar alocações de memória utilizando alocação dinâmica ou estática.
+Assinale a alternativa que representa uma alocação dinâmica de um vetor do tipo primitivo double com 10 posições na linguagem C.`}</Qea>}
                   answer={<Res>malloc( 10 * sizeof( double ) )</Res>}
                />
                
                <Exercicio title=""
                   question={<Qea>{`Considere a definição da seguinte struct escrita em linguagem de programação C.\n\nstruct endereço {\n\t\tchar logradouro [50];\n\t\tint numero;\n\t\tchar cidade[30];\n\t\tchar estado[2];\n} end1;\n\nA alternativa que manipula corretamente a struct acima definida é:`}</Qea>}
-                  answer={<Res>{`Para armazenar um valor inteiro na variavel numero: scanf( "%d", &end1.numero );`}</Res>}
+                  answer={<View pd={0} gap={8} style={{ flexDirection: "column",  }}>
+                     <View pd={5} gap={8} style={{ backgroundColor: "#000" }}>
+                        <Text darkColor="#daa520">case 1 - conter "RJ"</Text>
+                        <Text darkColor="#955">Para criar um array de structs endereco: struct endereco[10]</Text>
+                        <Text darkColor="#27f">Para armazenar um valor inteiro na variável numero: scanf("%d",&end1.numero);</Text>
+                     </View>
+
+                     <View pd={5} gap={8} style={{ backgroundColor: "#000", width: "100%", }}>
+                        <Text darkColor="#daa520">case 2 - conter "armazenar o valor 104"</Text>
+                        <Text darkColor="#955">Para armazenar o valor 104 na variável numero: endereco.numero = 104;</Text>
+                        <Text darkColor="#27f">Para criar um array de structs endereco: struct endereco end1[10];</Text>
+                     </View>
+                  </View>}
                />
                
                <Exercicio title=""
@@ -66,7 +79,7 @@ export default function SimuladoEstruturaDeDados( { ...props } ) {
                />
                
                <Exercicio title=""
-                  question={<Qea>{`Sejam as seguintes propriedades de estrutura de dados:
+                  question={<Qea>{`Sejam as seguintes propriedades de estruturas de dados:
       1. a remoção de um elemento interno obriga ao deslocamento de todos os sucessores.
       2. um nó pode ser inserido no meio da estrutura com complexidade O(1).
       3. a inserção e a remoção podem ser feitas em ambas as extremidades.
@@ -175,7 +188,7 @@ com base nesse código, é correto afirmar que:`}</Qea>}
                
                <Exercicio title=""
                   question={<Qea>{`Levando em consideração a estrutura de dados do tipo "Pilha", analise os itens a seguir e, ao final, assinale a alternativa correta:`}</Qea>}
-                  answer={<Res>{`1. Um elemento a ser removido é o que está há mesno tempo na estrutura de dados.`}</Res>}
+                  answer={<Res>{`1. Um elemento a ser removido é o que está há menos tempo na estrutura de dados.\n\nApenas o item I é verdadeiro.`}</Res>}
                />
                
                <Exercicio title=""
@@ -328,172 +341,214 @@ Analise as afirmativas abaixo e marque a opção correta.
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{`O acesso ao elemento de uma estrutura de dados tipo pilha se restringr ao mais recente na pilha.
+Já o acesso a um elemento de uma estrutura tipo fila ocorre ao dado há mais tempo na fila.
+Sobre pilhas e filas, avalie as assertivas a seguir:
+
+      1. Uma forma de evitar o desperdício de memória numa fila em alocação sequencial é utilizar-se lista circular.
+      3. Pilhas têm a propriedade de inverter a ordem de cadeias, enquanto as filas mantêm a ordem.`}</Text>}
+                  answer={<Res>{`1 e 3.`}</Res>}
+               />
+               
+               <Exercicio title=""
+                  question={<Text>{`Sobre listas duplamente encadeadas, afirma-se:
+                     
+      1) Cada nó usa o dobro do número de campos ponteiro de uma lista simplesmente encadeada.
+   
+   É correto apenas:`}</Text>}
+                  answer={<Res>{`1.`}</Res>}
+               />
+               
+               <Exercicio title=""
+                  question={<Text>{`Sobre estruturas de dados, assinale a alternativa CORRETA.`}</Text>}
+                  answer={<Res>{`Pilhas são tipos de dados abstratos caracterizadas pelapolítica "primeiro a entrar, último a sair".`}</Res>}
+               />
+               
+               <Exercicio title=""
+                  question={<Text>{`Algoritmos de ordenação baseados em comparação entre elementos da sequência tem complexidade computacional mínima de:`}</Text>}
+                  answer={<Res>{`O(n log n)`}</Res>}
+               />
+               {/* 
+               
+
+                  *                 *
+               a     b     fsen  h     j
+
+               */}
+               <Exercicio title=""
+                  question={<Text>{`O método de ordenação por seleção tem duas versões, uma estável e outra instável.
+Em relação ao tempo de execução do algoritmo quando é apresentado em sua entrada uma sequência quase ordenada e sua complexidade computacional, é correto afirmar que:`}</Text>}
+                  answer={<Res>{`É provável que a versão estável execute em tempo inferior a versão instável, porém a complexidade computacional de ambos é O(n²).`}</Res>}
+               />
+               
+               <Exercicio title=""
+                  question={<>
+                     <ImageBackground style={{ width: "100%", height: 200, }} resizeMode="contain" source={ require( "@/assets/images/disciplinas/estrutura-de-dados/simulados/3.png" ) }/>
+                     <Text>
+                        {`Considerando a figura acima, que ilustra uma árvore de busca binária, assinale a opção correta.`}
+                     </Text>
+                  </>}
+                  answer={<Res>{`Se a árvore em tela for balanceada, depois da inserção de um nó 9, o nó 12 assume a raiz da árvore.`}</Res>}
+               />
+               
+               <Exercicio title=""
+                  question={<Text>{`Árvore ALV é uma árvore de busca autobalanceada. Isso significa que:`}</Text>}
+                  answer={<Res>{`As alturas das duas subárvores a partir de cada nó diferem no máximo em uma unidade.`}</Res>}
+               />
+               
+               <Exercicio title=""
+                  question={<Text>{`Considere uma estrutura de dados do tipo vetos. Com respeito a tal estrutura, é correto que seus componentes são:`}</Text>}
+                  answer={<Res>{`homogêneos e de acesso aleatório por intermédio de índices.`}</Res>}
+               />
+               
+               <Exercicio title=""
+                  question={<Text>{`Observe o trecho de código abaixo, escrito na linguagem C.
+                     
+void quadrado(float, *r, float *t);
+int main() {
+      float a, b;
+      printf("Entre com um numero complexo (2 numeros inteiros):");
+      scanf("%f %f, &a, &b);
+      quadrado(&a, &b);
+      printf("O quadrado do numero e %f + i %f\\n", a, b);
+}
+      
+Com base nesse código, é correto afirmar que as variáveis a e b`}</Text>}
+                  answer={<Res>{`Indicam, quando precediads pelo caracter &, que os parâmetros podem ser modificados pelas funções scanf() e quadrado().`}</Res>}
+               />
+               
+               <Exercicio title=""
+                  question={<Text>{`Na linguagem de programação em C, as funções permitem a criação de programas em módulos, em que todas as variáveis, que são descritas nas definições de função, são locais, pois são conhecidas apenas na função em que são definidas.
+Cada biblioteca-padrão tem um cabeçalho que contém os protótipos de função para todas as funções nessa biblioteca, assim como definições de vários tipos de dados e constantes que são necessárias para estas funções.
+Uma dessas bibliotecas tem a seguinte explicação: contém as definições comuns de tipo usadas pela C para realizar cálculos.
+Assinale-a.`}</Text>}
+                  answer={<>
+                     <Text darkColor="#955">stddef.h</Text>
+                     <Text darkColor="#955">math.h</Text>
+                     {``}
+                  </>}
+               />
+               
+               <Exercicio title="7"
+                  question={<>
+                     <Text>Analisando o quadro comparativo abaixo, marque a opção que indica a melhor escolha de algoritmo de ordenação.</Text>
+                     <ImageBackground resizeMode="contain" style={{ width: "100%", height: 200, }} source={ require( "@/assets/images/disciplinas/estrutura-de-dados/simulados/4.png" ) }/>
+                  </>}
+                  answer={<Res>{`Merge sort, Buble sort, insert sort e Selection sort.`}</Res>}
+               />
+               
+               <Exercicio title=""
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
-               />
-               
-               <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
-               />
-               
-               <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
-               />
-               
-               <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
-               />
-               
-               <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
-               />
-               
-               <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
-               />
-               
-               <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
-               />
-               
-               <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
-               />
-               
-               <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
-               />
-               
-               <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
-               />
-               
-               <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
-                  answer={<Res>{``}</Res>}
-               />
-               
-               <Exercicio title=""
-                  question={<Qea>{``}</Qea>}
+                  question={<Text>{``}</Text>}
                   answer={<Res>{``}</Res>}
                />
             </Section>
