@@ -337,7 +337,7 @@ Analise as afirmativas abaixo e marque a opção correta.
       1. A árvore AVL é uma árvore binária com uma condição de balanço, porem não completamente balanceada.
       2. Árvores admitem tratamento computacionaleficiente quando comparadas às estruturas mais genéricas como os grafos.
       3. Em uma Árvore Binária de Busca, todas as chaves da subarvore esquerda são maiores que a chave da raiz.`}</Text>}
-                  answer={<Res>{`Se somente as afirmativas 1 e 2estiverem corretas.`}</Res>}
+                  answer={<Res>{`Se somente as afirmativas 1 e 2 estiverem corretas.`}</Res>}
                />
                
                <Exercicio title=""
@@ -438,37 +438,75 @@ Assinale-a.`}</Text>}
                />
                
                <Exercicio title=""
-                  question={<Text>{``}</Text>}
-                  answer={<Res>{``}</Res>}
+                  question={<Text>{`Em relação aos algoritmos de ordenação externa, é correto afirmar que:`}</Text>}
+                  answer={<Res>{`Manipulam os dados na memória secundária, porém usam parcela da memória principal.\n\nA afirmativa 3 está correta.`}</Res>}
+               />
+               {/* 
+               
+               F = [ A, R, G, O, M ];
+               e( d() ); 
+               e( d() ); 
+               d();
+               
+               */}
+               
+               <Exercicio title=""
+                  question={<>
+                     <Text>Observe a árvore binária a seguir</Text>
+                     <ImageBackground style={{ width: "100%", height: 250, }} resizeMode="contain" source={ require( "@/assets/images/disciplinas/estrutura-de-dados/simulados/5.png" ) }/>
+                     <Text>O caminhamento central (infixado) sobre essa árvore produz a sequência de visitação:</Text>
+                  </>}
+                  answer={<Res>{`DBHEJIKAFCG`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Text>{``}</Text>}
-                  answer={<Res>{``}</Res>}
+                  question={<Text>{`Após a inserção de um nó, é necessário verificar cada um dos nós ancestrais desse nó inserido, relativamente à consistência com as regras estruturais de uma árvore AVL.
+\nPORQUE
+\nO fator de balanceamento de cada nó, em uma árvore AVL, deve pertencer ao conjunto formado por { -2, -1, 0, +1, +2 }.
+\nAnalisando-se as afirmações acima, conclui-se que:`}</Text>}
+                  answer={<Res>{`A primeira afirmação é verdadeira, e a segunda é falsa.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Text>{``}</Text>}
-                  answer={<Res>{``}</Res>}
+                  question={<Text>{`Sobre estrutura de dados, identifique o que está correto afirmar
+\n\t\tI. Pilha é uma estrutura de dados com acesso restrito aos seus elementos, uma vez que eles são colocados e retirados por um único lado e são ordenados pelo princípio LIFO (last in first out). Assim, sempre que um elemento é adicionado ou retirado seu topo é alterado.
+\t\tII. Pilha é o tipo de estrutura usada, por exemplo, na avaliação de expressões numéricas, na recursividade e pelos compiladores, na passagem de parâmetros para as funções.
+\t\tIII. Registro é uma estrutura básica que permite guardar coleções de dados de diferentes tipos, sendo normalmente utilizado quando um objeto tem diferentes atributos, isto é, contém campos de diferentes tipos.`}</Text>}
+                  answer={<Res>{`I, II e III.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Text>{``}</Text>}
-                  answer={<Res>{``}</Res>}
+                  question={<Text>{`Funções são instrumentos de modularização de programas, que tem como finalidade tornar o código mais legível, isto é mais fácil de entender, evita replicação de instruções e permite o reuso das funções em outros programas. Então considere o seguinte código:
+
+#include< iostream >
+using namespace std;
+
+int main( )
+{
+      float a=10.0;
+      float b=4.0;
+      cout < < media(a,b);
+      return 0;
+}
+float media(float x, float y) { return (x+y)/2;}
+
+Marque a alternativa CORRETA:
+`}</Text>}
+                  answer={<Res>{`O código não compila, pois há necessidade de se declarar float media(float, float) como protótipo da função float media(float x, float y)antes da função principal.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Text>{``}</Text>}
-                  answer={<Res>{``}</Res>}
+                  question={<Text>{`Dadas as afirmativas abaixo, identifique as corretas e marque a alternativa verdadeira.
+
+      I- Vetores e matrizes servem apenas para construir agregados de dados heterogêneos.
+      II- Registros em C++ são tipos de dados compostos formados por mais de um tipo de dados.
+      III- Na Linguagem C++, "struct" é uma palavra reservada que serve para definir registros.
+      IV- Registros são tipos de dados heterogêneos.`}</Text>}
+                  answer={<Res>{`estão corretas apenas as afirmativas II, III e IV.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Text>{``}</Text>}
-                  answer={<Res>{``}</Res>}
-               />
-               
-               <Exercicio title=""
-                  question={<Text>{``}</Text>}
+                  question={<Text>{`Suponha uma listagem, contendo número de inscrição e pontuação (ordenada pelo número de inscrição) dos candidatos para o cargo de Analista de Sistemas de uma grande empresa pública. São 1024 candidatos inscritos e o sistema implementado para consulta do resultado, permite busca binária ou busca sequencial pelo número de inscrição. O número máximo de comparações executadas se fosse utilizada a busca binária e se fosse utilizada busca sequencial, respectivamente, seria de:`}</Text>}
                   answer={<Res>{``}</Res>}
                />
                
