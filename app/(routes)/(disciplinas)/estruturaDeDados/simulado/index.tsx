@@ -507,47 +507,76 @@ Marque a alternativa CORRETA:
                
                <Exercicio title=""
                   question={<Text>{`Suponha uma listagem, contendo número de inscrição e pontuação (ordenada pelo número de inscrição) dos candidatos para o cargo de Analista de Sistemas de uma grande empresa pública. São 1024 candidatos inscritos e o sistema implementado para consulta do resultado, permite busca binária ou busca sequencial pelo número de inscrição. O número máximo de comparações executadas se fosse utilizada a busca binária e se fosse utilizada busca sequencial, respectivamente, seria de:`}</Text>}
-                  answer={<Res>{``}</Res>}
+                  answer={<Res>{`10 e 1024`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Text>{``}</Text>}
-                  answer={<Res>{``}</Res>}
+                  question={<Text>{`Analise a função abaixo, considerando o tipo Livro e marque a opção correta.
+\nint R2D2 (Livro v[ ], int c, int n) {
+      for (int i = 0; i < n; i++)
+      if (v[i].codigo == c)
+            return i;
+      return -1;
+}
+
+onde
+
+struct Livro {
+      int codigo;
+      char autor[30];
+};`}</Text>}
+                  answer={<Res>{`Retorna a posição do valor c em v , se o valor c for encontrado em v.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Text>{``}</Text>}
-                  answer={<Res>{``}</Res>}
+                  question={<Text>{`Na pequena mercearia do Sr. Manuel os pedidos são anotados no papel e assim que montam um lote com 10 listas de compras dos fregueses, as entregas começam. As compras de cada freguês são postas em uma caixa. As caixas são organizadas no veículo de entrega respeitando a ordem da entrega, ou seja, a 1a. caixa a ser entregue fica na frente das demais caixas e assim, sucessivamente. Dessa forma, a última caixa a ser entregue ficará no final do veículo, após todas as outras caixas que deverão ser entregues primeiro. Qual a estrutura de dados mais adequada que traduz a organização das pizzas no veículo de entrega ?`}</Text>}
+                  answer={<Res>{`fila`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Text>{``}</Text>}
-                  answer={<Res>{``}</Res>}
+                  question={<Text>{`Qual das alternativas a seguir pode definir uma estrutura de fila?`}</Text>}
+                  answer={<Res>{`Entrada de dados pelo final e saída pelo início.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Text>{``}</Text>}
-                  answer={<Res>{``}</Res>}
+                  question={<Text>{`Assumindo que um valor do tipo inteiro ocupa 4 bytes na memória, e se baseando nas linhas de código abaixo, marque a alternativa correta:
+
+int *p;
+p = (int *)malloc(20*sizeof(int));
+`}</Text>}
+                  answer={<Res>{`Alocação dinâmica de 80 bytes na memória`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Text>{``}</Text>}
-                  answer={<Res>{``}</Res>}
+                  question={<Text>{`Assinale a característica que NÃO está relacionada às estruturas de dados encadeadas:`}</Text>}
+                  answer={<Res>{`Consomem memória de maneira permanente, só sendo liberadas ao fim do programa.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Text>{``}</Text>}
-                  answer={<Res>{``}</Res>}
+                  question={<Text>{`As estruturas de dados lineares (fila, pilha e lista) são muito utilizadas para resolver problemas computacionais.
+Cada uma dessas estruturas pode ser implementada com diferentes características e atendem a diferentes tipos de problemas. 
+Sobre as características dessas estruturas de dados, atribua V (verdadeiro) ou F (falso) para as afirmativas a seguir. 
+      
+      - Em uma pilha, o último elemento a entrar é o primeiro a sair. 
+      
+      - Em uma fila, o primeiro elemento a entrar é o último a sair. 
+      
+      - Uma lista permite que as inserções possam ser feitas em qualquer lugar (posição), mas as remoções, não. 
+      
+      - Em uma lista circular com encadeamento simples, o primeiro elemento aponta para o segundo e para o último. 
+      
+      - Para remover um elemento de uma lista duplamente encadeada, deve- se alterar o encadeamento dos elementos anterior e próximo ao elemento removido. Assinale a alternativa que contém, de cima para baixo, a sequência correta:`}</Text>}
+                  answer={<Res>{`v, f, f, f, v.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Text>{``}</Text>}
-                  answer={<Res>{``}</Res>}
+                  question={<Text>{`Árvore AVL é uma árvore de busca autobalanceada. Isso significa que:`}</Text>}
+                  answer={<Res>{`As alturas das duas subárvores a partir de cada nó diferem no máximo em uma unidade.`}</Res>}
                />
                
                <Exercicio title=""
-                  question={<Text>{``}</Text>}
-                  answer={<Res>{``}</Res>}
+                  question={<Text>{`A ordenação por seleção é um algoritmo de ordenação simples e intuitivo. Na ordenação por seleção, é necessário permutar o vetor. Para esse caso, o significado de 'permutar' é`}</Text>}
+                  answer={<Res>{`rearranjar os elementos do vetor`}</Res>}
                />
                
                <Exercicio title=""
