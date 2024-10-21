@@ -3,12 +3,14 @@
 /** == [ @imports ] 
  * == == == == == == == == == */
 import { Header, HomePage, Section } from "@/widgets/elements";
+import { router } from "expo-router";
 import React, { useState, useEffect } from "react";
 import { 
    StyleSheet,
    View,
    Text,
-   ScrollView, 
+   ScrollView,
+   Pressable, 
 } from "react-native";
 
 
@@ -27,7 +29,11 @@ export default function ProgramaçãoClienteComJavaScriptView( { ...props } ) {
             <Header></Header>
 
             <Section>
-               
+               <Pressable
+                  onPress={ () => router.push( "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-2/modulos/modulo-1" ) }
+               >
+                  <Text>Módulo 1</Text>
+               </Pressable>
             </Section>
          </ScrollView>
       </HomePage>
