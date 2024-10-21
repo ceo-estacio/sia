@@ -20,7 +20,7 @@ export default function EstruturaDeDadosLayout() {
          headerStyle: { backgroundColor: Palette.sigrid.d2 },
          statusBarColor: Palette.sigrid.d2,
          headerTintColor: Palette.accent.purple[3],
-         headerLeft:() => <BackBtn />
+         headerLeft:() => <BackBtn /> // ative de novo essa linha
       }}>
         <Stack.Screen name="index" options={{ headerShown: true, title: "Tema 5: Ordenação" }} />
         <Stack.Screen name="exercicios/index" options={{ title: "Exercícios" }} />

@@ -44,7 +44,15 @@ export default function HomeView( { ...props } ) {
                      <Pressable
                         style={{ flex: 1 }}
                         onPress={ () => router.push( "/(routes)/(disciplinas)/estruturaDeDados/" ) }
-                        >
+                     >
+                        <Text style={{ color: "#eee", }}>Estrutura de dados</Text>
+                     </Pressable>
+                  </Tile>
+                  <Tile>
+                     <Pressable
+                        style={{ flex: 1 }}
+                        onPress={ () => router.push( "/(disciplinas)/desenvolvimentoDeFrontEnd" ) }
+                     >
                         <Text style={{ color: "#eee", }}>Estrutura de dados</Text>
                      </Pressable>
                   </Tile>

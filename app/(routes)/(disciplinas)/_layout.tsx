@@ -19,10 +19,10 @@ export default function DisciplinasLayout() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack screenOptions={ { headerShown: false, } }>
-         <Stack.Screen name="estruturaDeDados" options={{ 
+         {/* <Stack.Screen name="estruturaDeDados" options={{ 
             // headerShown: false,
             headerLeft:() => <BackBtn />
-         }} />
+         }} /> */}
       </Stack>
     </ThemeProvider>
   );

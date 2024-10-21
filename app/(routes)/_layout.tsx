@@ -6,6 +6,7 @@ import { Stack } from 'expo-router';
 import { useEffect } from 'react';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { Palette } from "@/constants/Colors";
 
 
 export default function RoutesLayout() {
@@ -14,7 +15,7 @@ export default function RoutesLayout() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="(disciplinas)" options={{ headerShown: false }} />
+        <Stack.Screen name="(disciplinas)" options={{ headerShown: false, statusBarColor: Palette.dark.bar }} />
       </Stack>
     </ThemeProvider>
   );

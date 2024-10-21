@@ -27,7 +27,7 @@ export default function EstruturaDeDadosView( { ...props } ) {
    return( <>
       <DisciplinasMenu
          title="Estruturas de Dados"
-         sectionName="Módulo"
+         sectionName="Tema"
          items={
             [
                { 
