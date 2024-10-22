@@ -16,7 +16,7 @@ import {
    StyleSheet,
    ScrollView,
    useColorScheme,
-   ImageBackground, 
+   ImageBackground,
 } from "react-native";
 
 
@@ -59,11 +59,11 @@ export default function Modulo_2_View( { ...props } ) {
                      <Header center>
                         <Text darkColor="#55e" h={4}>Manipulando a árvore DOM</Text>
                      </Header>
-                     {/* <ImageBackground 
+                     <ImageBackground 
                         style={{ width: "100%", height: 250 }}
                         resizeMode="contain"
-                        source={ require( "@/assets/images/disciplinas/desenvolvimento-de-front-end/DOM.jpg" ) }
-                     /> */}
+                        source={ require( "@/assets/images/disciplinas/desenvolvimento-de-front-end/tema-2/DOM.jpg" ) }
+                     />
                   </Content>
                </Section>
                <Section darkColor="#212329" lightColor="#e5e5e5">
