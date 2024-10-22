@@ -68,9 +68,41 @@ export default function Modulo_2_View( { ...props } ) {
                </Section>
                <Section darkColor="#212329" lightColor="#e5e5e5">
                   <Header ph={24} pv={24}>
-                     <Text h={4} darkColor="#e55"></Text>
+                     <Text h={4} darkColor="#e55">JQuery Methods</Text>
                   </Header>
-                  <Content></Content>
+                  <Content>
+                     {
+                        [
+                           [
+                              "$( \"p\" )",
+                              "seletor == querySelector() e querySelectorAll()"
+                           ],
+                           [
+                              "$( \"p\" ).first()",
+                           ],
+                           [
+                              "$( \"p\" ).last()",
+                           ],
+                           [
+                              "$( \"p\" ).eq(0)",
+                           ],
+                           [
+                              "$( \"p\" ).append()",
+                           ],
+                           [
+                              "$( \"p\" ).before()",
+                           ],
+                           [
+                              "$( \"p\" ).find()",
+                           ],
+                        ].map( ( item, i ) => ( 
+                           <View key={ i } pd={24}>
+                              <Text darkColor="#559">{ item[0] }</Text>
+                              <Text>{ item[1] }</Text>
+                           </View>
+                         ) )
+                     }
+                  </Content>
                </Section>
             </View>
          </ScrollView>

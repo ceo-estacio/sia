@@ -8,6 +8,7 @@ import { Pressable, Text, View } from "react-native";
 import React from "react";
 import { DrawerToggleButton } from "@react-navigation/drawer";
 import { DrawerActions } from "@react-navigation/native";
+import { Palette } from "@/constants/Colors";
 // import * as NavigationBar from "expo-navigation-bar";
 
 // NavigationBar.setBackgroundColorAsync( "#16181c" );
@@ -23,10 +24,13 @@ export default function DrawerLayout() {
             //       bg="#f5f5f5"
             //    /> 
             // ) }
+            
             screenOptions={{
                headerShown: true,
                sceneContainerStyle: { backgroundColor: "#006400", },     
-
+               headerStyle: { backgroundColor: Palette.dark.bar  },
+               headerTintColor: "#f0a",
+               headerTitleAlign: "center"
                // headerLeft: () => { DrawerActions.openDrawer() }
             }}
          >

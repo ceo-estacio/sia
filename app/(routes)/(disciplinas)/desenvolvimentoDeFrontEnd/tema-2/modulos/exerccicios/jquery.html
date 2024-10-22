@@ -36,8 +36,20 @@ src="https://code.jquery.com/jquery-3.6.4.js"></script>
         Texto do parágrafo.
         <span>Texto do span</span>
     </p>
+
+    <p>
+      <h1>Título com h1</h1>
+      <h2>Subtítulo com h2</h2>
+      <spans>texto com spans</spans>
+      
+    </p>
 	
     <script type="text/javascript">
+      const 
+         _ = ( ...a ) => console.log( ...a )
+         ,
+         $$ = v => document.querySelector( v )
+      ;
 		
         //Sobrescrevendo o texto atual do primeiro parágrafo do documento por um novo texto
 		      $( 'p' ).first().html("Esse texto sobrescreve o inicial.");
@@ -55,6 +67,12 @@ src="https://code.jquery.com/jquery-3.6.4.js"></script>
         //Foi utilizado o seletor find() para localizar os elementos <span> dentro dos elementos <p>
       //   $( 'p' ).find('span').html('');
         $( 'p' ).find('span').html('');
+
+        // replace tag element with another tag element
+        $( "spans" ).replaceWith( `<t>texto com t</t>` );
+        $$( "h2" ).outerHTML = `<t>text with t </t>`;
+
+        $( "body" )[0].append( `<p>oi</p>` )
 		
     </script>
 
