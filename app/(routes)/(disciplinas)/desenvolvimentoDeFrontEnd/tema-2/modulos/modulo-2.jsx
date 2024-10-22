@@ -95,10 +95,18 @@ export default function Modulo_2_View( { ...props } ) {
                            [
                               "$( \"p\" ).find()",
                            ],
+                           [
+                              "$( \"p\" ).html()",
+                              "same as innerHTML"
+                           ],
+                           [
+                              "$( \"p\" ).replaceWith()",
+                              "same as outerHTML"
+                           ],
                         ].map( ( item, i ) => ( 
-                           <View key={ i } pd={24}>
+                           <View key={ i } pd={8}>
                               <Text darkColor="#559">{ item[0] }</Text>
-                              <Text>{ item[1] }</Text>
+                              <Text style={{ marging: 8 }}>{ item[1] }</Text>
                            </View>
                          ) )
                      }
