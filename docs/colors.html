@@ -1,0 +1,82 @@
+
+
+<style>
+   body {
+      background: #000;
+      background: #e5e5e5;
+      padding: 0;
+      margin: 0;
+   }
+   view {
+      display: flex;
+      width: 90%;
+      width: 100%;
+      margin: auto;
+      height: 100px;
+   }
+   text {
+      color: #fff;   
+      text-shadow: #000 0px 0px 3px;
+   }
+   .dois9 {
+      background: #212329;
+   }
+   .doisb {
+      background: #21252b;
+   }
+   .dois34 {
+      background: #282c34;
+   }
+   .e67 { color: #e32; }
+</style>
+<view class="dois9">
+   <text class="e67">function</text>
+</view>
+<view class="dois34">
+   <text class="e67">function</text>
+</view>
+<view class="doisb">
+   <text class="e67">function</text>
+</view>
+
+<section id="cores"></section>
+
+<script>
+   const 
+      colors = [
+         // a_4 = "#0c070a",
+         // a_3 = "#120a0f",
+         // a_2 = "#180f14",
+         // a_1 = "#1e1319",
+         a = "#24181f",
+         a1 = "#372b32",
+         a2 = "#4a3f45",
+         a3 = "#5f545a",
+         a4 = "#746b70",
+         a5 = "#8a8286",
+         a6 = "#a0999D",
+         a7 = "#b7b2b5",
+         a8 = "#cecbcd",
+         a9 = "#e6e5e6",
+      ]
+   ;
+   addEventListener( "load", () => {
+      cores.innerHTML = colors.map( 
+         c => `<view style=" background: ${ c } ">
+            <Text>${ c }</Text>
+         </view>` 
+      ).toString().replaceAll( ",", "" );
+   } );
+
+var texto = "Texto atribuido à variável";
+imprimirTexto();
+
+function imprimirTexto() {
+
+// var texto = "Novo texto atribuído à variável";
+texto = "Novo texto atribuído à variável";
+
+}
+
+console.log(texto);
+</script>

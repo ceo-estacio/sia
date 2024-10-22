@@ -34,6 +34,7 @@ export default function Modulo_1_View( { ...props } ) {
                </Header>
                <Section darkColor="#212329" lightColor="#e5e5e5">
                   <Content></Content>
+
                </Section>
             </View>
          </ScrollView>

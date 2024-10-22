@@ -2,15 +2,14 @@
 
 /** == [ @imports ] 
  * == == == == == == == == == */
-import { Header, HomePage, Section } from "@/widgets/elements";
+import { Header, HomePage, Section, View, Text, } from "@/widgets/elements";
 import { router } from "expo-router";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { 
    StyleSheet,
-   View,
-   Text,
    ScrollView,
-   Pressable, 
+   Pressable,
+   FlatList, 
 } from "react-native";
 
 
@@ -21,20 +20,53 @@ import {
 /** == [ exports ]
  * == == == == == == == == == */
 export default function ProgramaçãoClienteComJavaScriptView( { ...props } ) {
-
+   const 
+      modulos = [
+         {
+            id: "Módulo 1",
+            src: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-2/modulos/modulo-1",
+         },
+         {
+            id: "Módulo 2",
+            src: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-2/modulos/modulo-2",
+         },
+         // {
+         //    id: "",
+         //    src: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-2/modulos/modulo-",
+         // },
+      ]
+   ;
 
    return( <>
       <HomePage style={ s.sheet }>
+         <Section pd={24} w={"100%"} gap={16}>
+            {
+               modulos && 
+               <FlatList 
+                  data={ modulos }
+                  ItemSeparatorComponent={ () => <View style={{ height: 16, }}/> }
+                  renderItem={ ({ item }) => (
+                     <Pressable key={ item.id }
+                        onPress={ () => router.push( item.src ) }
+                        style={{
+                           backgroundColor: "#21252b",
+                           width: "100%",
+                           height: 56,
+                           alignItems: "center",
+                           justifyContent: "center",
+                           borderRadius: 16,
+                           
+                        }}
+                     >
+                        <Text h={5}>{ item.id }</Text>
+                     </Pressable>
+                  ) }
+               />
+            }
+         </Section>
          <ScrollView>
             <Header></Header>
 
-            <Section>
-               <Pressable
-                  onPress={ () => router.push( "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-2/modulos/modulo-1" ) }
-               >
-                  <Text>Módulo 1</Text>
-               </Pressable>
-            </Section>
          </ScrollView>
       </HomePage>
    </> );
