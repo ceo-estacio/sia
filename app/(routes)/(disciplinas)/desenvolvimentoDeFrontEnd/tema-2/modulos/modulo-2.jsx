@@ -2,15 +2,6 @@
 
 /** == [ @imports ] 
  * == == == == == == == == == */
- import { 
-   View,
-   Text, 
-   HomePage, 
-   Header, 
-   Section,
-   Code,
-   Content, 
-} from "@/widgets/elements";
 import React, { useState, useEffect } from "react";
 import { 
    StyleSheet,
@@ -18,6 +9,7 @@ import {
    useColorScheme,
    ImageBackground,
 } from "react-native";
+import { Header, HomePage, Text, View, Section, Code, Content, } from "../../../../../../widgets/elements";
 
 
 /** == [ properties ]

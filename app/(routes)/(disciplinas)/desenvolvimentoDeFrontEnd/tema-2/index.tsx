@@ -30,6 +30,10 @@ export default function ProgramaçãoClienteComJavaScriptView( { ...props } ) {
             id: "Módulo 2",
             src: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-2/modulos/modulo-2",
          },
+         {
+            id: "Módulo 3",
+            src: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-2/modulos/modulo-3",
+         },
          // {
          //    id: "",
          //    src: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-2/modulos/modulo-",

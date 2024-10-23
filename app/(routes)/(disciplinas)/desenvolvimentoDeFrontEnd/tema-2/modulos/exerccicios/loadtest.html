@@ -1,0 +1,27 @@
+
+
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<title>Evento onload com jQuery</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.js"></script>
+</head>
+<body onload="exibeAlerta('a partir da tag body')">
+<div id="lipsum" onload="exibeAlerta('a partir da div')">
+<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+</div>
+<script type="text/javascript">
+    function exibeAlerta(msg){
+        alert('Função "exibeAlerta" executada ' + msg);
+    }
+	
+    window.onload = function(){
+        exibeAlerta('a partir do evento window.onload');
+    }
+
+    $(function() {
+        exibeAlerta('a partir da $(function)(){}');
+    });
+</script>
+</body>
+</html>

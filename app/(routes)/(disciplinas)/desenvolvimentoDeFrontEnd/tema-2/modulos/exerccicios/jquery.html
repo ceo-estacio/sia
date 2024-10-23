@@ -74,6 +74,12 @@ src="https://code.jquery.com/jquery-3.6.4.js"></script>
 
         $( "body" )[0].append( `<p>oi</p>` )
 		
+        addEventListener( "load", () => alert( "event load" ) );
+      //   window.onload = function() { alert( "event load" ) };
+        $( () => {
+         // $( "p" ).last().html( "oifh" );
+         alert( "jquery ready" );
+        } );
     </script>
 
 </body></html>
