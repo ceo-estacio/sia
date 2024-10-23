@@ -1,0 +1,49 @@
+
+
+<head>
+   <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.js"></script>
+</head>
+<script>
+   const 
+      _ = ( ...a ) => console.log( ...a )
+   ;
+
+   function ReqListener() {
+      _( this.responseText );
+   }
+
+   const 
+      req = new XMLHttpRequest()
+   ;
+
+   req.addEventListener( "load", ReqListener );
+   req.open( "GET", "https://www.example.org/example.txt" );
+   req.send();
+
+   /* req.onreadystatechange = () => {
+      if( this.readyState == 4 && this.status == 200 ) {
+         
+   }
+
+   };
+
+   req.open( "GET", "url", true );
+   req.send(); */
+
+   /**
+    * == AJAX with JQuery
+    */
+   $.ajax(
+      {
+         url: "https://www.example.org/example.txt",
+         type: "get", // post
+         beforeSend: function() {
+            $( "#result" ).html( "loading..." );
+         }
+      }
+   ).done( msg => {
+
+   } ).fail( ( jqXHR, textStatus, msg ) => {
+      console.error( `  : ${ msg }` );
+   } );
+</script>
