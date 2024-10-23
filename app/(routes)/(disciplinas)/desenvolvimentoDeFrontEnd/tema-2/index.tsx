@@ -15,7 +15,9 @@ import {
 
 /** == [ properties ]
  * == == == == == == == == == */
-
+const 
+   conteúdoOnline = "https://stecine.azureedge.net/repositorio/00212ti/07662/index.html?brand=estacio#"
+;
 
 /** == [ exports ]
  * == == == == == == == == == */
