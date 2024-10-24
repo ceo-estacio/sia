@@ -71,7 +71,7 @@ export default function VueJSView( { ...props } ) {
                            padding: 8,
                         }}
                      >
-                        <View style={{ paddingBottom: 16, }}>
+                        <View style={{ paddingBottom: 8, }}>
                            <Text h={6} darkColor="#777">{ item.id }</Text>
                         </View>
                         <Text h={3}>{ item.name }</Text>
@@ -87,7 +87,7 @@ export default function VueJSView( { ...props } ) {
          </ScrollView>
       </HomePage>
    </> );
-}  /*  </  ProgramaçãoClienteComJavaScriptView  >  */
+}  /*  </  VueJSView  >  */
 
 
 /** == [ StyleSheet ]
