@@ -40,6 +40,11 @@ export default function DesenvolvimentoDeFrontEndView( { ...props } ) {
                   title: "Programação Cliente Com Javascript", 
                   link: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-2/", 
                },
+               { 
+                  id: 3,
+                  title: "Vue js", 
+                  link: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-3/", 
+               },
                // { 
                //    id: 3,
                //    title: "", 
