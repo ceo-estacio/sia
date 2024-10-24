@@ -42,9 +42,14 @@ export default function DesenvolvimentoDeFrontEndView( { ...props } ) {
                },
                // { 
                //    id: 3,
-               //    title: ", 
+               //    title: "", 
                //    link: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-", 
                // },
+               { 
+                  id: 99,
+                  title: "Exercícios", 
+                  link: "/(disciplinas)/desenvolvimentoDeFrontEnd/Exercicios", 
+               },
             ]
          }
       />

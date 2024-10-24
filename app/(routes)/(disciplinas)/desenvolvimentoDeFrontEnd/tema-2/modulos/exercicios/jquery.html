@@ -13,6 +13,15 @@ src="https://code.jquery.com/jquery-3.6.4.js"></script>
         <h1>Título na primeira div</h1>
         <p>Texto inicial do parágrafo da primeira div.</p>
     </div>
+    <section
+      style="background: #e5e5e5; padding: 16px;"
+    >
+       
+       <p class="destaque">p destaque</p>
+       <p class="destaque">p destaque</p>
+       <p class="destaque">p destaque</p>
+       <button onclick="hide()" id="btn">btn hide</button>
+   </section>
 
     <div>
         <h2>SubTítulo na segunda div</h1>
@@ -68,6 +77,12 @@ src="https://code.jquery.com/jquery-3.6.4.js"></script>
       //   $( 'p' ).find('span').html('');
         $( 'p' ).find('span').html('');
 
+        $( "#btn" ).click( function() {
+            $( "p.destaque" ).hide();
+        } );
+
+        $( "p:first" ).html( "oioi" );
+
         // replace tag element with another tag element
         $( "spans" ).replaceWith( `<t>texto com t</t>` );
         $$( "h2" ).outerHTML = `<t>text with t </t>`;
@@ -80,6 +95,28 @@ src="https://code.jquery.com/jquery-3.6.4.js"></script>
          // $( "p" ).last().html( "oifh" );
          alert( "jquery ready" );
         } );
+
+
+         function createList( items ) {
+            return items.map( item => (
+               $( `
+                  <li>${ item }</li>
+               ` )
+            ) );
+         }
+
+         $( 'body' ).append( createList( [ 'ovo', 'pão' ] ) );
+
+         function CreateList( items ) {
+            return items.map( item => $( `
+               <li>${ item }</li>
+            ` ) );
+         }
+
+         const Create = items => items.map( item => $( `
+         ` ) );
+
+         $( 'body' ).append( CreateList( [ 'ovo', 'pão' ] ) );
     </script>
 
 </body></html>
