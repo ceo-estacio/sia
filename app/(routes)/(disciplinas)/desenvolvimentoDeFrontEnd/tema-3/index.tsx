@@ -26,12 +26,22 @@ export default function VueJSView( { ...props } ) {
       modulos = [
          {
             id: "Módulo 1",
+            name: "Estrutura básica do Vue.js",
+            desc: "Reconhecer a estrutura básica do Vue.js.",
             src: "/(disciplinas)/VueJS/tema-2/modulos/modulo-1",
          },
-         // {
-         //    id: "",
-         //    src: "/(disciplinas)/VueJS/tema-2/modulos/modulo-",
-         // },
+         {
+            id: "Módulo 2",
+            name: "Saindo do básico",
+            desc: "Empregar uma lógica para interação com o usuário.",
+            src: "/(disciplinas)/VueJS/tema-2/modulos/modulo-",
+         },
+         {
+            id: "Módulo 3",
+            name: "Componentes",
+            desc: "Aplicar a utilização de componentes para modularização do código.",
+            src: "/(disciplinas)/VueJS/tema-2/modulos/modulo-",
+         },
       ]
    ;
 
@@ -41,6 +51,11 @@ export default function VueJSView( { ...props } ) {
             {
                modulos && 
                <FlatList 
+                  ListHeaderComponent={ <>
+                     <Header pv={24} >
+                        <Text h={4}>Objetivos</Text>
+                     </Header>
+                  </> }
                   data={ modulos }
                   ItemSeparatorComponent={ () => <View style={{ height: 16, }}/> }
                   renderItem={ ({ item }) => (
@@ -49,14 +64,18 @@ export default function VueJSView( { ...props } ) {
                         style={{
                            backgroundColor: "#21252b",
                            width: "100%",
-                           height: 56,
+                           height: 126,
                            alignItems: "center",
                            justifyContent: "center",
-                           borderRadius: 16,
-                           
+                           borderRadius: 22,
+                           padding: 8,
                         }}
                      >
-                        <Text h={5}>{ item.id }</Text>
+                        <View style={{ paddingBottom: 16, }}>
+                           <Text h={6} darkColor="#777">{ item.id }</Text>
+                        </View>
+                        <Text h={3}>{ item.name }</Text>
+                        <Text h={5} darkColor="#777" style={{ textAlign: "center", }}>{ item.desc }</Text>
                      </Pressable>
                   ) }
                />
