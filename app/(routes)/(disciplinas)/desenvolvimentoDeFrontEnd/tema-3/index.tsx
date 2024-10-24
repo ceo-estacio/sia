@@ -4,7 +4,7 @@
  * == == == == == == == == == */
 import { Header, HomePage, Section, View, Text, } from "@/widgets/elements";
 import { router } from "expo-router";
-import React, { useState, useEffect, } from "react";
+import React, { useState, useEffect,  } from "react";
 import { 
    StyleSheet,
    ScrollView,
