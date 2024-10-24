@@ -4,7 +4,7 @@
  * == == == == == == == == == */
 import { Header, HomePage, Section, View, Text, } from "@/widgets/elements";
 import { router } from "expo-router";
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect, } from "react";
 import { 
    StyleSheet,
    ScrollView,
@@ -16,7 +16,7 @@ import {
 /** == [ properties ]
  * == == == == == == == == == */
 const 
-   conteúdoOnline = "https://stecine.azureedge.net/repositorio/00212ti/07662/index.html?brand=estacio#"
+   conteúdoOnline = ""
 ;
 
 /** == [ exports ]
