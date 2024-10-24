@@ -4,8 +4,8 @@
 <html lang="pt-BR"><head>
     <meta charset="utf-8">
     <title>jQuery - Manipulando Conteúdo</title>
-    <script type="text/javascript" 
-src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.js"></script> -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
 	
@@ -29,6 +29,8 @@ src="https://code.jquery.com/jquery-3.6.4.js"></script>
     </div>
 	
     <h3>Parágrafos com span</h3>
+    <t class="phone">91486078</t>
+    <t class="date">13101984</t>
     <p>
         Texto do parágrafo.
         <span>Texto do span</span>
@@ -98,25 +100,43 @@ src="https://code.jquery.com/jquery-3.6.4.js"></script>
 
 
          function createList( items ) {
-            return items.map( item => (
-               $( `
-                  <li>${ item }</li>
-               ` )
-            ) );
-         }
-
-         $( 'body' ).append( createList( [ 'ovo', 'pão' ] ) );
-
-         function CreateList( items ) {
             return items.map( item => $( `
                <li>${ item }</li>
             ` ) );
          }
+         $( 'body' ).append( createList( [ 'ovo', 'pão' ] ) );
 
-         const Create = items => items.map( item => $( `
-         ` ) );
-
+         function CreateList( items ) {
+            return items.map( item => `
+               <li>${ item }</li>
+            ` ).join( "" );
+         }
          $( 'body' ).append( CreateList( [ 'ovo', 'pão' ] ) );
+         document.body.innerHTML += CreateList( [ "Ovo", "Pâo" ] );
+
+
+
+         /** 
+          * == [ fetch ] 
+          */ 
+         $.getJSON( "https://api.github.com/users/ceo-sammarco", res => {
+            _( 'res: ', res );
+            $( "h1" ).eq(0).html( res.name );
+         } );
+
+
+         /**
+          * == [ mask ]
+          */
+         addEventListener( "load", () => {
+            $('.date').mask('00/00/0000');
+            $('.time').mask('00:00:00');
+            $('.date_time').mask('00/00/0000 00:00:00');
+            $('.cep').mask('00000-000');
+            // $('.phone').mask('0000-0000');
+            $('.phone').mask('0000-0000');
+            $('.phone_with_ddd').mask('(00) 0000-0000');
+         } );
     </script>
 
 </body></html>

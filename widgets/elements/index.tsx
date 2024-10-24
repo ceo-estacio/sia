@@ -675,6 +675,38 @@ export function TabBarIcon( { focused, color, size, title, name, family, ...prop
 
 
 
+/** == [ Exercices ]
+ * == == == == == == == == == */
+type ExercicesProps = {
+   id: number;
+   question: ReactElement;
+   answer: ReactElement;
+}
+
+export function Exercices( props: ExercicesProps ) {
+   return(
+      <View darkColor={ Palette.dark.bar } pd={16}>
+         <View ratio={1} borderRadius={8}
+            style={{ borderColor: "#9995", borderWidth: 1, width: 26, alignItems: "center", justifyContent: "center", }}
+         >
+            <Text>{ props.id }</Text>
+         </View>
+         <View pv={16} gap={8}>
+            { props.question }
+         </View>
+         <View borderRadius={9} pd={16}
+            style={{
+               borderColor: "#006400", borderWidth: .5,
+            }}
+         >
+            { props.answer }
+         </View>
+      </View>
+   );
+}
+
+
+
 /** == [ StyleSheet ]
  * == == == == == == == == == */
 type ExercicioProps = {
