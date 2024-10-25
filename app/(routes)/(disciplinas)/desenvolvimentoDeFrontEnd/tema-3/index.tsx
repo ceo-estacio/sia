@@ -28,19 +28,19 @@ export default function VueJSView( { ...props } ) {
             id: "Módulo 1",
             name: "Estrutura básica do Vue.js",
             desc: "Reconhecer a estrutura básica do Vue.js.",
-            src: "/(disciplinas)/VueJS/tema-2/modulos/modulo-1",
+            src: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-3/modulos/modulo-1",
          },
          {
             id: "Módulo 2",
             name: "Saindo do básico",
             desc: "Empregar uma lógica para interação com o usuário.",
-            src: "/(disciplinas)/VueJS/tema-2/modulos/modulo-",
+            src: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-3/modulos/modulo-2",
          },
          {
             id: "Módulo 3",
             name: "Componentes",
             desc: "Aplicar a utilização de componentes para modularização do código.",
-            src: "/(disciplinas)/VueJS/tema-2/modulos/modulo-",
+            src: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-3/modulos/modulo-",
          },
       ]
    ;
