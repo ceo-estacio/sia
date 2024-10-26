@@ -3,7 +3,7 @@
 /** == [ @imports ] 
  * == == == == == == == == == */
 import { Palette } from "@/constants/Colors";
-import YouTubePlayer from "@/widgets/céo/YoyTubePlayer";
+import YouTubePlayer from "@/widgets/céo/YouTubePlayer";
 import { 
    HomePage, 
    Header, 

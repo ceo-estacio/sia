@@ -70,7 +70,7 @@ export default function SaindoDoBásicoView( { ...props } ) {
                               "O texto deve contar com até 20 caracteres, enquanto a contagem precisa ser mostrada a seguir do input de texto.",
                            ].map( ( item, i ) => (
                               <Content key={ i } style={{ flexDirection: "row", marginVertical: 8, alignItems: "flex-start" }}>
-                                 <Text h={4} darkColor="#933" style={{ textShadowColor: "#fff", textShadowOffset: { width: 0, height: 0 }, textShadowRadius: 1, }}>⭕  </Text>
+                                 <Text h={4}># </Text>
                                  <Text >{ item }</Text>
                               </Content>
                            ) )

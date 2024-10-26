@@ -260,14 +260,8 @@ export function Page( { ...props }: ViewSuperProps ) {
 /**
  * == [ Header ] 
  * == == == == == == == == == */
-type HeaderProps = {
-   h?: number | string;
-   // bg?: string;
+type HeaderProps = ViewSuperProps & {
    bg?: ColorValue;
-   ph?: number;
-   pv?: number;
-   children?: any;
-   style?: any;
    center?: boolean;
    centerH?: boolean;
 }
@@ -275,12 +269,19 @@ type HeaderProps = {
 export function Header( { ...props }: HeaderProps ) {
    return(
       <View style={[ props.style, { 
-         backgroundColor: props.bg, paddingHorizontal: props.ph, paddingVertical: props.pv, 
-         width: "100%", minHeightheight: 56, height: props.h,
+         backgroundColor: props.bg || props.darkColor || props.lightColor, 
+         paddingHorizontal: props.ph, 
+         paddingVertical: props.pv, 
+         width: "100%", 
+         minHeight: 56, 
+         height: props.h,
+         padding: props.pd,
+         paddingHorizontal: props.ph,
+         paddingVertical: props.pv,
       }, 
-         props.center ? { alignItems: "center", justifyContent: "center" } : "" 
+         props.center ? { alignItems: "center", justifyContent: "center" } : null 
          ,
-         props.centerH ? { justifyContent: "center" } : ""
+         props.centerH ? { justifyContent: "center" } : null
       ]}>
          { props.children }
       </View>
@@ -465,6 +466,33 @@ export function Pix( { ...props }: PixProps ) {
 }
 
 
+/**
+ * == [ Pix ] 
+ * == == == == == == == == == */
+type PixBGProps = {
+   source: any;
+   w?: DimensionValue;
+   h?: DimensionValue;
+   resizeMode?: "center" | "cover" | "contain" | "repeat" | "stretch";
+   style?: any;
+   
+}
+export function PixBG( { ...props }: PixBGProps ) {
+   return(
+      <ImageBackground 
+         source={ props.source }
+         style={[ 
+            { width: props.w || "100%", height: props.h || 210, 
+
+            },
+            props.style
+         ] } 
+         resizeMode={ props.resizeMode || "contain" }
+      />
+   );
+}
+
+
 
 /**
  * == [ Code ] 
@@ -498,6 +526,39 @@ export function Code( { ...props }: CodeProps ) {
          </View>
       </View> 
    </> );
+}
+
+
+
+/** == [ List ]
+ * == == == == == == == == == */
+type ListItemType = {
+   item: ReactNode;
+}
+
+type ListType = {
+   children?: ReactNode;
+   li: LI[];
+}
+
+export function List( { ...props }: OL ) {
+   return( props.li.map( ( item, i ) => ( <>
+      <View
+         key={ `ol-item:${ i }` }
+         style={{
+            flexDirection: "row",
+            alignItems: "center",
+            gap: 8,
+            paddingHorizontal: 24,
+            paddingVertical: 12,
+            // backgroundColor: "#fff"
+         }}
+      >
+         <Icon family="Octicons" name="dot-fill" color={ Palette.accent.amber[0] }/>
+         <Text>{ item }</Text>
+      </View>
+   </> ) ) );
+   // return(  );
 }
 
 

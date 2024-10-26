@@ -23,14 +23,13 @@ export default function DesenvolvimentoDeFrontEndLayout() {
          headerLeft:() => <BackBtn />
       }}>
         <Stack.Screen name="index" options={{ headerShown: true, title: "Desenvolvimento de Front-End" }} />
-        {/* <Stack.Screen name="tema-1" options={{ headerShown: true, title: "Desenvolvimento de Front-End" }} /> */}
+        
         <Stack.Screen name="tema-2/index" options={{ headerShown: true, title: "Programação Cliente Com Javascript" }} />
-        {/* <Stack.Screen name="tema-3/index" options={{ headerShown: true, title: "Vue js" }} />
-        <Stack.Screen name="tema-4/index" options={{ headerShown: true, title: "Programação Cliente Com Typescript" }} />
-        <Stack.Screen name="tema-5/index" options={{ headerShown: true, title: "Angular" }} />
-        <Stack.Screen name="tema-6/index" options={{ headerShown: true, title: "Reactjs" }} />
-        <Stack.Screen name="exercícios" options={{ headerShown: true, title: "Exercícios" }} />
-        <Stack.Screen name="simulados" options={{ headerShown: true, title: "Simulados" }} /> */}
+        
+        <Stack.Screen name="tema-3/index" options={{ headerShown: true, title: "Tema 3: VueJS" }} />
+        <Stack.Screen name="tema-3/modulos/modulo-1" options={{ headerShown: true, title: "Tema 3: VueJS" }} />
+        <Stack.Screen name="tema-3/modulos/modulo-2" options={{ headerShown: true, title: "Tema 3: VueJS" }} />
+        <Stack.Screen name="tema-3/modulos/modulo-3" options={{ headerShown: true, title: "Tema 3: VueJS" }} />
       </Stack>
     </ThemeProvider>
   );

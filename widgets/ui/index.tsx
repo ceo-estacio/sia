@@ -109,7 +109,15 @@ export function DisciplinasMenu( { ...props }: DisciplinasMenuProps ) {
  */
 export function BackBtn( { ...props } ) {
    return( <>
-      <Pressable
+      <Pressable 
+         style={{
+            backgroundColor: "#21232900",
+            height: 50,
+            aspectRatio: 1,
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: 18
+         }}
          onPress={ () => router.back() }
       >
          <Icon color={ Palette.accent.purple[3] } family="Ionicons"
