@@ -111,9 +111,17 @@ export default function EstruturaBásicaDoVueJS( { ...props } ) {
                                  item: (<Text>{`v-text="name"`}</Text>),
                               },
                               {
-                                 name: "",
-                                 item: ``,
+                                 name: "v-if",
+                                 item: ( <Text>{`v-if="text.length > 0"`}</Text> ),
                               },
+                              {
+                                 name: "v-show",
+                                 item: ( <Text>{`v-show=""`}</Text> ),
+                              },
+                              // {
+                              //    name: "",
+                              //    item: ( <Text>{``}</Text> ),
+                              // },
                            ].map( ( item, i ) => (
                               <List gap={8} key={i}>
                                  <Text h={3}>{ item.name }</Text>

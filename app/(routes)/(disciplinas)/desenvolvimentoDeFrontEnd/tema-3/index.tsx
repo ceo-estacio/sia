@@ -40,7 +40,7 @@ export default function VueJSView( { ...props } ) {
             id: "Módulo 3",
             name: "Componentes",
             desc: "Aplicar a utilização de componentes para modularização do código.",
-            src: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-3/modulos/modulo-",
+            src: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-3/modulos/modulo-3",
          },
       ]
    ;
