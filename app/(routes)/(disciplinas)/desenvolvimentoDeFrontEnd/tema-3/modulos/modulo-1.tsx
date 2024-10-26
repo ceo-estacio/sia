@@ -10,17 +10,15 @@
    Section,
    Content,
    PixBG,
-   Exercices, 
+   Exercices,
+   List,
 } from "@/widgets/elements";
-import React, { useState, useEffect, useRef, useCallback, } from "react";
+import React, { useState, useEffect,  } from "react";
 import { 
    StyleSheet,
    ScrollView,
-   useColorScheme,
    Alert,
-   Button, 
    ActivityIndicator,
-   ImageBackground,
 } from "react-native";
 import YouTube from "react-native-youtube-iframe";
 import YouTubePlayer from "@/widgets/céo/YouTubePlayer";
@@ -67,6 +65,64 @@ export default function EstruturaBásicaDoVueJS( { ...props } ) {
                         <Text>
                            4 - Fazer as ligações necessárias;
                         </Text>
+                     </Content>
+                     <Content>
+                        <Header pv={24}>
+                           <Text h={3} darkColor="#f0a">Vue keys</Text>
+                        </Header>
+                        {
+                           [
+                              {
+                                 name: "v-bind",
+                                 item: ( <>
+                                    <View darkColor="#fff1" pd={8}>
+                                       <Text h={4}>Forma longa</Text>
+                                       <Text>{`<img v-bind:src=”perfil.foto” />`}</Text>
+                                    </View>
+                                    <View darkColor="#fff1" pd={8}>
+                                       <Text h={4}>Forma reduzida</Text>
+                                       <Text>{`<img :src=”perfil.foto” />`}</Text>
+                                    </View>
+                                 </> ),
+                              },
+                              {
+                                 name: "v-on",
+                                 item: ( <>
+                                    <View darkColor="#fff1" pd={8}>
+                                       <Text h={4}>click forma longa</Text>
+                                       <Text>{`<img v-on:click=”item.feito = !item.done” />`}</Text>
+                                    </View>
+                                    <View darkColor="#fff1" pd={8}>
+                                       <Text h={4}>click forma reduzida</Text>
+                                       <Text>{`<img :src=”perfil.foto” />`}</Text>
+                                    </View>
+                                 </> ),
+                              },
+                              {
+                                 name: "v-for",
+                                 item: ( <View darkColor="#fff1" pd={8}><Text>v-for="item in lista"</Text></View> ),
+                              },
+                              {
+                                 name: "v-model",
+                                 item: (<Text>{`v-model="name"`}</Text>),
+                              },
+                              {
+                                 name: "v-text",
+                                 item: (<Text>{`v-text="name"`}</Text>),
+                              },
+                              {
+                                 name: "",
+                                 item: ``,
+                              },
+                           ].map( ( item, i ) => (
+                              <List gap={8} key={i}>
+                                 <Text h={3}>{ item.name }</Text>
+                                 <View darkColor="#fff1" pd={16} gap={8} style={{ flex: 1, width: "100%", }}>
+                                    { item.item }
+                                 </View>
+                              </List>
+                           ) )
+                        }
                      </Content>
                   </Content>
                </Section>

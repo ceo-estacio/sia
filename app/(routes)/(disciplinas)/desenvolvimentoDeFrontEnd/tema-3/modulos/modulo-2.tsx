@@ -17,11 +17,7 @@ import React, { useState, useEffect, useRef, useCallback, } from "react";
 import { 
    StyleSheet,
    ScrollView,
-   useColorScheme,
    Alert,
-   Button, 
-   ActivityIndicator,
-   ImageBackground,
 } from "react-native";
 import YouTubePlayer from "@/widgets/céo/YouTubePlayer";
 
@@ -83,7 +79,11 @@ export default function SaindoDoBásicoView( { ...props } ) {
                   <Header pd={24} darkColor="#fff1">
                      <Text>Classes e eventos</Text>
                   </Header>
-                  <Content></Content>
+                  <Content>
+                     <YouTubePlayer 
+                        videoID="cRE9x5axOdM"
+                     />
+                  </Content>
                </Section>
                
                <Section>

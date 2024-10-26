@@ -540,6 +540,7 @@ type ListType = {
    children?: ReactNode;
    type?: ReactNode;
    color?: ColorValue;
+   gap?: number;
 }
 
 export function List( { ...props }: ListType ) {
@@ -549,7 +550,7 @@ export function List( { ...props }: ListType ) {
             props.type ||
             <Icon family="Octicons" name="dot-fill" color={ props.color || "#c33" }/>
          }
-         <View>{ props.children }</View>
+         <View style={{ gap: props.gap || 8 }}>{ props.children }</View>
       </Content>
    </> );
 }
@@ -739,7 +740,7 @@ type ExercicesProps = {
 
 export function Exercices( props: ExercicesProps ) {
    return(
-      <View darkColor={ Palette.dark.bar } pd={16}>
+      <View darkColor={ Palette.dark.bg_lv1 } pd={16}>
          <View ratio={1} borderRadius={8}
             style={{ borderColor: "#9995", borderWidth: 1, width: 26, alignItems: "center", justifyContent: "center", }}
          >
