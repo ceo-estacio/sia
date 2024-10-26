@@ -100,11 +100,25 @@ export default function SaindoDoBásicoView( { ...props } ) {
                   <Content></Content>
                </Section>
                
-               <Section>
+               <Section gap={16}>
                   <Header pd={24} darkColor="#fff1">
                      <Text>Verificando Aprendizado</Text>
                   </Header>
-                  <Content></Content>
+                  <Exercices 
+                     id={3}
+                     question={<>
+                        <Text>{`Este código para o método salvarNovoItem não se comporta como o esperado:`}</Text>
+                        <PixBG 
+                           source={ require( "@/assets/images/disciplinas/desenvolvimento-de-front-end/tema-3/aprendizado-3.jpg" ) }
+                        />
+                     </>}
+                     answer={<Text>{`Toda vez que utilizamos variáveis, métodos e computed properties, entre outros, dentro do escopo do Vue Instance, precisamos usar a palavra-chave this.`}</Text>}
+                  />
+                  <Exercices 
+                     id={4}
+                     question={<Text>Qual das opções a seguir cria uma div para cada elemento de uma lista chamada list, imprimindo o nome do usuário (variável name)?</Text>}
+                     answer={<Text>{`<div for=”list as user”> {{user.name}} </div>`}</Text>}
+                  />
                </Section>
                
             </View>
