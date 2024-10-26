@@ -538,27 +538,20 @@ type ListItemType = {
 
 type ListType = {
    children?: ReactNode;
-   li: LI[];
+   type?: ReactNode;
+   color?: ColorValue;
 }
 
-export function List( { ...props }: OL ) {
-   return( props.li.map( ( item, i ) => ( <>
-      <View
-         key={ `ol-item:${ i }` }
-         style={{
-            flexDirection: "row",
-            alignItems: "center",
-            gap: 8,
-            paddingHorizontal: 24,
-            paddingVertical: 12,
-            // backgroundColor: "#fff"
-         }}
-      >
-         <Icon family="Octicons" name="dot-fill" color={ Palette.accent.amber[0] }/>
-         <Text>{ item }</Text>
-      </View>
-   </> ) ) );
-   // return(  );
+export function List( { ...props }: ListType ) {
+   return( <>
+      <Content gap={8} style={{ flexDirection: "row", marginVertical: 8, alignItems: "flex-start" }}>
+         {
+            props.type ||
+            <Icon family="Octicons" name="dot-fill" color={ props.color || "#c33" }/>
+         }
+         <View>{ props.children }</View>
+      </Content>
+   </> );
 }
 
 

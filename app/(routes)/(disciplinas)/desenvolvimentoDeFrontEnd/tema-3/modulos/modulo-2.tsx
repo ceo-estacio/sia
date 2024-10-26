@@ -10,7 +10,8 @@ import {
    Section,
    Content,
    PixBG,
-   Exercices, 
+   Exercices,
+   List, 
 } from "@/widgets/elements";
 import React, { useState, useEffect, useRef, useCallback, } from "react";
 import { 
@@ -69,10 +70,9 @@ export default function SaindoDoBásicoView( { ...props } ) {
                               "O usuário digita o texto e clica em salvar ou aperta a tecla Enter, e o item vai para a lista. O botão salvar só deverá aparecer se houver um texto digitado. Após a inserção, os campos deverão ser limpos.",
                               "O texto deve contar com até 20 caracteres, enquanto a contagem precisa ser mostrada a seguir do input de texto.",
                            ].map( ( item, i ) => (
-                              <Content key={ i } style={{ flexDirection: "row", marginVertical: 8, alignItems: "flex-start" }}>
-                                 <Text h={4} darkColor="#933" style={{ textShadowColor: "#fff", textShadowOffset: { width: 0, height: 0 }, textShadowRadius: 1, }}>⭕  </Text>
-                                 <Text >{ item }</Text>
-                              </Content>
+                              <List key={ i }>
+                                 <Text>{ item }</Text> 
+                              </List>
                            ) )
                         }
                      </Content>
