@@ -45,6 +45,11 @@ export default function DesenvolvimentoDeFrontEndView( { ...props } ) {
                   title: "Vue js", 
                   link: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-3/", 
                },
+               { 
+                  id: 4,
+                  title: "Programação Cliente Com Typescript", 
+                  link: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-4/", 
+               },
                // { 
                //    id: 3,
                //    title: "", 

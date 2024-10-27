@@ -30,6 +30,12 @@ export default function DesenvolvimentoDeFrontEndLayout() {
         <Stack.Screen name="tema-3/modulos/modulo-1" options={{ headerShown: true, title: "Tema 3: VueJS" }} />
         <Stack.Screen name="tema-3/modulos/modulo-2" options={{ headerShown: true, title: "Tema 3: VueJS" }} />
         <Stack.Screen name="tema-3/modulos/modulo-3" options={{ headerShown: true, title: "Tema 3: VueJS" }} />
+        
+        <Stack.Screen name="tema-4/index" options={{ headerShown: true, title: "Tema 4: Programação Cliente Com Typescript" }} />
+        <Stack.Screen name="tema-4/modulos/modulo-1" options={{ headerShown: true, title: "Tema 4: Programação Cliente Com Typescript" }} />
+        {/* <Stack.Screen name="tema-4/modulos/modulo-2" options={{ headerShown: true, title: "Tema 4: Programação Cliente Com Typescript" }} />
+        <Stack.Screen name="tema-4/modulos/modulo-3" options={{ headerShown: true, title: "Tema 4: Programação Cliente Com Typescript" }} />
+        <Stack.Screen name="tema-4/modulos/modulo-4" options={{ headerShown: true, title: "Tema 4: Programação Cliente Com Typescript" }} /> */}
       </Stack>
     </ThemeProvider>
   );
