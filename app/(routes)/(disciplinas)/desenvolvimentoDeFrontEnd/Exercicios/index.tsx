@@ -10,7 +10,8 @@ import {
    Header, 
    Section,
    Content,
-   Exercices, 
+   Exercices,
+   PixBG, 
 } from "@/widgets/elements";
 import React, { useState, useEffect, ReactElement } from "react";
 import { 
@@ -143,6 +144,70 @@ export default function ExercíciosView( { ...props } ) {
                   </Content>
                </Section>
             </View>
+
+            <View pv={24} >
+               <Header pv={24}>
+                  <Text h={3}>Tema 3</Text>
+                  <Text h={5}>VueJS</Text>
+               </Header>
+               <Section gap={16}>
+
+                  <Exercices id={1}
+                     question={<>
+                        <Text>Um desenvolvedor, ao trabalhar com o componente de lista de cidades, não obteve sucesso ao utilizar o componente filho CardCidade.vue, veja abaixo o código construído por ele. Qual das alternativas apresenta o motivo pelo qual a página não funcionou corretamente?</Text>
+                        <PixBG source={ require( "@/assets/images/disciplinas/desenvolvimento-de-front-end/exercicios/t3-1.png" ) }/>
+                     </>}
+                     answer={<Text>Ele não registrou o componente.</Text>}
+                  />
+
+                  <Exercices id={2}
+                     question={<Text>{`Vue.js é um framework extremamente versátil e se tornou essencial em aplicações de pequeno, médio e grande porte. O Vue tem a capacidade de interagir com diversos elementos do documento HTML. Qual diretiva do Vue é utilizada num input do tipo text para que ele esteja ligado a uma variável da Vue instance (two way data binding)?`}</Text>}
+                     answer={<Text>v-model.</Text>}
+                  />
+
+                  <Exercices id={3}
+                     question={<Text>{`O carregamento do Javascript ocorre após o carregamento do HTML, pois este contém o caminho para os arquivos JS ou sua declaração direta dentro da tag . Qual diretiva é utilizada (juntamente com uma regra de CSS) para evitar que partes do HTML que contenham variáveis do Vue pisquem antes de serem devidamente processadas pelo framework?`}</Text>}
+                     answer={<Text>v-cloak</Text>}
+                  />
+
+                  <Exercices id={4}
+                     question={<Text>Vue.js é um framework JavaScript leve, de rápida assimilação para os iniciantes e amplamente utilizado no mercado mundial. Com relação ao framework Vue, qual entidade/empresa é responsável pela sua manutenção?</Text>}
+                     answer={<Text>A comunidade.</Text>}
+                  />
+
+                  <Exercices id={5}
+                     question={<Text>Devido a sua sintaxe flexível o Vue possibilita a redução do número de instruções presentes no código sem perder a eficiência na realização da tarefa. Qual das alternativas abaixo representa uma maneira possível de um componente filho passar informações para um componente pai?</Text>}
+                     answer={<Text>Através de eventos.</Text>}
+                  />
+
+                  <Exercices id={6}
+                     question={<Text>Componentes são blocos de código reutilizáveis, que são usados para criar uma base de código modular e de fácil manutenção. Qual alternativa abaixo contém os 3 blocos básicos de um Single File Component?</Text>}
+                     answer={<Text>template, script, style</Text>}
+                  />
+
+                  <Exercices id={7}
+                     question={<Text>De modo geral, todas as variáveis devem ser inicializadas com a atribuição de valores. Posteriormente, esses valores podem ser exibidos através da utilização de palavras-chaves da linguagem. Qual diretiva pode ser utilizada para colocar o valor textual de uma variável como texto renderizado no HTML dentro de uma tag H1?</Text>}
+                     answer={<Text>v-text</Text>}
+                  />
+
+                  <Exercices id={8}
+                     question={<Text>Montar a instância no HTML é uma tarefa relativamente simples. O que deve ser passado dentro do método mount ao criar uma Vue instance, após importar o arquivo do Vue JS?</Text>}
+                     answer={<Text>Um seletor css relativo ao elemento raiz onde queremos montar aquela instância.</Text>}
+                  />
+
+                  <Exercices id={9}
+                     question={<Text>Funções são uma parte importante da programação, permitindo o isolamento de código e a reutilização de partes importantes. Qual das alternativas abaixo representa o bloco dentro da nossa Vue instance adequado para colocarmos as funções, também chamadas de métodos?</Text>}
+                     answer={<Text>No objeto methods.</Text>}
+                  />
+
+                  <Exercices id={10}
+                     question={<Text>Vue.js é um framework JavaScript que possui uma comunidade ativa, contando com uma vasta documentação disponível para consulta e aprendizagem.  Acerca dos seus conhecimentos sobre Vue, qual seria o retorno típico da função data(), utilizada na Vue instance?</Text>}
+                     answer={<Text>um objeto.</Text>}
+                  />
+
+               </Section>
+            </View>
+
          </ScrollView>
       </HomePage>
    </> );

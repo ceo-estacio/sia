@@ -38,7 +38,7 @@ export default function ComponentesView( { ...props } ) {
                </Header>
 
                <Section>
-                  <Header>
+                  <Header pd={24}>
                      <Text>Projeto Clima Tempo: com vite</Text>
                   </Header>
                   <Content>
@@ -57,6 +57,14 @@ export default function ComponentesView( { ...props } ) {
                      <PixBG 
                         source={ require( "@/assets/images/disciplinas/desenvolvimento-de-front-end/tema-3/componente.jpg" ) }
                      />
+
+                     <Section gap={24}>
+                        <Text h={3}>Criação e uso de componentes</Text>
+                        <PixBG h={330} source={ require( "@/assets/images/disciplinas/desenvolvimento-de-front-end/tema-3/vue-componentes.png" ) }/>                     
+                        <Text h={4}>inserção de componentes dentro de outros ( ""props:children"" )</Text>
+                        <PixBG source={ require( "@/assets/images/disciplinas/desenvolvimento-de-front-end/tema-3/slot-declaração.jpg" ) }/>                     
+                        <PixBG source={ require( "@/assets/images/disciplinas/desenvolvimento-de-front-end/tema-3/slot-uso.jpg" ) }/>                     
+                     </Section>
 
                      <View gap={16}>
                         <Text>Componentização da página</Text>
@@ -87,7 +95,23 @@ export default function ComponentesView( { ...props } ) {
                   <Header pd={24}>
                      <Text darkColor="#159050" h={3}>Verificando Aprendizado</Text>
                   </Header>
-                  <Content gap={24}></Content>
+                  <Exercices 
+                     id={5}
+                     question={<>
+                        <Text>{`Um desenvolvedor está trabalhando em um componente que mostra o resumo de um perfil de usuário. Nesse componente, são utilizados três outros: a foto do usuário, a bio dele (um texto resumido) e a lista de seguidores. Apesar de muito esforço, nada é mostrado na tela.
+
+Observe a estrutura a seguir e responda à pergunta:`}</Text>
+                        <PixBG source={ require( "@/assets/images/disciplinas/desenvolvimento-de-front-end/tema-3/q5.jpg" ) }/>
+                        <Text>Do que o desenvolvedor se esqueceu?</Text>
+                     </>}
+                     answer={<Text>De importar e registrar os componentes filhos.</Text>}
+                  />
+
+                  <Exercices 
+                     id={6}
+                     question={<Text>Uma aplicação de rede social tem um componente de perfil de usuário (Perfil.vue) que mostra a foto, a bio e os seguidores de determinado usuário. Esse componente espera receber um objeto usuário com os dados necessários. De que maneira um componente pai pode passar informações para esse componente filho?</Text>}
+                     answer={<Text>Utilizando props.</Text>}
+                  />
                </Section>
                
                

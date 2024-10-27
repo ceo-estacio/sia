@@ -26,6 +26,9 @@ import YouTubePlayer from "@/widgets/céo/YouTubePlayer";
 
 /** == [ properties ]
  * == == == == == == == == == */
+const
+   print = "https://stecine.azureedge.net/repositorio/00212ti/04319/index.html?brand=estacio#imprimir"
+;
 
 /** == [ exports ]
  * == == == == == == == == == */
