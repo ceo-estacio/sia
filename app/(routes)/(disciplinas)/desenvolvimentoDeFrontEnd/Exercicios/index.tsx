@@ -146,7 +146,7 @@ export default function ExercíciosView( { ...props } ) {
             </View>
 
             <View pv={24} >
-               <Header pv={24}>
+               <Header pd={24}>
                   <Text h={3}>Tema 3</Text>
                   <Text h={5}>VueJS</Text>
                </Header>
@@ -205,6 +205,129 @@ export default function ExercíciosView( { ...props } ) {
                      answer={<Text>um objeto.</Text>}
                   />
 
+               </Section>
+            </View>
+
+            <View pv={24} >
+               <Header pd={24}>
+                  <Text h={3}>Tema 4</Text>
+                  <Text h={5}>Programação Cliente Com Typescript</Text>
+               </Header>
+               <Section>
+                  <Exercices id={1}
+                     question={ <>
+                        <Text>Considere o trecho de código:</Text>
+                        <PixBG source={ require( "@/assets/images/disciplinas/desenvolvimento-de-front-end/exercicios/t4-q1.jpg" ) }/>
+                        <Text>Selecione a opção correta com o resultado da execução do código.</Text>
+                     </> }
+                     answer={ <Text>8</Text> }
+                  />
+
+                  <Exercices id={2}
+                     question={ <Text>{`
+Considere o trecho de código:</p>
+function y(a: number|string):string
+{
+return (typeof a === 'number' ? "número" : "string");
+}
+console.log(y(Teste')); 
+Selecione a opção correta com o resultado da execução do código.
+                     `}</Text> }
+                     answer={ <Text>string</Text> }
+                  />
+                  
+                  <Exercices id={3}
+                     question={ <Text>Em relação às propriedades da programação orientada a objetos que o TypeScript utiliza, selecione a opção correta que está relacionada a reusabilidade de código.</Text> }
+                     answer={ <Text>herança</Text> }
+                  />
+                  
+                  <Exercices id={4}
+                     question={ <>
+                        <Text>Considere o trecho de código:</Text>
+                        <PixBG h={350} source={ require( "@/assets/images/disciplinas/desenvolvimento-de-front-end/exercicios/t4-q4.jpg" ) }/>
+                        <Text>Selecione a opção correta com o resultado da execução do código.</Text>
+                     </> }
+                     answer={ <Text>string</Text> }
+                  />
+                  
+                  <Exercices id={5}
+                     question={ <>
+                        <Text>Considere o trecho de código:</Text>
+                        <Text>{`let s = (x: number, y: number): number => x+y;
+console.log(s(s(1,2),s(3,4)));\n`}</Text>
+                        <Text>Selecione a opção correta com o resultado da execução do código.</Text>
+                     </> }
+                     answer={ <Text>10</Text> }
+                  />
+                  
+                  <Exercices id={6}
+                     question={ <>
+                        <Text>Considere o trecho de código:</Text>
+                        <Text>{`function f1(msg: string, num: number): number {
+return msg+num;
+}
+let tnum: number = 10;
+let tmsg: string = "10";
+console.log(f1(tmsg, tnum))`}</Text>
+                        <Text>Selecione a opção correta com o resultado da execução do código.</Text>
+                     </> }
+                     answer={ <Text>"1010"</Text> }
+                  />
+                  
+                  <Exercices id={7}
+                     question={ <>
+                        <Text>Considere o trecho de código:</Text>
+                        <Text>{`let vetor: number[] = [ 1, 5, 9, 10, 15 ];
+const e: number = vetor.indexOf(5);
+console.log( e );`}</Text>
+                        <Text>Selecione a opção correta com o resultado da execução do código.</Text>
+                     </> }
+                     answer={ <Text>1</Text> }
+                  />
+                  
+                  <Exercices id={8}
+                     question={ <>
+                        <Text>{`Considere o trecho de código que deve ser chamado por uma função externa:
+class Teste {
+      lacuna imprimir = () => {
+            console.log( 'imprimir teste' );
+      }
+}
+const t = new Teste();
+console.log( t.imprimir() )`}</Text>
+                     
+                     </> }
+                     answer={ <Text>public</Text> }
+                  />
+                  
+                  <Exercices id={9}
+                     question={ <Text>{`Considere o trecho de código:
+class P {
+      public exibir_informacao( a: number | string ): void {
+            console.log( 'resultado' );
+      }
+}
+const obj1 = new P();
+obj1.exibir_informacao( 10 );
+Selecione a opção correta com o resultado da execução do código.`}</Text> }
+                     answer={ <Text>vai exibir a frase: "resultado"</Text> }
+                  />
+                  
+                  <Exercices id={10}
+                     question={ <Text>{`Considere o trecho de código:
+function w( n: number ): number {
+      if( n == 0 ) {
+            return 0;
+      }
+      if( n == 1 ) {
+            return 1;
+      }
+      return n + w( n - 1 );
+}
+console.log( w( 5 ) );`}</Text> }
+                     answer={ <Text>15</Text> }
+                  />
+                  
                </Section>
             </View>
 
