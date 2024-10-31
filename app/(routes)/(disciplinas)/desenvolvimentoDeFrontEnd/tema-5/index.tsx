@@ -16,60 +16,29 @@ import {
 /** == [ properties ]
  * == == == == == == == == == */
 const 
-   conteúdoOnline = "https://stecine.azureedge.net/repositorio/00212ti/07666/index.html?brand=estacio#imprimir"
+   conteúdoOnline = ""
    ,
    videos = [
-      "Fundamentos do TypeScript",
-      "JavaScript versus TypeScript: semelhanças e diferenças",
-      "Codificando uma aplicação com TypeScript",
-      "Utilização de comandos condicionais e iterativos",
-      "Escrevendo o código de ordenação de um vetor em TypeScript",
-      "Introdução às funções no TS",
-      "Funções para manipulação de vetores e recursivas",
-      "Arrow functions",
-      "Expressões regulares mais interessantes",
-      "Funções com parâmetros REST",
-      "Os tipos estáticos do TypeScript e suas limitações",
-      "Narrowing através de Type Guards",
-      "Narrowing customizado",
-      "Conceitos de programação orientada a objetos",
-      "As propriedades de encapsulamento e herança",
-      "A propriedade de polimorfismo",
-      "Classe genérica",
-      "Aplicando herança",
-      ""
    ]
 ;
 
 /** == [ exports ]
  * == == == == == == == == == */
-export default function ProgramaçãoClienteComTypescriptView( { ...props } ) {
+export default function AngularView( { ...props } ) {
    const 
       modulos = [
          {
             id: "Módulo 1",
-            name: "Conceitos gerais e similaridades com o JavaScript",
-            desc: "Reconhecer os conceitos gerais e as similaridades com o JavaScript.",
-            src: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-4/modulos/modulo-1",
+            name: "",
+            desc: "",
+            src: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-5/modulos/modulo-1",
          },
-         {
-            id: "Módulo 2",
-            name: "Funções com TypeScript",
-            desc: "Tipos e narrowing",
-            src: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-4/modulos/modulo-2",
-         },
-         {
-            id: "Módulo 3",
-            name: "Tipos e narrowing",
-            desc: "Analisar os tipos e narrowing.",
-            src: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-4/modulos/modulo-3",
-         },
-         {
-            id: "Módulo 4",
-            name: "Classes com TypeScript",
-            desc: "Aplicar exemplos práticos de classes com TypeScript.",
-            src: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-4/modulos/modulo-4",
-         },
+         // {
+         //    id: "Módulo 1",
+         //    name: "",
+         //    desc: "",
+         //    src: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-5/modulos/modulo-1",
+         // },
       ]
    ;
 
@@ -115,7 +84,7 @@ export default function ProgramaçãoClienteComTypescriptView( { ...props } ) {
          </ScrollView>
       </HomePage>
    </> );
-}  /*  </  ProgramaçãoClienteComTypescriptView  >  */
+}  /*  </  AngularView  >  */
 
 
 /** == [ StyleSheet ]

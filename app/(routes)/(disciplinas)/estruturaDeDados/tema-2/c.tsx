@@ -4,13 +4,14 @@
 
 /** == [ @imports ] 
  * == == == == == == == == == */
-import X, { Header, HomePage, Page, Section } from "@/widgets/elements";
+import X, { Header, HomePage, Page, Section, 
+   View,
+   Text,
+} from "@/widgets/elements";
 import { Stack } from "expo-router";
 import React, { useState, useEffect } from "react";
 import { 
    StyleSheet,
-   View,
-   Text,
    ScrollView, 
 } from "react-native";
 

@@ -2,12 +2,13 @@
 
 /** == [ @imports ] 
  * == == == == == == == == == */
-import X, { Code, Header, HomePage, Picture, Pix, Section } from "@/widgets/elements";
+import X, { Code, Header, HomePage, Picture, Pix, Section, 
+   View,
+   Text,
+} from "@/widgets/elements";
 import React, { useState, useEffect } from "react";
 import { 
    StyleSheet,
-   View,
-   Text,
    ScrollView, 
 } from "react-native";
 
@@ -25,25 +26,25 @@ export default function ModularizaçãoView( { ...props } ) {
       <HomePage>
          <ScrollView>
             <Header bg="#00559c" h={91} ph={18} pv={18} center>
-               <X.H1 style={{ color: "#eee" }}>Modularização</X.H1>
+               <Text h={1} style={{ color: "#eee" }}>Modularização</Text>
             </Header>
 
             <Section>
 
                <Section>
                   <Header ph={18} pv={18}>
-                     <X.H3>Definições</X.H3>
+                     <Text h={3}>Definições</Text>
                   </Header>
                   <Section pd={18}
                   >
                      <Text>
-                        <X.H5>parametros:  </X.H5>
+                        <Text h={5}>parametros:  </Text>
                         são passados no momento da criação da função,
                         são formais e são como uma var local dentro da função.
                      </Text>
 
                      <Text>
-                        <X.H5>argumentos:  </X.H5>
+                        <Text h={5}>argumentos:  </Text>
                         
                         são parametros passados na execução da função,
                         são reais/atuais e são como os valores passados para os parametros formais
@@ -53,7 +54,7 @@ export default function ModularizaçãoView( { ...props } ) {
 
                <Section>
                   <Header ph={18} pv={18}>
-                     <X.H3>Passagem de parâmetros</X.H3>
+                     <Text h={3}>Passagem de parâmetros</Text>
                   </Header>
                   <Section pd={18}
                   >
@@ -72,7 +73,7 @@ export default function ModularizaçãoView( { ...props } ) {
 
                <Section>
                   <Header ph={18} pv={18}>
-                     <X.H3>Protótipos de sub-rotinas</X.H3>
+                     <Text h={3}>Protótipos de sub-rotinas</Text>
                   </Header>
                   <Section pd={18}
                   >
@@ -84,7 +85,7 @@ export default function ModularizaçãoView( { ...props } ) {
 
                <Section>
                   <Header ph={18} pv={18}>
-                     <X.H3>Passagem de vetores</X.H3>
+                     <Text h={3}>Passagem de vetores</Text>
                   </Header>
                   <Section pd={18}
                   >
@@ -106,7 +107,7 @@ export default function ModularizaçãoView( { ...props } ) {
 
                <Section>
                   <Header ph={18} pv={18}>
-                     <X.H3>Verificando o aprendizado</X.H3>
+                     <Text h={3}>Verificando o aprendizado</Text>
                   </Header>
                   <Section pd={18}
                   ></Section>

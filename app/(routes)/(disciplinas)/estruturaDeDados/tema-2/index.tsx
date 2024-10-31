@@ -5,12 +5,13 @@
 import React, { useState, useEffect } from "react"; 
 import { 
    StyleSheet, 
-   View, 
-   Text,
    Image,
    ScrollView, 
 } from "react-native";
-import X, { Code, Header, HomePage, Page, Picture, Pix, Section } from "@/widgets/elements";
+import X, { Code, Header, HomePage, Page, Picture, Pix, Section, 
+   View, 
+   Text,
+} from "@/widgets/elements";
 
 
 
@@ -27,15 +28,15 @@ export default function EstruturaDeDadosHeterogêneasView( { ...props } ) {
       <HomePage>
          <ScrollView>
             <Header bg="#00559c" h={91} ph={18} pv={18} center>
-               <X.H1 style={{ color: "#eee" }}>Estrutura de dados</X.H1>
+               <Text style={{ color: "#eee" }}>Estrutura de dados</Text>
             </Header>
 
             <Section pv={24} bg="#e5e5e5" gap={18}>
-               <X.H2 style={{ paddingHorizontal: 24 }}>Tema 2</X.H2>
+               <Text style={{ paddingHorizontal: 24 }}>Tema 2</Text>
 
                <Section gap={18} bg="#f5f5f5">
                   <Header bg="#f5f5f5" ph={24} center>
-                     <X.H4 style={{ color: "#0075bd" }}>Empregar ponteiros com a utilização da linguagem de programação C</X.H4>
+                     <Text h={4} style={{ color: "#0075bd" }}>Empregar ponteiros com a utilização da linguagem de programação C</Text>
                   </Header>
 
                   <Section pd={24} gap={16} bg="#e5e5e5" style={{ borderTopStartRadius: 24, borderTopEndRadius: 24, }}>
@@ -49,7 +50,7 @@ export default function EstruturaDeDadosHeterogêneasView( { ...props } ) {
                      </Picture>
 
                      <Section>
-                        <X.H4>alocação dinamica com dois vetores: um com malloc e um com calloc</X.H4>
+                        <Text h={4}>alocação dinamica com dois vetores: um com malloc e um com calloc</Text>
                         <Code 
                            title="alocação com malloc"
                            script={`
@@ -76,7 +77,7 @@ i = ( int* ) calloc( 5, sizeof( int ) );   // 1° arg é o n° de elementos, 2°
                      </Section>
 
                      <Section>
-                        <X.H4>Ponteiro para ponteiro</X.H4>
+                        <Text h={4}>Ponteiro para ponteiro</Text>
                         <Code 
                            title="Indireção múltipla"
                            script={`
@@ -102,56 +103,56 @@ pt1 = &x;
 
                <Section gap={18} bg="#f5f5f5">
                   <Header bg="#f5f5f5" ph={24} center>
-                     <X.H4 style={{ color: "#0075bd" }}>Definir estrutura de dados heterogênea</X.H4>
+                     <Text h={4} style={{ color: "#0075bd" }}>Definir estrutura de dados heterogênea</Text>
                   </Header>
 
                   <Section pd={24} gap={16} bg="#e5e5e5" style={{ borderTopStartRadius: 24, borderTopEndRadius: 24, }}>
 
                      <Section>
                         <Header>
-                           <X.H4>Estrutura de dados</X.H4>
+                           <Text h={4}>Estrutura de dados</Text>
                         </Header>
                         <Text>São formas de distribuir e relacionar os dados</Text>
                         <Text>São distribuidos em 2 tipos: </Text>
-                        <X.H5>dado </X.H5>
+                        <Text h={5}>dado </Text>
                         <Text>elemento usado para solucionar problemas</Text>
                         <Text>
                            possuem tipos especificos: inteiro, real, lógicos, texto
                         </Text>
 
-                        <X.H5>estrutura </X.H5>
+                        <Text h={5}>estrutura </Text>
                         <Text>Elemento estrutural, responsável por carregar as informações</Text>
                      </Section>
 
                      <Section>
                         <Header>
-                           <X.H4>Tipos de estrutura de dados</X.H4>
+                           <Text h={4}>Tipos de estrutura de dados</Text>
                         </Header>
-                        <X.H6>Tipos de estruturas</X.H6>
-                        <X.H6 style={{ color: "#0af" }}>vetor</X.H6>
+                        <Text h={6}>Tipos de estruturas</Text>
+                        <Text h={6} style={{ color: "#0af" }}>vetor</Text>
                         <Section>
                            <Text>Unidimencionais / bidimencionais</Text>
                         </Section>
-                        <X.H6 style={{ color: "#0af" }}>lista</X.H6>
-                        <X.H6 style={{ color: "#0af" }}>pilha</X.H6>
-                        <X.H6 style={{ color: "#0af" }}>fila</X.H6>
-                        <X.H6 style={{ color: "#0af" }}>arvore</X.H6>
-                        <X.H6 style={{ color: "#0af" }}>registro</X.H6>
+                        <Text h={6} style={{ color: "#0af" }}>lista</Text>
+                        <Text h={6} style={{ color: "#0af" }}>pilha</Text>
+                        <Text h={6} style={{ color: "#0af" }}>fila</Text>
+                        <Text h={6} style={{ color: "#0af" }}>arvore</Text>
+                        <Text h={6} style={{ color: "#0af" }}>registro</Text>
                         <Section>
                            <Text>heterogenea</Text>
                         </Section>
-                        <X.H6 style={{ color: "#0af" }}>...</X.H6>
+                        <Text h={6} style={{ color: "#0af" }}>...</Text>
                      </Section>
 
                      <Section>
                         <Header>
-                           <X.H4>Estruturas de dados homogêneas x heterogêneas</X.H4>
+                           <Text h={4}>Estruturas de dados homogêneas x heterogêneas</Text>
                         </Header>
                      </Section>
 
                      <Section>
                         <Header>
-                           <X.H4>Verificando o aprendizado</X.H4>
+                           <Text h={4}>Verificando o aprendizado</Text>
                         </Header>
                      </Section>
 
@@ -165,14 +166,14 @@ pt1 = &x;
 
                <Section gap={18} bg="#f5f5f5" >
                   <Header bg="#f5f5f5" ph={24} center>
-                     <X.H4 style={{ color: "#0075bd" }}>Aplicar structs com a utilização da linguagem de programação C</X.H4>
+                     <Text h={4} style={{ color: "#0075bd" }}>Aplicar structs com a utilização da linguagem de programação C</Text>
                   </Header>
 
                      <Section pd={24} gap={16} bg="#e5e5e5" style={{ borderTopStartRadius: 24, borderTopEndRadius: 24, }}>
 
                      <Section>
                         <Header>
-                           <X.H4>Definição de struct em C</X.H4>
+                           <Text h={4}>Definição de struct em C</Text>
                         </Header>
                         <Text>Struct : Registro</Text>
 
@@ -180,7 +181,7 @@ pt1 = &x;
 
                      <Section>
                         <Header>
-                           <X.H4>Declaração de struct em C</X.H4>
+                           <Text h={4}>Declaração de struct em C</Text>
                         </Header>
                         <Text>Tipos de declaração struct</Text>
                         <Code title="tipo 1" script={`struct nome {\n   int item;\n}\n\nstruct nome v_nome;`}/>
@@ -190,14 +191,14 @@ pt1 = &x;
 
                      <Section>
                         <Header>
-                           <X.H4>Inicializando struct em C</X.H4>
+                           <Text h={4}>Inicializando struct em C</Text>
                         </Header>
                         <Code title="tipo 2" script={`struct endereco x = { "Av. das Américas", "4200", " 22640-102 ", "Barra da Tijuca" };`}/>
                      </Section>
 
                      <Section>
                         <Header>
-                           <X.H4>Acessando os membros da struct em C</X.H4>
+                           <Text h={4}>Acessando os membros da struct em C</Text>
                         </Header>
                         <Text></Text>
                         <Code title="acesso por struct sendo referenciada por var" script={`printf("%s", x.rua);`}/>
@@ -207,13 +208,13 @@ pt1 = &x;
 
                      <Section>
                         <Header>
-                           <X.H4>Manipulando structs</X.H4>
+                           <Text h={4}>Manipulando structs</Text>
                         </Header>
                      </Section>
 
                      <Section>
                         <Header>
-                           <X.H4>Verificando o aprendizado</X.H4>
+                           <Text h={4}>Verificando o aprendizado</Text>
                         </Header>
                      </Section>
 
@@ -227,14 +228,14 @@ pt1 = &x;
 
                <Section gap={18} bg="#f5f5f5" >
                   <Header bg="#f5f5f5" ph={24} center>
-                     <X.H4 style={{ color: "#0075bd" }}>Empregar as estruturas de dados aninhadas, os vetores de estruturas e a instrução typedef usando a linguagem de programação C</X.H4>
+                     <Text h={4} style={{ color: "#0075bd" }}>Empregar as estruturas de dados aninhadas, os vetores de estruturas e a instrução typedef usando a linguagem de programação C</Text>
                   </Header>
 
                   <Section pd={24} gap={16} bg="#e5e5e5" style={{ borderTopStartRadius: 24, borderTopEndRadius: 24, }}>
 
                      <Section>
                         <Header>
-                           <X.H4>struct aninhada</X.H4>
+                           <Text h={4}>struct aninhada</Text>
                         </Header>
                         
                      </Section>
@@ -242,48 +243,48 @@ pt1 = &x;
 
                      <Section>
                         <Header>
-                           <X.H4>manipulação de struct aninhadas</X.H4>
+                           <Text h={4}>manipulação de struct aninhadas</Text>
                         </Header>
                      </Section>
 
 
                      <Section>
                         <Header>
-                           <X.H4>mão na massa</X.H4>
+                           <Text h={4}>mão na massa</Text>
                         </Header>
                      </Section>
 
 
                      <Section>
                         <Header>
-                           <X.H4>array de struct</X.H4>
+                           <Text h={4}>array de struct</Text>
                         </Header>
-                        <X.H5>criando um modelo</X.H5>
+                        <Text h={5}>criando um modelo</Text>
                         <Picture>
                            <Pix 
                               image={ require( "@/assets/images/disciplinas/estrutura-de-dados/arrayDeStruct-1.png" ) }
                            />
                         </Picture>
-                        <X.H5>criando um vetor de 10 posições</X.H5>
+                        <Text h={5}>criando um vetor de 10 posições</Text>
                         <Picture>
                            <Pix 
                               image={ require( "@/assets/images/disciplinas/estrutura-de-dados/arrayDeStruct-2.png" ) }
                            />
                         </Picture>
-                        <X.H5>Inicializando o array de struct</X.H5>
+                        <Text h={5}>Inicializando o array de struct</Text>
                         <Text>Para inicializar um array de struct, devemos atribuir aos seus membros os valores padrão (default) de cada tipo de dado</Text>
                         <Picture>
                            <Pix 
                               image={ require( "@/assets/images/disciplinas/estrutura-de-dados/arrayDeStruct-3.png" ) }
                            />
                         </Picture>
-                        <X.H5>Populando o array de struct</X.H5>
+                        <Text h={5}>Populando o array de struct</Text>
                         <Picture>
                            <Pix 
                               image={ require( "@/assets/images/disciplinas/estrutura-de-dados/arrayDeStruct-4.png" ) }
                            />
                         </Picture>
-                        <X.H5>Buscando um elemento no array de struct</X.H5>
+                        <Text h={5}>Buscando um elemento no array de struct</Text>
                         <Picture>
                            <Pix 
                               image={ require( "@/assets/images/disciplinas/estrutura-de-dados/arrayDeStruct-5.png" ) }
@@ -294,16 +295,16 @@ pt1 = &x;
 
                      <Section>
                         <Header>
-                           <X.H4>buscando um elemento no array de struct</X.H4>
+                           <Text h={4}>buscando um elemento no array de struct</Text>
                         </Header>
                      </Section>
 
 
                      <Section>
                         <Header>
-                           <X.H4>mão na massa</X.H4>
+                           <Text h={4}>mão na massa</Text>
                         </Header>
-                        <X.H6>Considere que você está desenvolvendo um novo software para catalogar os jogadores de futebol. Você modelou o seu programa utilizando as structs apresentadas abaixo.</X.H6>
+                        <Text h={6}>Considere que você está desenvolvendo um novo software para catalogar os jogadores de futebol. Você modelou o seu programa utilizando as structs apresentadas abaixo.</Text>
                         <Picture>
                            <Pix 
                               image={ require( "@/assets/images/disciplinas/estrutura-de-dados/jogador.png" ) }
@@ -314,7 +315,7 @@ pt1 = &x;
 
                      <Section>
                         <Header>
-                           <X.H4>Verificando o aprendizado</X.H4>
+                           <Text h={4}>Verificando o aprendizado</Text>
                         </Header>
                      </Section>
 
@@ -334,46 +335,46 @@ pt1 = &x;
 
             <Section ph={22} pv={22}>
                <Header>
-                  <X.H3>tipos</X.H3>
+                  <Text>tipos</Text>
                </Header>
 
                <Section pv={22}>
-                  <X.H5>Array</X.H5>
-                  <X.Ts>Vetor: estruturas unidimensionais</X.Ts>
-                  <X.Ts>Matriz: estruturas multidimensionais</X.Ts>
-                  <X.P>
+                  <Text h={5}>Array</Text>
+                  <Text>Vetor: estruturas unidimensionais</Text>
+                  <Text>Matriz: estruturas multidimensionais</Text>
+                  <Text>
                      armazenar uma coleção de elementos do mesmo tipo "ou não", onde cada elemento pode ser identificado por um indice ou uma chave
-                  </X.P>
+                  </Text>
                </Section>
 
                <Section pv={22}>
-                  <X.H5>Pilha</X.H5>
-                  <X.Ts>coleção ordenada de itens baseada no princípio L.I.F.O "Last In First Out"</X.Ts>
-                  <X.P>
+                  <Text h={5}>Pilha</Text>
+                  <Text>coleção ordenada de itens baseada no princípio L.I.F.O "Last In First Out"</Text>
+                  <Text>
 
-                  </X.P>
+                  </Text>
                </Section>
 
                <Section pv={22}>
-                  <X.H5>Fila</X.H5>
-                  <X.Ts>coleção ordenada de itens baseada no princípio F.I.F.O "First In First Out"</X.Ts>
-                  <X.P>
+                  <Text h={5}>Fila</Text>
+                  <Text>coleção ordenada de itens baseada no princípio F.I.F.O "First In First Out"</Text>
+                  <Text>
 
-                  </X.P>
+                  </Text>
                </Section>
 
                <Section pv={22}>
-                  <X.H5>Árvore</X.H5>
-                  <X.Ts>coleção não ordenada de itens</X.Ts>
+                  <Text h={5}>Árvore</Text>
+                  <Text>coleção não ordenada de itens</Text>
                   <Picture center >
                      <Pix
                         image={ require( "../../../../../assets/images/disciplinas/estrutura-de-dados/tree-node.png" ) }
                         w="70%"   
                      />
                   </Picture>
-                  <X.P>
+                  <Text>
                      constituídas por nós, com relacionamento pai e filhos
-                  </X.P>
+                  </Text>
                   <X.T>Nó do topo: raiz</X.T>
                   <X.T>cada nó pode ter 0 ou mais filhos: ramos</X.T>
                   <X.T>nós internos são os que possuem filhos: B, E, F, D, G</X.T>
@@ -381,12 +382,12 @@ pt1 = &x;
                   <X.T>nós </X.T>
 
                   <Section pv={16}>
-                     <X.H4>Árvore binária</X.H4>
+                     <Text h={4}>Árvore binária</Text>
                      <Text>insere seus nós sem nenhuma regra definida</Text>
                   </Section>
 
                   <Section pv={16}>
-                     <X.H4>Árvore binária de busca</X.H4>
+                     <Text h={4}>Árvore binária de busca</Text>
                      <Text>inicia a operação inserindo a raiz e o primeiro nó filho</Text>
                      <Text>a partir do segundo nó, é feita a verificação: </Text>
                      <Text>o valor é maior do que o valor da raiz ? ( é adicionado à direita ) : ( é adicionado à esquerda )</Text>

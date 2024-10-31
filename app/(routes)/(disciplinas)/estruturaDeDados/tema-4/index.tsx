@@ -2,13 +2,14 @@
 
 /** == [ @imports ] 
  * == == == == == == == == == */
-import X, { T, Header, HomePage, Section, Code, Pix } from "@/widgets/elements";
+import X, { T, Header, HomePage, Section, Code, Pix,
+   View,
+   Text,
+} from "@/widgets/elements";
 import { transform } from "@babel/core";
 import React, { useState, useEffect } from "react";
 import { 
    StyleSheet,
-   View,
-   Text,
    ScrollView,
    FlatList,
    Image, 
@@ -24,14 +25,14 @@ function ModuloView( { ...props }: { n?: number; children: any; hbg?: string; bg
       <Section bg={ props.bg }>
          { props.n &&
             <Header ph={18} pv={18} bg={ props.hbg }>
-               <T.H6 style={{ color: "#0af" }}>Módulo { props.n }</T.H6>
+               <Text h={6} style={{ color: "#0af" }}>Módulo { props.n }</Text>
             </Header>
          }
          { props.children }
          {/* <Section pd={18}>
 
             <Section gap={16} pv={16}>
-               <T.H5></T.H5>
+               <Text h={5}></Text>
             </Section>
 
          </Section> */}
@@ -48,37 +49,37 @@ export default function Tema4View( { ...props } ) {
       <HomePage>
          <ScrollView>
             <Header center ph={24} pv={24} bg="#00559c">
-               <T.H3 style={{ color: "#0ef" }}>Listas, Pilhas, Filas e Deques</T.H3>
+               <Text h={3} style={{ color: "#0ef" }}>Listas, Pilhas, Filas e Deques</Text>
             </Header>
 
             <Section>
 
                <Section bg="#e5e5e5">
                   <Header ph={18} pv={18}>
-                     <T.H6>Módulo 1</T.H6>
+                     <Text h={6}>Módulo 1</Text>
                   </Header>
                   <Section pd={18} bg="#fafafa">
 
                      <Section gap={16} pv={16} style={{ borderBottomWidth: 30, borderColor: "#0001" }}>
-                        <T.H5>Entendendo a alocação sequencial</T.H5>
+                        <Text h={5}>Entendendo a alocação sequencial</Text>
                         <Text>
-                           <T.H6>listas lineares alocadas sequencialmente  </T.H6>
+                           <Text h={6}>listas lineares alocadas sequencialmente  </Text>
                            São eficientes no acesso ao elemento da lista.
                         </Text>
                         <Text>
                            <T.T>os elementos do vetor podem ser acessados diretamente pelo seu indice </T.T>
                            <T.Small> o indice corresponde ao offset "deslocamento a ser feito a partir do endereço do elemento anterior"</T.Small>
                         </Text>
-                        <T.H6>Vantagens </T.H6>
+                        <Text h={6}>Vantagens </Text>
                         <Text>facilidade no acesso dos elementos</Text>
-                        <T.H6>Desvantagens</T.H6>
+                        <Text h={6}>Desvantagens</Text>
                         <Text>operações como remoção são prejudicadas por não ser possivel desalocar o espaço sem perder a sequencialidade das posições</Text>
                      </Section>
 
                      <Section gap={16} pv={16}>
-                        <T.H5>Conceitos e operações em listas lineares genéricas</T.H5>
+                        <Text h={5}>Conceitos e operações em listas lineares genéricas</Text>
                         <Section>
-                           <T.H6>Busca</T.H6>
+                           <Text h={6}>Busca</Text>
                            <Code script={`int buscar( chave ) {
     if( n > 0 ) {
        for( i = 1; i <= n; i++ ) {
@@ -91,7 +92,7 @@ export default function Tema4View( { ...props } ) {
                         </Section>
 
                         <Section>
-                           <T.H6>Inserir  </T.H6>
+                           <Text h={6}>Inserir  </Text>
                            <Code script={`int inserir( novo_elemento ) {
     if( busca( novo_elemento.chave ) == n + 1 ) {
        Lista[ n + 1 ] == novo_elemento;
@@ -104,7 +105,7 @@ export default function Tema4View( { ...props } ) {
                         </Section>
 
                         <Section>
-                           <T.H6>Remover  </T.H6>
+                           <Text h={6}>Remover  </Text>
                            <Code script={`int remover( chave ) {
     if( n > 0 ) {
        int i = busca( chave );
@@ -122,17 +123,17 @@ export default function Tema4View( { ...props } ) {
                         </Section>
 
                         <Section>
-                           <T.H6>alocação dinamica</T.H6>
+                           <Text h={6}>alocação dinamica</Text>
                            <Pix image={ require( "@/assets/images/disciplinas/estrutura-de-dados/tema-4/alocaçãoDinamica-malloc.png" ) }/>
                         </Section>
 
                         <Section>
-                           <T.H6>BuscaBinaria</T.H6>
+                           <Text h={6}>BuscaBinaria</Text>
                            <Pix image={ require( "@/assets/images/disciplinas/estrutura-de-dados/tema-4/BuscaBinaria.png" ) }/>
                         </Section>
 
                         <Section>
-                           <T.H6>Deque</T.H6>
+                           <Text h={6}>Deque</Text>
                            <Code title="Deque"
                               script={`
 v = [ a, b, r, t, c, p ]
@@ -150,11 +151,11 @@ aux_r = 5;
                      </Section>
 
                      <Section gap={16} pv={16}>
-                        <T.H5>Mão na Massa</T.H5>
+                        <Text h={5}>Mão na Massa</Text>
                      </Section>
 
                      <Section gap={16} pv={16}>
-                        <T.H5>Verificando o aprendizado</T.H5>
+                        <Text h={5}>Verificando o aprendizado</Text>
                      </Section>
 
                   </Section>
@@ -162,27 +163,27 @@ aux_r = 5;
 
                <Section>
                   <Header ph={18} pv={18}>
-                     <T.H6>Módulo 2</T.H6>
+                     <Text h={6}>Módulo 2</Text>
                   </Header>
                   <Section pd={18}>
 
                      <Section gap={16} pv={16}>
-                        <T.H5>Listas lineares dinamicamente encadeadas</T.H5>
+                        <Text h={5}>Listas lineares dinamicamente encadeadas</Text>
                      </Section>
 
                      <Section gap={16} pv={16}>
-                        <T.H5>Teoria na prática</T.H5>
+                        <Text h={5}>Teoria na prática</Text>
                      </Section>
 
                      <Section gap={16} pv={16}>
-                        <T.H5>Entendendo a alocação encadeada</T.H5>
+                        <Text h={5}>Entendendo a alocação encadeada</Text>
                         <Pix image={ require( "@/assets/images/disciplinas/estrutura-de-dados/tema-4/lista-encadeada.jpg" ) }/>
-                        <T.H6>lista duplamente encadeada</T.H6>
+                        <Text h={6}>lista duplamente encadeada</Text>
                         <Pix image={ require( "@/assets/images/disciplinas/estrutura-de-dados/tema-4/lista-duplamente-encadeada.jpg" ) }/>
                      </Section>
 
                      <Section gap={16} pv={16}>
-                        <T.H5>Listas encadeadas</T.H5>
+                        <Text h={5}>Listas encadeadas</Text>
 
                         <Text>precisa de um ponteiro ref para guardar o endereço da HEAD</Text>
                         <Text>precisa de um ponteiro ref para guardar o endereço da TAIL</Text>
@@ -191,19 +192,19 @@ aux_r = 5;
                         <Text>testar se a lista está vazia, testar se NEXT da HEAD == null </Text>
                         <Text>inserir um elemento, alocar em memoria e fazer o NEXT apontar para ele</Text>
 
-                        <T.H6>Nó de lista simples encadeada</T.H6>
+                        <Text h={6}>Nó de lista simples encadeada</Text>
                         <Code title=" Definição genérica de um nó de uma lista simplesmente encadeada." 
                            script={`struct Node {\n\t<type> name;\n\t<type> name;\n\t...\n\t<type> nameN;\n\tNode *NEXT;\n};`}
                         />
 
-                        <T.H6>Busca em lista encadeada ordenada</T.H6>
+                        <Text h={6}>Busca em lista encadeada ordenada</Text>
                         <Code 
                            script={``}
                         />
                      </Section>
 
                      <Section gap={16} pv={16}>
-                        <T.H5>Verificando o aprendizado</T.H5>
+                        <Text h={5}>Verificando o aprendizado</Text>
                      </Section>
 
                   </Section>
@@ -211,12 +212,12 @@ aux_r = 5;
 
                <Section>
                   <Header ph={18} pv={18}>
-                     <T.H6>Módulo 3</T.H6>
+                     <Text h={6}>Módulo 3</Text>
                   </Header>
                   <Section pd={18}>
 
                      <Section gap={16} pv={16}>
-                        <T.H5>Tipo de lista: Pilha</T.H5>
+                        <Text h={5}>Tipo de lista: Pilha</Text>
                         <Pix h={ 1110 } image={ require( "@/assets/images/disciplinas/estrutura-de-dados/tema-4/pilha.png" ) }/>
                         {
                            [
@@ -225,7 +226,7 @@ aux_r = 5;
                            ].map( ( item, i ) => <>
                               <View style={{ padding: 8 }}>
                                  <Text key={ i } style={{ alignItems: "center", justifyContent: "center",}}>
-                                    <T.H6 style={{ fontSize: 18, color: "#fc0" }}>{ i + 1 }-  </T.H6>
+                                    <Text h={6} style={{ fontSize: 18, color: "#fc0" }}>{ i + 1 }-  </Text>
                                     { item }
                                  </Text>
                               </View>
@@ -234,33 +235,33 @@ aux_r = 5;
                      </Section>
 
                      <Section gap={16} pv={16}>
-                        <T.H5>Teoria na prática</T.H5>
+                        <Text h={5}>Teoria na prática</Text>
                      </Section>
 
                      <Section gap={16} pv={16}>
-                        <T.H5>Pilhas em alocação sequencial</T.H5>
+                        <Text h={5}>Pilhas em alocação sequencial</Text>
                      </Section>
 
                      <Section gap={16} pv={16}>
-                        <T.H5>Pilhas em alocação dinâmica</T.H5>
+                        <Text h={5}>Pilhas em alocação dinâmica</Text>
                      </Section>
 
                      <Section gap={16} pv={16}>
-                        <T.H5>Pilhas e expressões aritméticas binárias</T.H5>
+                        <Text h={5}>Pilhas e expressões aritméticas binárias</Text>
                      </Section>
 
                      <Section gap={16} pv={16}>
-                        <T.H5>Teoria na prática</T.H5>
+                        <Text h={5}>Teoria na prática</Text>
                      </Section>
 
                      <Section gap={16} pv={16}>
-                        <T.H5>Mão na Massa</T.H5>
+                        <Text h={5}>Mão na Massa</Text>
                      </Section>
 
                      <Section gap={16} pv={16}>
-                        <T.H5>Verificando o aprendizado</T.H5>
+                        <Text h={5}>Verificando o aprendizado</Text>
 
-                        <T.H6>vantagem de se implementar pilhas em alocação encadeada</T.H6>
+                        <Text h={6}>vantagem de se implementar pilhas em alocação encadeada</Text>
                         <Text>Evita o desperdício de memória.</Text>
                      </Section>
 
@@ -271,8 +272,8 @@ aux_r = 5;
                   <Section pd={18}>
 
                      <Section gap={16} pv={16}>
-                        <T.H5>Tipo de lista: Fila ( queue )</T.H5>
-                        <T.H6>caracteristicas</T.H6>
+                        <Text h={5}>Tipo de lista: Fila ( queue )</Text>
+                        <Text h={6}>caracteristicas</Text>
                         {
                            [
                               {
@@ -330,19 +331,19 @@ aux_r = 5;
                      </Section>
 
                      <Section gap={16} pv={16}>
-                        <T.H5>Filas em alocação sequencial</T.H5>
+                        <Text h={5}>Filas em alocação sequencial</Text>
                      </Section>
 
                      <Section gap={16} pv={16}>
-                        <T.H5>Teoria na prática</T.H5>
+                        <Text h={5}>Teoria na prática</Text>
                      </Section>
 
                      <Section gap={16} pv={16}>
-                        <T.H5>Filas em alocação dinâmica</T.H5>
+                        <Text h={5}>Filas em alocação dinâmica</Text>
                      </Section>
 
                      <Section gap={16} pv={16}>
-                        <T.H5>Verificando o aprendizado</T.H5>
+                        <Text h={5}>Verificando o aprendizado</Text>
                      </Section>
                   </Section>
                </ModuloView>

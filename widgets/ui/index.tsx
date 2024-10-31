@@ -5,15 +5,23 @@
 import React, { useState, useEffect } from "react"; 
 import { 
    StyleSheet, 
-   View, 
-   Text,
    Image,
    ScrollView,
    Pressable,
    Dimensions,
    FlatList,
 } from "react-native";
-import X, { Code, Header, HomePage, Page, Picture, Pix, Section } from "@/widgets/elements";
+import X, { 
+   Code, 
+   Header, 
+   HomePage, 
+   Page, 
+   Picture, 
+   Pix, 
+   Section,
+   View, 
+   Text, 
+} from "@/widgets/elements";
 import { Href, router } from "expo-router";
 import { Colors, Palette, } from "@/constants/Colors";
 import Icon from "../icon";
