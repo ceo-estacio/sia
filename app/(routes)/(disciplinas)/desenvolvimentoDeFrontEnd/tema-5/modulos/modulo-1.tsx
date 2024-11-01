@@ -57,7 +57,7 @@ export default function EstruturaBásicaDoVueJS( { ...props } ) {
 
                      <List children={<>
                         <Text h={4} darkColor="#757">Criação de um projeto</Text>
-                        <Text>{`ng new projectName\nRoutung? No\nStylesheet? CSS`}</Text>
+                        <Text>{`ng new projectName\nRouting? No\nStylesheet? CSS`}</Text>
                      </>}/>
 
                      <List>

@@ -373,8 +373,8 @@ selecione a opção correta a respeito do código.`}</Text>}
                      />
 
                      <Exercices id={3} 
-                        question={<Text></Text>}
-                        answer={<Text></Text>}
+                        question={<Text>Atualmente, temos meios para a definição de rotas de acesso aos recursos do sistema em diversas tecnologias de desenvolvimento, tanto no front-end quanto no back-end, e não seria diferente no Angular. Adotando o modelo de rotas, temos maior controle sobre a utilização dos recursos, permitindo que a autenticação e autorização sejam efetuadas de forma simples, já que ocorre um modo de acesso centralizado. Na estrutura do Angular, qual elemento é responsável pela exibição do conteúdo roteado?</Text>}
+                        answer={<Text>router-outlet</Text>}
                      />
 
                      <Exercices id={4} 
