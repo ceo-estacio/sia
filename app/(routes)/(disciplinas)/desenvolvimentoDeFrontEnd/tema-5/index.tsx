@@ -29,16 +29,28 @@ export default function AngularView( { ...props } ) {
       modulos = [
          {
             id: "Módulo 1",
-            name: "",
-            desc: "",
+            name: "Framework Angular",
+            desc: "Reconhecer o framework Angular na estruturação do comportamento de sistemas web.",
             src: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-5/modulos/modulo-1",
          },
-         // {
-         //    id: "Módulo 1",
-         //    name: "",
-         //    desc: "",
-         //    src: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-5/modulos/modulo-1",
-         // },
+         {
+            id: "Módulo 2",
+            name: "Arquitetura de componentes",
+            desc: "Aplicar a arquitetura de componentes na criação do front-end de sistemas web.",
+            src: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-5/modulos/modulo-2",
+         },
+         {
+            id: "Módulo 3",
+            name: "Reactive extensions library for JavaScript",
+            desc: "Empregar o paradigma reativo para criar front-end com elementos assíncronos.",
+            src: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-5/modulos/modulo-3",
+         },
+         {
+            id: "Módulo 4",
+            name: "Aplicação Angular",
+            desc: "Aplicar o framework Angular na criação do front-end de um sistema completo.",
+            src: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-5/modulos/modulo-4",
+         },
       ]
    ;
 

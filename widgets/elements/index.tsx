@@ -545,7 +545,7 @@ type ListType = {
 
 export function List( { ...props }: ListType ) {
    return( <>
-      <Content gap={8} style={{ flexDirection: "row", marginVertical: 8, alignItems: "flex-start" }}>
+      <Content gap={8} style={{ flexDirection: "row", marginVertical: 8, alignItems: "flex-start", paddingHorizontal: 24, }}>
          {
             props.type ||
             <Icon family="Octicons" name="dot-fill" color={ props.color || "#c33" }/>

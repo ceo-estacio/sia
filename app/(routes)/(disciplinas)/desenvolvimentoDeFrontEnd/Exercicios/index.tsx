@@ -213,7 +213,7 @@ export default function ExercíciosView( { ...props } ) {
                   <Text h={3}>Tema 4</Text>
                   <Text h={5}>Programação Cliente Com Typescript</Text>
                </Header>
-               <Section>
+               <Section gap={24} darkColor={ Palette.dark.bar }>
                   <Exercices id={1}
                      question={ <>
                         <Text>Considere o trecho de código:</Text>
@@ -328,7 +328,90 @@ console.log( w( 5 ) );`}</Text> }
                      answer={ <Text>15</Text> }
                   />
                   
+                  <Exercices id={11}
+                     question={ <Text>{`Considere o trecho de código:
+let valor: number = (22%10) + 1;
+console.log(valor);
+Selecione a opção correta com o resultado da execução do código.`}</Text> }
+                     answer={ <Text>3</Text> }
+                  />
+                  
+
+                  <Exercices id={12}
+                     question={ <Text>O TypeScript dá suporte ao uso de funções. Uma função nada mais é do que uma subrotina usada em um programa. Selecione a opção correta que explique qual o objetivo da função construtora de uma classe do TypeScript.</Text> }
+                     answer={ <Text>Estabelecer o comportamento inicial do objeto.</Text> }
+                  />
+
+                  <Exercices id={13}
+                     question={<Text>{`Considere que o trecho de código abaixo está correto:
+class Teste extends R{
+public imprimir = () => {
+console.log(1imprimir teste');
+}
+}
+selecione a opção correta a respeito do código.`}</Text>}
+                     answer={<Text>R é a superclasse de Teste</Text>}
+                  />
+
                </Section>
+            </View>
+
+            <View pv={24}>
+               <Header pd={24}>
+                  <Text h={3}>Tema 5</Text>
+                  <Text h={5}>Angular</Text>
+               </Header>
+               <View>
+                     <Exercices id={1} 
+                        question={<Text>Na engenharia de software, definimos acoplamento como o nível de dependência encontrada entre os diversos elementos de um sistema, e quanto maior for o acoplamento em um sistema, maior será a dificuldade de manutenção. Qualquer plataforma de desenvolvimento atual busca meios para diminuir o acoplamento nos sistemas. No Angular, garantimos o baixo acoplamento dos serviços através de uma técnica específica. Qual o nome da técnica utilizada?</Text>}
+                        answer={<Text>Injeção de dependências</Text>}
+                     />
+
+                     <Exercices id={2} 
+                        question={<Text>Angular é um framework para desenvolver aplicações em diversas plataformas, mantido e desenvolvido pela Google. Ele vem com um conjunto de bibliotecas poderosas que podemos importar, possibilitando construir aplicações com uma qualidade e produtividade surpreendente. O Angular usa qual linguagem como padrão?</Text>}
+                        answer={<Text>TypeScript</Text>}
+                     />
+
+                     <Exercices id={3} 
+                        question={<Text></Text>}
+                        answer={<Text></Text>}
+                     />
+
+                     <Exercices id={4} 
+                        question={<Text></Text>}
+                        answer={<Text></Text>}
+                     />
+
+                     <Exercices id={5} 
+                        question={<Text></Text>}
+                        answer={<Text></Text>}
+                     />
+
+                     <Exercices id={6} 
+                        question={<Text></Text>}
+                        answer={<Text></Text>}
+                     />
+
+                     <Exercices id={7} 
+                        
+                     />
+
+                     <Exercices id={8} 
+                        question={<Text></Text>}
+                        answer={<Text></Text>}
+                     />
+
+                     <Exercices id={9} 
+                        question={<Text></Text>}
+                        answer={<Text></Text>}
+                     />
+
+                     <Exercices id={10}
+                        question={<Text></Text>}
+                        answer={<Text></Text>}
+                     />
+
+               </View>
             </View>
 
          </ScrollView>

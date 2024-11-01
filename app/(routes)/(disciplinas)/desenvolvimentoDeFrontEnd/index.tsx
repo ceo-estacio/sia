@@ -50,11 +50,16 @@ export default function DesenvolvimentoDeFrontEndView( { ...props } ) {
                   title: "Programação Cliente Com Typescript", 
                   link: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-4/", 
                },
-               // { 
-               //    id: 3,
-               //    title: "", 
-               //    link: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-", 
-               // },
+               { 
+                  id: 5,
+                  title: "Angular", 
+                  link: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-5/", 
+               },
+               { 
+                  id: 6,
+                  title: "Reactjs", 
+                  link: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-6/", 
+               },
                { 
                   id: 99,
                   title: "Exercícios", 
