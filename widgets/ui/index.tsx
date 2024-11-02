@@ -57,6 +57,7 @@ type ItemsProps = {
    id: number;
    title: string;
    link: string;
+   doc: string;
 }
 
 type DisciplinasMenuProps = {

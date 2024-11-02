@@ -36,6 +36,9 @@ export default function DesenvolvimentoDeFrontEndLayout() {
         
         <Stack.Screen name="tema-5/index" options={{ headerShown: true, title: "Tema 5: Angular" }} />
         <Stack.Screen name="tema-5/modulos/modulo-1" options={{ headerShown: true, title: "Tema 5: Angular" }} />
+        
+        <Stack.Screen name="tema-6/index" options={{ headerShown: true, title: "Tema 6: Reactjs" }} />
+        <Stack.Screen name="tema-6/modulos/modulo-1" options={{ headerShown: true, title: "Tema 6: Reactjs" }} />
       </Stack>
     </ThemeProvider>
   );

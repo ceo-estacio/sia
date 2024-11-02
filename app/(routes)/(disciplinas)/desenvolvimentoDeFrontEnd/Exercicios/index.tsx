@@ -353,6 +353,40 @@ selecione a opção correta a respeito do código.`}</Text>}
                      answer={<Text>R é a superclasse de Teste</Text>}
                   />
 
+                  <Exercices id={14} 
+                     question={<Text>{`TypeScript é um superconjunto de JavaScript, ou seja, um conjunto de ferramentas e formas mais eficientes de escrever código JavaScript, adicionando recursos que não estão presentes de maneira nativa na linguagem.
+Disponível em: https://tecnoblog.net/responde/o-que-e-typescript-guia-para-iniciantes/. Acesso em: 21 out. 2022.
+A respeito do TypeScript, selecione a opção correta.`}</Text>}
+                     answer={<Text>Possui código aberto</Text>}
+                  />
+                  
+                  <Exercices id={4} 
+                     question={<Text>{`Considere o trecho de código:
+function t(a: number|string):number
+{
+let r:number= (typeof a === 'number' ? 1 : 2);
+return r**(r+r);
+}
+console.log(t('teste'));
+Selecione a opção correta com o resultado da execução do código`}</Text>}
+                     answer={<Text>16</Text>}
+                  />
+                  
+                  <Exercices id={4} 
+                     question={<Text>{`let n: number = ("teste.").length;\nconsole.log(n);`}</Text>}
+                     answer={<Text>6</Text>}
+                  />
+                  
+                  <Exercices id={4} 
+                     question={<Text></Text>}
+                     answer={<Text></Text>}
+                  />
+                  
+                  <Exercices id={4} 
+                     question={<Text></Text>}
+                     answer={<Text></Text>}
+                  />
+
                </Section>
             </View>
 
@@ -361,7 +395,7 @@ selecione a opção correta a respeito do código.`}</Text>}
                   <Text h={3}>Tema 5</Text>
                   <Text h={5}>Angular</Text>
                </Header>
-               <View>
+               <View gap={24}>
                      <Exercices id={1} 
                         question={<Text>Na engenharia de software, definimos acoplamento como o nível de dependência encontrada entre os diversos elementos de um sistema, e quanto maior for o acoplamento em um sistema, maior será a dificuldade de manutenção. Qualquer plataforma de desenvolvimento atual busca meios para diminuir o acoplamento nos sistemas. No Angular, garantimos o baixo acoplamento dos serviços através de uma técnica específica. Qual o nome da técnica utilizada?</Text>}
                         answer={<Text>Injeção de dependências</Text>}
@@ -378,35 +412,147 @@ selecione a opção correta a respeito do código.`}</Text>}
                      />
 
                      <Exercices id={4} 
-                        question={<Text></Text>}
-                        answer={<Text></Text>}
+                        question={<Text>Em engenharia de software, um padrão de projeto é uma solução geral para um problema que ocorre com frequência dentro de determinado contexto no projeto de software. Qual padrão de projeto comportamental permite que um objeto notifique outros objetos sobre alterações em seu estado?</Text>}
+                        answer={<Text>Observer</Text>}
                      />
 
                      <Exercices id={5} 
-                        question={<Text></Text>}
-                        answer={<Text></Text>}
+                        question={<Text>Através do paradigma da programação reativa, temos um modelo simples para o tratamento de elementos assíncronos, com base no padrão Observer, e a biblioteca RxJS é responsável pela viabilização desse modelo de programação para o Angular. Através da biblioteca, temos acesso a um conjunto de componentes, com papéis bem definidos na implementação de processos que devem ser tratados de forma assíncrona. Nesse contexto, qual componente representa a fonte de informações para o processamento assíncrono, sem possibilidade de assinantes múltiplos?</Text>}
+                        answer={<Text>{`Observable\n\nse forem necessários multiplos assinantes: Subject`}</Text>}
                      />
 
                      <Exercices id={6} 
-                        question={<Text></Text>}
-                        answer={<Text></Text>}
+                        question={<Text>Quando trabalhamos em sistemas Web, a responsabilidade sobre a persistência dos dados é da tecnologia servidora utilizada, com o fornecimento das informações necessárias através do protocolo HTTP e seus diferentes métodos. Por meio da inclusão de HttpClientModule, podemos efetuar a comunicação com o servidor de forma simples, a partir do front-end criado em Angular, onde o objeto injetado, do tipo HttpClient, oferece os métodos necessários atender a todos os modos de utilização do HTTP. Qual seria o método para solicitar a inclusão de um registro?</Text>}
+                        answer={<Text>Post</Text>}
                      />
 
                      <Exercices id={7} 
-                        
+                        question={<Text>As tecnologias relacionais, que apresentam uma grande preocupação com a manutenção de relacionamentos entre as entidades, nem sempre oferecem resposta em tempo adequado para grandes massas de dados. Com o advento do big data, cuja a quantidade de dados é expressiva, opções ao armazenamento relacional passaram a ser utilizadas, popularizando os repositórios classificados como NoSQL, que por apresentarem grande heterogeneidade, são classificados em diferentes grupos, de acordo com a forma adotada para representar a informação. Uma opção de banco muito utilizada atualmente é o MongoDB, que é classificado como uma base do tipo</Text>}
+                        answer={<Text>Documental.</Text>}
                      />
 
                      <Exercices id={8} 
-                        question={<Text></Text>}
-                        answer={<Text></Text>}
+                        question={<Text>Com o surgimento do Material Design, foi possível determinar um padrão para a criação de interfaces, envolvendo diferentes plataformas, incluindo preocupações com responsividade, usabilidade e acessibilidade. São especificados os melhores padrões de cores, fontes, dimensões e unidades de medida, além de termos o conceito visual de componentes padronizados, que são implementados nas diferentes plataformas, trazendo homogeneidade para os sistemas. Para o Angular, seu uso é baseado na importação da biblioteca adequada e aplicação de atributos nos componentes comuns do HTML, bem como através de um conjunto de seletores próprios. Por exemplo, um botão poderia ser configurado para exibição elevada, ao mesmo tempo em que representa a opção negativa para uma pergunta, utilizando a configuração</Text>}
+                        answer={<Text>mat-raised-button color="warn"</Text>}
                      />
 
                      <Exercices id={9} 
+                        question={<Text>Os padrões de desenvolvimento visam resolver problemas recorrentes na implementação de sistemas, com a definição de soluções padronizadas, amplamente testadas e com modelos bem-organizados, utilizando a notação UML. Supondo que os gastos com a manutenção de um determinado sistema estejam muito altos, devido à proliferação de instruções SQL ao longo de todo o código, e você tenha sido contratado para refatorá-lo, qual padrão deverá utilizar para a melhoria da estratégia de persistência e consequente redução do custo de manutenção?</Text>}
+                        answer={<Text>Data Access Object</Text>}
+                     />
+
+                     <Exercices id={10}
+                        question={<Text>As tags semânticas trouxeram para o HTML 5 a possibilidade de transmitir significado para as áreas nas quais uma página é dividida, viabilizando a melhoria no reconhecimento a partir dos sistemas de busca, como o que é utilizado pelo Google. Qual dessas tags deve ser utilizada para configurar a porção inferior de uma página?</Text>}
+                        answer={<Text>footer</Text>}
+                     />
+
+                     <Exercices id={11}
+                        question={<Text>{`Para qualquer programador Angular, é fundamental conhecer a utilização da biblioteca RxJS para implementação de funcionalidades assíncronas. Considere o fragmento de código seguinte.
+---------
+const observable = interval(1000)
+      .pipe(map((x:number)=>x*x))
+      .pipe(observeOn(asyncScheduler));
+---------
+Para que serve o método pipe no código apresentado?`}</Text>}
+                        answer={<Text>Direcionar o fluxo de dados para o processamento seguinte, antes de enviar o resultado.</Text>}
+                     />
+
+                     <Exercices id={12}
+                        question={<Text>{`Uma novidade interessante do HTML 5 foi a definição de folhas de estilo por escopo, trazendo a possibilidade de adotar formatações específicas para o elemento e seus filhos, sem interferir no restante da página. Essa característica é utilizada pelos componentes do Angular, onde temos formatações CSS específicas, adotadas no escopo de utilização do seletor. Observe o fragmento de código que é apresentado a seguir.
+---------
+.container{
+display: flex; flex-direction: row; flex-wrap: wrap;
+width: 100%; overflowY: scroll; height:230px;
+}
+---------
+Qual informação é verdadeira, acerca da formatação que foi definida?
+`}</Text>}
+                        answer={<Text>Permite definir uma área de exibição na forma de grid, com o posicionamento sequencial de elementos e a quebra de linha quando não há mais espaço na horizontal.</Text>}
+                     />
+
+                     <Exercices id={13}
+                        question={<Text>Na estrutura de um projeto baseado em Angular, temos um conjunto de arquivos no diretório raiz voltados para a configuração geral do aplicativo. Entre os arquivos encontrados, temos um com o nome polyfills.ts, que tem como objetivo:</Text>}
+                        answer={<Text>Incluir elementos para compatibilidade em diferentes plataformas e navegadores.</Text>}
+                     />
+
+                     <Exercices id={14}
+                        question={<Text>Partindo de uma iniciativa do Google, com foco no sistema Android, o Material Design trouxe diretivas relacionadas ao design que se tornaram uma referência de mercado, visando sempre a garantia de usabilidade, responsividade e acessibilidade nas mais diversas plataformas. Além das diretivas estabelecidas, temos a especificação de componentes padronizados e modelo para implementação em cada plataforma, como Android, Web, iOS e Flutter. Os componentes podem ser categorizados de acordo com seus objetivos, e segundo essa classificação, qual das opções a seguir contém apenas elementos para comunicação, feita através da exibição de mensagens?</Text>}
+                        answer={<Text>SnackBar, Banner e Dialog</Text>}
+                     />
+
+                     <Exercices id={15}
+                        question={<Text>Para trabalhar com as coleções do MongoDB a partir de um serviço Web, construído com base no NodeJS, devemos inicialmente obter uma conexão com a base de dados, através de um objeto do tipo MongoClient, oferecido na biblioteca mongodb. A partir da conexão, acessamos as coleções, e podemos utilizar os métodos que são disponibilizados por elas para manipulação e consulta de documentos. Qual desses métodos permite a inclusão de um documento?</Text>}
+                        answer={<Text>insertOne</Text>}
+                     />
+
+                     <Exercices id={16}
+                        question={<Text>No Angular é possível efetuar as críticas sobre os campos de um formulário durante o seu preenchimento, com base na tecnologia de formulários reativos. O processo envolve a criação de um FormGroup, ao nível da classe, contendo as configurações para cada campo, incluindo a possibilidade de uma lista de validadores, e o grupo é associado ao formulário, no modelo. Para uma situação em que o usuário deve aceitar as regras do site para se cadastrar, com a marcação de uma caixa de seleção, qual seria o validador correto para o campo?</Text>}
+                        answer={<Text>Validators.requiredTrue</Text>}
+                     />
+
+                     <Exercices id={17}
+                        question={<Text>Formulários são a forma padrão para viabilizar a entrada de dados em sistemas cadastrais para Web, podendo ser especificados no Angular ao nível dos modelos HTML. No entanto, para a construção de um formulário em um front-end baseado no Angular, temos algumas regras de implementação que devem ser observadas. Qual das opções a seguir constitui uma regra válida para a implementação de formulários no Angular?</Text>}
+                        answer={<Text>O evento de submissão do formulário deve ser associado a um método da classe.</Text>}
+                     />
+
+                     <Exercices id={18}
+                        question={<Text>{`Considerando um serviço no estilo REST, implementado com base no NodeJS e na biblioteca Express, e uma entidade Aluno, persistida no MongoDB via MongoClient, qual a assinatura do método, no servidor, 
+para responder à chamada http://localhost:3000/alunos/29891, 
+obtendo como retorno os dados do aluno de matrícula 29891 no formato JSON?  `}</Text>}
+                        answer={<Text>router.get('/alunos/:id', async (req, res) => { });</Text>}
+                     />
+
+                     <Exercices id={19}
+                        question={<Text>Para diversas funcionalidades de um sistema ocorre a necessidade de um usuário válido, ou seja, deve haver algum meio de autenticação disponível. Em termos do Angular, o acesso a uma rota pode ser controlado de forma simples, com base em um serviço para verificação de usuário que é associado às rotas privadas. Qual interface deve ser implementada pelo serviço?</Text>}
+                        answer={<Text>CanActivate</Text>}
+                     />
+
+                     <Exercices id={20}
+                        question={<Text>Durante o desenvolvimento de um sistema, principalmente nas fases iniciais, alguns recursos necessários para a funcionalidade desejada podem não estar disponíveis, impedindo a execução de testes. No entanto, podemos emular os recursos, permitindo a continuidade do projeto. No caso do Angular, qual interface permite emular um servidor REST com persistência em banco de dados?</Text>}
+                        answer={<Text>InMemoryDbService</Text>}
+                     />
+
+                     <Exercices id={21}
+                        question={<Text>A biblioteca RxJS é uma excelente opção para a implementação de elementos assíncronos, com a substituição das funções assíncronas (async) e diretivas de espera (await) por um padrão Observer, onde temos fontes de dados assinadas, que enviam suas alterações para o conjunto de assinantes, com a informação sendo tratada em funções de resposta. Considerando a criação de um aplicativo para acompanhamento estatístico, onde diversos gráficos são atualizados de forma simultânea, a cada vez que uma nova pesquisa é cadastrada, qual seria o componente da biblioteca RxJS adequado para emissão da informação atualizada?</Text>}
+                        answer={<Text>Subject</Text>}
+                     />
+
+                     <Exercices id={22}
+                        question={<Text>Devido às exigências de qualidade e prazos extremamente curtos para a criação de softwares, produtividade é um fator essencial para a área de desenvolvimento, e embora seja possível criar projetos para Angular através de simples editores de texto, o Visual Studio Code é um excelente ferramental para ganho de produtividade no uso do Angular. Entre as funcionalidades oferecidas pelo ambiente, qual delas permite a identificação rápida de instruções de controle, variáveis, atributos, métodos e demais tipos de elementos adotados na linguagem?</Text>}
+                        answer={<Text>syntax highlighting</Text>}
+                     />
+
+                     <Exercices id={23}
+                        question={<Text>O uso de decorações, ou anotações, permite a definição de configurações para os diversos elementos do Angular de forma simples, como na definição das propriedades do módulo, por meio da anotação NgModule. Qual dos atributos de NgModule define o componente principal de um módulo do Angular?</Text>}
+                        answer={<Text>bootstrap</Text>}
+                     />
+
+                     <Exercices id={24}
+                        question={<Text>Com a estrutura modular do Angular, conseguimos acrescentar funcionalidades ao sistema de forma muito simples, através da importação dos módulos necessários. Entre os módulos mais comuns, em um sistema baseado no Angular, qual deles permite gerenciar a troca de conteúdo com base em rotas, dentro de uma interface no estilo SPA (Single Page Application)?</Text>}
+                        answer={<Text>RouterModule</Text>}
+                     />
+
+                     <Exercices id={25}
+                        question={<Text>Em um sistema de controle de estacionamento, devem ser exibidas apenas as vagas vazias na página de listagem, através de tags div configuradas como painéis, permitindo que o operador associe a vaga ao carro que estiver acessando o local naquele momento. Qual diretiva do Angular permitirá condicionar o desenho da div ao estado atual da vaga?</Text>}
+                        answer={<Text>ngIf</Text>}
+                     />
+
+                     <Exercices id={26}
                         question={<Text></Text>}
                         answer={<Text></Text>}
                      />
 
-                     <Exercices id={10}
+                     <Exercices id={2}
+                        question={<Text></Text>}
+                        answer={<Text></Text>}
+                     />
+
+                     <Exercices id={2}
+                        question={<Text></Text>}
+                        answer={<Text></Text>}
+                     />
+
+                     <Exercices id={2}
                         question={<Text></Text>}
                         answer={<Text></Text>}
                      />
