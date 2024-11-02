@@ -64,24 +64,6 @@ export default function Modulo1View( { ...props } ) {
                      </Header>
 
                      <Section gap={16}>
-                        <Text h={3}>Atividade</Text>
-                        <Exercices id={1}
-                           question={
-                              <Text>{`A biblioteca JavaScript usada para criação de interface de usuário, React, tem como uma de suas principais características a natureza declarativa. Analise os exemplos a seguir em relação à programação declarativa.
-      
-      I. HTML
-      II. XML
-      III. PHP
-      
-      Está correto, em relação à programação declarativa, o que se afirma em:`}</Text>
-                           }
-                           answer={<Text>{`1 e 2\n\n\nA linguagem declarativa é baseada no aspecto lógico e funcional: ela descreve o que se faz, e não exatamente como suas instruções funcionam. Já a linguagem procedural é focada na mudança de estado de variáveis, o que acontece em PHP.`}</Text>}
-                        />
-
-                        <Exercices id={2}
-                           question={<Text>O React é uma biblioteca do JavaScript muito útil no desenvolvimento de aplicações. Vimos que, para desenvolver uma aplicação na máquina local, precisamos instalar o Node.js. Nesse sentido, assinale a alternativa correta que descreve o que é o Node.js.</Text>}
-                           answer={<Text>É um ambiente em tempo de execução que permite desenvolver aplicações JavaScript sem a necessidade de um navegador.</Text>}
-                        />
                      </Section>
                   </View>
 
@@ -105,6 +87,49 @@ export default function Modulo1View( { ...props } ) {
                         <Text h={3}>Primeiro App React</Text>
                      </Header>
                   </View>
+
+{/* == [ exercicios ] */}
+                  <View pv={24}>
+                     <Header pv={24}>
+                        <Text h={3}>Atividades</Text>
+                     </Header>
+
+                     <Section gap={16}>
+                        <Text h={3}>Atividade</Text>
+                        <Exercices id={1}
+                           question={
+                              <Text>{`A biblioteca JavaScript usada para criação de interface de usuário, React, tem como uma de suas principais características a natureza declarativa. Analise os exemplos a seguir em relação à programação declarativa.
+      
+      I. HTML
+      II. XML
+      III. PHP
+      
+      Está correto, em relação à programação declarativa, o que se afirma em:`}</Text>
+                           }
+                           answer={<Text>{`1 e 2\n\n\nA linguagem declarativa é baseada no aspecto lógico e funcional: ela descreve o que se faz, e não exatamente como suas instruções funcionam. Já a linguagem procedural é focada na mudança de estado de variáveis, o que acontece em PHP.`}</Text>}
+                        />
+
+                        <Exercices id={2}
+                           question={<Text>O React é uma biblioteca do JavaScript muito útil no desenvolvimento de aplicações. Vimos que, para desenvolver uma aplicação na máquina local, precisamos instalar o Node.js. Nesse sentido, assinale a alternativa correta que descreve o que é o Node.js.</Text>}
+                           answer={<Text>É um ambiente em tempo de execução que permite desenvolver aplicações JavaScript sem a necessidade de um navegador.</Text>}
+                        />
+
+                        <Exercices id={3}
+                           question={<Text>{`Para criarmos uma aplicação local do React, tivemos que digitar o comando:
+
+npx create-react-app my-app
+
+Nesse sentido, assinale a alternativa correta que explique o que faz o comando npx.`}</Text>}
+                           answer={<Text>É um programa que pode executar pacotes ou executáveis que estão na pasta node_modules.</Text>}
+                        />
+
+                        <Exercices id={4}
+                           question={<Text></Text>}
+                           answer={<Text></Text>}
+                        />
+                     </Section>
+                  </View>
+
                </Section>
             </View>
          </ScrollView>
