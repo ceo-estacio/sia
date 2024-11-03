@@ -111,6 +111,30 @@ Agora, aponte a alternativa correta.`}</Text>}
                            answer={<Text>1 e 2.</Text>}
                         />
 
+                        <Exercices id={2}
+                           question={<Text>Um termo bastante comum no React é o nome componentes. No entanto, os componentes podem ter comportamentos e estruturas muito distintas. Nesse sentido, assinale a alternativa correta a respeito de qual tipo de componente devemos utilizar quando o nosso objetivo é trabalhar com generalizações de comportamentos a partir da propriedade herança.</Text>}
+                           answer={<Text>Nesse caso, devemos usar componentes de classe.</Text>}
+                        />
+                        
+                        <Exercices id={3}
+                           question={<Text>{`No desenvolvimento de uma aplicação do React, constantemente, precisamos trabalhar com componentes. Inclusive, é comum utilizarmos a estrutura:
+
+class MinhaClasse extends React.Component
+
+Nesse sentido, selecione a opção correta a respeito dessa estrutura sintática.`}</Text>}
+                           answer={<Text>Quando uma classe herda de React.Component, ela pode padronizar comportamentos e propriedades.</Text>}
+                        />
+                        
+                        <Exercices id={4}
+                           question={<Text>Os componentes desempenham um papel essencial no uso de uma aplicação com React. Eles estabelecem comportamentos e fazem uso de propriedades que padronizam a forma de trabalhar. Nesse sentido, selecione a opção correta a respeito do ciclo de vida dos componentes do React.</Text>}
+                           answer={<Text>O getSnapshotBeforeUpdate é executado logo antes de a renderização ser confirmada no DOM. Qualquer valor retornado será encaminhado para o constructor.</Text>}
+                        />
+                        
+                        <Exercices id={5}
+                           question={<Text>A classe React.Component desempenha um importante papel no desenvolvimento de uma aplicação no React. Entre os diversos métodos que ela possui, há o método “constructor”. Nesse sentido, selecione a opção correta sobre o objetivo desse método.</Text>}
+                           answer={<Text>Ele estabelece o estado inicial do componente e faz a vinculação com os manipuladores de eventos.</Text>}
+                        />
+                        
                         <Exercices id={1}
                            question={<Text></Text>}
                            answer={<Text></Text>}

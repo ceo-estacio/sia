@@ -30,3 +30,19 @@ new CPerson( "Anselmo", "noah.kd@gmail.com" ).get( "I am a developer" );
 _( [ "oi", "io", "o i" ].map( ( x, y ) => {
    return( `<${x}></${y}>` );
 } ).join( "\n" ) );
+
+/**
+ * == [ bind ]
+ */
+function exibirContexto() {
+   _( this );
+}
+
+let usuario = {
+   nome: 'João',
+   idade: 20,
+   nacionalidade: 'Brasil'
+}
+exibirContexto();
+let bindUsuario = exibirContexto.bind( usuario );
+bindUsuario(); 
