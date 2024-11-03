@@ -41,7 +41,7 @@ export default function Modulo4View( { ...props } ) {
          <ScrollView>
             <View darkColor="#212329" lightColor="#e5e5e5">
                <Header darkColor={ Palette.sigrid.tint } center ph={24} pv={24}>
-                  <Text darkColor={ Palette.dark.bar } h={3}>Introdução e preparação do ambiente</Text>
+                  <Text darkColor={ Palette.dark.bar } h={3}>Rotas e Redux</Text>
                </Header>
 
 {/* == [ introdução ] */}
@@ -51,8 +51,8 @@ export default function Modulo4View( { ...props } ) {
                   </Header>
                   <Section pd={24}>
                      <List children={<>
-                        <Text h={4} darkColor="#757">Instalação</Text>
-                        <Text>{`npm install -g @angular/cli`}</Text>
+                        <Text h={4} darkColor="#757"></Text>
+                        <Text>{``}</Text>
                      </>}/>
                   </Section>
                </View>
@@ -60,21 +60,21 @@ export default function Modulo4View( { ...props } ) {
 {/* == [ section 1 ] */}
                <View pv={24}>
                   <Header pv={24}>
-                     <Text h={3}></Text>
+                     <Text h={3}>Biblioteca React Route</Text>
                   </Header>
                </View>
 
 {/* == [ section 2 ] */}
                <View pv={24}>
                   <Header pv={24}>
-                     <Text h={3}></Text>
+                     <Text h={3}>Biblioteca React Redux</Text>
                   </Header>
                </View>
 
 {/* == [ section 3 ] */}
                <View pv={24}>
                   <Header pv={24}>
-                     <Text h={3}></Text>
+                     <Text h={3}>Reducers, slicer e componentes login e logout</Text>
                   </Header>
                </View>
 
@@ -91,6 +91,22 @@ export default function Modulo4View( { ...props } ) {
                      <Text h={3}></Text>
                   </Header>
                </View>
+
+{/* == [ exercicios ] */}
+                  <View pv={24}>
+                     <Header pv={24}>
+                        <Text h={3}>Atividades</Text>
+                     </Header>
+
+                     <Section gap={16}>
+                        
+                        <Exercices id={1}
+                           question={<Text></Text>}
+                           answer={<Text></Text>}
+                        />
+                        
+                     </Section>
+                  </View>
                
             </View>
          </ScrollView>

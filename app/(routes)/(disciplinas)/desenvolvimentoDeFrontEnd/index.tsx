@@ -64,7 +64,7 @@ export default function DesenvolvimentoDeFrontEndView( { ...props } ) {
                   id: 6,
                   title: "Reactjs", 
                   link: "/(disciplinas)/desenvolvimentoDeFrontEnd/tema-6/", 
-                  doc: "",
+                  doc: "https://stecine.azureedge.net/repositorio/00212ti/07667/index.html?brand=estacio#imprimir",
                },
                { 
                   id: 99,

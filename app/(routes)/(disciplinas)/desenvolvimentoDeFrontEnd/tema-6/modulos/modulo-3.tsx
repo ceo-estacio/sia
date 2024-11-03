@@ -105,6 +105,22 @@ export default function Modulo3View( { ...props } ) {
                            answer={<Text>O React oferece recursos para o desenvolvedor ter maior controle e qualidade da aplicação.</Text>}
                         />
                         
+                        <Exercices id={2}
+                           question={<Text>O VS Code é uma ferramenta muito útil para desenvolver aplicações em diversas linguagens de programação, incluindo aplicações JavaScript com React. Ao abrirmos a pasta de uma aplicação, vemos diversos arquivos e subpastas. Nesse sentido, selecione a opção correta a respeito do arquivo responsável por registrar as dependências de uma aplicação no React.js.</Text>}
+                           answer={<Text>As dependências estão registradas no arquivo package.json.</Text>}
+                        />
+                        
+                        <Exercices id={3}
+                           question={<Text>{`O Hooks surgiu no React para permitir a utilização dos estados e de outros recursos sem a necessidade de criar classes. Analise as afirmativas a seguir em relação à utilização de Hooks em nossas aplicações:
+
+I. Hooks são funções que lhe permitem “ligar-se” aos recursos de state e ciclo de vida do React a partir de componentes funcionais.
+II. O useState é chamado de dentro de um componente de classe para adicionar states locais a ele.
+III. O useState possui mais de um argumento que é basicamente o estado inicial que queremos atualizar mais tarde com setState.
+
+Está correto o que se afirma em:`}</Text>}
+                           answer={<Text>1 e 2.</Text>}
+                        />
+                        
                         <Exercices id={1}
                            question={<Text></Text>}
                            answer={<Text></Text>}
