@@ -47,12 +47,12 @@ export default function Modulo4View( { ...props } ) {
 {/* == [ introdução ] */}
                <View pv={24}>
                   <Header pd={24}>
-                     <Text h={3}></Text>
+                     <Text h={3}>Reduce</Text>
                   </Header>
                   <Section pd={24}>
                      <List children={<>
-                        <Text h={4} darkColor="#757"></Text>
-                        <Text>{``}</Text>
+                        <Text h={4} darkColor="#757">instalação</Text>
+                        <Text>{`° npm i react-redux\n° npm i @reduxjs/toolkit react-redux`}</Text>
                      </>}/>
                   </Section>
                </View>
@@ -101,8 +101,30 @@ export default function Modulo4View( { ...props } ) {
                      <Section gap={16}>
                         
                         <Exercices id={1}
-                           question={<Text></Text>}
-                           answer={<Text></Text>}
+                           question={<Text>O React Router é uma biblioteca que permite navegar entre outras interfaces em nossa aplicação. Neste material, falamos exclusivamente da versão V6, modificando algumas sintaxes com novos recursos. Em relação aos principais componentes dessa versão nova do Router, assinale a alternativa correta.</Text>}
+                           answer={<Text>O Route é o componente mais importante, pois é responsável pela renderização da aplicação.</Text>}
+                        />
+                        
+                        <Exercices id={2}
+                           question={<Text>Biblioteca utilizada para auxiliar o gerenciamento de estado, o Redux centraliza as informações, sendo responsável por repassá-las para o componente que precisa utilizar essas informações. Assinale a opção correta a respeito do Redux.</Text>}
+                           answer={<Text>Actions são basicamente as instruções enviadas aos reducers, informando qual a função terá de ser executada e que valor essa função utilizará como parâmetro.</Text>}
+                        />
+                        
+                        <Exercices id={3}
+                           question={<Text>{`No desenvolvimento do componente de logout, em um dado momento, vimos a construção:
+
+const handleLogout = () => {
+     dispatch(logout(name));
+}
+
+No entanto, também vimos uma estrutura sintática semelhante no componente de login:
+
+const handleLogin = () => {
+     dispatch(changeUser(name));
+}
+
+Nesse sentido, selecione a opção correta a respeito dessas estruturas sintáticas.`}</Text>}
+                           answer={<Text>São exemplos de arrows functions baseadas em programação funcional.</Text>}
                         />
                         
                      </Section>

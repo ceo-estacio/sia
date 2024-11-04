@@ -144,8 +144,10 @@ export type TextSuperProps = TextProps & {
 
 export function Text( {
   style,
-  lightColor = "#333",
-  darkColor = Palette.dark.text,
+//   lightColor = "#333",
+  lightColor,
+//   darkColor = Palette.dark.text,
+  darkColor,
   h,
   type = 'default',
   ...rest
@@ -156,18 +158,18 @@ export function Text( {
       <TextRN
          style={ [
             { color },
+            
+            h == 1 ? styles.H1 : undefined,
+            h == 2 ? styles.H2  : undefined,
+            h == 3 ? styles.H3  : undefined,
+            h == 4 ? styles.H4  : undefined,
+            h == 5 ? styles.H5  : undefined,
+            h == 6 ? styles.H6 : undefined,
             type === 'default' ? styles.default : undefined,
             type === 'title' ? styles.title : undefined,
             type === 'defaultSemiBold' ? styles.defaultSemiBold : undefined,
             type === 'subtitle' ? styles.subtitle : undefined,
             type === 'link' ? styles.link : undefined,
-
-            h == 1 ? styles.H1 
-            : h == 2 ? styles.H2 
-            : h == 3 ? styles.H3 
-            : h == 4 ? styles.H4 
-            : h == 5 ? styles.H5 
-            : styles.H6,
 
             style,
          ] }

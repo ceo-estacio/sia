@@ -46,3 +46,29 @@ let usuario = {
 exibirContexto();
 let bindUsuario = exibirContexto.bind( usuario );
 bindUsuario(); 
+
+
+let 
+   holder
+;
+
+function DataHolder( props ) {
+   holder = props;
+}
+
+async function GetData( props ) {
+   fetch( 
+      props.api 
+   ).then(
+      returned => returned.json()
+   ).then(
+      data => props.dataHolder( data )
+   );
+}
+
+GetData(
+   {
+      api: "https://jsonplaceholder.typicode.com/users",
+      dataHolder: DataHolder
+   }
+).then( _( "holder => ", holder ) );

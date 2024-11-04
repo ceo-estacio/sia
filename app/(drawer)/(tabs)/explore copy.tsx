@@ -6,6 +6,7 @@ import { ExternalLink } from '@/widgets/ExternalLink';
 import ParallaxScrollView from '@/widgets/ParallaxScrollView';
 import { ThemedText } from '@/widgets/ThemedText';
 import { ThemedView } from '@/widgets/ThemedView';
+import { Text } from "@/widgets/elements";
 
 export default function TabTwoScreen() {
   return (
@@ -17,11 +18,11 @@ export default function TabTwoScreen() {
       </ThemedView>
       <ThemedText>This app includes example code to help you get started.</ThemedText>
       <Collapsible title="File-based routing">
-        <ThemedText>
-          This app has two screens:{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> and{' '}
+        <Text>
+          {'This app has two screens: '}
+          <Text type="defaultSemiBold">app/(tabs)/index.tsx</Text> and{' '}
           <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
-        </ThemedText>
+        </Text>
         <ThemedText>
           The layout file in <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
           sets up the tab navigator.

@@ -13,19 +13,19 @@ import {
    Exercices,
    PixBG, 
 } from "@/widgets/elements";
-import React, { useState, useEffect, ReactElement } from "react";
+import React, { useState, useEffect, ReactElement, ReactNode } from "react";
 import { 
    StyleSheet,
    ScrollView,
    useColorScheme,
    ImageBackground,
-   FlatList, 
+   FlatList,
+   SectionList, 
 } from "react-native";
 
 
 /** == [ properties ]
  * == == == == == == == == == */
-
 
 /** == [ exports ]
  * == == == == == == == == == */
@@ -34,6 +34,8 @@ export default function ExercíciosView( { ...props } ) {
    return( <>
       <HomePage>
          <ScrollView>
+
+            {/* section 2 */}
             <View gap={16}>
                <Header ph={24} pv={24} bg={ Palette.dark.bar }>
                   <Text h={3}>{ "Tema 2" }</Text>
@@ -140,11 +142,39 @@ export default function ExercíciosView( { ...props } ) {
                      </> }
                   />
 
-                  <Content>
-                  </Content>
+                  <Exercices id={8}
+                     question={<>
+                        <Text>{`Em um projeto de interface web, um desenvolvedor utiliza jQuery para aprimorar a interatividade. Ele planeja modificar o estilo de um botão quando o usuário passa o mouse sobre ele. Para isso, ele precisa selecionar corretamente o botão e aplicar a função de estilo.
+Qual método jQuery o desenvolvedor deve usar para selecionar o botão pelo seu ID e aplicar uma mudança de estilo ao passar o mouse?`}</Text>
+                     </>}
+                     answer={<>
+                        <Text>{`$('#botao').hover()`}</Text>
+                     </>}
+                  />
+
+                  <Exercices id={9}
+                     question={<>
+                        <Text>{`Uma aplicação web requer a atualização de conteúdo sem recarregar a página inteira. O desenvolvedor decide usar jQuery para realizar requisições AJAX, buscando dados de um servidor e atualizando um elemento da página.
+Qual função jQuery é apropriada para enviar uma requisição AJAX GET e atualizar um elemento com o ID 'conteudo'?`}</Text>
+                     </>}
+                     answer={<>
+                        <Text>{`$.get('url', function(data) { $('#conteudo').html(data); })`}</Text>
+                     </>}
+                  />
+
+                  <Exercices id={1}
+                     question={<>
+                        <Text>{``}</Text>
+                     </>}
+                     answer={<>
+                        <Text>{``}</Text>
+                     </>}
+                  />
+
                </Section>
             </View>
 
+            {/* section 3 */}
             <View pv={24} >
                <Header pd={24}>
                   <Text h={3}>Tema 3</Text>
@@ -208,6 +238,7 @@ export default function ExercíciosView( { ...props } ) {
                </Section>
             </View>
 
+            {/* section 4 */}
             <View pv={24} >
                <Header pd={24}>
                   <Text h={3}>Tema 4</Text>
@@ -378,18 +409,19 @@ Selecione a opção correta com o resultado da execução do código`}</Text>}
                   />
                   
                   <Exercices id={4} 
-                     question={<Text></Text>}
-                     answer={<Text></Text>}
+                     question={<Text>{``}</Text>}
+                     answer={<Text>{``}</Text>}
                   />
                   
                   <Exercices id={4} 
-                     question={<Text></Text>}
-                     answer={<Text></Text>}
+                     question={<Text>{``}</Text>}
+                     answer={<Text>{``}</Text>}
                   />
 
                </Section>
             </View>
 
+            {/* section 5 */}
             <View pv={24}>
                <Header pd={24}>
                   <Text h={3}>Tema 5</Text>
@@ -538,23 +570,229 @@ obtendo como retorno os dados do aluno de matrícula 29891 no formato JSON?  `}<
                      />
 
                      <Exercices id={26}
-                        question={<Text></Text>}
-                        answer={<Text></Text>}
+                        question={<Text>{``}</Text>}
+                        answer={<Text>{``}</Text>}
                      />
 
                      <Exercices id={2}
-                        question={<Text></Text>}
-                        answer={<Text></Text>}
+                        question={<Text>{``}</Text>}
+                        answer={<Text>{``}</Text>}
                      />
 
                      <Exercices id={2}
-                        question={<Text></Text>}
-                        answer={<Text></Text>}
+                        question={<Text>{``}</Text>}
+                        answer={<Text>{``}</Text>}
                      />
 
                      <Exercices id={2}
-                        question={<Text></Text>}
-                        answer={<Text></Text>}
+                        question={<Text>{``}</Text>}
+                        answer={<Text>{``}</Text>}
+                     />
+
+               </View>
+            </View>
+
+            {/* section 6 */}
+            <View pv={24}>
+               <Header pd={24}>
+                  <Text h={3}>Tema 6</Text>
+                  <Text h={5}>Reactjs</Text>
+               </Header>
+               <View gap={24}>
+                     <Exercices id={1} 
+                        question={<Text>{`React Routes é uma biblioteca externa, que permite navegar entre telas, reaproveitando componentes. Sua última versão necessita refatorar parte dos códigos, sem muito alarde, mas alguns conceitos não mudaram. Assinale a alternativa correta quando comparamos suas versões e algumas definições.
+
+I. Na versão anterior, era utilizado switch para encapsular as rotas, que foi substituído pelos Routes.
+
+II. Não é necessário instalar a biblioteca react-router-config para se utilizar o React Router v6, no lugar utiliza-se userRoutes.
+
+III. Ainda é necessário utilizar a props exact em Route.
+
+IV. Em toda aplicação, só podemos ter um único BrowserRouter, encapsulando o objeto principal.
+
+V. useNavigate foi substituído por useHistory.`}</Text>}
+                        answer={<Text>1, 2, 4, e 5 apenas.</Text>}
+                     />
+
+                     <Exercices id={2}
+                        question={<Text>{`Sobre ciclo de vida, diversos métodos podem acabar sendo chamados e reutilizados conforme a fase de vida de um componente React, conforme as assertivas abaixo, analise as alternativas a seguir:
+
+I) constructor() apenas ocorre na fase de Montagem.
+
+II) render() ocorre apenas na fase de Atualização.
+
+III) getDerivedStateFromProps() é chamado em duas fases, tanto na montagem quando na fase de atualização.
+
+Quais as afirmativas CORRETAS?`}</Text>}
+                        answer={<Text>1 e 3</Text>}
+                     />
+
+                     <Exercices id={3}
+                        question={<>
+                           <Text>No código a seguir, marque a alternativa correta em relação ao resultado que devemos obter executando-o.</Text>
+                           <PixBG source={ require( "@/assets/images/disciplinas/desenvolvimento-de-front-end/exercicios/ex-1.png" ) }/>
+                        </>}
+                        answer={<Text>Erro de compilação</Text>}
+                     />
+
+                     <Exercices id={4}
+                        question={<Text>Após a instalação das bibliotecas necessárias quando da configuração do ambiente, utiliza-se um comando para criar uma aplicação React, o Create React App, basicamente um script que configura um novo projeto. Após sua execução, que comando precisamos chamar para abrir nossa aplicação, considerando que estamos na pasta da referida aplicação?</Text>}
+                        answer={<Text>npm start.</Text>}
+                     />
+
+                     <Exercices id={5}
+                        question={<Text>{`Sobre React e suas características, assinale a alternativa correta:
+
+I. Biblioteca Javascript desenvolvida pelo Facebook.
+
+II. Utiliza o conceito de componentes, ajudando na construção de interfaces, facilitando na sua reutilização.
+
+III. Apesar de ser de código aberto, sua comunidade é muito pequena, pois muitos não aderiram a forma complexa de utilizar JSX.
+
+IV. Usado para o desenvolvimento de interface tanto para usuários web quanto para mobile (React native).`}</Text>}
+                        answer={<Text>1, 2 e 4, apenas.</Text>}
+                     />
+
+                     <Exercices id={6}
+                        question={<Text>Formulários em React trabalham de forma um pouco diferente do que estamos habituados em HTML. No React, aproveitamos os estados dos componentes para manipular os dados. Marque a alternativa correta em relação a componentes controlados e não controlados.</Text>}
+                        answer={<Text>Um input do tipo arquivo é um componente controlado.</Text>}
+                     />
+
+                     <Exercices id={7}
+                        question={<Text>{`Podemos utilizar diferentes ambientes para testar nossas aplicações em React, avalie as seguintes afirmativas:
+
+I) O CodeSandBox não possui um template para React, necessitando de configuração extra para utilização de React.
+
+II) O CodePen não possui um template já definido, precisando incluir as bibliotecas dentro de suas configurações.
+
+III) É necessário a instalação do node.js em nosso ambiente de desenvolvimento offline.
+
+Quais as afirmativas CORRETAS?`}</Text>}
+                        answer={<Text>As alternativas 2 e 3.</Text>}
+                     />
+
+                     <Exercices id={8}
+                        question={<Text>{`Considerando o cenário da utilização de states em componentes do tipo classe sem utilização de Hooks, , avalie as seguintes afirmativas:
+
+I) Mudanças ocorrem dentro de componentes filhos.
+
+II) Definido o valor padrão no componente pai.
+
+III) Mudanças ocorrem dentro de componentes pai
+
+Quais as afirmativas CORRETAS?`}</Text>}
+                        answer={<Text>As alternativas 2 e 3</Text>}
+                     />
+
+                     <Exercices id={9}
+                        question={<Text>{`O React segue uma forma de fluxo de dados unidirecional ou também conhecido como vinculação unidirecional. Nesse contexto, avalie as seguintes afirmativas:
+                           
+I) Recebe o valor inicial do componente filho.
+
+II) O componente pai pode alterar o seu valor.
+
+III) Mudanças ocorrem dentro de componente pai.
+
+Quais as afirmativas CORRETAS?`}</Text>}
+                        answer={<Text>Apenas a 2.</Text>}
+                     />
+
+                     <Exercices id={10}
+                        question={<>
+                           <Text>Conforme código a seguir, qual seria o resultado esperado em tela levando em consideração a sintaxe JSX:</Text>
+                           <PixBG source={ require( "@/assets/images/disciplinas/desenvolvimento-de-front-end/exercicios/ex-2.png" ) }/>
+                        </>}
+                        answer={<Text>Rodrigo2032014012.</Text>}
+                     />
+
+                     <Exercices id={11}
+                        question={<Text>{`Considerando um cenário onde uma aplicação local é executada na porta 3000 como padrão e não ocorrendo alteração na instalação, avalie as seguintes afirmativas.
+
+I) Se fecharmos o terminal que estamos executando nosso servidor, a aplicação permanece ativa.
+
+II) O create-react-app é um script que configura e instala o básico para nossa aplicação, mas existem outras formas de iniciar uma configuração inicial para uma aplicação React.
+
+III) Toda aplicação React criada pelo create-react-app possuirá uma pasta node_modules, contendo os módulos que o React utiliza em suas aplicações.
+
+Quais as afirmativas CORRETAS?`}</Text>}
+                        answer={<Text>As alternativas 2 e 3.</Text>}
+                     />
+                     <Exercices id={12}
+                        question={<Text>{`A partir da versão 16.8 do React, foi introduzido o conceito de Hooks, que trouxe uma nova dinâmica. Avalie as assertivas relacionadas com a motivação de sua criação.
+
+I) Classes em React sempre foram uma forma confusa de utilizar, como por exemplo a utilização do 
+
+II) Componentes complexos e grandes eram difíceis de refatorar.
+
+III) A partir dessa versão, componentes de classes foram excluídas, forçando que todo o código antigo fosse refatorado.
+
+Quais são as afirmativas CORRETAS?`}</Text>}
+                        answer={<Text>1 e 2</Text>}
+                     />
+                     <Exercices id={13}
+                        question={<Text>{`Acerca das principais diferenças entre o DOM virtual e o DOM real, assinale a alternativa correta:
+                           
+I. A atualização no DOM real acontece de forma mais lenta que o DOM virtual.
+
+II. No DOM virtual não é possível atualizar diretamente o elemento HTML.
+
+III. A manipulação do DOM real é muito custosa, devido à sua complexidade da árvore.
+
+IV. Uma nova árvore do DOM é gerada para qualquer modificação feita em algum elemento de sua árvore.
+
+V. Existe pouco desperdício de memória no DOM real, já no DOM virtual um grande desperdício.`}</Text>}
+                        answer={<Text>1, 2, 3 e 4, apenas.</Text>}
+                     />
+                     <Exercices id={14}
+                        question={<Text>{`Requisições HTTP são mensagens enviadas pelo cliente para iniciar uma ação no servidor. Nesse contexto, avalie as afirmativas relacionadas com a utilização de Requisições HTTP em React.
+                           
+I) React não permite utilizar bibliotecas externas, apenas a nativa do navegador (windows.fetch)
+
+II) Olhando para o ciclo de vida, o local para preencher os dados com requisições AJAX seria no método componetDidMount, pois assim pode-se utilizar o setState para atualizar seu componente quando os dados estiverem disponíveis
+
+III) Não é possível utilizar hooks em requisições.
+
+Quais as afirmativas CORRETAS?`}</Text>}
+                        answer={<Text>{`Apenas a 2.`}</Text>}
+                     />
+                     <Exercices id={15}
+                        question={<>
+                           <Text>{`O Bind é amplamente utilizado em aplicações React,  um exemplo de código pode ser visualizado abaixo:`}</Text>
+                           <PixBG source={ require( "@/assets/images/disciplinas/desenvolvimento-de-front-end/exercicios/ex-3.png" ) }/>
+                           <Text>Qual seria o resultado no console quando clicarmos em Clique aqui! (linha 14)?</Text>
+                        </> }
+                        answer={<Text>{`Um objeto, ExemploBind`}</Text>}
+                     />
+                     <Exercices id={16}
+                        question={<Text>{`Redux reúne todos os estados, centralizando e otimizando a passagem de dados entre componentes e ficando responsável por essa distribuição. Marque a alternativa correta em relação às suas diferentes responsabilidades e algumas definições:
+                           
+I. A biblioteca não é nativa, necessitando de instalação através de um gerenciador de pacotes.
+
+II. Store é o objeto que salva todos os estados que desejamos compartilhar.
+
+III. Actions são dados enviados do nosso componente, sem permissão de utilizar outros objetos do Redux.
+
+IV. Reducers são funções puras que recebem o estado anterior e uma ação, retornando para o próximo estado.
+
+V. Nunca devemos modificar os argumentos passados para os reducers, a fim de manter que sejam funções puras.`}</Text>}
+                        answer={<Text>{`1, 2, 4 e 5, apenas.`}</Text>}
+                     />
+                     <Exercices id={1}
+                        question={<Text>{``}</Text>}
+                        answer={<Text>{``}</Text>}
+                     />
+                     <Exercices id={1}
+                        question={<Text>{``}</Text>}
+                        answer={<Text>{``}</Text>}
+                     />
+                     <Exercices id={1}
+                        question={<Text>{``}</Text>}
+                        answer={<Text>{``}</Text>}
+                     />
+
+                     <Exercices id={2}
+                        question={<Text>{``}</Text>}
+                        answer={<Text>{``}</Text>}
                      />
 
                </View>
