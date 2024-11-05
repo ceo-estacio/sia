@@ -261,7 +261,7 @@ function y(a: number|string):string
 {
 return (typeof a === 'number' ? "número" : "string");
 }
-console.log(y(Teste')); 
+console.log(y('Teste')); 
 Selecione a opção correta com o resultado da execução do código.
                      `}</Text> }
                      answer={ <Text>string</Text> }
