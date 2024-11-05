@@ -67,8 +67,8 @@ export default function DesenvolvimentoDeFrontEndView( { ...props } ) {
                   doc: "https://stecine.azureedge.net/repositorio/00212ti/07667/index.html?brand=estacio#imprimir",
                },
                { 
-                  id: 99,
-                  title: "Exercícios", 
+                  id: "Exercícios",
+                  title: "Desenvolvimento de Front-end", 
                   link: "/(disciplinas)/desenvolvimentoDeFrontEnd/Exercicios", 
                   doc: "",
                },

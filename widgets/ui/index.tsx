@@ -30,7 +30,7 @@ import Icon from "../icon";
 
 /** == [ properties ]
  * == == == == == == == == == */
-function Tema( { ...p }: { link: Href; tema: number; name: string; sectionName: string; } ) {
+function Tema( { ...p }: { link: Href; tema: number | string; name: string; sectionName: string; } ) {
    const 
       link: Href = p.link 
    ;
@@ -38,13 +38,16 @@ function Tema( { ...p }: { link: Href; tema: number; name: string; sectionName: 
       <View
          style={{
             padding: 16,
+            // backgroundColor: "#153"
          }}
       >
          <Pressable style={{ paddingVertical: 8, gap: 5, }}
             onPress={ () => { router.push( link ); } }
          >
-            <Text style={{ color: Palette.dark.accent.amber[1] }}>{ p.sectionName } { p.tema }</Text>
-            <X.H4 style={{ color: Palette.dark.text }}>{ p.name }</X.H4>
+            <Text style={{ color: Palette.dark.accent.amber[1] }}>
+               { typeof( p.tema ) === 'number' && p.sectionName } { p.tema }
+            </Text>
+            <Text type="subtitle" style={{ color: Palette.dark.text }}>{ p.name }</Text>
          </Pressable>
       </View>
    </> );
@@ -54,7 +57,7 @@ function Tema( { ...p }: { link: Href; tema: number; name: string; sectionName: 
 /** == [ Disciplinas Menu ]
  * == == == == == == == == == */
 type ItemsProps = {
-   id: number;
+   id: number | string;
    title: string;
    link: string;
    doc: string;
@@ -73,28 +76,25 @@ export function DisciplinasMenu( { ...props }: DisciplinasMenuProps ) {
    return( <>
       <HomePage>
          <Header h={129} ph={18} pv={18} centerH>
-            <X.H4 style={{ color: "#ccc" }}>Disciplina</X.H4>
-            <X.H1 style={{ color: props.titleColor || "#ddd" }}>{ props.title }</X.H1>
+            <Text h={4} style={{ color: "#ccc" }}>Disciplina</Text>
+            <Text h={1} style={{ color: props.titleColor || "#ddd" }}>{ props.title }</Text>
          </Header>
             <View style={{ 
-               // backgroundColor: props.bodyBG || Palette.dark[2],
-               // backgroundColor: props.bodyBG || Palette.andy[2],
-               backgroundColor: props.bodyBG || "#212329",
-               flex: 1, 
-               minHeight: ( Dimensions.get( "window" ).height ) - ( 129 - 30 ), 
-               borderTopStartRadius: 24,
+                  backgroundColor: props.bodyBG || "#212329",
+                  flex: 1, 
+                  borderTopStartRadius: 24,
+                  overflow: "hidden",
                }}
             >
                <View style={{ padding: 18, }}>
-                  <Section pd={ 18 } 
-                     bg={ Palette.dark[0] || "#ffffff05" }
-                     style={{
-                        borderRadius: 13,
-                        borderColor: "#9992",
-                        borderWidth: 1,
-                     }}
-                  >
+                  
                      <FlatList 
+                        style={{
+                           padding: 8,
+                           borderRadius: 13,
+                           borderColor: "#9992",
+                           borderWidth: 1,
+                        }}
                         data={ props.items }
                         ItemSeparatorComponent={ () => <View style={{ width: "90%", height: 1, backgroundColor: "#7775", marginHorizontal: "auto", }}/> }
                         renderItem={ ( item ) => (
@@ -104,7 +104,6 @@ export function DisciplinasMenu( { ...props }: DisciplinasMenuProps ) {
                         ) }
                      />
             
-                  </Section>
                </View>
             </View>
       </HomePage>

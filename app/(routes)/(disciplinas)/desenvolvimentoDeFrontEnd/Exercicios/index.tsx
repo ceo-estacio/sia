@@ -531,7 +531,7 @@ Qual informação é verdadeira, acerca da formatação que foi definida?
                         question={<Text>{`Considerando um serviço no estilo REST, implementado com base no NodeJS e na biblioteca Express, e uma entidade Aluno, persistida no MongoDB via MongoClient, qual a assinatura do método, no servidor, 
 para responder à chamada http://localhost:3000/alunos/29891, 
 obtendo como retorno os dados do aluno de matrícula 29891 no formato JSON?  `}</Text>}
-                        answer={<Text>router.get('/alunos/:id', async (req, res) => { });</Text>}
+                        answer={<Text>{`router.get('/alunos/:id', async (req, res) => { });`}</Text>}
                      />
 
                      <Exercices id={19}

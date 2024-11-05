@@ -36,6 +36,10 @@ export default function HomeView( { ...props } ) {
             src: "/(disciplinas)/desenvolvimentoDeFrontEnd",
          },
          {
+            id: "Engenharia de Usabilidade",
+            src: "/(disciplinas)/EngenhariaDeUsabilidade",
+         },
+         {
             id: "",
             src: "",
          },
