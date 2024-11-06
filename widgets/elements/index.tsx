@@ -279,8 +279,6 @@ export function Header( { ...props }: HeaderProps ) {
          minHeight: 56, 
          height: props.h,
          padding: props.pd,
-         paddingHorizontal: props.ph,
-         paddingVertical: props.pv,
       }, 
          props.center ? { alignItems: "center", justifyContent: "center" } : null 
          ,
@@ -294,8 +292,13 @@ export function Header( { ...props }: HeaderProps ) {
 /**
  * == [ Section ] 
  * == == == == == == == == == */
-// export function Section({ style, LightColor, darkColor, ...otherProps }: SectionProps) {
-export function Section({ ...props }: ViewSuperProps) {
+type SectionProps = ViewSuperProps & {
+   label?: string;
+   hpd?: DimensionValue;
+   type?: 'default' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link';
+}
+
+export function Section( { ...props }: SectionProps ) {
    const 
       backgroundColor = useThemeColor(
          { 
@@ -319,7 +322,18 @@ export function Section({ ...props }: ViewSuperProps) {
             props.center ? { alignItems: "center", justifyContent: "center", } : null,
             props.style
          ]} {...props} 
-      />
+      >
+         { 
+            props.label && (
+               <Header
+                  pd={ props.hpd }
+               >
+                  <Text type={ props.type || "subtitle" }>{ props.label }</Text>
+               </Header> 
+            )
+         }
+         { props.children }
+      </ViewRN>
    );
 }
 
@@ -390,6 +404,56 @@ export function Grid( { ...props }: GridType ) {
          }
       ]} { ...props }
    /> );      
+}
+
+
+/** == [ Horizontal ]
+ * == == == == == == == == == */
+export function Horizontal( { ...props } ) {
+   return( <>
+      <Section 
+         style={{
+            backgroundColor: Palette.dark.bg_lv3,
+         }}
+      >
+         <ScrollView horizontal
+            style={{
+
+            }}
+         >
+            <View
+               style={{
+                  flexDirection: "row",
+                  padding: 18,
+                  gap: 18,
+               }}
+            >
+               { props.children }
+            </View>
+         </ScrollView>
+      </Section>
+   </> );
+}
+
+
+
+/**
+ * == [ Card ] 
+ * == == == == == == == == == */
+export function Card( { ...props } ) {
+   return( <>
+      <View 
+         style={{
+            borderRadius: 24,
+            backgroundColor: props.bg || "#fff",
+            overflow: "hidden",
+            aspectRatio: "16/9",
+            width: Dimensions.get( "window" ).width * .7,
+         }}
+      >
+         {  props.children }
+      </View>
+   </> );
 }
 
 
