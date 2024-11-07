@@ -30,7 +30,7 @@ import { Palette } from "@/constants/Colors";
 
 /** == [ exports ]
  * == == == == == == == == == */
-export default function Modulo2View( { ...props } ) {
+export default function Modulo1View( { ...props } ) {
    const 
       videoHeight = 210,
       [ VideoReady, setVideoReady ] = useState<boolean>( false )
@@ -60,35 +60,42 @@ export default function Modulo2View( { ...props } ) {
 {/* == [ section 1 ] */}
                <View pv={24}>
                   <Header pv={24}>
-                     <Text h={3}></Text>
+                     <Text h={3}>Conceitos de Ergonomia</Text>
                   </Header>
                </View>
 
 {/* == [ section 2 ] */}
                <View pv={24}>
                   <Header pv={24}>
-                     <Text h={3}></Text>
+                     <Text h={3}>Premissas para criação de um sistema ergonômico</Text>
                   </Header>
                </View>
 
 {/* == [ section 3 ] */}
                <View pv={24}>
                   <Header pv={24}>
-                     <Text h={3}></Text>
+                     <Text h={3}>Conceitos de Usabilidade</Text>
                   </Header>
                </View>
 
 {/* == [ section 4 ] */}
                <View pv={24}>
                   <Header pv={24}>
-                     <Text h={3}></Text>
+                     <Text h={3}>Interface Humano-Computador (IHC)</Text>
                   </Header>
                </View>
 
 {/* == [ section 5 ] */}
                <View pv={24}>
                   <Header pv={24}>
-                     <Text h={3}></Text>
+                     <Text h={3}>Ergodesign</Text>
+                  </Header>
+               </View>
+
+{/* == [ section 5 ] */}
+               <View pv={24}>
+                  <Header pv={24}>
+                     <Text h={3}>Engenharia Semiótica</Text>
                   </Header>
                </View>
 
@@ -113,7 +120,7 @@ export default function Modulo2View( { ...props } ) {
          </ScrollView>
       </HomePage>
    </> );
-}  /*  </  Modulo2View  >  */
+}  /*  </  Modulo1View  >  */
 
 
 /** == [ StyleSheet ]

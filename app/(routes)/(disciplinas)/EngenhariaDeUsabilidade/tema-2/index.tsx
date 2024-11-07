@@ -31,19 +31,19 @@ export default function AngularView( { ...props } ) {
             id: "Módulo 1",
             name: "Descrever os conceitos de Ergonomia e Usabilidade em geral",
             desc: "",
-            src: "/(disciplinas)/EngenhariaDeUsabilidade/tema-2/modulos/modulo-1",
+            src: "/(disciplinas)/EngenhariaDeUsabilidade/tema-2/modulos/1",
          },
          {
             id: "Módulo 2",
             name: "Descrever os princípios e critérios ergonômicos em IHC",
             desc: "",
-            src: "/(disciplinas)/EngenhariaDeUsabilidade/tema-2/modulos/modulo-2",
+            src: "/(disciplinas)/EngenhariaDeUsabilidade/tema-2/modulos/2",
          },
          {
             id: "Módulo 3",
             name: "Identificar o que é necessário para que um software tenha características mínimas de ergonomia em IHC",
             desc: "",
-            src: "/(disciplinas)/EngenhariaDeUsabilidade/tema-2/modulos/modulo-3",
+            src: "/(disciplinas)/EngenhariaDeUsabilidade/tema-2/modulos/3",
          },
       ]
    ;

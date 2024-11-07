@@ -144,10 +144,8 @@ export type TextSuperProps = TextProps & {
 
 export function Text( {
   style,
-//   lightColor = "#333",
-  lightColor,
-//   darkColor = Palette.dark.text,
-  darkColor,
+  lightColor = "#333",
+  darkColor = "#eee",
   h,
   type = 'default',
   ...rest
@@ -263,29 +261,44 @@ export function Page( { ...props }: ViewSuperProps ) {
 /**
  * == [ Header ] 
  * == == == == == == == == == */
-type HeaderProps = ViewSuperProps & {
+type HeaderProps = ViewSuperProps & TextSuperProps & {
    bg?: ColorValue;
    center?: boolean;
    centerH?: boolean;
+   title?: string;
+   image?: string;
 }
 
 export function Header( { ...props }: HeaderProps ) {
    return(
-      <View style={[ props.style, { 
-         backgroundColor: props.bg || props.darkColor || props.lightColor, 
-         paddingHorizontal: props.ph, 
-         paddingVertical: props.pv, 
-         width: "100%", 
-         minHeight: 56, 
-         height: props.h,
-         padding: props.pd,
-      }, 
-         props.center ? { alignItems: "center", justifyContent: "center" } : null 
-         ,
-         props.centerH ? { justifyContent: "center" } : null
-      ]}>
-         { props.children }
-      </View>
+      <ImageBackground 
+         source={ props.image ? props.image : undefined }
+         style={[ props.style, { 
+            backgroundColor: props.bg || props.darkColor || props.lightColor, 
+            paddingHorizontal: props.ph, 
+            paddingVertical: props.pv, 
+            // width: "100%", 
+            // minHeight: 56, 
+            height: props.h,
+            padding: props.pd,
+
+            aspectRatio: props.ratio, // "2.78/1",
+            alignItems: "flex-start",
+            justifyContent: "center",
+            // paddingLeft: 24,
+         }, 
+            props.center ? { alignItems: "center", justifyContent: "center" } : null 
+            ,
+            props.centerH ? { justifyContent: "center" } : null
+         ]}
+      >
+         {  
+            props.title ? (
+               <Text type={ props.type || "title" }>{ props.title }</Text>
+            ) : props.children
+            
+         }
+      </ImageBackground>
    );
 }
 
