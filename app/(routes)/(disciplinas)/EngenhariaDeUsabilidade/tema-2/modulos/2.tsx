@@ -45,7 +45,8 @@ export default function Modulo2View( { ...props } ) {
       <HomePage>
          <ScrollView>
             <View darkColor="#212329" lightColor="#e5e5e5">
-               <Header darkColor={ Palette.sigrid.tint } center ph={24} pv={24}
+               <Header darkColor={ Palette.sigrid.tint } 
+                  center
                   title="Descrever os princípios e critérios ergonômicos em IHC"
                   type="subtitle"
                   image={ require( "@/assets/images/ui/banners/banner-020_2.78.jpg" ) }

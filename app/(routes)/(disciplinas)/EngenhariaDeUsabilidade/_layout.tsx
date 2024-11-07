@@ -24,7 +24,7 @@ export default function DesenvolvimentoDeFrontEndLayout() {
       }}>
         <Stack.Screen name="index" options={{ headerShown: true, title: "Engenharia de Usabilidade" }} />
         
-        <Stack.Screen name="tema-2/index" options={{ headerShown: true, title: "Programação Cliente Com Javascript" }} />
+        <Stack.Screen name="tema-2/index" options={{ headerShown: true, title: "Ergonomia em IHC" }} />
         
         {/* <Stack.Screen name="tema-3/index" options={{ headerShown: true, title: "Tema 3: VueJS" }} />
         <Stack.Screen name="tema-3/modulos/modulo-1" options={{ headerShown: true, title: "Tema 3: VueJS" }} />

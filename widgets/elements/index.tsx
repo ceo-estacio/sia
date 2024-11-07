@@ -277,7 +277,7 @@ export function Header( { ...props }: HeaderProps ) {
             backgroundColor: props.bg || props.darkColor || props.lightColor, 
             paddingHorizontal: props.ph, 
             paddingVertical: props.pv, 
-            // width: "100%", 
+            width: "100%", 
             // minHeight: 56, 
             height: props.h,
             padding: props.pd,

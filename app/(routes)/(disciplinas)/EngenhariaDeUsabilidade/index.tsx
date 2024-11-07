@@ -22,11 +22,11 @@ import { Palette } from "@/constants/Colors";
 
 /** == [ exports ]
  * == == == == == == == == == */
-export default function DesenvolvimentoDeFrontEndView( { ...props } ) {
+export default function EngenhariaDeUsabilidadeView( { ...props } ) {
 
    return( <>
       <DisciplinasMenu
-         title="Desenvolvimento de Front-end"
+         title="Engenharia de Usabilidade"
          sectionName="Tema"
          items={
             [
