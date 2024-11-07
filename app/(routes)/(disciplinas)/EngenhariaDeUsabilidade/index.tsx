@@ -40,7 +40,7 @@ export default function EngenhariaDeUsabilidadeView( { ...props } ) {
                   id: "Tema 2",
                   title: "Ergonomia em Interação Humano Computador", 
                   link: "/(disciplinas)/EngenhariaDeUsabilidade/tema-2/", 
-                  doc: "",
+                  doc: "https://stecine.azureedge.net/repositorio/ergonomia_em_interacao_humano_computador/index.html?brand=estacio#imprimir",
                },
                { 
                   id: "Tema 3",

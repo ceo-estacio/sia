@@ -24,7 +24,7 @@ const
 
 /** == [ exports ]
  * == == == == == == == == == */
-export default function AngularView( { ...props } ) {
+export default function Tema2View( { ...props } ) {
    const 
       modulos = [
          {
@@ -118,7 +118,7 @@ export default function AngularView( { ...props } ) {
          </ScrollView>
       </HomePage>
    </> );
-}  /*  </  AngularView  >  */
+}  /*  </  Tema2View  >  */
 
 
 /** == [ StyleSheet ]
