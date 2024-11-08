@@ -69,7 +69,7 @@ export default function EngenhariaDeUsabilidadeView( { ...props } ) {
                { 
                   id: "Exercícios",
                   title: "Exercícios", 
-                  link: "/(disciplinas)/EngenhariaDeUsabilidade/Exercicios", 
+                  link: "/(disciplinas)/EngenhariaDeUsabilidade/exercicios", 
                   doc: "",
                },
             ]
