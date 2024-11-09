@@ -43,7 +43,7 @@ export default function ExercíciosView( { ...props } ) {
                      Ergonomia em Interação Humano Computador
                   </Text>
                </Header>
-               <Section darkColor="#1b1d22" lightColor="#e5e5e5" gap={16}>
+               <Section darkColor="#" lightColor="#e5e5e5" gap={16}>
 
                   <Exercices
                      id={1}
@@ -61,50 +61,57 @@ Existem diversos critérios para isso. Assinale a alternativa que contém 3 (tr�
                   <Exercices
                      id={2}
                      question={ <>
-                        <Text>{``}</Text>
+                        <Text>{`Os objetos de interação são elementos nas interfaces digitais que permitem aos usuários acessarem e manipularem conteúdo necessário à execução de suas tarefas, sendo próprios para isso. Existem diversos tipos de objetos de interação. 
+
+Assinale abaixo a alternativa que contém somente objetos de interação:`}</Text>
                      </> }
                      answer={ <>
-                        <Text>{``}</Text>
+                        <Text>{`Janelas, Combo Boxes, Barra de Ferramentas.`}</Text>
                      </> }
                   />
 
                   <Exercices
                      id={3}
                      question={ <>
-                        <Text>{``}</Text>
+                        <Text>{`Em um novo software de gestão de projetos, os desenvolvedores incluíram um sistema robusto de ajuda e tutoriais. Eles pretendem facilitar o aprendizado do`}</Text>
                      </> }
                      answer={ <>
-                        <Text>{``}</Text>
+                        <Text>{`Suporte ao usuário e aprendizado facilitado.`}</Text>
                      </> }
                   />
 
                   <Exercices
                      id={4}
                      question={ <>
-                        <Text>{``}</Text>
+                        <Text>{`Uma plataforma de e-commerce está sendo redesenhada para oferecer uma melhor experiência ao usuário. A equipe de design decide incorporar elementos que permitam aos usuários personalizar a interface de acordo com suas preferências.
+
+Que aspecto da ergonomia em IHC está sendo enfatizado nessa decisão?`}</Text>
                      </> }
                      answer={ <>
-                        <Text>{``}</Text>
+                        <Text>{`Adaptabilidade da interface.`}</Text>
                      </> }
                   />
 
                   <Exercices
                      id={5}
                      question={ <>
-                        <Text>{``}</Text>
+                        <Text>{`IBGE/2013) A ergonomia cognitiva nas interfaces de programas de design gráfico tornou-se uma das principais contribuições do que se convencionou chamar de revolução digital. A facilitação do trabalho e a concepção do conceito de sistema amigável (user-friendly software) popularizaram tais programas a ponto de causarem uma reestruturação nos ambientes profissionais ligados às áreas gráficas.
+
+Uma das características desses softwares encontra-se em:`}</Text>
                      </> }
                      answer={ <>
-                        <Text>{``}</Text>
+                        <Text>{`Abundância de ícones operacionais reforçados pela redundância presente nos menus, nas barras de ferramentas e nos atalhos de teclado.`}</Text>
                      </> }
                   />
 
                   <Exercices
                      id={6}
                      question={ <>
-                        <Text>{``}</Text>
+                        <Text>{`SELECON/2022 - Adaptada) No que se refere à Interface Homem-Máquina, um termo é definido como a qualidade que um produto apresenta de poder ser utilizado por usuários específicos para atingir determinadas metas com eficiência, eficácia e satisfação num contexto de uso específico. Em resumo, os sistemas devem ser flexíveis e fáceis de usar e aprender. Além disso, devem despertar uma boa atitude nas pessoas.
+Esse termo é denominado:`}</Text>
                      </> }
                      answer={ <>
-                        <Text>{``}</Text>
+                        <Text>{`Usabilidade.`}</Text>
                      </> }
                   />
 

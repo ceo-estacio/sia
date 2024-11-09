@@ -625,12 +625,20 @@ type ListType = {
 
 export function List( { ...props }: ListType ) {
    return( <>
-      <Content gap={8} style={{ flexDirection: "row", marginVertical: 8, alignItems: "flex-start", paddingHorizontal: 24, }}>
+      <Content gap={8} 
+         style={{ 
+            flexDirection: "row", 
+            marginVertical: 8, 
+            alignItems: "flex-start", 
+            paddingLeft: 24, 
+            // flexWrap: "wrap",
+         }}
+      >
          {
             props.type ||
             <Icon family="Octicons" name="dot-fill" color={ props.color || "#c33" }/>
          }
-         <View style={{ gap: props.gap || 8 }}>{ props.children }</View>
+         <View style={{ gap: props.gap || 8, width: "90%" }}>{ props.children }</View>
       </Content>
    </> );
 }
