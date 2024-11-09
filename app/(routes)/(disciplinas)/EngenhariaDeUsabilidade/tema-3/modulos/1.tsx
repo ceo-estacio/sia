@@ -141,6 +141,34 @@ export default function Modulo1View( { ...props } ) {
                   <Header pd={24}>
                      <Text h={3}></Text>
                   </Header>
+                  <Content>
+                     <Text type="subtitle">Personas</Text>
+                     <Collapsible title="Identidade">
+                        <Text>Nome, idade, avatar (foto) e dados demográficos.</Text>
+                     </Collapsible>
+                     <Collapsible title="Status">
+                        <Text>Categoria como stakeholder, usuário primário, administrador ou outras.</Text>
+                     </Collapsible>
+                     <Collapsible title="Objetivos">
+                        <Text>Objetivos definidos com relação ao sistema.</Text>
+                     </Collapsible>
+                     <Collapsible title="Habilidades">
+                        <Text>Competências e habilidades especificadas.</Text>
+                     </Collapsible>
+                     <Collapsible title="Tarefas">
+                        <Text>Tarefas que realiza normalmente e a frequência de realização.</Text>
+                     </Collapsible>
+                     <Collapsible title="Relacionamentos">
+                        <Text>Indicação das outras personas com quem se relaciona.</Text>
+                     </Collapsible>
+                  </Content>
+               </View>
+
+{/* == [ section 2 ] */}
+               <View pv={24}>
+                  <Header pd={24}>
+                     <Text h={3}></Text>
+                  </Header>
                </View>
 
 {/* == [ exercicios ] */}
