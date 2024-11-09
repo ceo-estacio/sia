@@ -141,27 +141,79 @@ export default function Modulo1View( { ...props } ) {
                   <Header pd={24}>
                      <Text h={3}></Text>
                   </Header>
+
                   <Content>
-                     <Text type="subtitle">Personas</Text>
-                     <Collapsible title="Identidade">
-                        <Text>Nome, idade, avatar (foto) e dados demográficos.</Text>
-                     </Collapsible>
-                     <Collapsible title="Status">
-                        <Text>Categoria como stakeholder, usuário primário, administrador ou outras.</Text>
-                     </Collapsible>
-                     <Collapsible title="Objetivos">
-                        <Text>Objetivos definidos com relação ao sistema.</Text>
-                     </Collapsible>
-                     <Collapsible title="Habilidades">
-                        <Text>Competências e habilidades especificadas.</Text>
-                     </Collapsible>
-                     <Collapsible title="Tarefas">
-                        <Text>Tarefas que realiza normalmente e a frequência de realização.</Text>
-                     </Collapsible>
-                     <Collapsible title="Relacionamentos">
-                        <Text>Indicação das outras personas com quem se relaciona.</Text>
-                     </Collapsible>
+
+                     <Section>
+                        <View pv={18} gap={8}>
+                           <Text type="subtitle">Perfil do usuário</Text>
+                           <Text>A definição do perfil do usuário é importante, pois é para ele que o sistema será construído.</Text>
+                        </View>
+                     </Section>
+
+                     <Section>
+                        <View pv={18} gap={8}>
+                           <Text type="subtitle">Personas</Text>
+                           <Text>É um termo que representa um grupo hipotético de usuários.</Text>
+                        </View>
+                        <Collapsible title="Identidade">
+                           <Text>Nome, idade, avatar (foto) e dados demográficos.</Text>
+                        </Collapsible>
+                        <Collapsible title="Status">
+                           <Text>Categoria como stakeholder, usuário primário, administrador ou outras.</Text>
+                        </Collapsible>
+                        <Collapsible title="Objetivos">
+                           <Text>Objetivos definidos com relação ao sistema.</Text>
+                        </Collapsible>
+                        <Collapsible title="Habilidades">
+                           <Text>Competências e habilidades especificadas.</Text>
+                        </Collapsible>
+                        <Collapsible title="Tarefas">
+                           <Text>Tarefas que realiza normalmente e a frequência de realização.</Text>
+                        </Collapsible>
+                        <Collapsible title="Relacionamentos">
+                           <Text>Indicação das outras personas com quem se relaciona.</Text>
+                        </Collapsible>
+                     </Section>
+
+                     <Section>
+                        <View pv={18} gap={8}>
+                           <Text type="subtitle">Cenários</Text>
+                           <Text>É uma narrativa que inclui contexto sobre uma situação de uso de um sistema.</Text>
+                        </View>
+                        <Collapsible title="Ambiente">
+                           <Text>Detalhes da situação.</Text>
+                        </Collapsible>
+                        <Collapsible title="Atores">
+                           <Text>Pessoas que interagem no cenário.</Text>
+                        </Collapsible>
+                        <Collapsible title="Objetivos">
+                           <Text>O que motiva as ações dos atores.</Text>
+                        </Collapsible>
+                        <Collapsible title="Planejamento">
+                           <Text>Atividades que transformam o objetivo em comportamento.</Text>
+                        </Collapsible>
+                        <Collapsible title="Planejamento">
+                           <Text>Comportamentos.</Text>
+                        </Collapsible>
+                        <Collapsible title="Eventos">
+                           <Text>Ações externas ou reações internas.</Text>
+                        </Collapsible>
+                        <Collapsible title="Avaliação">
+                           <Text>Interpretação da situação.</Text>
+                        </Collapsible>
+                     </Section>
+
+                     <Section>
+                        <View pv={18} gap={8}>
+                           <Text type="subtitle"></Text>
+                           <Text></Text>
+                        </View>
+                     </Section>
+                     
                   </Content>
+
+
                </View>
 
 {/* == [ section 2 ] */}
