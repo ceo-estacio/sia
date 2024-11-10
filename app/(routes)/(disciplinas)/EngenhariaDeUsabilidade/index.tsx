@@ -3,8 +3,8 @@
 /** == [ @imports ] 
  * == == == == == == == == == */ 
 import React, { 
-   // useState, 
-   // useEffect 
+// useState, 
+// useEffect 
 } from "react"; 
 import { 
    StyleSheet, 
@@ -22,7 +22,7 @@ import { Palette } from "@/constants/Colors";
 
 /** == [ exports ]
  * == == == == == == == == == */
-export default function EngenhariaDeUsabilidadeView( { ...props } ) {
+export default function EngenhariaDeUsabilidadeView( { ...props } ) { 
 
    return( <>
       <DisciplinasMenu
@@ -52,7 +52,7 @@ export default function EngenhariaDeUsabilidadeView( { ...props } ) {
                   id: "Tema 4",
                   title: "Avaliação de Interface Humano Computador", 
                   link: "/(disciplinas)/EngenhariaDeUsabilidade/tema-4/", 
-                  doc: "",
+                  doc: "https://stecine.azureedge.net/repositorio/avaliacao_de_interface_humano_computador/index.html?brand=estacio#imprimir",
                },
                { 
                   id: "Tema 5",

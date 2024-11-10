@@ -54,7 +54,7 @@ Existem diversos critérios para isso. Assinale a alternativa que contém 3 (tr�
                         </Text>
                      </> }
                      answer={ <>
-                        <Text>{`Condução, Carga de Trabalho, Controle Explícito.`}</Text>
+                        <Text>{"Condução, Carga de Trabalho, Controle Explícito."}</Text>
                      </> }
                   />
 
@@ -66,17 +66,17 @@ Existem diversos critérios para isso. Assinale a alternativa que contém 3 (tr�
 Assinale abaixo a alternativa que contém somente objetos de interação:`}</Text>
                      </> }
                      answer={ <>
-                        <Text>{`Janelas, Combo Boxes, Barra de Ferramentas.`}</Text>
+                        <Text>{"Janelas, Combo Boxes, Barra de Ferramentas."}</Text>
                      </> }
                   />
 
                   <Exercices
                      id={3}
                      question={ <>
-                        <Text>{`Em um novo software de gestão de projetos, os desenvolvedores incluíram um sistema robusto de ajuda e tutoriais. Eles pretendem facilitar o aprendizado do`}</Text>
+                        <Text>{"Em um novo software de gestão de projetos, os desenvolvedores incluíram um sistema robusto de ajuda e tutoriais. Eles pretendem facilitar o aprendizado do"}</Text>
                      </> }
                      answer={ <>
-                        <Text>{`Suporte ao usuário e aprendizado facilitado.`}</Text>
+                        <Text>{"Suporte ao usuário e aprendizado facilitado."}</Text>
                      </> }
                   />
 
@@ -88,7 +88,7 @@ Assinale abaixo a alternativa que contém somente objetos de interação:`}</Tex
 Que aspecto da ergonomia em IHC está sendo enfatizado nessa decisão?`}</Text>
                      </> }
                      answer={ <>
-                        <Text>{`Adaptabilidade da interface.`}</Text>
+                        <Text>{"Adaptabilidade da interface."}</Text>
                      </> }
                   />
 
@@ -100,7 +100,7 @@ Que aspecto da ergonomia em IHC está sendo enfatizado nessa decisão?`}</Text>
 Uma das características desses softwares encontra-se em:`}</Text>
                      </> }
                      answer={ <>
-                        <Text>{`Abundância de ícones operacionais reforçados pela redundância presente nos menus, nas barras de ferramentas e nos atalhos de teclado.`}</Text>
+                        <Text>{"Abundância de ícones operacionais reforçados pela redundância presente nos menus, nas barras de ferramentas e nos atalhos de teclado."}</Text>
                      </> }
                   />
 
@@ -111,47 +111,47 @@ Uma das características desses softwares encontra-se em:`}</Text>
 Esse termo é denominado:`}</Text>
                      </> }
                      answer={ <>
-                        <Text>{`Usabilidade.`}</Text>
+                        <Text>{"Usabilidade."}</Text>
                      </> }
                   />
 
                   <Exercices
                      id={7}
                      question={ <>
-                        <Text>{``}</Text>
+                        <Text>{""}</Text>
                      </> }
                      answer={ <>
-                        <Text>{``}</Text>
+                        <Text>{""}</Text>
                      </> }
                   />
 
                   <Exercices
                      id={8}
                      question={ <>
-                        <Text>{``}</Text>
+                        <Text>{""}</Text>
                      </> }
                      answer={ <>
-                        <Text>{``}</Text>
+                        <Text>{""}</Text>
                      </> }
                   />
 
                   <Exercices
                      id={9}
                      question={ <>
-                        <Text>{``}</Text>
+                        <Text>{""}</Text>
                      </> }
                      answer={ <>
-                        <Text>{``}</Text>
+                        <Text>{""}</Text>
                      </> }
                   />
 
                   <Exercices
                      id={10}
                      question={ <>
-                        <Text>{``}</Text>
+                        <Text>{""}</Text>
                      </> }
                      answer={ <>
-                        <Text>{``}</Text>
+                        <Text>{""}</Text>
                      </> }
                   />
 
@@ -175,7 +175,7 @@ Esse termo é denominado:`}</Text>
 Qual método ágil de desenvolvimento é amplamente utilizado em projetos de software?`}</Text>
                      </> }
                      answer={ <>
-                        <Text>{`Scrum`}</Text>
+                        <Text>{"Scrum"}</Text>
                      </> }
                   />
                   
@@ -188,7 +188,7 @@ Ao fim do encontro, o tema do jogo estava decidido.
 Assinale a opção que indica a técnica de decisão utilizada pelos diretores da empresa XPTO.`}</Text>
                      </> }
                      answer={ <>
-                        <Text>{`Brainstorming`}</Text>
+                        <Text>{"Brainstorming"}</Text>
                      </> }
                   />
                   
@@ -200,7 +200,7 @@ Assinale a opção que indica a técnica de decisão utilizada pelos diretores d
 Qual é o principal benefício da utilização de p`}</Text>
                      </> }
                      answer={ <>
-                        <Text>{`Facilitação da colaboração e feedback rápido.`}</Text>
+                        <Text>{"Facilitação da colaboração e feedback rápido."}</Text>
                      </> }
                   />
                   
@@ -212,7 +212,7 @@ Qual é o principal benefício da utilização de p`}</Text>
 Qual é o principal objetivo ao aplicar os princípios de IHC neste contexto?`}</Text>
                      </> }
                      answer={ <>
-                        <Text>{`Facilitar a interação do usuário com a interface.`}</Text>
+                        <Text>{"Facilitar a interação do usuário com a interface."}</Text>
                      </> }
                   />
                   
@@ -226,17 +226,17 @@ Disponível em: https://www.devmedia.com.br/ciclos-de-vida-dosoftware/21099. Ace
 No Ciclo de Vida Estrela, a atividade central é:`}</Text>
                      </> }
                      answer={ <>
-                        <Text>{`Avaliação`}</Text>
+                        <Text>{"Avaliação"}</Text>
                      </> }
                   />
                   
                   <Exercices
                      id={6}
                      question={ <>
-                        <Text>{`Existem diversos tipos de processo de design de interface. Qual das alternativas abaixo apresenta um deles?`}</Text>
+                        <Text>{"Existem diversos tipos de processo de design de interface. Qual das alternativas abaixo apresenta um deles?"}</Text>
                      </> }
                      answer={ <>
-                        <Text>{`Ciclo de vida em estrela`}</Text>
+                        <Text>{"Ciclo de vida em estrela"}</Text>
                      </> }
                   />
                   
@@ -250,7 +250,7 @@ Disponível em: https://www.dialhost.com.br/blog/o-que-e-design-de-interfacedo-u
 Qual das alternativas abaixo melhor define o design baseado em cenários?`}</Text>
                      </> }
                      answer={ <>
-                        <Text>{`É uma história sobre pessoas executando uma atividade.`}</Text>
+                        <Text>{"É uma história sobre pessoas executando uma atividade."}</Text>
                      </> }
                   />
                   
@@ -262,7 +262,7 @@ Qual das alternativas abaixo melhor define o design baseado em cenários?`}</Tex
 Assinale a alternativa que apresenta o nome desta técnica para o levantamento de requisito.`}</Text>
                      </> }
                      answer={ <>
-                        <Text>{`Questionário.`}</Text>
+                        <Text>{"Questionário."}</Text>
                      </> }
                   />
                   
@@ -274,17 +274,130 @@ Assinale a alternativa que apresenta o nome desta técnica para o levantamento d
 Acerca dos conceitos de IHC, é correto definir brainstorming como:`}</Text>
                      </> }
                      answer={ <>
-                        <Text>{`Reunião desenvolvida para estimular a produção de ideias. O Coordenador seleciona e avalia as sugestões recebidas pelos Colaboradores.`}</Text>
+                        <Text>{"Reunião desenvolvida para estimular a produção de ideias. O Coordenador seleciona e avalia as sugestões recebidas pelos Colaboradores."}</Text>
                      </> }
                   />
                   
                   <Exercices
                      id={10}
                      question={ <>
-                        <Text>{``}</Text>
+                        <Text>{""}</Text>
                      </> }
                      answer={ <>
-                        <Text>{``}</Text>
+                        <Text>{""}</Text>
+                     </> }
+                  />
+                  
+               </Section>
+            </View>
+            { /* == == == == == == == == == */ }
+
+            { /** == [ Exercicios tema 4 ]
+             * == == == == == == == == == */ }
+            <View gap={16}>
+               <Header ph={24} pv={24} bg={ Palette.dark.bar }>
+                  <Text h={3}>Tema 4</Text>
+                  <Text h={5} darkColor="#777">Avaliação De Interface Humano Computador</Text>
+               </Header>
+               <Section gap={16}>
+                  
+                  <Exercices
+                     id={1}
+                     question={ <>
+                        <Text>{"IBFC/2014 - Adaptada) Usabilidade é a medida da facilidade com que as pessoas podem utilizar uma interface de usuário para atingir seus objetivos de forma eficiente, eficaz e satisfatória. Identifique o termo técnico abaixo que está diretamente relacionado com os conceitos de ergonomia e usabilidade:"}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{"IHC"}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={2}
+                     question={ <>
+                        <Text>{"A usabilidade é capacidade do sistema em fazer com que o usuário tenha sucesso na execução de suas tarefas. Fácil aprendizagem, utilização eficiente e gestão de erros são pontos fundamentais para que o usuário perceba a boa usabilidade. Disponível em: https://www.teclogica.com.br/oque-e-usabilidade/. Acesso em: 23 set. 2022. Assinale a alternativa que contém somente parâmetros observados durante a técnica Ensaios de Interação. "}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{"Amostra de usuários, local de realização e verbalizações do usuário."}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={3}
+                     question={ <>
+                        <Text>{"VUNESP/2022 - Adaptada) Testes de software são uma prática fundamental no desenvolvimento de software que consiste em executar um programa com o objetivo de encontrar defeitos, falhas ou erros no software. Considerando os chamados testes de unidade feitos no software de um sistema computacional, marque a alternativa correta. "}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{"Testam suas interfaces que recebem e transmitem dados. "}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={4}
+                     question={ <>
+                        <Text>{"Segundo a ISO 9241-11, usabilidade é a capacidade que um produto tem de ser usado por usuários específicos para atingir objetivos específicos com eficácia, eficiência e satisfação em contexto específico de uso. Disponível em: https://www.neomind.com.br/blog/aimportancia-da-usabilidade-em-software/. Acesso em: 23 set. 2022. Acerca dos conceitos da avaliação de interface humano-computador, analise as afirmativas sobre a técnica de Ensaio de Interação e marque a alternativa correta."}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{"Durante uma sessão de ensaios de interação, o comportamento dos usuários pode ser observado e comparado com os outros usuários que realizam uma mesma tarefa. "}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={5}
+                     question={ <>
+                        <Text>{"UFRJ/2021) Assinale, dentre as alternativas a seguir, uma das heurísticas de Nielsen, responsável por nortear as definições básicas de usabilidade na área de Interface HomemMáquina."}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{"Visualização do estado do sistema. "}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={6}
+                     question={ <>
+                        <Text>{"Um novo aplicativo de gerenciamento de tarefas foi lançado, visando atender às necessidades de profissionais autônomos. Durante a avaliação da interface, a equipe se concentrou em entender como esses profissionais interagem com as funcionalidades do aplicativo para melhorar a eficiência no gerenciamento de suas tarefas. Qual aspecto da interface é mais relevante na avaliação de um aplicativo de gerenciamento de tarefas para profissionais autônomos?"}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{"Capacidade de personalização da interface. "}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={7}
+                     question={ <>
+                        <Text>{"Avaliação de usabilidade é parte integrante do processo de design de interfaces com o usuário. As técnicas de avaliação existentespodem ser categorizadas de várias formas, mas uma delas focaliza se a avaliação é feita envolvendo ou não usuários. Considere as afirmações abaixo. I - Avaliação Heurística é uma técnica de avaliação que NÃO envolve usuários. II - Inspeção é uma técnica de avaliação que NÃO envolve usuários. III Estudo de Campo é uma técnica de avaliação que NÃO envolve usuários. Quais estão corretas?"}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{"Apenas I e II"}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={8}
+                     question={ <>
+                        <Text>{"(ESAF/2015 - Adaptada) Segundo Jakob Nielsen, um pesquisador reconhecido e precursor na área de usabilidade, a engenharia de usabilidade visa ao desenvolvimento de interfaces com determinados atributos. Em relação a esses atributos, marque a alternativa correta: "}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{"prevenção de erros do usuário significa que o sistema deve prevenir erros cometidos pelo usuário quando o utiliza em suas atividades."}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={9}
+                     question={ <>
+                        <Text>{""}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{""}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={10}
+                     question={ <>
+                        <Text>{""}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{""}</Text>
                      </> }
                   />
                   

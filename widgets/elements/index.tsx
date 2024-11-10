@@ -837,7 +837,7 @@ export function Exercices( props: ExercicesProps ) {
          <View pv={16} gap={8}>
             { props.question }
          </View>
-         <View borderRadius={9} pd={16} darkColor="#00640064"
+         <View borderRadius={9} pd={16} darkColor="#11441a"
             style={{
                borderColor: "#006400", borderWidth: .5,
             }}
