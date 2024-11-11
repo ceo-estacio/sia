@@ -25,6 +25,7 @@ import YouTube from "react-native-youtube-iframe";
 import YouTubePlayer from "@/widgets/céo/YouTubePlayer";
 import { Palette } from "@/constants/Colors";
 import { Stack } from "expo-router";
+import { Fonts } from "@/constants/Sizes";
 
 
 /** == [ properties ]
@@ -56,26 +57,81 @@ export default function Modulo1View( { ...props } ) {
 
                {/* == [ introdução ] */}
                <View pv={24}>
-                  <Header pd={24}>
-                     <Text h={3}></Text>
-                     <Text darkColor="#cf6478"></Text>
+                  <Header pd={24} style={{ gap: 8 }}>
+                     <Text >Módulo 1</Text>
+                     <Text style={ Fonts.h2 } darkColor="#cf6478">As seis dimensões da acessibilidade</Text>
+                     <Text style={ Fonts.t5 }>Descrever o conceito geral de acessibilidade, suas seis dimensões e características.</Text>
                   </Header>
+
+                  {/* == [ section 1 ] */}
+                  <View pv={24}>
+                     <Header pd={24}>
+                        <Text h={3}>{""}</Text>
+                     </Header>
+                     <Content>
+                        <Text darkColor="#cf6478"></Text>
+                     </Content>
+                  </View>
                </View>
 
-               {/* == [ section 1 ] */}
                <View pv={24}>
-                  <Header pd={24}>
-                     <Text h={3}>{""}</Text>
+                  <Header pd={24} style={{ gap: 8 }}>
+                     <Text >Módulo 2</Text>
+                     <Text style={ Fonts.h2 } darkColor="#cf6478">Acessibilidade e seus benefícios</Text>
+                     <Text style={ Fonts.h5 }>Descrever os conceitos gerais sobre acessibilidade à web e seus benefícios.</Text>
                   </Header>
-                  <Content>
-                     <Text darkColor="#cf6478"></Text>
-                  </Content>
+
+                  {/* == [ section 1 ] */}
+                  <View pv={24}>
+                     <Header pd={24}>
+                        <Text h={3}>{""}</Text>
+                     </Header>
+                     <Content>
+                        <Text darkColor="#cf6478"></Text>
+                     </Content>
+                  </View>
+               </View>
+
+               <View pv={24}>
+                  <Header pd={24} style={{ gap: 8 }}>
+                     <Text >Módulo 3</Text>
+                     <Text style={ Fonts.h2 } darkColor="#cf6478">Componentes para acessibilidade na web</Text>
+                     <Text style={ Fonts.h5 }>Identificar os sete componentes essenciais para promoção da acessibilidade web.</Text>
+                  </Header>
+
+                  {/* == [ section 1 ] */}
+                  <View pv={24}>
+                     <Header pd={24}>
+                        <Text h={3}>{""}</Text>
+                     </Header>
+                     <Content>
+                        <Text darkColor="#cf6478"></Text>
+                     </Content>
+                  </View>
+               </View>
+
+               <View pv={24}>
+                  <Header pd={24} style={{ gap: 8 }}>
+                     <Text >Módulo 4</Text>
+                     <Text style={ Fonts.h2 } darkColor="#cf6478">Integração da acessibilidade na produção de produtos digitais</Text>
+                     <Text style={ Fonts.h5 }>Reconhecer as estratégias de integração da acessibilidade em todo o processo de desenvolvimento de websites, aplicativos e outros produtos digitais.</Text>
+                  </Header>
+
+                  {/* == [ section 1 ] */}
+                  <View pv={24}>
+                     <Header pd={24}>
+                        <Text h={3}>{""}</Text>
+                     </Header>
+                     <Content>
+                        <Text darkColor="#cf6478"></Text>
+                     </Content>
+                  </View>
                </View>
 
                {/* == [ exercicios ] */}
                <View darkColor={ Palette.dark.bg } pv={24}>
                   <Header pd={24}>
-                     <Text h={3}>Atividades</Text>
+                     <Text >Atividades</Text>
                   </Header>
 
                   <Section gap={16}>
