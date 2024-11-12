@@ -587,6 +587,179 @@ projeto específico, incluindo os recursos de tecnologia assistiva.`}</Text>
             </View>
             { /* == == == == == == == == == */ }
 
+            { /** == [ AV ]
+             * == == == == == == == == == */ }
+            <View gap={16}>
+               <Header ph={24} pv={24} bg={ Palette.dark.bar }>
+                  <Text h={3}>AV</Text>
+                  <Text h={5} darkColor="#777"></Text>
+               </Header>
+               <Section gap={16}>
+
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/1.png" ) }/>
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/2.png" ) }/>
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/3.png" ) }/>
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/4.png" ) }/>
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/5.png" ) }/>
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/6.png" ) }/>
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/7.png" ) }/>
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/8.png" ) }/>
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/9.png" ) }/>
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/10.png" ) }/>
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/11.png" ) }/>
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/12.png" ) }/>
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/13.png" ) }/>
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/14.png" ) }/>
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/15.png" ) }/>
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/16.png" ) }/>
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/17.png" ) }/>
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/18.png" ) }/>
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/19.png" ) }/>
+                  
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/20.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/21.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/22.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/23.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/24.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/25.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/26.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/27.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/28.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/29.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/30.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/31.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/32.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/33.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/34.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/35.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/36.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/37.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/38.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/39.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/40.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/41.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/42.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/43.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/44.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/45.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/46.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/47.png" ) }/>
+                  
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/48.png" ) }/>
+                  
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/49.png" ) }/>
+                  <PixBG h={300} source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/50.png" ) }/>
+                  
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/51.png" ) }/>
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/52.png" ) }/>
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/53.png" ) }/>
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/54.png" ) }/>
+                  <PixBG source={ require( "@/assets/images/disciplinas/engenharia-de-usabilidade/exercicios/55.png" ) }/>
+                  
+                  <Exercices
+                     id={1}
+                     question={ <>
+                        <Text>{``}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{``}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={2}
+                     question={ <>
+                        <Text>{``}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{``}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={3}
+                     question={ <>
+                        <Text>{``}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{``}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={4}
+                     question={ <>
+                        <Text>{``}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{``}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={5}
+                     question={ <>
+                        <Text>{``}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{``}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={6}
+                     question={ <>
+                        <Text>{``}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{``}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={7}
+                     question={ <>
+                        <Text>{``}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{``}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={8}
+                     question={ <>
+                        <Text>{``}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{``}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={9}
+                     question={ <>
+                        <Text>{``}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{``}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={10}
+                     question={ <>
+                        <Text>{``}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{``}</Text>
+                     </> }
+                  />
+                  
+               </Section>
+            </View>
+            { /* == == == == == == == == == */ }
+
          </ScrollView>
       </HomePage>
    </> );
