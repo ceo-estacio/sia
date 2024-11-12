@@ -482,7 +482,7 @@ type TileProps = ViewSuperProps & {
 export function Tile( { onPress, ...props }: TileProps ) {
    return( <>
       <View darkColor="#0000" lightColor="#0000" pd={2}>
-         <View darkColor="#212329" lightColor="#f5f5f5" borderRadius={18} pd={24}
+         <View darkColor="#2d2129" lightColor="#f5f5f5" borderRadius={18} pd={24}
             w={ Dimensions.get( "window" ).width / 2.3 }
             ratio="1 / 1"
             { ...props }

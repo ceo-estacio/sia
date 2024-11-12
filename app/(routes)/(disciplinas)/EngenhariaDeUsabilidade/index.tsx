@@ -58,7 +58,7 @@ export default function EngenhariaDeUsabilidadeView( { ...props } ) {
                   id: "Tema 5",
                   title: "Acessibilidade à Web", 
                   link: "/(disciplinas)/EngenhariaDeUsabilidade/tema-5/", 
-                  doc: "",
+                  doc: "https://stecine.azureedge.net/repositorio/00212ti/07660/index.html?brand=estacio#imprimir",
                },
                { 
                   id: "Tema 6",

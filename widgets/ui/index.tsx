@@ -80,7 +80,7 @@ export function DisciplinasMenu( { ...props }: DisciplinasMenuProps ) {
             <Text h={1} style={{ color: props.titleColor || "#ddd" }}>{ props.title }</Text>
          </Header>
             <View style={{ 
-                  backgroundColor: props.bodyBG || "#212329",
+                  backgroundColor: props.bodyBG || "#2d2129",
                   flex: 1, 
                   borderTopStartRadius: 24,
                   overflow: "hidden",

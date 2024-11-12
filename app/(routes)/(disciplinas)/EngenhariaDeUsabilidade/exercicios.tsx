@@ -118,27 +118,27 @@ Esse termo é denominado:`}</Text>
                   <Exercices
                      id={7}
                      question={ <>
-                        <Text>{""}</Text>
+                        <Text>{`Você está trabalhando como desenvolvedor de software em uma empresa de tecnologia, responsável por criar interfaces gráficas para diversos aplicativos. Durante o desenvolvimento, percebe que a experiência do usuário está sendo comprometida por certas dificuldades que os usuários enfrentam ao tentar utilizar o sistema. Essas dificuldades podem afetar a usabilidade da interface e, consequentemente, a satisfação do cliente com o produto final. Para garantir que a interface gráfica seja eficiente e agradável, é essencial entender o conceito de "barreiras na usabilidade". Considerando esse contexto, como você definiria as barreiras na usabilidade de interfaces?`}</Text>
                      </> }
                      answer={ <>
-                        <Text>{""}</Text>
+                        <Text>{"Problemas que impossibilitam que os usuários executem seu trabalho sem ajuda externa."}</Text>
                      </> }
                   />
 
                   <Exercices
                      id={8}
                      question={ <>
-                        <Text>{""}</Text>
+                        <Text>{`Imagine que você é um analista de sistemas e está trabalhando na revisão de uma interface para um sistema de gerenciamento de tarefas. Durante a análise, percebe que as caixas de mensagens desempenham um papel crucial na comunicação com o usuário, especialmente quando ocorre algum erro ou quando é necessário informar sobre o andamento de um processo. Essas caixas de mensagens são fundamentais para guiar o usuário durante sua interação com o software, evitando confusões e garantindo que ele saiba o que está acontecendo em cada etapa. Com isso em mente, qual seria um possível uso correto para as caixas de mensagens dentro de uma interface?`}</Text>
                      </> }
                      answer={ <>
-                        <Text>{""}</Text>
+                        <Text>{"Apresentação de um erro do sistema."}</Text>
                      </> }
                   />
 
                   <Exercices
                      id={9}
                      question={ <>
-                        <Text>{""}</Text>
+                        <Text>{"Você trabalha como designer de interfaces para um estúdio de design gráfico que produz softwares de edição de imagens. Com a evolução das ferramentas digitais, a ergonomia cognitiva tornou-se cada vez mais relevante para garantir que esses softwares sejam intuitivos e acessíveis aos usuários, independentemente do seu nível de habilidade. É importante que a interface gráfica não apenas seja funcional, mas também que ajude a reduzir a carga cognitiva dos usuários, facilitando o processo de criação artística. Nesse contexto, considere as características que tornam um software de design gráfico verdadeiramente amigável ao usuário. Qual das opções a seguir melhor exemplifica essas características?"}</Text>
                      </> }
                      answer={ <>
                         <Text>{""}</Text>
@@ -398,6 +398,188 @@ Acerca dos conceitos de IHC, é correto definir brainstorming como:`}</Text>
                      </> }
                      answer={ <>
                         <Text>{""}</Text>
+                     </> }
+                  />
+                  
+               </Section>
+            </View>
+            { /* == == == == == == == == == */ }
+
+            { /** == [ Exercicios tema 5 ]
+             * == == == == == == == == == */ }
+            <View gap={16}>
+               <Header ph={24} pv={24} bg={ Palette.dark.bar }>
+                  <Text h={3}>Tema 5</Text>
+                  <Text h={5} darkColor="#777">Acessibilidade à Web</Text>
+               </Header>
+               <Section gap={16}>
+                  
+                  <Exercices
+                     id={1}
+                     question={ <>
+                        <Text>{`Para que a Web seja acessível a pessoas com deficiência, vários componentes
+de desenvolvimento Web e ferramentas de interação devem ser coordenados,
+dentre os quais:`}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{`Conteúdo e tocadores de mídia (media players)`}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={2}
+                     question={ <>
+                        <Text>{`Qual a função do componente "Agentes de Usuário" quando uma pessoa cega
+acessa um texto alternativo com imagens com apoio de um software leitor de
+tela:`}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{`Fornecem uma interface humana e de máquina para o texto alternativo.`}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={3}
+                     question={ <>
+                        <Text>{`O desenvolvedor de conteúdo (código) Web é o profissional responsável pela
+codificação semântica do conteúdo Web. Qual a dica de boas práticas pode
+apoiar este profissional no cumprimento dos requisitos das chamadas Diretrizes
+de Acessibilidade de Conteúdo da Web WCAG):`}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{`Associe um rótulo a cada campo de entrada de um formulário.`}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={4}
+                     question={ <>
+                        <Text>{`A World Wide Web, também conhecida como WWW ou simplesmente Web, é
+um sistema de informação baseado em hipertexto que permite o acesso a
+documentos interconectados e vinculados pela internet. Foi desenvolvida por
+qual pesquisador?`}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{`Tim Berners-Lee - reconhecido por ter desenvolvido o primeiro servidor web, a primeira biblioteca de hipertexto e a primeira linguagem para criação de páginas web.`}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={5}
+                     question={ <>
+                        <Text>{`Acessibilidade Digital é a eliminação de barreiras na Web. O conceito
+pressupõe que os sites e portais sejam projetados de modo que todas as
+pessoas possam perceber, entender, navegar e interagir de maneira efetiva
+com as páginas.
+Disponível em: https://www.gov.br/governodigital/pt-br/acessibilidade-digital
+Acesso em: 26 set. 2022.
+São consideradas dimensões de Acessibilidade:`}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{`Arquitetônica, metodológica, instrumental, programática, atitudinal e
+comunicacional.`}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={6}
+                     question={ <>
+                        <Text>{`No que se refere à World Wide Web Consortium W3C, comunidade
+organizada por membros internacionais, é correto afirmar que ela possui como
+objetivos marcos:`}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{`Oferecer diretrizes, notas, artigos, tutoriais e afins aos profissionais
+que desenvolvem para Web, visando possibilitar uma Web cada vez
+mais acessível.`}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={7}
+                     question={ <>
+                        <Text>{`A W3C publica documentos que definem as tecnologias Web. Estes
+documentos seguem um processo destinado a promover o consenso, justiça,
+responsabilidade pública e qualidade. No final deste processo, a W3C publica
+recomendações, que são consideradas como padrões Web. A recomendação
+que apresenta as diretrizes que explicam como tornar o conteúdo Web
+acessível a pessoas com deficiência é a`}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{`Web Content Accessibility Guidelines WCAG.`}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={8}
+                     question={ <>
+                        <Text>{`(FAFIPA/2019 - Adaptada) Um novo relatório indica que 99% dos sites que
+estão ativos no Brasil não são acessíveis para pessoas com deficiência. O
+levantamento foi realizado pela BigData Corp, empresa especializada em
+trabalhar com um grande conjunto de dados Big Data), e o Movimento Web
+Para Todos (MWPT).
+O Brasil possui atualmente mais de 24 milhões de portais registrados. No
+entanto, apenas 14 milhões são ativos, ou seja, endereços atualizados
+frequentemente e que foram o foco deste estudo. De todos, somente 0,61% dos
+sites passaram em testes de acessibilidade, e 99,39% tiveram pelo menos uma
+falha que dificulta a navegação de pessoas com deficiência.
+Sites governamentais - que possuem "
+.gov.br" no domínio - também foram
+analisados e o resultado tampouco é positivo: apenas 0,34% foram aprovados.
+Isso significa que 99,66% dos portais de prefeituras, estados ou ministérios,
+por exemplo, não estão completamente acessíveis.
+A pesquisa avaliou questões como linguagem HTML, problemas em
+formulários, links e a presença de descrição de imagens, recurso que permite a
+explicação de fotografias para pessoas com deficiência visual. Práticas
+consideradas adequadas estão disponíveis nas Diretrizes de Acessibilidade
+para Conteúdo Web WCAG2.1, mantida pela World Wide Web Consortium
+W3C, organização mundial de padronização da web.
+"Coisas simples, como acessar aplicativos de relacionamentos, consultar
+preços e entrar na conta bancária podem ser feitas com o celular ou no
+desktop, mas algumas dessas tecnologias são excludentes para pessoas com
+deficiência"
+, afirma Simone Freire, idealizadora do MWPT.
+"O mundo digital
+precisa derrubar as barreiras de navegação para melhorar o acesso de todas as
+pessoas.
+"
+Texto adaptado de:
+https://revistagalileu.globo.com/Tecnologia/noticia/2019/10/menos-de-1-dossites-brasileiros-saoacessiveis-para-pessoas-com-deficiencia.html. Acesso em
+06 de novembro de 2019.
+De acordo com o texto, é CORRETO afirmar que:`}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{`Portais brasileiros ainda não são completamente acessíveis para
+pessoas com deficiência.`}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={9}
+                     question={ <>
+                        <Text>{`De acordo com as Diretrizes de Acessibilidade para Conteúdo Web WCAG 2.1,
+os quatro princípios que fundamentam a acessibilidade estabelecem que todos
+os sites acessíveis devem possuir conteúdo que seja`}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{`Perceptível, operável, compreensível e robusto.`}</Text>
+                     </> }
+                  />
+                  
+                  <Exercices
+                     id={10}
+                     question={ <>
+                        <Text>{`(Avança SP/2022 - Adaptada) Uma lei é um conjunto de regras e normas
+estabelecidas por uma autoridade competente, seja ela legislativa, executiva ou
+judiciária. A lei tem como objetivo regular o comportamento das pessoas e das
+instituições, promover a justiça, a ordem e a segurança na sociedade. Segundo
+a Lei 13.146/15, o Estatuto da Pessoa com Deficiência, entende-se por desenho
+universal:`}</Text>
+                     </> }
+                     answer={ <>
+                        <Text>{`Concepção de produtos, ambientes, programas e serviços a serem
+usados por todas as pessoas, sem necessidade de adaptação ou de
+projeto específico, incluindo os recursos de tecnologia assistiva.`}</Text>
                      </> }
                   />
                   
