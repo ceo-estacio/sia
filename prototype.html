@@ -1,0 +1,176 @@
+
+
+<head>
+   <!-- == [ ReactJS ] == == == == == == == == == -->
+   <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+   
+   <!-- Don't use this in production: -->
+   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+   <!-- <script type="text/babel">example</script> -->
+   <style>
+      * {
+         box-sizing: border-box;
+      }
+      
+      body {
+         margin: 0;
+         padding: 0;
+      }
+      
+      section {
+         padding: 1em;
+      }
+      
+      card {
+         display: flex;
+         flex-direction: column;
+         aspect-ratio: 16 / 9;
+         background: #3a2d34;
+         border-radius: 16px;
+         padding: 1em;
+      }
+   </style>
+</head>
+   <appbar></appbar>
+
+<view>view</view>
+<view>oi</view>
+<script type="text/babel">
+   "use strict";
+   const 
+      _ = ( ...a ) => console.log( ...a )
+      ,
+      $ = v => document.querySelectorAll( v )
+   ;
+
+   NodeList.prototype._ = function() {
+      return document.querySelector( this[0].nodeName );
+      // return this[0];
+   }
+
+   NodeList.prototype.snap = async function( props ) {
+      try {
+         const 
+            list = await [ ...this ]
+         ;
+         return list;
+      } catch( err ) {
+         _( "snap() err => ", err );
+      }
+   }
+
+   String.prototype.data = function( v ) {
+      return( JSON.parse( this ) );
+   }
+   
+   String.prototype.adata = async function( v ) {
+      try{
+         const 
+            data = await JSON.parse( this )
+         ;
+         return( data );
+      } catch( err ) {
+         _( `${ this }.adata() => err: `, err );
+      }
+   }
+
+   // if( $$( "body" ) instanceof NodeList ) {
+   //    _(
+   //       "NodeList"
+   //    );
+   // }
+
+   $( "view" ).forEach( v => {
+      $( "body" )._().innerHTML += v.innerText;
+   } );
+
+   $( "view" ).snap().then( r => {
+      _( "list: ", r )
+   } );
+
+   $( "body" )._().style.background = "#24171f";
+
+   function List( { ...props } ) {
+      return(
+         <section>
+            {
+               props.items && props.items.map(
+                  item => <card>
+                     <h1>Name: { item.name }</h1>
+                     <p>Type: { item.type }</p>
+                     <small>id: { item.id }</small>
+                  </card>   
+               )
+            }
+         </section>
+      );
+   }
+
+   function AppBar( { ...props } ) {
+      return(
+         <section
+            style="width: 100%; heigth: 81px; background: '#3a2d34'; position: absolute; top: 0; left: 0;"
+         >
+         </section>
+      );
+   }
+   ReactDOM.createRoot(
+      $( "appbar" )._()
+   ).render(
+      // <AppBar />
+      <section>
+         <List 
+            items={ [
+               {
+                  name: "céo",
+                  id: `${ 1 + 3 + 1 + 0 + 1 + 9 + 8 + 4 }:${ 13 + 10 + 1984 }`,
+                  type: "vampire",
+               },
+            ] }
+         />
+         <List 
+            items={
+               JSON.stringify( [
+                  {
+                     name: "data 1",
+                     id: "d1",
+                     type: "data",
+                  },
+                  {
+                     name: "data 2",
+                     id: "d2",
+                     type: "data",
+                  },
+                  {
+                     name: "data 3",
+                     id: "d3",
+                     type: "data",
+                  },
+               ] ).data()
+            }
+         />
+         <List 
+            items={
+               JSON.stringify( [
+                  {
+                     name: "data 1",
+                     id: "d1",
+                     type: "data",
+                  },
+                  {
+                     name: "data 2",
+                     id: "d2",
+                     type: "data",
+                  },
+                  {
+                     name: "data 3",
+                     id: "d3",
+                     type: "data",
+                  },
+               ] ).data()
+            }
+         />
+      </section>
+   );
+</script>
