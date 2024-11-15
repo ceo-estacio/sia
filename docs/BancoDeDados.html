@@ -1,0 +1,939 @@
+
+
+<!DOCTYPE html>
+<html lang='pt-br'>
+   <head>
+      <title></title>
+      
+      <!-- <link rel='icon' href='src/pix/logo.svg' type='svg+xml'> -->
+      <meta charset='UTF-8'>
+      <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+      <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+      <!-- <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'> -->
+      <style>
+         /* @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cinzel+Decorative:wght@400;700;900&family=Open+Sans:wght@500;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tangerine:wght@400;700&display=swap'); */
+
+         *:not( h1,h2,h3,h4,h5,h6,p,menu,ul,ol,li,hr,pre,dd,blockquote,fieldset,legend ),
+         *:not( h1,h2,h3,h4,h5,h6,p,menu,ul,ol,li,hr,pre,dd,blockquote,fieldset,legend )::before,
+         *:not( h1,h2,h3,h4,h5,h6,p,menu,ul,ol,li,hr,pre,dd,blockquote,fieldset,legend )::after {
+            margin:0; padding:0; box-sizing:border-box;
+         }
+         
+         :root {
+            --dark0: #16181c;   --dark1: #1b1d22;
+            --dark2: #212329;   --dark3: #505257;
+
+            --light0: #ffffff;  --light1: #f5f5f5;
+
+            --pink: #905;   --amber: #ffab00;   --red: #ce3635;
+            --azul: #27f;   --green: #006400;   --blue: #149cbe;
+            --texto: #e9e6e3;
+
+            --green-dark: #8b6d19;  --green-light: #a17d1a;    --green-bg: #fbf6e9;
+            --purple-dark: #603479; --purple-light: #965bb9;   --purple-bg: #f4edf7;
+            --red-dark: #902726;    --red-light: #b83232;      --red-bg: #fceeee;
+            --blue-dark: #1c5b6e;   --blue-light: #267d97;     --blue-bg: #ebf6fb;
+
+            --appbar-height: 81px;
+            --appbar-filter-shadow: drop-shadow( #0009 0 0 5px );
+            --sidebar-width: 68px;
+         }
+         
+         navlink { cursor: pointer; }
+         navlink:hover { color: #27f; transition: .3s ease-in-out; }
+         
+         ::-webkit-scrollbar {
+            width: 10px;
+         }
+         ::-webkit-scrollbar-track {
+            background: var( --pink );
+            border-radius: 5px;
+         }
+         ::-webkit-scrollbar-thumb {
+            background: var( --dark0 );
+            border-radius: 5px;
+         }
+         
+         html {
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+            
+            background-color: #212329;
+            background-image:   linear-gradient( 0deg, #00000000 24px, #313339 25px ),
+            linear-gradient( 90deg, #00000000 24px, #313339 25px );
+            background-size: 25px 25px;
+         }
+         body {
+            width: calc( 100% - var( --sidebar-width ) );
+            min-height: 100vh;
+            /* margin-left: var( --sidebar-width ); */
+            color: var( --texto );
+            font-family: 'Poppins';
+            -webkit-font-smoothing: antialiased;
+         }
+         home-page {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+         }
+         t1, t2, t3, t4, t5, t6, t7 {
+            font-size: 3em;
+            font-weight: bold;
+            line-height: 1.2;
+            word-wrap: break-word;
+            color: #27f;
+         }
+         t { font-size: 1rem; }
+         t1 { font-size: 3rem; color: #e33; }
+         t2 { font-size: 2.5rem; color: #f29; }
+         t3 { font-size: 2.25rem; }
+         t4 { font-size: 1.8rem; }
+         t5 { font-size: 1.5rem; }
+         t6 { font-size: 1.25rem; }
+         t7 { font-size: 1.1rem; }
+         p { word-wrap: break-word; }
+         li { margin: 0.8ch 0; font-size: inherit; }
+         li > :nth-child( 1n ) {
+            padding-top: 1ch;
+            padding-bottom: 1ch;
+         }
+         li::marker {
+            /* unicode-bidi: isolate;
+            font-variant-numeric: tabular-nums;
+            font-variant-numeric: slashed-zero;
+            text-transform: none;
+            text-indent: 0px !important;
+            text-align: start !important;
+            text-align-last: start !important; */
+            font-size: larger;
+            font-weight: bolder;
+            color: #da0;
+         }
+         appbar {
+            /* display: block;
+            width: 100%;
+            height: 81px;
+            position: fixed;
+            top: 0; left: 0;
+            background: var( --dark0 );
+            filter: var( --appbar-filter-shadow ); */
+            z-index: 9;
+            
+            display: block;
+            width: 100%;
+            height: 98px;
+            position: sticky;
+            top: 0; left: 0;
+            background: #16181c;
+            box-shadow: #16181c 0 0 0 6px;
+            filter: drop-shadow( #0009 0 0 5px );
+            border-bottom-left-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+            border-bottom: #da0 5px dashed;
+            border-left: #da0 5px dashed;
+            border-right: #da0 5px dashed;
+         }
+         appbar-body {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            width: 99%;
+            height: 81px;
+            margin: 0 auto;
+            background: #1b1d22;
+            box-shadow: #1b1d22 0 0 0 6px;
+            filter: drop-shadow( #0009 0 0 5px );
+            border-bottom-left-radius: 7ch;
+            border-bottom-right-radius: 7ch;
+            border-bottom: #313339 5px dashed;
+            border-left: #313339 5px dashed;
+            border-right: #313339 5px dashed;
+         }
+         appbar-body > t1 {
+            color: #e9e6e3;
+            display: grid;
+            place-items: center;
+         }
+         sidebar::-webkit-scrollbar { width: 0; }
+         card {
+            display: grid;
+            width: clamp( 100px, 90%, 950px );
+            height: 100%;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #2232;
+            box-shadow: #2233 0 0 0 13px;
+            filter: drop-shadow( #9052 0 0 6px );
+            border-radius: 1.5rem;
+            border: 6px dashed #f275;
+         }
+         card-body {
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 1.5em 2.5em;
+            background: #f5f5f5;
+         }
+         fieldset {
+            border-radius: 2rem;
+            margin: 1rem 0;
+            padding: 1rem;
+         }
+         legend { font-weight: bolder; }
+         hr {
+            width: 100%;
+            border: #da05 solid;
+            border-radius: 2rem;
+         }
+      </style>
+      <style>
+         body {
+            background: #2a181f;
+            background: #16181c;
+            width: 100%;
+         }
+         
+         exercices, header, section, exercice, question, answer {
+            display: flex;
+            flex-direction: column;
+         }
+
+         exercices {
+            /* background: #212329; */
+            width: 100%;
+            padding-top: 1.5em;
+            padding-bottom: 1.5em;
+            gap: 1em;
+         }
+         
+         exercices > header {
+            background: #0000;
+         }
+         
+         exercices > section {
+            background: #0000;
+         }
+         
+         exercices > section > exercice {
+            background: #1b1d22;
+         }
+         
+         exercices question {
+            background: #0000;
+         }
+         
+         exercices answer {
+            background: #342d3a;
+            border-radius: .7em;
+            padding: 0.5em;
+         }
+      </style>
+   </head>
+   <body>
+      <appbar>
+         <appbar-body>
+            <appbar-brand></appbar-brand>
+            <t1></t1>
+            <appbar-options></appbar-options>
+         </appbar-body>
+      </appbar>
+
+      <home-page>
+      </home-page>
+
+      <script>
+         'use strict';
+         /* ==[ properties ]================= */
+         const 
+            _ = ( ...v ) => console.log( ...v )
+            ,
+            $ = ( v, a ) => {
+               if( !a ) {
+                  return( document.querySelector( v ) ); 
+               } else {
+                  return( document.querySelectorAll( v ) );
+               }
+            }
+         ;
+         /* -------------------------------- */
+
+         /**
+          * == [ prototypes ]
+          * == == == == == == == == == */ 
+         String.prototype.$ = function( v ) {
+            if( !v ) {
+               return(
+                  document.querySelector( this )
+               );
+            } else {
+               return(
+                  document.querySelectorAll( this )
+               );
+            }
+         }
+         String.prototype._ = function( v ) {
+            return(
+               console.log( "/** == [ Sting log ] == == == == == == == == == */\n\n", this )
+            );
+         }
+
+
+
+         function Exercices( { ...props } ) {
+            const 
+               style = `
+                  <style>                     
+                     exercices, header, section, exercice, question, answer {
+                        display: flex;
+                        flex-direction: column;
+                     }
+
+                     exercices {
+                        /* background: #212329; */
+                        width: 100%;
+                     }
+                     
+                     exercices > header {
+                        background: #0000;
+                     }
+                     
+                     exercices > section {
+                        background: #0000;
+                     }
+                     
+                     exercices > section > exercice {
+                        background: #1b1d22;
+                     }
+                     
+                     exercices question {
+                        background: #0000;
+                     }
+                     
+                     exercices answer {
+                        background: #342d3a;
+                        border-radius: .7em;
+                        padding: 0.5em;
+                     }
+                  </style>`
+               ,
+               exes = props.exercices.map( exe => `
+                  <exercice pd="1em" gap="1em">
+                     <question>${ exe.q }</question>
+                     <answer>${ exe.a }</answer>
+                  </exercice>` ).join( "" )
+               ,
+               model = `
+               <exercices pv="1.5em" gap="1em">
+                  <header pd="1em">${ props.name }</header>
+                     <section gap="1em">
+                        ${ exes }
+                     </section>
+                  </exercices>
+               `
+            ;
+            return(
+               $( "home-page" ).innerHTML += model
+            );
+         }
+
+
+
+         /* ==[ events ]==================== */
+         window.addEventListener( 'load', ev => {
+            let 
+               NavLinks
+            ;
+
+            Exercices( {
+               name: "Tema 2: Sistema De Banco De Dados",
+               exercices: [
+                  {
+                     q: `NoSQL é um termo usado para se referir a uma categoria de sistemas de gerenciamento de banco de dados SGBDs que são diferentes dos bancos de dados relacionais tradicionais.
+
+O que significa NoSQL em bancos de dados?`,
+                     a: `Não somente SQL.`
+                  },
+                  {
+                     q: `Qual das alternativas abaixo não é uma propriedade desejada das transações em um sistema de banco de dados?`,
+                     a: `Integridade.`
+                  },
+                  {
+                     q: `Edgar F. Codd é uma figura icônica no mundo da ciência da computação e no desenvolvimento de sistemas de gerenciamento de banco de dados.
+
+Qual foi a contribuição mais significativa de Edgar F. Codd para a evolução dos sistemas de banco de dados?`,
+                     a: `Criação do modelo relacional de banco de dados.`
+                  },
+                  {
+                     q: `Qual conjunto de comandos da SQL abaixo serve para manipular o estado ou a instância do banco de dados?`,
+                     a: `INSERT, UPDATE, DELETE.`
+                  },
+                  {
+                     q: `Qual conjunto de comandos da SQL abaixo serve para o administrador do banco de dados gerenciar os metadados de um banco de dados?`,
+                     a: `CREATE, ALTER, DROP.`
+                  },
+                  {
+                     q: `Que invenção da IBM permitiu a utilização dos computadores na implementação de sistemas de informação, inaugurando a chamada era do processamento de dados?`,
+                     a: `O disco magnético.`
+                  },
+                  {
+                     q: `Analise as afirmações abaixo e responda qual alternativa corresponde a afirmações verdadeiras sobre os módulos de um SGBDI - O catálogo armazena os metadados do sistema de banco de dados.
+II - Os programas de aplicação são précompilados para separar os comandos da linguagem de programação dos comandos de manipulação de dados.
+
+III - As transações são compiladas após passarem pelo otimizador de consultas.`,
+                     a: `Somente as afirmações I e II estão corretas.`
+                  },
+                  {
+                     q: ``,
+                     a: ``
+                  },
+               ]
+            } );
+
+            Exercices( {
+               name: "Tema 3: Projeto De Banco De Dados: Modelagem Conceitual",
+               exercices: [
+                  {
+                     q: `Em Modelo de Entidade de Relacionamento,
+possuímos entidades e atributos. A esse
+respeito, analise as assertivas e assinale a
+alternativa que aponta a(s) correta(s).
+I. O objeto básico de um MER é uma entidade,
+"algo" do mundo real, com uma existência
+independente.
+II. Uma entidade pode ser um objeto com uma
+existência física (por exemplo, uma pessoa, um
+carro, uma casa ou um funcionário) ou um
+objeto com uma existência conceitual (por
+exemplo, uma empresa, um trabalho ou um
+curso universitário).
+III. Os valores dos atributos que descrevem
+cada entidade se tornarão a maior parte dos
+dados armazenados no banco de dados.
+IV. Cada entidade tem atributos ¿ propriedades
+particulares que a descrevem. Por exemplo,
+uma entidade empregada pode ser descrita
+pelo nome do empregado, idade, endereço,
+salário e trabalho (função).`,
+                     a: `I, II, III e IV.`
+                  },
+                  {
+                     q: `O projeto conceitual e o projeto lógico de um
+banco de dados são duas etapas
+fundamentais no processo de
+desenvolvimento de um sistema de
+gerenciamento de banco de dados SGBD.
+Cada fase desempenha um papel específico
+na criação de um modelo de dados eficaz.
+Qual é a principal diferença entre o projeto
+conceitual e o projeto lógico de banco de
+dados?`,
+                     a: `O projeto lógico se concentra em
+detalhes de implementação, enquanto
+o projeto conceitual é de alto nível.`
+                  },
+                  {
+                     q: `Em alguns casos, dois ou mais valores de
+atributos em um modelo de EntidadeRelacionamento estão relacionados. Por
+exemplo, os atributos Idade e Data de
+Nascimento de uma pessoa. Para uma Entidade
+− Pessoa em particular, o valor de Idade pode
+ser determinado pela data corrente e o valor de
+Data de Nascimento da pessoa. Portanto, o atributo Idade é chamado atributo ...I... do
+atributo Data de Nascimento, que, por sua vez,
+é chamado atributo ...II... .
+As lacunas I e II são, correta e respectivamente,
+preenchidas com:`,
+                     a: `derivado - armazenado`
+                  },
+                  {
+                     q: `Em relação aos conceitos de bancos de dados,
+é correto afirmar que:`,
+                     a: `Em uma generalização/especialização
+total, para cada ocorrência da
+entidade genérica, existe sempre uma
+ocorrência em uma das entidades
+especializadas.`
+                  },
+                  {
+                     q: `Após a análise dos requisitos de um projeto de
+banco de dados para representar as estradas
+de um país, obteve-se as seguintes
+especificações:
+As estradas são descritas pelo nome oficial,
+apelido (pode ser mais de um), tipo, extensão.
+As estradas se classificam em: Federais,
+estaduais e municipais.
+As estradas se dividem em trechos. Porém um
+trecho pertence sempre a uma única estrada e
+não poderá fazer parte de outra estrada. Existe
+o trecho inicial e trecho final de uma estrada.
+Na criação de um modelo de entidadesrelacionamento para o problema descrito acima,
+marque a alternativa correta:`,
+                     a: `TRECHO pode ser modelado como
+uma entidade fraca com relação a
+ESTRADA.`
+                  },
+                  {
+                     q: `Na nomenclatura de banco de dados, restrição
+corresponde a uma regra que deve ser
+obedecida pelo SGBD. Seja a restrição "um funcionário não pode ter salário maior que seu
+chefe imediato"
+, esta deve ser classificada
+como restrição de:`,
+                     a: `Semântica`
+                  },
+                  {
+                     q: ``,
+                     a: ``
+                  },
+               ]
+            } );
+
+            Exercices( {
+               name: "Tema 4: Projeto De Banco De Dados: Modelagem Lógica e Física",
+               exercices: [
+                  {
+                     q: `Em um projeto de banco de dados, a
+desnormalização é recomendada quando:`,
+                     a: `Há necessidade de reduzir o número
+de tabelas envolvidas em consultas
+que acontecem com frequência, com
+a consequente redução do uso de
+recursos pelo SGBD.`
+                  },
+                  {
+                     q: `O Modelo Relacional usa:`,
+                     a: `Uma coleção de tabelas para
+representar os dados e as relações
+entre eles.`
+                  },
+                  {
+                     q: `Uma chave estrangeira (foreign key, em
+inglês) é uma parte fundamental do modelo
+relacional de banco de dados, garantindo
+que os dados sejam consistentes e
+refletindo as relações entre as entidades
+representadas nas tabelas.
+Qual é a principal função de uma chave
+estrangeira em um banco de dados
+relacional?`,
+                     a: `Estabelecer um vínculo entre duas
+tabelas, permitindo a integridade
+referencial.`
+                  },
+                  {
+                     q: `Formar novas relações, separando-as a partir
+de grupos de repetição antes existentes dentro
+de uma relação, é objetivo da:`,
+                     a: `1FN.`
+                  },
+                  {
+                     q: `A normalização de banco de dados é um
+processo fundamental na modelagem de
+bancos de dados relacionais. A
+normalização é uma série de regras que
+ajudam a projetar esquemas de banco de
+dados que estão em conformidade com
+princípios de organização de dados.
+Qual é o principal objetivo da normalização
+em um banco de dados?`,
+                     a: `Eliminar a redundância de dados.`
+                  },
+                  {
+                     q: `Tabelas desempenham um papel central na
+estrutura de qualquer banco de dados
+relacional. Elas permitem a organização,
+armazenamento e recuperação eficiente de
+dados.
+O que representa uma tabela em um modelo
+de banco de dados relacional?`,
+                     a: `Um conjunto de objetos de dados
+semelhantes, também chamado de
+entidades.`
+                  },
+                  {
+                     q: `Qual dos fatores a seguir não deve ser levado
+em consideração ao implementarmos um banco de dados levando em conta questões de
+desempenho?`,
+                     a: `Organização de políticas de acesso a
+dados.`
+                  },
+                  {
+                     q: `A figura acima apresenta o modelo entidade
+relacionamento (ER) de uma situação hipotética
+que considera eleitores votando em candidatos
+a cargo público em uma eleição. O processo de
+mapeamento do modelo ER para o modelo
+relacional gera relações. Assinale a opção que
+apresenta as relações corretas que serão
+geradas ao mapear o modelo ER apresentado
+para o modelo relacional. Considere a seguinte
+notação: PK- atributos que compõem a chave
+primária e FK- atributos que compõe a chave
+estrangeira.`,
+                     a: `eleitor (id_eleitor(pk), nome, titulo)
+candidato (id_eleitor(pk)(fk), numero,
+legenda, id_cargo(fk))
+votação((id_eleitor_eleitor(fk),
+id_eleitor_candidato(fk))(pk))
+cargo(id_cargo(pk), desc_cargo)`
+                  },
+               ]
+            } );
+
+            Exercices( {
+               name: "Tema 5: Criação e Manipulação De Objetos No Postgresql",
+               exercices: [
+                  {
+                     q: `Em um sistema de gerenciamento de banco
+de dados relacional (SGBD, as tabelas são
+estruturas fundamentais para armazenar
+dados de forma organizada e eficiente. Elas
+são compostas por linhas e colunas, onde
+cada linha representa um registro de dados
+e cada coluna representa um atributo ou
+campo de dados específico.
+Qual comando é usado para adicionar uma
+nova coluna a uma tabela existente no
+PostgreSQL?`,
+                     a: `ALTER TABLE`
+                  },
+                  {
+                     q: `Fernando está usando a linguagem SQL ANSI)
+e pretende fazer uma atualização nos dados
+Nome_Cli e End_Cli do cliente cujo Cod_Cli é
+Cli01, na tabela Cliente. Nome_Cli passará a ser
+Ariana e End_Cli passará a ser Rua ABC. O
+código SQL correto que Fernando escreveu foi:
+..I.. Cliente
+..II.. Nome_Cli =
+'Ariana'
+, End _Cli =
+'Rua ABC'
+..III.. Cod_Cli =
+'Cli01';
+Para que o código esteja correto, as lacunas I, II
+e III devem ser preenchidas, respectivamente,
+por:`,
+                     a: `UPDATE - SET - WHERE`
+                  },
+                  {
+                     q: `Não se trata de uma afirmativa válida para
+instalação do PostgreSQL, a partir do código
+fonte da distribuição:`,
+                     a: `É necessário um software adicional
+para instalação no Windows.
+Recomenda-se usar o MinGW.`
+                  },
+                  {
+                     q: `Uma chave estrangeira (também conhecida
+como chave externa) é um conceito
+importante em bancos de dados relacionais
+que estabelece relações entre tabelas. Ela é
+uma coluna ou conjunto de colunas em uma
+tabela que se refere à chave primária (ou
+outra chave única) de outra tabela.
+Qual ação o SGBD realizará se você tentar
+excluir uma linha de uma tabela que possui
+uma chave estrangeira referenciando-a?`,
+                     a: `O SGBD gerará um erro e não
+permitirá a exclusão.`
+                  },
+                  {
+                     q: `Transações em banco de dados são um
+conceito fundamental no gerenciamento de
+sistemas de banco de dados relacionais.
+Elas são usadas para garantir a integridade,
+consistência e confiabilidade dos dados,
+especialmente em ambientes onde várias
+operações concorrentes podem estar
+ocorrendo simultaneamente.
+O que é atomicidade em relação a
+transações em bancos de dados?`,
+                     a: `A propriedade de que uma transação
+precisa ser realizada completamente
+ou não realizada.`
+                  },
+                  {
+                     q: `Dentre as opções a seguir, assinale a que
+contém a expressão em SQL que inclui uma
+coluna Email do tipo VARCHAR80) na tabela
+PROFESSOR.`,
+                     a: `ALTER TABLE PROFESSOR ADD
+COLUMN Email VARCHAR80.`
+                  },
+                  {
+                     q: `São vários os tipos de dados numéricos no
+PostgreSQL. O tipo:`,
+                     a: `serial é um tipo conveniente para
+definir colunas identificadoras únicas,
+semelhante à propriedade auto
+incremento.`
+                  },
+                  {
+                     q: `Utilizando SQL, responda o que se pede. Uma
+tabela chamada Area possui dois campos:
+arecod e aredes. Como podemos inserir um
+novo registro na tabela "Area"?`,
+                     a: `INSERT INTO Area (arecod, aredes)
+VALUES (100,
+"Técnico"), 200,
+"TI").`
+                  },
+               ]
+            } );
+
+            Exercices( {
+               name: "Tema 6: Consultas Em Uma Tabela No Postgresql",
+               exercices: [
+                  {
+                     q: `Seja uma tabela assim estruturada:
+CARGO(CARGO, SALARIO. Qual código a
+seguir retorna o salário médio?`,
+                     a: `SELECT AVG(SALARIO) FROM CARGO;`
+                  },
+                  {
+                     q: `Seja uma tabela assim estruturada:
+DISCIPLINA(CODIGOD, DESCRICAO,
+CARGAHORARIA). Qual código a seguir retorna
+as disciplinas cuja descrição inicia pela letra
+"A" e que tenham carga horária menor que 80
+horas?`,
+                     a: `SELECT * FROM DISCIPLINA WHERE
+DESCRICAO LIKE 'A%' AND
+CARGAHORARIA80;`
+                  },
+                  {
+                     q: `Seja uma tabela assim estruturada:
+MEDICAMENTO (CODIGO, DESCRICAO,
+QUANTIDADE, PRECOUNITARIO. Qual código a
+seguir retorna o código e a descrição dos
+medicamentos, além de uma coluna
+representativa do produto entre a quantidade e
+o preço unitário?`,
+                     a: `SELECT CODIGO, DESCRICAO,
+QUANTIDADE * PRECOUNITARIO
+FROM MEDICAMENTO;`
+                  },
+                  {
+                     q: `As funções de agregação são importantes
+porque muitas vezes nós precisamos realizar
+cálculos em grupos de registros com algum
+parâmetro similar, como por exemplo o sexo
+das pessoas. Se você deseja contar o número
+de funcionários por sexo, qual seria a função de
+agregação apropriada?`,
+                     a: `COUNT.`
+                  },
+                  {
+                     q: `Seja uma tabela assim estruturada:
+UNIDADE(CODIGOU, DESCRICAO, BAIRRO,
+ANOINICIO). Qual código a seguir retorna as
+unidades localizadas nos bairros Copacabana,
+Centro ou Barra, cujo ano de início de
+funcionamento seja maior que 2002?`,
+                     a: `SELECT * FROM UNIDADE WHERE
+BAIRRO IN
+('Copacabana'
+,
+'Centro'
+,
+'Barra') AND
+ANOINICIO2002;`
+                  },
+                  {
+                     q: `Em uma instrução SQL, a cláusula GROUP BY,
+se utilizada juntamente com funções de grupo,
+deve estar em uma posição específica como:`,
+                     a: `SELECT coluna1 [, coluna2, ... ] .
+função_de_grupo, [ função_de_grupo,
+...]
+FROM tabela
+WHERE condição
+GROUP BY coluna4 [, coluna5, ...]
+HAVING coluna5  10 ORDER BY
+coluna2;`
+                  },
+                  {
+                     q: `As vezes temos um banco de dados onde
+certas colunas estão sem valor. Isso pode
+acontecer ou porque, durante um tempo, aquela
+informação não era obrigatória, ou porque
+houve a falta de validação daquela informação.
+Com base nisso, como se verifica se uma
+coluna não possui valor cadastrado?`,
+                     a: `COLUNA IS NULL.`
+                  },
+                  {
+                     q: `Uma "view" é uma construção lógica em
+bancos de dados que fornece uma
+representação tabular de dados, assim como
+uma tabela real. No entanto, uma view não
+armazena fisicamente os dados; ela apenas
+exibe dados que são armazenados em outras
+tabelas.
+Qual é a principal função de uma "view" em
+SQL?`,
+                     a: `Encapsular a complexidade da
+consulta SQL que a forma.`
+                  },
+                  {
+                     q: `A agregação em bancos de dados SQL referese ao processo de resumir e agrupar conjuntos
+de dados para produzir resultados únicos,
+geralmente em cenários analíticos e de
+relatórios.
+Qual é a função da cláusula HAVING?`,
+                     a: `Estabelecer condições de filtro com
+funções de agregação.`
+                  },
+                  {
+                     q: `O comando SELECT é um dos mais
+fundamentais e frequentemente usados em
+SQL. Ele é utilizado para consultar e extrair
+dados de uma ou mais tabelas em um banco de
+dados.
+O que o comando SELECT FROM TABELA;
+faz?`,
+                     a: `Seleciona todas as colunas
+especificadas em uma consulta.`
+                  },
+               ]
+            } );
+
+            Exercices( {
+               name: "Tema 7: Consulta Com Várias Tabelas No Postgresql",
+               exercices: [
+                  {
+                     q: `Sejam duas tabelas assim estruturadas:
+DEPARTAMENTO(CODIGOD, NOMEEMPREGADO(CODIGOE, NOME, ENDERECO,
+CODIGOD)
+CODIGOD REFERENCIA DEPARTAMENTO
+Seja a consulta a seguir:
+SELECT D.NOME, E.NOME
+FROM DEPARTAMENTO D LEFT JOIN
+EMPREGADO E ON (D.CODIGODE.CODIGODORDER BY D.NOME;
+A consulta retorna:`,
+                     a: `O nome do departamento e o nome do
+empregado alocado. Os
+departamentos sem funcionário
+aparecem no resultado.`
+                  },
+                  {
+                     q: `Seja a consulta:
+SELECT NOME, CPF, SEXO
+FROM EMPREGADO
+WHERE SEXO 'F' OR SALARIO5000;
+Qual alternativa a seguir representa um código
+equivalente ao da consulta acima?`,
+                     a: `SELECT NOME, CPF, SEXO
+FROM EMPREGADO
+WHERE SEXO 'F'
+UNION
+SELECT NOME, CPF, SEXO
+FROM EMPREGADO
+WHERE SALARIO5000;`
+                  },
+                  {
+                     q: `Seja a consulta a seguir:
+SELECT CODIGONIVEL ,DESCRICAO
+FROM NIVEL
+WHERE CODIGONIVEL IN SELECT DISTINCT
+CODIGONIVEL FROM CURSO;
+A consulta serve para:`,
+                     a: `Exibir os níveis para os quais há pelo
+menos um curso associado.`
+                  },
+                  {
+                     q: `Para obter todas as linhas da tabela B, o
+comando SELECT deverá utilizar na sequência
+um JOIN entre as tabelas A e B do tipo:`,
+                     a: `RIGHT OUTER JOIN.`
+                  },
+                  {
+                     q: `As operações de junção (ou JOIN em SQL)
+em bancos de dados são utilizadas para
+combinar dados de duas ou mais tabelas
+com base em uma coluna comum. Elas são
+essenciais para recuperar informações
+relacionadas de diferentes tabelas e
+consolidá-las em um único resultado.
+Qual é o resultado de uma junção à
+esquerda (LEFT JOIN)?`,
+                     a: `Retorna todas as linhas da tabela à
+esquerda e as linhas correspondentes
+da tabela à direita.`
+                  },
+                  {
+                     q: `As operações de subconsultas são uma
+ferramenta poderosa para manipular e
+recuperar dados de maneira flexível e
+específica. Elas desempenham um papel
+essencial na realização de consultas
+complexas em bancos de dados relacionais,
+permitindo a obtenção de informações
+detalhadas de várias fontes de dados.
+Qual é o objetivo principal de uma consulta
+que utiliza subconsultas?`,
+                     a: `Realizar uma pesquisa usando
+resultados de outras consultas.`
+                  },
+                  {
+                     q: `Operadores de conjuntos em banco de
+dados são usados para combinar, comparar
+e realizar operações em conjuntos de
+resultados de consultas. Eles são úteis
+quando você deseja extrair informações de duas ou mais tabelas ou conjuntos de
+resultados separados e combiná-los de
+várias maneiras.
+Qual é a diferença entre o operador
+INTERSECT e o operador EXCEPT em SQL?`,
+                     a: `O operador INTERSECT retorna
+apenas as linhas que aparecem em
+ambas as consultas, enquanto o
+operador EXCEPT retorna apenas as
+linhas que não estão presentes em
+ambas as consultas.`
+                  },
+                  {
+                     q: `Qual consulta retorna o nome e o CPF dos
+cidadãos que são clientes e alunos?`,
+                     a: `SELECT NOME, CPF FROM ALUNO
+UNION
+SELECT NOME, CPF FROM CLIENTE;`
+                  },
+               ]
+            } );
+
+            Exercices( {
+               name: "Tema 7:",
+               exercices: [
+                  {
+                     q: ``,
+                     a: ``
+                  },
+               ]
+            } );
+
+
+            "navlink".$(1).forEach( link => link.addEventListener( 'click', ev => {
+               window.open( link.getAttribute( 'to' ), '_blank' );
+            } ) );
+
+            /* paddings */
+            $( "[pd]", 1 ).forEach( pd => pd.style.padding = pd.getAttribute( "pd" ) );
+            $( "[ph]", 1 ).forEach( ph => {
+               ph.style.paddingLeft = ph.getAttribute( "ph" ) 
+               ph.style.paddingRight = ph.getAttribute( "ph" ) 
+            } );
+            $( "[pv]", 1 ).forEach( pv => {
+               pv.style.paddingTop = pv.getAttribute( "pv" ) 
+               pv.style.paddingBottom = pv.getAttribute( "pv" ) 
+            } );
+
+            /* gap */
+            $( "[gap]", 1 ).forEach( gap => gap.style.gap = gap.getAttribute( "gap" ) );
+
+         } );
+
+      </script>
+   </body>
+</html>
